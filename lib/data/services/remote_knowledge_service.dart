@@ -1,10 +1,11 @@
 import 'package:get/get.dart';
+
 import '../models/knowledge_card.dart';
 
 class RemoteKnowledgeService extends GetConnect {
   /// Remote JSON URL — change this to your own server
   static const String remoteUrl =
-      'https://raw.githubusercontent.com/yosvu/ledgerlearn-data/main/knowledge_cards.json';
+      'https://raw.githubusercontent.com/maicarons/ledgerlearn/main/knowledge_cards.json';
 
   /// Fetch knowledge cards from remote server.
   /// Returns null if the fetch fails (no network, timeout, bad response).
@@ -15,8 +16,9 @@ class RemoteKnowledgeService extends GetConnect {
         decoder: (data) {
           if (data is List) {
             return data
-                .map((e) => KnowledgeCard.fromJson(
-                    Map<String, dynamic>.from(e)))
+                .map(
+                  (e) => KnowledgeCard.fromJson(Map<String, dynamic>.from(e)),
+                )
                 .toList();
           }
           return null;
