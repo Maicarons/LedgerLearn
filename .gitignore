@@ -49,3 +49,6 @@ app.*.map.json
 
 /CLAUDE.md
 /AGENTS.md
+.env
+/.crowdin
+/key.properties
