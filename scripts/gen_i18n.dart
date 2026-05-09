@@ -1,9 +1,8 @@
 /// Code generator: JSON i18n files → Dart locale files.
 ///
-/// Reads JSON translation files from `i18n/` and generates the corresponding
-/// Dart `const Map<String, String>` files under `lib/app/i18n/locales/`.
-///
-/// This script is intended to be run after Crowdin pulls updated translations.
+/// Reads JSON translation files from `i18n/` (hyphenated Crowdin format, e.g.
+/// `zh-CN.json`) and generates the corresponding Dart `const Map<String, String>`
+/// files under `lib/app/i18n/locales/` (underscored Dart format, e.g. `zh_CN.dart`).
 ///
 /// Usage:
 ///   dart run scripts/gen_i18n.dart
@@ -14,22 +13,34 @@ import 'dart:io';
 const jsonDir = 'i18n';
 const outputDir = 'lib/app/i18n/locales';
 
+// Maps Crowdin locale (JSON filename, hyphen) → Dart output filename (underscore)
 const localeFileMap = {
-  'zh_CN': 'zh_CN.dart',
-  'en_US': 'en_US.dart',
-  'ko_KR': 'ko_KR.dart',
-  'ja_JP': 'ja_JP.dart',
-  'vi_VN': 'vi_VN.dart',
-  'th_TH': 'th_TH.dart',
+  'zh-CN': 'zh_CN.dart',
+  'en-US': 'en_US.dart',
+  'ko-KR': 'ko_KR.dart',
+  'ja-JP': 'ja_JP.dart',
+  'vi-VN': 'vi_VN.dart',
+  'th-TH': 'th_TH.dart',
 };
 
+// Maps Crowdin locale (JSON filename, hyphen) → Dart variable name
 const localeVarMap = {
-  'zh_CN': 'zhCN',
-  'en_US': 'enUS',
-  'ko_KR': 'koKR',
-  'ja_JP': 'jaJP',
-  'vi_VN': 'viVN',
-  'th_TH': 'thTH',
+  'zh-CN': 'zhCN',
+  'en-US': 'enUS',
+  'ko-KR': 'koKR',
+  'ja-JP': 'jaJP',
+  'vi-VN': 'viVN',
+  'th-TH': 'thTH',
+};
+
+// Maps Crowdin locale (JSON filename) → GetX locale key (underscore)
+const dartLocaleKey = {
+  'zh-CN': 'zh_CN',
+  'en-US': 'en_US',
+  'ko-KR': 'ko_KR',
+  'ja-JP': 'ja_JP',
+  'vi-VN': 'vi_VN',
+  'th-TH': 'th_TH',
 };
 
 String escapeDartString(String s) {
@@ -37,7 +48,7 @@ String escapeDartString(String s) {
       .replaceAll('\\', '\\\\')
       .replaceAll("'", "\\'")
       .replaceAll('\n', '\\n')
-      .replaceAll('\$', '\\$');
+      .replaceAll(r'$', r'\$');
 }
 
 void main() {
@@ -66,13 +77,13 @@ void main() {
   final generatedLocales = <String>[];
 
   for (final jsonFile in jsonFiles) {
-    final localeCode =
+    final crowdinLocale =
         jsonFile.uri.pathSegments.last.replaceAll('.json', '');
-    final dartFileName = localeFileMap[localeCode];
-    final varName = localeVarMap[localeCode];
+    final dartFileName = localeFileMap[crowdinLocale];
+    final varName = localeVarMap[crowdinLocale];
 
     if (dartFileName == null || varName == null) {
-      stdout.writeln('Skipping unknown locale: $localeCode');
+      stdout.writeln('Skipping unknown locale: $crowdinLocale');
       continue;
     }
 
@@ -99,25 +110,28 @@ void main() {
 
     final outputFile = File('$outputDir/$dartFileName');
     outputFile.writeAsStringSync(buffer.toString());
-    generatedLocales.add(localeCode);
+    generatedLocales.add(crowdinLocale);
 
-    stdout.writeln('Generated: $outputDir/$dartFileName (${map.length} keys)');
+    stdout.writeln(
+        'Generated: $outputDir/$dartFileName (${map.length} keys)');
   }
 
-  // Update translations.dart to include all generated locales
   _updateTranslationsDart(generatedLocales);
 
   stdout.writeln('Done. ${generatedLocales.length} locale files generated.');
 }
 
-void _updateTranslationsDart(List<String> locales) {
+void _updateTranslationsDart(List<String> crowdinLocales) {
   final imports = StringBuffer();
   final mapEntries = StringBuffer();
 
-  for (final locale in locales) {
-    final varName = localeVarMap[locale]!;
-    imports.writeln("import 'locales/$locale.dart';");
-    mapEntries.writeln("        '$locale': $varName,");
+  for (final crowdinLocale in crowdinLocales) {
+    final varName = localeVarMap[crowdinLocale]!;
+    final dartKey = dartLocaleKey[crowdinLocale]!;
+    final dartFile = localeFileMap[crowdinLocale]!;
+
+    imports.writeln("import 'locales/$dartFile';");
+    mapEntries.writeln("        '$dartKey': $varName,");
   }
 
   final content = '''

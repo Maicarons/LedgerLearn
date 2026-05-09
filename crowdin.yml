@@ -8,7 +8,7 @@ preserve_hierarchy: true
 
 files:
   # --- App UI translations ---
-  - source: /i18n/zh_CN.json
+  - source: /i18n/zh-CN.json
     translation: /i18n/%locale%.json
     type: json
 
