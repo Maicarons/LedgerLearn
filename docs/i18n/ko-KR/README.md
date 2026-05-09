@@ -4,7 +4,7 @@
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter)](https://flutter.dev)
 [![Crowdin](https://badges.crowdin.net/ledgerlearn/localized.svg)](https://crowdin.com/project/ledgerlearn)
 
-一款面向**中国内地会计初学者**的多语言会计入门学习应用，支持中文、English、한국어。通过模拟完整的会计记账流程——凭证录入、总账/明细账查询、试算平衡、财务报表生成，并在操作中嵌入会计实务与经济法知识点，实现「做中学」。
+一款面向**中国内地会计初学者**的多语言会计入门学习应用，支持中文、英文、韩文。通过模拟完整的会计记账流程——凭证录入、总账/明细账查询、试算平衡、财务报表生成，并在操作中嵌入会计实务与经济法知识点，实现「做中学」。
 
 > ⚠️ **适用地区说明**：本程序的科目体系、会计准则和知识内容均基于\*\*中国企业会计准则（ASBE）\*\*和中国大陆会计从业要求，主要面向中国内地的会计学习者。其他国家/地区的会计准则可能存在差异，请谨慎参考。
 
@@ -52,8 +52,9 @@
 ├── scripts/
 │   └── gen_i18n.dart                   # JSON → Dart 翻译代码生成器
 ├── fastlane/metadata/android/
-│   ├── zh-CN/                          # F-Droid 元数据（源语言）
-│   └── en-US/                          # F-Droid 元数据（英文）
+│   ├── zh-CN/                          # F-Droid 元数据（源语言/中文）
+│   ├── en-US/                          # F-Droid 元数据（英文）
+│   └── ko-KR/                          # F-Droid 元数据（韩文）
 ├── fdroid/
 │   └── com.yosvu.ledgerlearn.ledgerlearn.yml  # fdroiddata 提交用元数据
 ├── crowdin.yml                         # Crowdin 翻译平台配置
