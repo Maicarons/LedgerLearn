@@ -1,6 +1,19 @@
-# LedgerLearn — 会计学习模拟应用
+# LedgerLearn — 记账学习模拟应用
 
-一款基于 Flutter 的**多语言会计入门学习应用**，支持中文、English、한국어 三种语言。通过模拟完整的会计记账流程——凭证录入、总账/明细账查询、试算平衡、财务报表生成，并在操作中嵌入会计实务与经济法知识点，实现「做中学」。
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter)](https://flutter.dev)
+[![Crowdin](https://badges.crowdin.net/ledgerlearn/localized.svg)](https://crowdin.com/project/ledgerlearn)
+
+一款面向**中国内地会计初学者**的多语言会计入门学习应用，支持中文、English、한국어。通过模拟完整的会计记账流程——凭证录入、总账/明细账查询、试算平衡、财务报表生成，并在操作中嵌入会计实务与经济法知识点，实现「做中学」。
+
+> ⚠️ **适用地区说明**：本程序的科目体系、会计准则和知识内容均基于**中国企业会计准则（ASBE）**和中国大陆会计从业要求，主要面向中国内地的会计学习者。其他国家/地区的会计准则可能存在差异，请谨慎参考。
+
+## 下载
+
+| 平台 | 来源 |
+|---|---|
+| Android | [F-Droid](https://f-droid.org)（审核中） / [GitHub Releases](https://github.com/Maicarons/ledgerlearn/releases) |
+| 其他平台 | 参见[构建说明](#构建)自行编译 |
 
 ## 功能概览
 
@@ -32,34 +45,49 @@
 ## 项目结构
 
 ```
-lib/
-├── main.dart                        # 入口 + 底部导航壳
-├── app/
-│   ├── bindings/app_binding.dart    # GetX 全局依赖注入
-│   ├── config/preset_data.dart      # 59 个科目 + 74 条知识卡片的预置数据
-│   ├── i18n/
-│   │   ├── translations.dart        # GetX Translations 类
-│   │   └── locales/                 # zh_CN / en_US / ko_KR 语言文件
-│   ├── routes/app_pages.dart        # 16 条命名路由
-│   └── theme/app_theme.dart         # Material 3 主题 + 字体配置
-├── data/
-│   ├── models/                      # Account / Voucher / Entry / KnowledgeCard
-│   ├── repositories/                # 数据仓库层，封装存储查询逻辑
-│   └── services/
-│       ├── database_service.dart    # GetStorage 持久化 + 数据预置
-│       ├── remote_knowledge_service.dart  # 联网知识库拉取
-│       └── export_service.dart      # CSV/PDF 导出
-├── modules/
-│   ├── home/         # 首页仪表盘
-│   ├── voucher/      # 凭证录入/列表/详情
-│   ├── accounts/     # 科目管理/详情
-│   ├── ledger/       # 总账/明细账
-│   ├── reports/      # 试算平衡/利润表/资产负债表
-│   ├── knowledge/    # 知识库浏览/详情
-│   └── settings/     # 语言切换/数据重置
-└── shared/
-    ├── widgets/       # 公共组件（科目选择器等）
-    └── utils/         # 工具函数（金额格式化、余额计算）
+├── i18n/                               # 📦 Crowdin 翻译源文件（JSON）
+│   ├── zh_CN.json                      # 源语言：简体中文
+│   ├── en_US.json                      # 英文翻译
+│   └── ko_KR.json                      # 韩文翻译
+├── scripts/
+│   └── gen_i18n.dart                   # JSON → Dart 翻译代码生成器
+├── fastlane/metadata/android/
+│   ├── zh-CN/                          # F-Droid 元数据（源语言）
+│   └── en-US/                          # F-Droid 元数据（英文）
+├── fdroid/
+│   └── com.yosvu.ledgerlearn.ledgerlearn.yml  # fdroiddata 提交用元数据
+├── crowdin.yml                         # Crowdin 翻译平台配置
+├── lib/
+│   ├── main.dart                       # 入口 + 底部导航壳
+│   ├── app/
+│   │   ├── bindings/app_binding.dart   # GetX 全局依赖注入
+│   │   ├── config/preset_data.dart     # 59 个科目 + 74 条知识卡片的预置数据
+│   │   ├── i18n/
+│   │   │   ├── translations.dart       # GetX Translations 类（由 gen_i18n.dart 生成）
+│   │   │   └── locales/                # 各语言 Dart 文件（由 gen_i18n.dart 生成）
+│   │   ├── routes/app_pages.dart       # 16 条命名路由
+│   │   └── theme/app_theme.dart        # Material 3 主题 + 字体配置
+│   ├── data/
+│   │   ├── models/                     # Account / Voucher / Entry / KnowledgeCard
+│   │   ├── repositories/               # 数据仓库层
+│   │   └── services/
+│   │       ├── database_service.dart   # GetStorage 持久化 + 数据预置
+│   │       ├── remote_knowledge_service.dart  # 联网知识库拉取
+│   │       └── export_service.dart     # CSV/PDF 导出
+│   ├── modules/
+│   │   ├── home/         # 首页仪表盘
+│   │   ├── voucher/      # 凭证录入/列表/详情
+│   │   ├── accounts/     # 科目管理/详情
+│   │   ├── ledger/       # 总账/明细账
+│   │   ├── reports/      # 试算平衡/利润表/资产负债表
+│   │   ├── knowledge/    # 知识库浏览/详情
+│   │   └── settings/     # 语言切换/数据重置
+│   └── shared/
+│       ├── widgets/       # 公共组件（科目选择器等）
+│       └── utils/         # 工具函数（金额格式化、余额计算）
+└── assets/
+    ├── fonts/             # Inter / Noto Sans SC / Noto Sans KR 字体
+    └── data/              # 预置数据（knowledge_cards.json）
 ```
 
 ## 快速开始
@@ -73,6 +101,9 @@ lib/
 ### 运行
 
 ```bash
+git clone https://github.com/Maicarons/ledgerlearn.git
+cd ledgerlearn
+
 # 安装依赖
 flutter pub get
 
@@ -89,37 +120,49 @@ flutter run
 flutter build apk
 ```
 
-### 配置联网知识库
+## 翻译（Crowdin）
 
-知识库支持从远程 JSON 获取，获取成功后自动覆盖本地数据。获取失败则使用内置预置数据。
+本项目使用 [Crowdin](https://crowdin.com) 翻译平台管理多语言内容。翻译范围包括：
 
-1. 将 `assets/data/knowledge_cards.json` 上传到你的服务器
-2. 修改 `lib/data/services/remote_knowledge_service.dart` 中的 URL：
-   ```dart
-   static const String remoteUrl = 'https://你的服务器/knowledge_cards.json';
-   ```
+- **应用 UI 文本** — `i18n/*.json`
+- **F-Droid 商店页面文本** — `fastlane/metadata/android/*.txt`
+- **项目文档** — `README.md`
 
-## 国际化
+### 翻译工作流
 
-使用 GetX 内置的 `Translations` 机制实现三语切换，约 150 个翻译键覆盖所有 UI 文字。科目名称和知识卡片内容采用三语字段存储（`nameZh`/`nameEn`/`nameKo`），根据当前语言动态选取。
+```bash
+# 1. 从 Crowdin 拉取最新翻译
+crowdin pull
 
-语言切换在设置页进行，通过 `Get.updateLocale()` 即时生效，语言偏好持久化到 GetStorage。
+# 2. 从 JSON 生成 Dart 翻译文件
+dart run scripts/gen_i18n.dart
 
-## 字体
+# 3. 更新源文本后推送至 Crowdin
+crowdin push
 
-应用捆绑了以下本地字体，无需联网即可在各平台获得一致的排版效果：
+# 4. 添加新语言只需在 crowdin.yml 中配置，然后拉取 + 生成即可
+```
 
-| 字体 | 用途 | 文件 |
+### 当前支持的语言
+
+| 语言 | 代码 | 状态 |
 |---|---|---|
-| **Inter** | 英文、数字（400/500/600/700 字重） | `assets/fonts/Inter-*.ttf` |
-| **Noto Sans SC** | 简体中文 | `assets/fonts/NotoSansSC-*.ttf` |
-| **Noto Sans KR** | 韩文 | `assets/fonts/NotoSansKR-*.ttf` |
+| 🇨🇳 简体中文（源语言） | `zh_CN` | ✅ 完成 |
+| 🇺🇸 English | `en_US` | ✅ 完成 |
+| 🇰🇷 한국어 | `ko_KR` | ✅ 完成 |
+| 🇯🇵 日本語 | `ja_JP` | 🔜 Crowdin 待翻译 |
+| 🇻🇳 Tiếng Việt | `vi_VN` | 🔜 Crowdin 待翻译 |
+| 🇹🇭 ไทย | `th_TH` | 🔜 Crowdin 待翻译 |
 
-配置方式：`fontFamily: 'Inter'` + `fontFamilyFallback: ['Noto Sans SC', 'Noto Sans KR']`
+### 参与翻译
+
+1. 访问 [LedgerLearn Crowdin 项目](https://crowdin.com/project/ledgerlearn)
+2. 选择目标语言并开始翻译
+3. 翻译审核通过后，将合并到主分支
 
 ## 会计科目体系
 
-预置 **59 个标准会计科目**，严格按照企业会计准则分类：
+预置 **59 个标准会计科目**，严格按照**中国企业会计准则**分类：
 
 - **资产类**（25 个）：库存现金、银行存款、应收账款、原材料、库存商品、固定资产、累计折旧等
 - **负债类**（12 个）：短期借款、应付账款、应付职工薪酬、应交税费、长期借款等
@@ -131,7 +174,7 @@ flutter build apk
 
 ## 数据持久化
 
-使用 GetStorage 以 JSON 格式存储全部数据，键值对结构：
+使用 GetStorage 以 JSON 格式存储全部数据：
 
 | 键 | 内容 |
 |---|---|
@@ -139,11 +182,11 @@ flutter build apk
 | `vouchers` | 凭证列表 |
 | `knowledge_cards` | 知识卡片列表 |
 | `locale` | 语言偏好 |
-| `themeMode` | 主题模式（浅色/深色/跟随系统） |
+| `themeMode` | 主题模式 |
 | `colorScheme` | 配色方案 |
 | `defaultPeriod` | 默认账期 |
 
-应用首次启动时自动写入预置数据，后续启动读取已有数据。通过设置页可一键重置为初始状态。
+首次启动时自动写入预置数据，后续启动读取已有数据。通过设置页可一键重置为初始状态。
 
 ## 教学融入设计
 
@@ -152,3 +195,25 @@ flutter build apk
 - **报表页面**：点击信息图标查看该报表的解读说明
 - **科目详情页**：展示关联的知识卡片
 - **明细账/总账页**：悬浮按钮解释会计概念
+
+## 发布到 F-Droid
+
+`fdroid/` 目录下的 YAML 文件已准备就绪，可直接提交到 [fdroiddata](https://gitlab.com/fdroid/fdroiddata) 仓库的 Merge Request。
+
+```bash
+# 预览 F-Droid 元数据
+cat fdroid/com.yosvu.ledgerlearn.ledgerlearn.yml
+
+# 本地验证构建（需要 fdroidserver）
+fdroid build com.yosvu.ledgerlearn.ledgerlearn
+```
+
+商店页面文本（fastlane 格式）存放于 `fastlane/metadata/android/`。
+
+## 许可证
+
+[GNU General Public License v3.0](LICENSE)
+
+Copyright (C) 2025 Maicarorns
+
+LedgerLearn is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.

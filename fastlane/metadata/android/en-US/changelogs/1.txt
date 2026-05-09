@@ -1,0 +1,9 @@
+Initial release:
+- Voucher management with debit/credit validation
+- 59 preset standard accounts
+- General ledger and subsidiary ledger views
+- Trial balance, income statement, and balance sheet
+- 74 trilingual knowledge cards with Markdown rendering
+- CSV/PDF export for all report types
+- Chinese, English, and Korean language support
+- Light, dark, and system theme modes

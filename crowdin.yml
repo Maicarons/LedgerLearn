@@ -1,0 +1,74 @@
+# Crowdin translation platform configuration for LedgerLearn
+# Documentation: https://support.crowdin.com/configuration-file/
+
+project_id_env: CROWDIN_PROJECT_ID
+api_token_env: CROWDIN_PERSONAL_TOKEN
+base_path: .
+preserve_hierarchy: true
+
+# Locale mapping: Crowdin BCP-47 codes → project underscore codes
+# zh-CN is the source language for app i18n and store listings
+languages_mapping:
+  two_letters_code:
+    zh-CN: zh_CN
+    en-US: en_US
+    ko-KR: ko_KR
+
+files:
+  # --- App UI translations ---
+  # Source: Chinese (simplified)
+  # Crowdin pushes/pulls translations for all target languages
+  - source: /i18n/zh_CN.json
+    translation: /i18n/%locale%.json
+    type: json
+    languages_mapping:
+      two_letters_code:
+        zh-CN: zh_CN
+        en-US: en_US
+        ko-KR: ko_KR
+        ja-JP: ja_JP
+        vi-VN: vi_VN
+        th-TH: th_TH
+
+  # --- F-Droid / Fastlane store listing texts ---
+  # Source: Chinese (simplified) — primary audience
+  - source: /fastlane/metadata/android/zh-CN/title.txt
+    translation: /fastlane/metadata/android/%locale%/title.txt
+    languages_mapping:
+      two_letters_code:
+        en-US: en-US
+        ko-KR: ko-KR
+        ja-JP: ja-JP
+
+  - source: /fastlane/metadata/android/zh-CN/short_description.txt
+    translation: /fastlane/metadata/android/%locale%/short_description.txt
+    languages_mapping:
+      two_letters_code:
+        en-US: en-US
+        ko-KR: ko-KR
+        ja-JP: ja-JP
+
+  - source: /fastlane/metadata/android/zh-CN/full_description.txt
+    translation: /fastlane/metadata/android/%locale%/full_description.txt
+    languages_mapping:
+      two_letters_code:
+        en-US: en-US
+        ko-KR: ko-KR
+        ja-JP: ja-JP
+
+  - source: /fastlane/metadata/android/zh-CN/changelogs/1.txt
+    translation: /fastlane/metadata/android/%locale%/changelogs/%original_file_name%
+    languages_mapping:
+      two_letters_code:
+        en-US: en-US
+        ko-KR: ko-KR
+        ja-JP: ja-JP
+
+  # --- Project documentation ---
+  - source: /README.md
+    translation: /docs/i18n/%locale%/README.md
+    languages_mapping:
+      two_letters_code:
+        en-US: en-US
+        ko-KR: ko-KR
+        ja-JP: ja-JP

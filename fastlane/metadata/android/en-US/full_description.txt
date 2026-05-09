@@ -1,0 +1,14 @@
+LedgerLearn is a multilingual (Chinese, English, Korean) accounting education app designed specifically for accounting beginners in Chinese Mainland. It teaches double-entry bookkeeping through hands-on simulation — write vouchers, query ledgers, run trial balances, and generate financial statements following China's Accounting Standards for Business Enterprises (ASBE).
+
+IMPORTANT: This app is tailored for accounting practices of Chinese Mainland. The chart of accounts, accounting standards, and knowledge content are based on Chinese regulations. It may not apply to other jurisdictions.
+
+Features:
+• Voucher Management — Create, edit, and delete journal vouchers with dynamic entry rows and debit/credit balance validation following Chinese accounting conventions.
+• Chart of Accounts — 59 preset standard accounts categorized by Assets, Liabilities, Equity, Cost, Profit & Loss per China's ASBE classification.
+• General & Subsidiary Ledgers — Account-summary view and per-voucher drill-down with Chinese-standard formatting.
+• Financial Statements — Trial Balance, Income Statement, and Balance Sheet with educational annotations explaining Chinese accounting principles.
+• Knowledge Base — 74 trilingual knowledge cards covering Chinese accounting practice and economic law, rendered in Markdown. Supports remote updates.
+• Export — Export vouchers, ledgers, trial balances, income statements, and balance sheets to CSV or PDF.
+• Settings — Real-time language switching (Chinese/English/Korean), light/dark/system theme, and data reset.
+
+Built with Flutter and GetX. Offline-first with local storage — no account registration needed.

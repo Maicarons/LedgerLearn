@@ -1,0 +1,51 @@
+Categories:
+  - Education
+License: GPL-3.0-only
+AuthorName: Maicarons
+SourceCode: https://github.com/Maicarons/ledgerlearn
+IssueTracker: https://github.com/Maicarons/ledgerlearn/issues
+Changelog: https://github.com/Maicarons/ledgerlearn/releases
+
+AutoName: LedgerLearn
+Name: LedgerLearn
+Summary: Accounting learning simulation app for Chinese Mainland beginners
+Description: |
+  LedgerLearn is a multilingual accounting education app designed for
+  accounting beginners in Chinese Mainland. It teaches double-entry
+  bookkeeping through hands-on simulation — vouchers, ledgers, trial
+  balances, and financial statements following China's Accounting
+  Standards for Business Enterprises (ASBE).
+
+  IMPORTANT: This app is tailored for accounting practices of Chinese
+  Mainland and may not apply to other jurisdictions.
+
+  Features:
+  * Voucher management with debit/credit validation
+  * 59 preset standard accounts per China's ASBE classification
+  * General ledger and subsidiary ledger views
+  * Trial balance, income statement, and balance sheet
+  * 74 trilingual knowledge cards with Markdown rendering
+  * CSV/PDF export for all report types
+  * Chinese, English, Korean language support
+  * Light/dark/system theme modes
+  * Offline-first with local storage
+
+RepoType: git
+Repo: https://github.com/Maicarons/ledgerlearn
+
+Builds:
+  - versionName: '1.0.0'
+    versionCode: 1
+    commit: v1.0.0
+    subdir: .
+    sudo:
+      - apt-get update
+      - apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev
+    gradle:
+      - yes
+    output: build/app/outputs/flutter-apk/app-release.apk
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: 1.0.0
+CurrentVersionCode: 1
