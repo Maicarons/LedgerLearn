@@ -1,9 +1,9 @@
-首次发布：
-- 凭证管理，支持借贷平衡校验
-- 59 个预置标准会计科目
-- 总账与明细账视图
-- 试算平衡表、利润表、资产负债表
-- 74 条三语知识卡片，支持 Markdown 渲染
-- 支持 CSV/PDF 导出
-- 中/英/韩三种语言支持
-- 浅色/深色/跟随系统主题模式
+Initial release:
+- Voucher management with debit/credit validation
+- 59 preset standard accounts
+- General ledger and subsidiary ledger views
+- Trial balance, income statement, and balance sheet
+- 74 trilingual knowledge cards with Markdown rendering
+- CSV/PDF export for all report types
+- Chinese, English, and Korean language support
+- Light, dark, and system theme modes
