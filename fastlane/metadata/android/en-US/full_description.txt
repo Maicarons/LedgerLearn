@@ -1,4 +1,4 @@
-LedgerLearn is a multilingual (Chinese, English, Korean) accounting education app designed specifically for accounting beginners in Chinese Mainland. It teaches double-entry bookkeeping through hands-on simulation — write vouchers, query ledgers, run trial balances, and generate financial statements following China's Accounting Standards for Business Enterprises (ASBE).
+LedgerLearn is a multilingual accounting education app designed specifically for accounting beginners in Chinese Mainland. It teaches double-entry bookkeeping through hands-on simulation — write vouchers, query ledgers, run trial balances, and generate financial statements following China's Accounting Standards for Business Enterprises (ASBE).
 
 IMPORTANT: This app is tailored for accounting practices of Chinese Mainland. The chart of accounts, accounting standards, and knowledge content are based on Chinese regulations. It may not apply to other jurisdictions.
 
