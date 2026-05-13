@@ -54,7 +54,7 @@ class VoucherListView extends GetView<VoucherListController> {
                   children: [
                     Expanded(
                       child: DropdownButtonFormField<int>(
-                        value: controller.filterYear.value,
+                        initialValue: controller.filterYear.value,
                         decoration: InputDecoration(
                           labelText: '年份',
                           border: OutlineInputBorder(
@@ -78,7 +78,7 @@ class VoucherListView extends GetView<VoucherListController> {
                     const SizedBox(width: 12),
                     Expanded(
                       child: DropdownButtonFormField<int>(
-                        value: controller.filterMonth.value,
+                        initialValue: controller.filterMonth.value,
                         decoration: InputDecoration(
                           labelText: '月份',
                           border: OutlineInputBorder(
