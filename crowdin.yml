@@ -32,4 +32,7 @@ files:
 
   # --- Project documentation ---
   - source: /README.md
-    translation: /README_%locale%.md
+    translation: /doc/%locale%/README.md
+
+  - source: /doc/zh_CN/*.md
+    translation: /doc/%locale%/%original_file_name%
