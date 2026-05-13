@@ -15,7 +15,7 @@
 | Android | [F-Droid](https://f-droid.org)（审核中） / [GitHub Releases](https://github.com/Maicarons/ledgerlearn/releases) |
 | 其他平台    | 参见[构建说明](#构建)自行编译                                                                                          |
 
-## 功能概览
+## Feature Overview
 
 | 模块         | 功能描述                                         |
 | ---------- | -------------------------------------------- |
