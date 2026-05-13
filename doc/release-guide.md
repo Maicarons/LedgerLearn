@@ -18,9 +18,9 @@ CI/CD 由 GitHub Actions 驱动：
 3. 选择 `bump_level`：
    | 选项 | 说明 | 示例 |
    |---|---|---|
-   | `patch` | 修复版 | 1.0.0 → 1.0.1 |
-   | `minor` | 功能版 | 1.0.1 → 1.1.0 |
-   | `major` | 重大版 | 1.1.0 → 2.0.0 |
+   | `patch` | 修复版 | 0.1.0 → 0.1.1 |
+   | `minor` | 功能版 | 0.1.0 → 0.2.0 |
+   | `major` | 重大版 | 0.1.0 → 1.0.0 |
    | `none` | 不升版（仅重新构建当前版本） | — |
 4. 点击 **Run workflow**
 
@@ -47,10 +47,10 @@ flutter analyze
 
 # 5. 提交并推送标签
 git add version.json pubspec.yaml fdroid/ lib/app/config/ CHANGELOG.md
-git commit -m "chore(release): bump version to $(dart -e 'import "dart:convert";import"dart:io";print(json.decode(File("version.json").readAsStringSync())["version"]);')"
-VER=$(dart -e 'import "dart:convert";import"dart:io";print(json.decode(File("version.json").readAsStringSync())["version"]);')
+VER=$(jq -r '.version' version.json)
+git commit -m "chore(release): bump version to $VER"
 git tag v$VER
-git push origin master --tags
+git push origin master v$VER
 ```
 
 推送标签后，GitHub Actions 会自动构建 APK 并创建 Release。
