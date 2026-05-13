@@ -7,9 +7,9 @@ Features:
 • 会计科目 — 59 个预置标准科目（资产/负债/权益/成本/损益），按中国企业会计准则分类，支持自定义科目。
 • General & Subsidiary Ledgers — Account-summary view and per-voucher drill-down with Chinese-standard formatting.
 • Financial Statements — Trial Balance, Income Statement, and Balance Sheet with educational annotations explaining Chinese accounting principles.
-• Knowledge Base — 74 trilingual knowledge cards covering Chinese accounting practice and economic law, rendered in Markdown.
+• Knowledge base — 74 trilingual knowledge cards (accounting practices + economic law), covering Chinese accounting performance examinations, supporting Markdown rendering and supporting remote updating.
 • Export — Export vouchers, ledgers, trial balances, income statements, and balance sheets to CSV or PDF.
-• Settings — Real-time language switching (Chinese/English/Korean), light/dark/system theme, and data reset.
+• Settings — Real-time language switching, light/dark/system theme, and data reset.
 
 Built with Flutter and GetX. Offline-first with local storage — no account registration needed.
 
