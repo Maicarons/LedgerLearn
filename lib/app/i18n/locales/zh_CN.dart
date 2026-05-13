@@ -1,4 +1,9 @@
 	const Map<String, String> zhCN = {
+	  'about_changelog': '更新日志',
+	  'about_license': '许可证',
+	  'about_readme': '自述文件',
+	  'about_title': '关于',
+	  'about_view_details': '查看详情',
 	  'account_type_asset': '资产',
 	  'account_type_cost': '成本',
 	  'account_type_equity': '权益',

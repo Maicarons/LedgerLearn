@@ -221,24 +221,35 @@ class SettingsView extends GetView<SettingsController> {
 
           // ===== About =====
           Card(
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('settings_about'.tr,
-                      style: const TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.bold)),
-                  const SizedBox(height: 8),
-                  const Text('LedgerLearn',
-                      style: TextStyle(fontWeight: FontWeight.w600)),
-                  Text('${'settings_version'.tr}: 1.0.0',
-                      style: TextStyle(color: Colors.grey.shade600)),
-                  const SizedBox(height: 4),
-                  Text('会计学习模拟应用 · Accounting Learning Simulator',
-                      style: TextStyle(
-                          fontSize: 12, color: Colors.grey.shade500)),
-                ],
+            child: InkWell(
+              borderRadius: BorderRadius.circular(12),
+              onTap: () => Get.toNamed('/about'),
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('settings_about'.tr,
+                              style: const TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold)),
+                          const SizedBox(height: 8),
+                          const Text('LedgerLearn',
+                              style: TextStyle(fontWeight: FontWeight.w600)),
+                          Text('${'settings_version'.tr}: 1.0.0',
+                              style: TextStyle(color: Colors.grey.shade600)),
+                          const SizedBox(height: 4),
+                          Text('about_view_details'.tr,
+                              style: TextStyle(
+                                  fontSize: 12, color: Colors.grey.shade500)),
+                        ],
+                      ),
+                    ),
+                    Icon(Icons.chevron_right, color: Colors.grey.shade400),
+                  ],
+                ),
               ),
             ),
           ),

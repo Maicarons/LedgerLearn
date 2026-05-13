@@ -14,6 +14,7 @@ import '../../modules/reports/views/balance_sheet_view.dart';
 import '../../modules/knowledge/views/knowledge_view.dart';
 import '../../modules/knowledge/views/knowledge_detail_view.dart';
 import '../../modules/settings/views/settings_view.dart';
+import '../../modules/about/views/about_view.dart';
 
 class AppPages {
   static const String initial = '/home';
@@ -35,5 +36,6 @@ class AppPages {
     GetPage(name: '/knowledge', page: () => const KnowledgeView()),
     GetPage(name: '/knowledge/detail/:id', page: () => const KnowledgeDetailView()),
     GetPage(name: '/settings', page: () => const SettingsView()),
+    GetPage(name: '/about', page: () => const AboutView()),
   ];
 }

@@ -1,0 +1,84 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump_level:
+        description: 'Version bump type'
+        required: true
+        type: choice
+        options:
+          - none
+          - patch
+          - minor
+          - major
+        default: none
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: beta
+
+      - run: flutter pub get
+
+      - name: Bump version (if dispatch with bump)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.bump_level != 'none'
+        run: dart run scripts/bump_version.dart ${{ github.event.inputs.bump_level }}
+
+      - name: Sync version
+        run: dart run scripts/sync_version.dart
+
+      - name: Read version
+        id: ver
+        run: |
+          SEMVER=$(dart -e 'import "dart:convert"; import "dart:io"; print(json.decode(File("version.json").readAsStringSync())["version"]);')
+          CODE=$(dart -e 'import "dart:convert"; import "dart:io"; print(json.decode(File("version.json").readAsStringSync())["version_code"]);')
+          echo "semver=$SEMVER" >> $GITHUB_OUTPUT
+          echo "full=$SEMVER+$CODE" >> $GITHUB_OUTPUT
+
+      - name: Build APK
+        run: flutter build apk --release
+
+      - name: Create GitHub Release (tag push)
+        if: github.event_name == 'push'
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: CHANGELOG.md
+          files: build/app/outputs/flutter-apk/app-release.apk
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create GitHub Release (dispatch)
+        if: github.event_name == 'workflow_dispatch'
+        uses: softprops/action-gh-release@v2
+        with:
+          name: v${{ steps.ver.outputs.semver }}
+          tag_name: v${{ steps.ver.outputs.semver }}
+          body_path: CHANGELOG.md
+          files: build/app/outputs/flutter-apk/app-release.apk
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and push version bump
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.bump_level != 'none'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add version.json pubspec.yaml fdroid/ lib/app/config/app_version.dart
+          git commit -m "chore(release): bump version to ${{ steps.ver.outputs.full }}"
+          git tag v${{ steps.ver.outputs.semver }}
+          git push origin master --tags

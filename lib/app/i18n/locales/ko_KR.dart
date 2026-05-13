@@ -1,4 +1,9 @@
 	const Map<String, String> koKR = {
+	  'about_changelog': '변경 로그',
+	  'about_license': '라이선스',
+	  'about_readme': '리드미',
+	  'about_title': '정보',
+	  'about_view_details': '자세히 보기',
 	  'account_type_asset': '자산',
 	  'account_type_cost': '원가',
 	  'account_type_equity': '자본',

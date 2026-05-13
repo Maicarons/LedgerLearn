@@ -1,4 +1,9 @@
 	const Map<String, String> enUS = {
+	  'about_changelog': 'Changelog',
+	  'about_license': 'License',
+	  'about_readme': 'Readme',
+	  'about_title': 'About',
+	  'about_view_details': 'View Details',
 	  'account_type_asset': 'Asset',
 	  'account_type_cost': 'Cost',
 	  'account_type_equity': 'Equity',
