@@ -43,8 +43,8 @@ jobs:
       - name: Read version
         id: ver
         run: |
-          SEMVER=$(dart -e 'import "dart:convert"; import "dart:io"; print(json.decode(File("version.json").readAsStringSync())["version"]);')
-          CODE=$(dart -e 'import "dart:convert"; import "dart:io"; print(json.decode(File("version.json").readAsStringSync())["version_code"]);')
+          SEMVER=$(jq -r '.version' version.json)
+          CODE=$(jq -r '.version_code' version.json)
           echo "semver=$SEMVER" >> $GITHUB_OUTPUT
           echo "full=$SEMVER+$CODE" >> $GITHUB_OUTPUT
 
