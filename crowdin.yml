@@ -27,4 +27,4 @@ files:
 
   # --- Project documentation ---
   - source: /README.md
-    translation: /docs/i18n/%locale%/README.md
+    translation: /README_%locale%.md
