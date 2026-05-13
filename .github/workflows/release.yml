@@ -43,16 +43,30 @@ jobs:
       - name: Read version
         id: ver
         run: |
-          SEMVER=$(dart -e 'import "dart:convert"; import "dart:io"; print(json.decode(File("version.json").readAsStringSync())["version"]);')
-          CODE=$(dart -e 'import "dart:convert"; import "dart:io"; print(json.decode(File("version.json").readAsStringSync())["version_code"]);')
+          SEMVER=$(jq -r '.version' version.json)
+          CODE=$(jq -r '.version_code' version.json)
           echo "semver=$SEMVER" >> $GITHUB_OUTPUT
           echo "full=$SEMVER+$CODE" >> $GITHUB_OUTPUT
 
       - name: Build APK
         run: flutter build apk --release
 
-      - name: Create GitHub Release (tag push)
+      - name: Check if release exists (tag push)
+        id: check_rel
         if: github.event_name == 'push'
+        run: |
+          TAG="$(echo '${{ github.ref }}' | sed 's|refs/tags/||')"
+          if gh release view "$TAG" &>/dev/null; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Release for $TAG already exists, will skip creation."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create GitHub Release (tag push)
+        if: github.event_name == 'push' && steps.check_rel.outputs.exists != 'true'
         uses: softprops/action-gh-release@v2
         with:
           body_path: CHANGELOG.md
@@ -80,5 +94,11 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add version.json pubspec.yaml fdroid/ lib/app/config/app_version.dart
           git commit -m "chore(release): bump version to ${{ steps.ver.outputs.full }}"
-          git tag v${{ steps.ver.outputs.semver }}
-          git push origin master --tags
+          TAG="v${{ steps.ver.outputs.semver }}"
+          git tag "$TAG"
+          git push origin master
+          if git ls-remote --tags origin "$TAG" | grep -q "$TAG"; then
+            echo "Error: Tag $TAG already exists on remote. Version bump may have been too large."
+            exit 1
+          fi
+          git push origin "$TAG"

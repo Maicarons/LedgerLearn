@@ -1,11 +1,11 @@
-/// Code generator: JSON i18n files → Dart locale files.
-///
-/// Reads JSON translation files from `i18n/` (hyphenated Crowdin format, e.g.
-/// `zh-CN.json`) and generates the corresponding Dart `const Map<String, String>`
-/// files under `lib/app/i18n/locales/` (underscored Dart format, e.g. `zh_CN.dart`).
-///
-/// Usage:
-///   dart run scripts/gen_i18n.dart
+// Code generator: JSON i18n files → Dart locale files.
+//
+// Reads JSON translation files from `i18n/` (hyphenated Crowdin format, e.g.
+// `zh-CN.json`) and generates the corresponding Dart `const Map<String, String>`
+// files under `lib/app/i18n/locales/` (underscored Dart format, e.g. `zh_cn.dart`).
+//
+// Usage:
+//   dart run scripts/gen_i18n.dart
 
 import 'dart:convert';
 import 'dart:io';
@@ -15,12 +15,12 @@ const outputDir = 'lib/app/i18n/locales';
 
 // Maps Crowdin locale (JSON filename, hyphen) → Dart output filename (underscore)
 const localeFileMap = {
-  'zh-CN': 'zh_CN.dart',
-  'en-US': 'en_US.dart',
-  'ko-KR': 'ko_KR.dart',
-  'ja-JP': 'ja_JP.dart',
-  'vi-VN': 'vi_VN.dart',
-  'th-TH': 'th_TH.dart',
+  'zh-CN': 'zh_cn.dart',
+  'en-US': 'en_us.dart',
+  'ko-KR': 'ko_kr.dart',
+  'ja-JP': 'ja_jp.dart',
+  'vi-VN': 'vi_vn.dart',
+  'th-TH': 'th_th.dart',
 };
 
 // Maps Crowdin locale (JSON filename, hyphen) → Dart variable name

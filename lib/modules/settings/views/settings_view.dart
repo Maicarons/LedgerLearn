@@ -105,36 +105,45 @@ class SettingsView extends GetView<SettingsController> {
                       style: const TextStyle(
                           fontSize: 16, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 12),
-                  Obx(() => Column(
-                        children: [
-                          RadioListTile<String>(
-                            title: Text('中文'),
-                            subtitle: const Text('简体中文'),
-                            value: 'zh_CN',
-                            groupValue: controller.selectedLocale.value,
-                            onChanged: (v) {
-                              if (v != null) controller.switchLanguage(v);
-                            },
-                          ),
-                          RadioListTile<String>(
-                            title: const Text('English'),
-                            subtitle: const Text('English'),
-                            value: 'en_US',
-                            groupValue: controller.selectedLocale.value,
-                            onChanged: (v) {
-                              if (v != null) controller.switchLanguage(v);
-                            },
-                          ),
-                          RadioListTile<String>(
-                            title: const Text('한국어'),
-                            subtitle: const Text('한국어'),
-                            value: 'ko_KR',
-                            groupValue: controller.selectedLocale.value,
-                            onChanged: (v) {
-                              if (v != null) controller.switchLanguage(v);
-                            },
-                          ),
-                        ],
+                  Obx(() => RadioGroup<String>(
+                        groupValue: controller.selectedLocale.value,
+                        onChanged: (v) {
+                          if (v != null) controller.switchLanguage(v);
+                        },
+                        child: Column(
+                          children: [
+                            RadioListTile<String>(
+                              title: Text('中文'),
+                              subtitle: const Text('简体中文'),
+                              value: 'zh_CN',
+                            ),
+                            RadioListTile<String>(
+                              title: const Text('English'),
+                              subtitle: const Text('English'),
+                              value: 'en_US',
+                            ),
+                            RadioListTile<String>(
+                              title: const Text('한국어'),
+                              subtitle: const Text('한국어'),
+                              value: 'ko_KR',
+                            ),
+                            RadioListTile<String>(
+                              title: const Text('日本語'),
+                              subtitle: const Text('日本語'),
+                              value: 'ja_JP',
+                            ),
+                            RadioListTile<String>(
+                              title: const Text('Tiếng Việt'),
+                              subtitle: const Text('Tiếng Việt'),
+                              value: 'vi_VN',
+                            ),
+                            RadioListTile<String>(
+                              title: const Text('ภาษาไทย'),
+                              subtitle: const Text('ภาษาไทย'),
+                              value: 'th_TH',
+                            ),
+                          ],
+                        ),
                       )),
                 ],
               ),

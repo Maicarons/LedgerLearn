@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import '../../../data/repositories/knowledge_repository.dart';
 import '../../../data/repositories/account_repository.dart';
 
@@ -15,7 +15,6 @@ class KnowledgeDetailView extends StatelessWidget {
     final card = knowledgeRepo.getById(id);
     final locale =
         Get.locale?.toLanguageTag().replaceAll('-', '_') ?? 'zh_CN';
-
     if (card == null) {
       return Scaffold(
         appBar: AppBar(title: Text('knowledge_detail'.tr)),
@@ -55,7 +54,7 @@ class KnowledgeDetailView extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             MarkdownBody(
-              data: card.getContent(locale),
+              data: card.content,
               selectable: true,
             ),
             if (relatedAccount != null) ...[

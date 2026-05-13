@@ -51,7 +51,7 @@ class VoucherFormView extends GetView<VoucherFormController> {
                 if (knowledge != null) {
                   Get.defaultDialog(
                     title: 'voucher_knowledge_tip'.tr,
-                    middleText: knowledge.getTitle(locale),
+                    middleText: knowledge.title,
                     textConfirm: 'ok'.tr,
                     onConfirm: () => Get.back(),
                   );

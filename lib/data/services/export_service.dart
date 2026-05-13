@@ -48,7 +48,7 @@ class ExportService {
                 text: subtitle,
                 style: const pw.TextStyle(fontSize: 10, color: PdfColors.grey)),
           pw.SizedBox(height: 16),
-          pw.Table.fromTextArray(
+          pw.TableHelper.fromTextArray(
             headers: headers,
             data: rows,
             headerStyle: pw.TextStyle(fontWeight: pw.FontWeight.bold),

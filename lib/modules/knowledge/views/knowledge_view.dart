@@ -8,9 +8,6 @@ class KnowledgeView extends GetView<KnowledgeController> {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(KnowledgeController());
-    final locale =
-        Get.locale?.toLanguageTag().replaceAll('-', '_') ?? 'zh_CN';
-
     return Scaffold(
       appBar: AppBar(title: Text('knowledge_title'.tr)),
       body: Column(
@@ -95,7 +92,7 @@ class KnowledgeView extends GetView<KnowledgeController> {
                           size: 20,
                         ),
                       ),
-                      title: Text(card.getTitle(locale),
+                      title: Text(card.title,
                           style: const TextStyle(fontWeight: FontWeight.w600)),
                       subtitle: Text(
                         card.category == 'accounting_practice'
