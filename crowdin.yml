@@ -25,6 +25,11 @@ files:
   - source: /fastlane/metadata/android/zh-CN/changelogs/*.txt
     translation: /fastlane/metadata/android/%locale%/changelogs/%original_file_name%
 
+  # --- Knowledge cards ---
+  - source: /knowledge_card/zh-CN.json
+    translation: /knowledge_card/%locale%.json
+    type: json
+
   # --- Project documentation ---
   - source: /README.md
     translation: /README_%locale%.md

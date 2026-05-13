@@ -1,18 +1,18 @@
 import 'package:get/get.dart';
-
 import '../models/knowledge_card.dart';
 
 class RemoteKnowledgeService extends GetConnect {
-  /// Remote JSON URL — change this to your own server
-  static const String remoteUrl =
-      'https://fastly.jsdelivr.net/gh/Maicarons/LedgerLearn@master/knowledge_cards.json';
+  static const String _baseUrl =
+      'https://fastly.jsdelivr.net/gh/Maicarons/LedgerLearn@master/knowledge_card';
 
-  /// Fetch knowledge cards from remote server.
+  /// Fetch knowledge cards for the given locale from remote server.
   /// Returns null if the fetch fails (no network, timeout, bad response).
-  Future<List<KnowledgeCard>?> fetchKnowledgeCards() async {
+  Future<List<KnowledgeCard>?> fetchKnowledgeCards(String locale) async {
+    // Convert 'zh_CN' → 'zh-CN' for URL path
+    final lang = locale.replaceAll('_', '-');
     try {
       final response = await get(
-        remoteUrl,
+        '$_baseUrl/$lang.json',
         decoder: (data) {
           if (data is List) {
             return data
@@ -30,7 +30,6 @@ class RemoteKnowledgeService extends GetConnect {
       }
       return null;
     } catch (_) {
-      // Network error, timeout, or malformed data
       return null;
     }
   }

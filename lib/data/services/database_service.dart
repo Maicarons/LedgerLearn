@@ -1,14 +1,18 @@
+import 'dart:convert';
+import 'package:flutter/services.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:ledgerlearn/data/services/remote_knowledge_service.dart';
 import '../models/account.dart';
 import '../models/voucher.dart';
 import '../models/knowledge_card.dart';
 import '../../app/config/preset_data.dart';
-import 'remote_knowledge_service.dart';
 
 class DatabaseService {
   static const String _accountsKey = 'accounts';
   static const String _vouchersKey = 'vouchers';
   static const String _knowledgeKey = 'knowledge_cards';
+  static const String _knowledgeVersionKey = 'knowledge_version';
+  static const int _currentKnowledgeVersion = 2;
   final GetStorage _box = GetStorage();
 
   Future<void> init() async {
@@ -36,9 +40,12 @@ class DatabaseService {
           presetAccounts.map((a) => a.toJson()).toList());
     }
 
-    // Knowledge — try remote first, fallback to preset
-    if (_box.read(_knowledgeKey) == null) {
+    // Knowledge — seed if empty or old format needs migration
+    final savedVersion = _box.read(_knowledgeVersionKey) ?? 0;
+    if (_box.read(_knowledgeKey) == null ||
+        savedVersion < _currentKnowledgeVersion) {
       await _refreshKnowledge();
+      await _box.write(_knowledgeVersionKey, _currentKnowledgeVersion);
     }
 
     if (_box.read(_vouchersKey) == null) {
@@ -46,34 +53,54 @@ class DatabaseService {
     }
   }
 
-  /// Try to fetch knowledge cards from remote server.
+  /// Try to fetch knowledge cards from remote server for the current locale.
   /// On success, overwrite local storage with remote data.
-  /// On failure, use embedded preset data if local is empty.
+  /// On failure, load from bundled local JSON asset.
   Future<bool> _refreshKnowledge() async {
+    final locale = getLocale();
     final remoteService = RemoteKnowledgeService();
-    final remoteCards = await remoteService.fetchKnowledgeCards();
 
+    // 1. Try remote first (for latest updates without app update)
+    final remoteCards = await remoteService.fetchKnowledgeCards(locale);
     if (remoteCards != null && remoteCards.isNotEmpty) {
-      // Remote fetch succeeded — overwrite local storage
       await _box.write(
           _knowledgeKey,
           remoteCards.map((k) => k.toJson()).toList());
       return true;
     }
 
-    // Remote failed — use embedded preset if local is still empty
-    if (_box.read(_knowledgeKey) == null) {
+    // 2. Remote failed — fallback to local JSON asset
+    final localCards = await _loadKnowledgeFromAsset(locale) ??
+        await _loadKnowledgeFromAsset('zh_CN');
+    if (localCards != null && localCards.isNotEmpty) {
       await _box.write(
           _knowledgeKey,
-          presetKnowledgeCards.map((k) => k.toJson()).toList());
+          localCards.map((k) => k.toJson()).toList());
+      return true;
     }
+
+    await _box.write(_knowledgeKey, <Map<String, dynamic>>[]);
     return false;
   }
 
-  /// Public method: force re-fetch knowledge from remote.
-  /// Returns true if remote fetch succeeded.
+  /// Public method: reload knowledge cards from local asset.
   Future<bool> refreshKnowledge() async {
     return _refreshKnowledge();
+  }
+
+  /// Load knowledge cards from a JSON asset file for the given locale.
+  Future<List<KnowledgeCard>?> _loadKnowledgeFromAsset(String locale) async {
+    // Convert 'zh_CN' → 'zh-CN' for asset path
+    final assetPath = 'knowledge_card/${locale.replaceAll('_', '-')}.json';
+    try {
+      final jsonStr = await rootBundle.loadString(assetPath);
+      final List<dynamic> data = json.decode(jsonStr);
+      return data
+          .map((e) => KnowledgeCard.fromJson(Map<String, dynamic>.from(e)))
+          .toList();
+    } catch (_) {
+      return null;
+    }
   }
 
   // ==================== Accounts ====================
@@ -189,6 +216,7 @@ class DatabaseService {
 
   Future<void> setLocale(String locale) async {
     await _box.write('locale', locale);
+    await _refreshKnowledge();
   }
 
   String getDefaultPeriod() =>
@@ -213,17 +241,6 @@ class DatabaseService {
         _accountsKey,
         presetAccounts.map((a) => a.toJson()).toList());
     await _box.write(_vouchersKey, <Map<String, dynamic>>[]);
-    // For knowledge, try remote first
-    final remoteService = RemoteKnowledgeService();
-    final remoteCards = await remoteService.fetchKnowledgeCards();
-    if (remoteCards != null && remoteCards.isNotEmpty) {
-      await _box.write(
-          _knowledgeKey,
-          remoteCards.map((k) => k.toJson()).toList());
-    } else {
-      await _box.write(
-          _knowledgeKey,
-          presetKnowledgeCards.map((k) => k.toJson()).toList());
-    }
+    await _refreshKnowledge();
   }
 }

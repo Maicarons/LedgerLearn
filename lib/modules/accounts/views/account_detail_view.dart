@@ -126,7 +126,7 @@ class AccountDetailView extends GetView<AccountDetailController> {
                         child: ListTile(
                           leading: const Icon(Icons.lightbulb,
                               color: Colors.amber),
-                          title: Text(k.getTitle(locale)),
+                          title: Text(k.title),
                           subtitle: Text(k.category == 'accounting_practice'
                               ? 'knowledge_practice'.tr
                               : 'knowledge_law'.tr),

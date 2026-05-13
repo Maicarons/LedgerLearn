@@ -1,0 +1,594 @@
+[
+  {
+    "id": "k1",
+    "category": "accounting_practice",
+    "title": "Double-Entry Bookkeeping",
+    "content": "## Double-Entry Bookkeeping\n\nDouble-entry bookkeeping is the fundamental recording method in modern accounting.\n\n### Core Rule: **Every debit must have a corresponding credit**\n\nEvery transaction must be recorded as a debit in one account and a credit in another, with equal amounts on both sides.\n\n### Account Direction\n- **Assets, Expenses**: Increase on debit side, decrease on credit side, normally have debit balance\n- **Liabilities, Equity, Revenue**: Increase on credit side, decrease on debit side, normally have credit balance\n\n### Example\nCompany withdraws 5,000 CNY from bank:\n- Dr: Cash on Hand 5,000 (asset increases)\n- Cr: Bank Deposit 5,000 (asset decreases)",
+    "relatedAccountId": null,
+    "relatedSubject": null
+  },
+  {
+    "id": "k2",
+    "category": "accounting_practice",
+    "title": "Basic Accounting Equation",
+    "content": "## Basic Accounting Equation\n\n### Static Equation (Balance Sheet basis)\n**Assets = Liabilities + Owner's Equity**\n\nThis equation reflects the financial position at a point in time. The left side represents resources (assets), and the right side represents the sources of those resources (liabilities and equity).\n\n### Dynamic Equation (Income Statement basis)\n**Revenue - Expenses = Profit**\n\nReflects operating performance over a period.\n\n### Extended Equation\n**Assets = Liabilities + Equity + (Revenue - Expenses)**\n\nNo transaction can break the balance of the accounting equation.",
+    "relatedAccountId": null,
+    "relatedSubject": null
+  },
+  {
+    "id": "k3",
+    "category": "accounting_practice",
+    "title": "Common Journal Entry Examples",
+    "content": "## Common Journal Entries\n\n### 1. Cash Withdrawal\n| Debit | Credit |\n|---|---|\n| Cash on Hand | Bank Deposit |\n\n### 2. Purchase Materials (on credit)\n| Debit | Credit |\n|---|---|\n| Raw Materials | Accounts Payable |\n\n### 3. Sell Goods (deposited in bank)\n| Debit | Credit |\n|---|---|\n| Bank Deposit | Main Operating Revenue |\n\n### 4. Reimburse Travel Expenses\n| Debit | Credit |\n|---|---|\n| Admin. Expenses | Cash on Hand |\n\n### 5. Record Depreciation\n| Debit | Credit |\n|---|---|\n| Admin. Expenses | Accumulated Depreciation |\n\n### 6. Pay Wages\n| Debit | Credit |\n|---|---|\n| Payroll Payable | Bank Deposit |\n\n### 7. Close Year-End\n| Debit | Credit |\n|---|---|\n| Main Operating Revenue | Current Year Profit |\n| Current Year Profit | Main Operating Cost |\n| Current Year Profit | Admin. Expenses |",
+    "relatedAccountId": null,
+    "relatedSubject": null
+  },
+  {
+    "id": "k4",
+    "category": "economic_law",
+    "title": "Introduction to VAT",
+    "content": "## Introduction to VAT\n\nValue-Added Tax (VAT) is a turnover tax levied on the value added in the circulation of goods and services.\n\n### Taxpayer Classification\n- **General taxpayers**: Can deduct input VAT, use general tax calculation method\n- **Small-scale taxpayers**: Use simplified method, lower levy rate but cannot deduct input VAT\n\n### Tax Rates (China)\n- Basic rate: 13% (goods sales, processing, repair services)\n- Low rates: 9% (agricultural products, utilities), 6% (modern services)\n\n### Calculation Method\nVAT Payable = Output VAT - Input VAT\n\n### Accounting Treatment\n- On purchase: Dr: Raw Materials, Taxes Payable-VAT(input) Cr: Bank Deposit\n- On sale: Dr: Bank Deposit Cr: Main Operating Revenue, Taxes Payable-VAT(output)",
+    "relatedAccountId": null,
+    "relatedSubject": null
+  },
+  {
+    "id": "k5",
+    "category": "economic_law",
+    "title": "Key Points of Contract Law",
+    "content": "## Key Points of Contract Law\n\n### Formation of Contract\n- **Offer**: One party proposes to enter into a contract\n- **Acceptance**: The offeree agrees to the offer\n- A contract is formed when acceptance takes effect\n\n### Main Terms of a Contract\n1. Names and addresses of the parties\n2. Subject matter\n3. Quantity\n4. Quality\n5. Price or remuneration\n6. Performance period, place, and method\n7. Liability for breach\n8. Dispute resolution methods\n\n### Validity of Contracts\n- **Valid**: Parties have capacity, genuine intent, lawful content\n- **Invalid**: Fraud/coercion harming state interests, malicious collusion, concealing illegal purposes\n- **Voidable**: Material misunderstanding, grossly unfair, fraud/coercion\n\n### Remedies for Breach\n- Specific performance\n- Remedial measures\n- Damages\n- Liquidated damages",
+    "relatedAccountId": null,
+    "relatedSubject": null
+  },
+  {
+    "id": "k6",
+    "category": "accounting_practice",
+    "title": "Period-End Closing Steps",
+    "content": "## Period-End Closing Steps\n\n### Step 1: Close Revenue Accounts\nTransfer all revenue account balances to \"Current Year Profit\" (credit):\n- Dr: Main Operating Revenue\n- Dr: Other Operating Revenue\n- Dr: Non-operating Income\n- 　　　Cr: Current Year Profit\n\n### Step 2: Close Expense Accounts\nTransfer all expense account balances to \"Current Year Profit\" (debit):\n- Dr: Current Year Profit\n- 　　　Cr: Main Operating Cost\n- 　　　Cr: Other Operating Cost\n- 　　　Cr: Taxes & Surcharges\n- 　　　Cr: Selling Expenses\n- 　　　Cr: Admin. Expenses\n- 　　　Cr: Financial Expenses\n- 　　　Cr: Non-operating Expenses\n- 　　　Cr: Income Tax Expense\n\n### Step 3: Close Current Year Profit\n- If profit: Dr: Current Year Profit Cr: Profit Distribution\n- If loss: Dr: Profit Distribution Cr: Current Year Profit\n\n### Step 4: Transfer to Surplus Reserve\n- Dr: Profit Distribution - Transfer to Surplus Reserve\n- 　　　Cr: Surplus Reserve",
+    "relatedAccountId": null,
+    "relatedSubject": null
+  },
+  {
+    "id": "k7",
+    "category": "accounting_practice",
+    "title": "Fixed Asset Depreciation",
+    "content": "## Fixed Asset Depreciation\n\n### Depreciation Methods\n1. **Straight-line method**: Annual depreciation = (Cost - Residual) / Useful life\n2. **Units of production method**: Based on actual usage\n3. **Double-declining balance**: Accelerated method\n4. **Sum-of-years-digits**: Accelerated method\n\n### Journal Entry\n- Dr: Admin. Expenses (or Manufacturing Overhead)\n- 　　　Cr: Accumulated Depreciation\n\n### Notes\n- Assets added this month: depreciation starts next month\n- Assets disposed this month: depreciation this month, stops next month\n- Accumulated depreciation is a contra-asset; book value = Cost - Accumulated depreciation",
+    "relatedAccountId": "1602",
+    "relatedSubject": null
+  },
+  {
+    "id": "k8",
+    "category": "accounting_practice",
+    "title": "Trial Balance Principle",
+    "content": "## Trial Balance Principle\n\n### Purpose\nVerify that total debits equal total credits across all accounts.\n\n### Balance Basis\n1. **Transaction balance**: Total debit entries = Total credit entries for the period\n2. **Balance check**: Total debit ending balances = Total credit ending balances\n\n### Causes of Imbalance\n- Wrong direction (debit recorded as credit)\n- Amount error (numbers don't match)\n- Missing entry (only one side recorded)\n- Calculation error (summation mistakes)\n\n### Note\nA balanced trial balance does NOT guarantee correctness! The following don't affect balance:\n- Both sides omitted or duplicated equally\n- Both sides posted to wrong accounts\n- Debit/credit reversed but amounts equal",
+    "relatedAccountId": null,
+    "relatedSubject": null
+  },
+  {
+    "id": "k9",
+    "category": "economic_law",
+    "title": "Accounting Archive Retention",
+    "content": "## Accounting Archive Retention\n\n### Permanent Retention\n- Annual financial reports (final accounts)\n- Accounting archive retention register\n- Accounting archive destruction register\n- Accounting archive appraisal report\n\n### 30-Year Retention\n- Accounting vouchers (source documents, journal vouchers)\n- Accounting books (general ledger, detail ledgers, journals)\n- Accounting archive transfer register\n\n### 10-Year Retention\n- Monthly, quarterly, semi-annual financial reports\n- Bank reconciliation statements\n- Bank statements\n- Tax returns\n\n### Legal Liability\nIntentional destruction of accounting documents, books, or reports required by law constitutes a criminal offense.",
+    "relatedAccountId": null,
+    "relatedSubject": null
+  },
+  {
+    "id": "k10",
+    "category": "accounting_practice",
+    "title": "Relationship Between Financial Statements",
+    "content": "## Relationship Between Financial Statements\n\n### Three Main Statements\n1. **Balance Sheet**: Financial position at a point in time (Assets = Liabilities + Equity)\n2. **Income Statement**: Operating performance over a period (Revenue - Expenses = Profit)\n3. **Cash Flow Statement**: Inflows and outflows of cash and equivalents\n\n### Articulation Between Statements\n- Income statement **net profit** flows to balance sheet **retained earnings**\n- Balance sheet **cash difference (ending - beginning)** = Cash flow statement **net cash increase**\n\n### Analysis Path\n1. Start with income statement → Understand profitability\n2. Then balance sheet → Understand financial structure and solvency\n3. Finally cash flow statement → Understand cash sources and uses",
+    "relatedAccountId": null,
+    "relatedSubject": null
+  },
+  {
+    "id": "t1",
+    "category": "tax",
+    "title": "VAT in Detail",
+    "content": "## VAT in Detail\n\nVAT is the largest tax category in China, levied on the value added during the circulation of goods and services.\n\n### Taxpayers\n- **General taxpayers**: Annual taxable sales > 5 million CNY, can deduct input VAT\n- **Small-scale taxpayers**: Annual sales ≤ 5 million CNY, simplified method\n\n### Tax Rate Structure\n| Rate | Scope |\n|------|-------|\n| 13% | Goods sales, processing, repair, tangible movable property leasing |\n| 9% | Agricultural products, utilities, books, real estate, transportation |\n| 6% | Modern services, financial services, lifestyle services |\n| 0% | Export goods |\n\n### Calculation\n**General**: Tax payable = Output VAT - Input VAT\n**Simplified**: Tax payable = Sales × Levy rate (3% or 5%)\n\n### Invoice Types\n- **Special VAT Invoice**: Can be used for input VAT deduction\n- **General VAT Invoice**: Cannot be deducted\n- **E-Invoice**: Same legal effect as paper invoices",
+    "relatedAccountId": "2221",
+    "relatedSubject": "VAT Declaration"
+  },
+  {
+    "id": "t2",
+    "category": "tax",
+    "title": "Corporate Income Tax Basics",
+    "content": "## Corporate Income Tax\n\nCIT is a tax levied on enterprises and other organizations that obtain income.\n\n### Tax Rates\n| Type | Rate |\n|---|---|\n| General enterprises | 25% |\n| High-tech enterprises | 15% |\n| Small low-profit enterprises | 20% (reduced basis) |\n\n### Taxable Income Calculation\n**Taxable income = Gross income - Non-taxable income - Tax-exempt income - Deductions - Prior year losses**\n\n### Common Deductions\n- Reasonable salary expenses\n- Employee welfare (within 14% of total wages)\n- Business entertainment (60% of incurred, ≤ 5‰ of revenue)\n- Advertising & promotion (within 15% of revenue)",
+    "relatedAccountId": "2221",
+    "relatedSubject": "Annual CIT Reconciliation"
+  },
+  {
+    "id": "t3",
+    "category": "tax",
+    "title": "Invoice Management & Compliance",
+    "content": "## Invoice Management\n\nInvoices are one of the most important source documents in business activities.\n\n### Invoice Types\n1. **Special VAT Invoice** — For input VAT deduction\n2. **General VAT Invoice** — Cannot be deducted\n3. **E-Invoice** — Same legal effect as paper\n\n### Issuance Requirements\n- Must be issued according to actual transaction content\n- Invoice information must be complete\n- No false invoicing\n- No lending or transferring of invoices\n\n### Legal Liability\n- **False invoicing**: 2-7 years imprisonment for serious cases\n- **Illegal sale**: 2-7 years imprisonment for serious cases\n\n### Invoice Retention\n- Issued invoice stubs and registers must be kept for 5 years",
+    "relatedAccountId": null,
+    "relatedSubject": null
+  },
+  {
+    "id": "t4",
+    "category": "tax",
+    "title": "Tax Declaration Process",
+    "content": "## Tax Declaration Process\n\n### Filing Deadlines\n\n| Tax Type | Deadline |\n|----------|----------|\n| VAT | 15th of following month |\n| CIT (quarterly) | Within 15 days after quarter end |\n| CIT (annual) | Within 5 months after year end |\n| Individual Income Tax | 15th of following month |\n| Stamp Duty | 15th of following month |\n\n### Filing Methods\n1. **Online filing** — Via e-Tax Bureau (most common)\n2. **In-person filing** — At tax service hall\n3. **Mail filing** — Submit returns by post\n\n### Late Filing Consequences\n- Daily surcharge of 0.05% of unpaid tax\n- Fine of up to 2,000 CNY",
+    "relatedAccountId": null,
+    "relatedSubject": null
+  },
+  {
+    "id": "t5",
+    "category": "tax",
+    "title": "Individual Income Tax Basics",
+    "content": "## Individual Income Tax\n\n### Taxable Scope\n- Wages and salaries\n- Labor remuneration\n- Author's remuneration\n- Business income\n- Interest, dividends, bonuses\n- Property rental/transfer income\n\n### Comprehensive Income Tax Rates\n| Level | Annual Taxable Income | Rate |\n|-------|---------------------|------|\n| 1 | ≤ 36,000 | 3% |\n| 2 | 36,000~144,000 | 10% |\n| 3 | 144,000~300,000 | 20% |\n| 4 | 300,000~420,000 | 25% |\n| 5 | 420,000~660,000 | 30% |\n| 6 | 660,000~960,000 | 35% |\n| 7 | > 960,000 | 45% |\n\n### Special Additional Deductions\n- Children's education: 2,000 CNY/month per child\n- Housing loan interest: 1,000 CNY/month\n- Housing rent: 800-1,500 CNY/month\n- Elderly support: 2,000-3,000 CNY/month\n- Infant care (under 3): 2,000 CNY/month per child",
+    "relatedAccountId": null,
+    "relatedSubject": null
+  },
+  {
+    "id": "k11",
+    "category": "accounting_practice",
+    "title": "Cash on Hand Management",
+    "content": "## Cash on Hand\n\nCash on Hand is the most liquid asset, representing physical currency held by the business.\n\n### Management Rules\n- Limit management: Cash held must not exceed bank-approved limit\n- Usage scope: Wages, allowances, travel expenses, petty cash\n- No direct payment from cash receipts\n\n### Common Entries\n- Withdraw cash: Dr: Cash on Hand Cr: Bank Deposit\n- Reimburse expense: Dr: Admin Expenses Cr: Cash on Hand\n- Cash overage: Dr: Cash on Hand Cr: Pending Property Gain",
+    "relatedAccountId": "1001",
+    "relatedSubject": "Cash Management Rules"
+  },
+  {
+    "id": "k12",
+    "category": "accounting_practice",
+    "title": "Bank Deposits & Reconciliation",
+    "content": "## Bank Deposits\n\nBank deposits represent funds held in enterprise bank accounts.\n\n### Account Types\n- Basic deposit: Daily settlement and cash\n- General deposit: Loan transfers and repayments\n- Special deposit: Designated purpose funds\n- Temporary deposit: Temporary business\n\n### Bank Reconciliation\nPrepare monthly **bank reconciliation statement**:\n- Deposits in transit | Outstanding checks\n- Bank credits not recorded | Bank debits not recorded\n\n### Common Entries\n- Sales receipt: Dr: Bank Deposit Cr: Main Revenue\n- Pay supplier: Dr: Accounts Payable Cr: Bank Deposit",
+    "relatedAccountId": "1002",
+    "relatedSubject": "Bank Reconciliation Statement"
+  },
+  {
+    "id": "k13",
+    "category": "accounting_practice",
+    "title": "Receivables Management",
+    "content": "## Receivables\n\n### Key Accounts\n- **1121 Notes Receivable**: Claims from commercial notes\n- **1122 Accounts Receivable**: Claims from sales/services\n- **1123 Prepaid Accounts**: Advances to suppliers\n- **1131 Dividends Receivable**: Cash dividends due\n- **1132 Interest Receivable**: Bond interest due\n- **1221 Other Receivables**: Deposits, petty cash advances\n- **1231 Bad Debt Provision**: Estimated uncollectible (contra)\n\n### Bad Debt\nDr: Asset Impairment Loss (5601) Cr: Bad Debt Provision\n\n### Management\n- Regular aging analysis and follow-up\n- Provide for overdue receivables\n- AR Turnover = Revenue ÷ Average AR",
+    "relatedAccountId": "1122",
+    "relatedSubject": "AR Turnover & Aging"
+  },
+  {
+    "id": "k14",
+    "category": "accounting_practice",
+    "title": "Inventory Accounting",
+    "content": "## Inventory\n\n### Accounts\n- **1401 Material Procurement**: Materials in transit\n- **1403 Raw Materials**: Stock materials\n- **1405 Finished Goods**: Goods ready for sale\n- **1411 Revolving Materials**: Reusable packaging\n- **1471 Inventory Write-down**: Cost > NRV (contra)\n\n### Valuation: FIFO, Weighted Average, Specific ID\n\n### Core Entries\n- Purchase: Dr: Raw Materials (1403) Cr: AP (2202)\n- Issue: Dr: Production Cost (4001) Cr: Raw Materials\n- Complete: Dr: Finished Goods (1405) Cr: Production Cost\n- COGS: Dr: Main Operating Cost (5401) Cr: Finished Goods",
+    "relatedAccountId": "1403",
+    "relatedSubject": "Inventory Count & Valuation"
+  },
+  {
+    "id": "k15",
+    "category": "accounting_practice",
+    "title": "Fixed & Intangible Assets",
+    "content": "## Long-term Assets\n\n### Fixed Asset Accounts\n- **1601 Fixed Assets**: Tangible assets for production\n- **1604 Construction in Progress**: Uncompleted projects\n- **1606 Fixed Asset Disposal**: Transitional disposal\n\n### Intangible Asset Accounts\n- **1701 Intangible Assets**: Patents, trademarks, land use rights\n- **1702 Accumulated Amortization**: Contra account\n\n### Others\n- **1801 Long-term Prepaid Expenses**\n- **1901 Pending Property Loss/Gain**\n\n### Core Entries\n- Purchase: Dr: Fixed Assets Cr: Bank\n- Depreciation: Dr: Admin/Mfg Cr: Accumulated Depreciation\n- Disposal: Dr: Disposal/Acc Dep Cr: Fixed Assets\n- Amortization: Dr: Admin Cr: Accumulated Amortization",
+    "relatedAccountId": "1601",
+    "relatedSubject": "Fixed Asset Management Policy"
+  },
+  {
+    "id": "k16",
+    "category": "accounting_practice",
+    "title": "Financial Assets & Investments",
+    "content": "## Investment Accounts\n\n### Account List\n- **1012 Other Monetary Assets**: Outport deposits, cashier's checks, L/C margins\n- **1101 Trading Financial Assets**: Stocks, bonds, funds for short-term trading\n- **1501 Held-to-Maturity Investments**: Fixed-maturity bonds\n- **1511 Long-term Equity Investment**: Associates, JVs, subsidiaries\n\n### Investment Income\n- **5201 Investment Income**: Gain or loss from investments\n- Declared dividend: Dr: Dividends Rec Cr: Investment Income\n- Disposal: Dr: Bank Deposit Cr: Trading FA, Investment Income\n\n### Fair Value Changes\n- **5101 Fair Value Change Gain**: Year-end adjustment for trading FA",
+    "relatedAccountId": "1101",
+    "relatedSubject": "Three Categories of Financial Assets"
+  },
+  {
+    "id": "k17",
+    "category": "accounting_practice",
+    "title": "Accounts Payable & Short-term Liabilities",
+    "content": "## Short-term Liabilities\n\n### Account List\n- **2001 Short-term Loans**: Bank loans due within 1 year\n- **2201 Notes Payable**: Commercial notes issued\n- **2202 Accounts Payable**: Owed for goods/services\n- **2203 Advances from Customers**: Prepayments received\n- **2211 Payroll Payable**: Accrued wages & insurance\n- **2231 Interest Payable**: Accrued unpaid interest\n- **2232 Dividends Payable**: Declared unpaid dividends\n- **2241 Other Payables**: Deposits, temporary receipts\n\n### Core Entries\n- Purchase: Dr: Raw Materials Cr: AP\n- Borrow: Dr: Bank Deposit Cr: Short-term Loan\n- Pay: Dr: AP Cr: Bank Deposit\n- Accrue interest: Dr: Financial Expenses Cr: Interest Payable",
+    "relatedAccountId": "2202",
+    "relatedSubject": "AP Management"
+  },
+  {
+    "id": "k18",
+    "category": "accounting_practice",
+    "title": "Long-term Liabilities",
+    "content": "## Long-term Liabilities\n\n### Account List\n- **2501 Long-term Loans**: Bank loans > 1 year\n- **2502 Bonds Payable**: Corporate bonds issued\n- **2701 Long-term Payables**: Finance leases, installments\n\n### Long-term Loans\n- Borrow: Dr: Bank Cr: Long-term Loan\n- Interest: Dr: Financial Expense/CIP Cr: Long-term Loan-Accrued Interest\n- Repay: Dr: Long-term Loan Cr: Bank\n\n### Bonds Payable\n- Issued at par, premium, or discount\n- Premium/discount amortized over life\n\n### Borrowing Cost Capitalization\n- Interest for constructing fixed assets can be capitalized into CIP before asset is ready for use",
+    "relatedAccountId": "2501",
+    "relatedSubject": "Borrowing Cost Capitalization"
+  },
+  {
+    "id": "k19",
+    "category": "accounting_practice",
+    "title": "Owner's Equity",
+    "content": "## Owner's Equity\n\n### Account List\n- **3001 Paid-in Capital**: Registered capital invested\n- **3002 Capital Reserve**: Capital premium & other\n- **3101 Surplus Reserve**: Accumulated from net profit\n- **3103 Current Year Profit**: Cumulative net profit\n- **3104 Profit Distribution**: Profit allocation\n\n### Core Entries\n- Investment: Dr: Bank Cr: Paid-in Capital, Capital Reserve\n- Transfer to reserve: Dr: Profit Distribution Cr: Surplus Reserve\n- Close revenue: Dr: Main Revenue Cr: Current Year Profit\n- Close expenses: Dr: Current Year Profit Cr: Main Cost etc.\n- Close CY profit: Dr: Current Year Profit Cr: Profit Distribution\n\n### Equation\n**Assets = Liabilities + Equity**",
+    "relatedAccountId": "3001",
+    "relatedSubject": "Profit Distribution Process"
+  },
+  {
+    "id": "k20",
+    "category": "accounting_practice",
+    "title": "Cost Accounting",
+    "content": "## Cost Accounts\n\n### Account List\n- **4001 Production Cost**: Direct materials + labor + overhead\n- **4101 Manufacturing Overhead**: Indirect workshop costs\n\n### Cost Flow\n1. Incur costs: Dr: Production Cost Cr: Raw Materials/Payroll\n2. Collect overhead: Dr: Mfg Overhead Cr: Acc Dep/Bank\n3. Allocate overhead: Dr: Production Cost Cr: Mfg Overhead\n4. Complete: Dr: Finished Goods (1405) Cr: Production Cost\n5. Transfer to COGS: Dr: Main Cost (5401) Cr: Finished Goods\n\n### Cost Elements\n- Direct Materials | Direct Labor | Manufacturing Overhead\n\n### Costing Methods\n- Job costing, Process costing, Activity-based costing",
+    "relatedAccountId": "4001",
+    "relatedSubject": "Costing Methods"
+  },
+  {
+    "id": "k21",
+    "category": "accounting_practice",
+    "title": "Revenue Recognition",
+    "content": "## Revenue Accounts\n\n### Account List\n- **5001 Main Operating Revenue**: Primary business revenue\n- **5051 Other Operating Revenue**: Material sales, rent\n- **5101 Fair Value Change Gain**: Financial asset FV changes\n- **5201 Investment Income**: External investment P&L\n- **5301 Non-operating Income**: Non-routine gains\n\n### Five-Step Recognition\n1. Identify contract with customer\n2. Identify performance obligations\n3. Determine transaction price\n4. Allocate price to obligations\n5. Recognize when obligation satisfied\n\n### Entries\n- Sale: Dr: Bank/AR Cr: Main Revenue\n- Period-end: Dr: Main Revenue Cr: Current Year Profit",
+    "relatedAccountId": "5001",
+    "relatedSubject": "Revenue Five-Step Model"
+  },
+  {
+    "id": "k22",
+    "category": "accounting_practice",
+    "title": "Costs & Expenses Accounting",
+    "content": "## Cost & Expense Accounts\n\n### Operating Costs\n- **5401 Main Operating Cost**: Matched to main revenue\n- **5402 Other Operating Cost**: Other business costs\n\n### Taxes\n- **5403 Taxes & Surcharges**: Consumption tax, surcharges, stamp duty\n\n### Period Expenses\n- **5501 Selling Expenses**: Advertising, freight, sales staff\n- **5502 Administrative Expenses**: Office, management, depreciation\n- **5503 Financial Expenses**: Interest, exchange loss, bank charges\n\n### Other P&L\n- **5601 Asset Impairment Loss**: Bad debts, inventory write-down\n- **5701 Non-operating Expenses**: Fines, donations, extraordinary\n- **5801 Income Tax Expense**: Current income tax\n\n### Period-end Closing\n- Dr: Current Year Profit\n- 　　Cr: Main Cost, Selling Exp, Admin Exp, Financial Exp, etc.",
+    "relatedAccountId": "5401",
+    "relatedSubject": "Expense Control & Budgeting"
+  },
+  {
+    "id": "k23",
+    "category": "accounting_practice",
+    "title": "Payroll Accounting",
+    "content": "## Payroll Payable (2211)\n\n### Components\n- Wages, bonuses, allowances, subsidies\n- Employee welfare (14% of total wages)\n- Social insurance (5 types)\n- Housing fund\n- Union fees (2% of total wages)\n- Employee education (8% of total wages)\n\n### Accrual Entry\nDr: Production Cost (workers)\n　　Mfg Overhead (workshop supervisors)\n　　Admin Expenses (staff)\n　　Selling Expenses (sales staff)\n　　Cr: Payroll Payable\n\n### Payment Entry\nDr: Payroll Payable\n　　Cr: Bank Deposit\n　　　　Tax Payable-IIT (2221)",
+    "relatedAccountId": "2211",
+    "relatedSubject": "Social Insurance Base"
+  },
+  {
+    "id": "k24",
+    "category": "accounting_practice",
+    "title": "Income Tax Accounting",
+    "content": "## Income Tax Expense (5801)\n\n### Current Tax\nTaxable income × Applicable rate\n\n### Deferred Tax\n- **Taxable temporary difference** → Deferred tax liability\n- **Deductible temporary difference** → Deferred tax asset\n\n### Income Tax Expense Formula\nTax expense = Current tax + Deferred tax\n\n### Entry\nDr: Income Tax Expense (5801)\n　　Deferred Tax Asset\n　　Cr: Tax Payable (2221)\n　　　　Deferred Tax Liability\n\n### Common Temporary Differences\n- Different depreciation methods\n- Asset impairment provisions\n- Accrued liabilities",
+    "relatedAccountId": "5801",
+    "relatedSubject": "Deferred Tax Principle"
+  },
+  {
+    "id": "k25",
+    "category": "economic_law",
+    "title": "Overview of Chinese Tax System",
+    "content": "## Chinese Tax System\n\n### Turnover Taxes\n- **VAT**: On value added (13%/9%/6%)\n- **Consumption Tax**: Specific consumer goods\n\n### Income Taxes\n- **CIT**: 25%/15%/20%\n- **IIT**: 3%-45% progressive\n\n### Property & Behavior Taxes\n- **Stamp Duty**: Contracts, books\n- **Property Tax**: Commercial property\n- **Vehicle & Vessel Tax**\n- **Deed Tax**: Real estate transfer\n\n### Surcharges\n- Urban Maintenance & Construction Tax (7%/5%/1%)\n- Education Surcharge (3%)\n- Local Education Surcharge (2%)\n\n### Corresponding Accounts\n- VAT → Tax Payable (2221)\n- Other taxes → Taxes & Surcharges (5403)\n- Income tax → Income Tax Expense (5801)",
+    "relatedAccountId": "2221",
+    "relatedSubject": "Tax Filing Deadlines"
+  },
+  {
+    "id": "k26",
+    "category": "economic_law",
+    "title": "Company Law & Capital System",
+    "content": "## Company Capital System\n\n### Registered Capital\n- LLC registered capital is total subscribed contributions\n- Paid-in Capital (3001) is actual contributions received\n\n### Contribution Types\n- Cash | In-kind (fixed assets) | IP rights | Land use rights\n\n### Three Capital Principles\n1. **Capital Determination**: Specify at establishment\n2. **Capital Maintenance**: Maintain property matching capital\n3. **Capital Invariability**: No arbitrary changes\n\n### Surplus Reserve\n- Statutory surplus reserve: 10% of net profit\n- Can cover losses or increase capital\n- After capital increase, remainder ≥ 25% of pre-increase registered capital\n\n### Profit Distribution\n- Cover losses → Transfer to reserve → Distribute to investors",
+    "relatedAccountId": "3001",
+    "relatedSubject": "Shareholder Rights & Obligations"
+  },
+  {
+    "id": "k27",
+    "category": "economic_law",
+    "title": "Tax Administration Law",
+    "content": "## Tax Administration\n\n### Tax Registration\n- Register within 30 days of establishment\n- Update for changes and deregistration\n\n### Books & Records\n- Maintain accounting books based on valid documents\n- Retention periods covered in Archive Retention (Card k9)\n\n### Tax Filing\n- File truthfully and timely (VAT: by 15th of next month)\n- Online, in-person, or by mail\n\n### Tax Collection\n- Audit-based, deemed assessment, fixed amount\n- Late payment surcharge: 0.05% daily\n\n### Tax Inspection\n- Tax authorities may inspect books, documents, reports\n- May conduct on-site inspection\n\n### Legal Liability\n- Tax evasion: Recovery + 50%-5x fine\n- Criminal prosecution for serious cases",
+    "relatedAccountId": "5403",
+    "relatedSubject": "Tax Audit Response"
+  },
+  {
+    "id": "k28",
+    "category": "accounting_practice",
+    "title": "Notes Receivable",
+    "content": "## Notes Receivable (1121)\n\nCommercial drafts received from sales of goods or services.\n\n### Types: Trade acceptance vs Bank acceptance\n\n### Entries\n- Receive note: Dr: Notes Receivable Cr: Main Revenue\n- Collect at maturity: Dr: Bank Deposit Cr: Notes Receivable\n- Discount: Dr: Bank Deposit (discounted amount), Financial Expenses (discount interest) Cr: Notes Receivable\n\n### Related\n- 1122 AR | 1131 Dividends Rec | 1132 Interest Rec\n- 5503 Financial Expenses (discount interest)",
+    "relatedAccountId": "1121",
+    "relatedSubject": null
+  },
+  {
+    "id": "k29",
+    "category": "accounting_practice",
+    "title": "Prepaid Accounts",
+    "content": "## Prepaid Accounts (1123)\n\nAmounts paid in advance to suppliers per contract.\n\n### Entries\n- Prepay: Dr: Prepaid Accounts Cr: Bank Deposit\n- Receive goods: Dr: Raw Materials Cr: Prepaid Accounts\n- Pay balance: Dr: Prepaid Accounts Cr: Bank Deposit\n\n### Note: Can be recorded in AP (2202) debit if immaterial.\n\n### Related: 2202 AP | 1403 Raw Materials | 2203 Advances from Customers",
+    "relatedAccountId": "1123",
+    "relatedSubject": null
+  },
+  {
+    "id": "k30",
+    "category": "accounting_practice",
+    "title": "Dividends & Interest Receivable",
+    "content": "## Dividends Rec (1131) & Interest Rec (1132)\n\n### Dividends Receivable\n- Cash dividends or profits due to the enterprise\n- Declared: Dr: Dividends Rec Cr: Investment Income (5201)\n- Received: Dr: Bank Deposit Cr: Dividends Rec\n\n### Interest Receivable\n- Bond interest due to the enterprise\n- Accrue: Dr: Interest Rec Cr: Investment Income\n- Receive: Dr: Bank Deposit Cr: Interest Rec\n\n### Related: 5201 Investment Income | 1501 HTM | 1511 LT Equity",
+    "relatedAccountId": "1131",
+    "relatedSubject": null
+  },
+  {
+    "id": "k31",
+    "category": "accounting_practice",
+    "title": "Other Receivables",
+    "content": "## Other Receivables (1221)\n\nAll receivables and temporary payments other than notes, AR, prepaid, dividends, and interest receivable.\n\n### Includes\n- Compensation and fines receivable\n- Rent receivable from packaging rental\n- Advances recoverable from employees\n- Deposits paid (guarantee deposits)\n- Petty cash advances\n\n### Related\n- Fine income: Dr: Other Receivables Cr: Non-operating Income (5301)\n- Collection: Dr: Bank Deposit Cr: Other Receivables\n- 2241 Other Payables | 5301 Non-operating Income",
+    "relatedAccountId": "1221",
+    "relatedSubject": null
+  },
+  {
+    "id": "k32",
+    "category": "accounting_practice",
+    "title": "Material Procurement",
+    "content": "## Material Procurement (1401)\n\nUsed when applying planned costing for daily material accounting.\n\n### Planned Cost Method\n1. Purchase: Dr: Material Procurement (actual) Cr: Bank\n2. Receipt: Dr: Raw Materials (planned) Cr: Material Procurement; Dr/Cr: Material Cost Variance\n\n### Material Cost Variance\n- Actual > Planned: unfavorable (debit variance)\n- Actual < Planned: favorable (credit variance)\n\n### Related: 1403 Raw Materials | 4001 Production Cost | 5401 Main Cost",
+    "relatedAccountId": "1401",
+    "relatedSubject": null
+  },
+  {
+    "id": "k33",
+    "category": "accounting_practice",
+    "title": "Finished Goods",
+    "content": "## Finished Goods (1405)\n\nGoods that have completed the entire production process, passed inspection, and are ready for sale.\n\n### Entries\n- Complete production: Dr: Finished Goods Cr: Production Cost (4001)\n- Sell: Dr: Main Operating Cost (5401) Cr: Finished Goods\n\n### Management\n- Regular physical inventory counts\n- Inventory write-down provision (see 1471)\n- Inventory turnover = COGS ÷ Average inventory\n\n### Related: 4001 Production Cost | 5401 Main Cost | 1411 Revolving Materials | 1471 Inventory Write-down",
+    "relatedAccountId": "1405",
+    "relatedSubject": null
+  },
+  {
+    "id": "k34",
+    "category": "accounting_practice",
+    "title": "Revolving Materials",
+    "content": "## Revolving Materials (1411)\n\nMaterials that can be used multiple times but don't qualify as fixed assets.\n\n### Includes\n- Packaging materials (drums, boxes, bags)\n- Low-value consumables (tools, supplies, protective gear)\n\n### Amortization Methods\n- Immediate write-off: All to expense upon issuance\n- 50-50 method: 50% at issue, 50% at retirement\n- Installment method: Amortized by usage count\n\n### Entry (immediate)\n- On issue: Dr: Mfg Overhead/Admin Cr: Revolving Materials\n\n### Related: 4101 Mfg Overhead | 5502 Admin | 1405 Finished Goods",
+    "relatedAccountId": "1411",
+    "relatedSubject": null
+  },
+  {
+    "id": "k35",
+    "category": "accounting_practice",
+    "title": "Inventory Write-down",
+    "content": "## Inventory Write-down (1471)\n\nProvide when inventory cost exceeds NRV at period end.\n\n### NRV = Estimated selling price - Cost to complete - Estimated selling expenses - Related taxes\n\n### Provide\nDr: Asset Impairment Loss (5601) Cr: Inventory Write-down\n\n### Reversal\nIf impairment factors disappear, reverse within original provision.\nDr: Inventory Write-down Cr: Asset Impairment Loss\n\n### Related: 1403 Raw Materials | 1405 Finished Goods | 5601 Impairment Loss | 1231 Bad Debt Provision (Note: bad debt provision cannot be reversed)",
+    "relatedAccountId": "1471",
+    "relatedSubject": null
+  },
+  {
+    "id": "k36",
+    "category": "accounting_practice",
+    "title": "Held-to-Maturity Investments",
+    "content": "## Held-to-Maturity Investments (1501)\n\nNon-derivative financial assets with fixed maturity, fixed/determinable payments, and positive intent and ability to hold to maturity.\n\n### Measurement: Initially at FV + transaction costs; subsequently at amortized cost using effective interest method.\n\n### Entries\n- Purchase: Dr: HTM - Cost Cr: Bank\n- Accrue interest: Dr: Interest Rec (1132) Cr: Investment Income (5201)\n- Maturity: Dr: Bank Cr: HTM\n\n### Related: 1132 Interest Rec | 5201 Investment Income | 1511 LT Equity",
+    "relatedAccountId": "1501",
+    "relatedSubject": null
+  },
+  {
+    "id": "k37",
+    "category": "accounting_practice",
+    "title": "Long-term Equity Investment",
+    "content": "## Long-term Equity Investment (1511)\n\nEquity investment conferring control, joint control, or significant influence.\n\n### Methods\n- **Cost method**: Subsidiaries (>50% ownership)\n- **Equity method**: Associates (20%-50%) and joint ventures\n\n### Cost Method\n- Declared dividend: Dr: Dividends Rec Cr: Investment Income\n- No adjustment for investee's net asset changes\n\n### Equity Method\n- Investee profit: Dr: LT Equity - P&L Adjustment Cr: Investment Income\n- Declared dividend: Dr: Dividends Rec Cr: LT Equity - P&L Adjustment\n\n### Related: 1131 Dividends Rec | 5201 Investment Income | 3002 Capital Reserve",
+    "relatedAccountId": "1511",
+    "relatedSubject": null
+  },
+  {
+    "id": "k38",
+    "category": "accounting_practice",
+    "title": "Construction in Progress",
+    "content": "## Construction in Progress (1604)\n\nProjects under construction, installation, or technical renovation.\n\n### Content\n- Building works (factories, offices)\n- Installation works (equipment)\n- Technical renovation\n\n### Entries\n- Incur costs: Dr: CIP Cr: Bank/Construction materials\n- Capitalize borrowing costs: Dr: CIP Cr: Long-term Loan-Accrued Interest\n- Complete: Dr: Fixed Assets (1601) Cr: CIP\n\n### Note: Transferred to Fixed Assets when ready for use; depreciation starts next month.\n\n### Related: 1601 Fixed Assets | 2501 Long-term Loan | 1606 Disposal",
+    "relatedAccountId": "1604",
+    "relatedSubject": null
+  },
+  {
+    "id": "k39",
+    "category": "accounting_practice",
+    "title": "Fixed Asset Disposal",
+    "content": "## Fixed Asset Disposal (1606)\n\nTransitional account for sale, retirement, or destruction of fixed assets.\n\n### Entries\n1. Transfer to disposal: Dr: Disposal, Acc Dep (1602) Cr: Fixed Assets (1601)\n2. Disposal costs: Dr: Disposal Cr: Bank\n3. Proceeds: Dr: Bank Cr: Disposal\n4. Net gain/loss: Dr/Cr: Disposal Cr/Dr: Non-operating Income (5301) / Expenses (5701)\n\n### Related: 1601 Fixed Assets | 1602 Acc Dep | 5701 Non-operating Expenses | 5301 Non-operating Income",
+    "relatedAccountId": "1606",
+    "relatedSubject": null
+  },
+  {
+    "id": "k40",
+    "category": "accounting_practice",
+    "title": "Intangible Assets",
+    "content": "## Intangible Assets (1701)\n\nIdentifiable non-monetary assets without physical substance.\n\n### Types\n- Patents | Trademarks | Copyrights\n- Land use rights (China-specific)\n- Proprietary technology | Franchises\n\n### Entries\n- Purchase: Dr: Intangible Assets Cr: Bank\n- Self-developed R&D: Research = expense; qualifying development = capitalize\n- Amortization: Dr: Admin (5502) Cr: Accumulated Amortization (1702)\n\n### Finite-life intangibles: Amortize. Indefinite-life: No amortization, annual impairment test.\n\n### Related: 1702 Acc Amort | 5502 Admin | 1601 Fixed Assets (analogy)",
+    "relatedAccountId": "1701",
+    "relatedSubject": null
+  },
+  {
+    "id": "k41",
+    "category": "accounting_practice",
+    "title": "Accumulated Amortization",
+    "content": "## Accumulated Amortization (1702)\n\nCumulative reduction in intangible asset value from usage; contra-asset account.\n\n### Method: Generally straight-line over legal/contractual/estimated useful life.\n\n### Entry\nMonthly: Dr: Admin (5502) / Other Cost (5402) Cr: Accumulated Amortization\n\n### vs Accumulated Depreciation\n- Same: Both contra-assets reducing carrying value\n- Diff: Fixed assets use Acc Dep (1602); Intangibles use Acc Amort (1702)\n\n### Related: 1701 Intangible Assets | 5502 Admin | 1602 Acc Dep (analogy)",
+    "relatedAccountId": "1702",
+    "relatedSubject": null
+  },
+  {
+    "id": "k42",
+    "category": "accounting_practice",
+    "title": "Long-term Prepaid Expenses",
+    "content": "## Long-term Prepaid Expenses (1801)\n\nExpenses incurred but benefiting multiple periods with amortization > 1 year.\n\n### Includes\n- Improvement to leased fixed assets\n- Major repair of fixed assets\n- Organization costs (optional)\n\n### Entries\n- Incur: Dr: LT Prepaid Expenses Cr: Bank\n- Amortize: Dr: Admin/Selling Expenses Cr: LT Prepaid Expenses\n\n### Related: 5502 Admin | 5501 Selling | 1601 Fixed Assets",
+    "relatedAccountId": "1801",
+    "relatedSubject": null
+  },
+  {
+    "id": "k43",
+    "category": "accounting_practice",
+    "title": "Pending Property Loss/Gain",
+    "content": "## Pending Property Loss/Gain (1901)\n\nValue of asset overages, shortages, and damage discovered during property inspection.\n\n### Entries for Overage\n- Discover: Dr: Fixed Assets/Raw Materials Cr: Pending Property Gain\n- Approved: Dr: Pending Property Gain Cr: Non-operating Income (5301)/Admin\n\n### Entries for Shortage\n- Discover: Dr: Pending Property Loss Cr: Fixed Assets/Raw Materials\n- Approved: Dr: Non-operating Expenses (5701)/Other Rec/Admin Cr: Pending Property Loss\n\n### Note: Must be resolved by period-end; transitional account with no balance on reports.\n\n### Related: 1601 FA | 1403 RM | 5301 Non-operating Income | 5701 Non-operating Exp | 1221 Other Rec",
+    "relatedAccountId": "1901",
+    "relatedSubject": null
+  },
+  {
+    "id": "k44",
+    "category": "accounting_practice",
+    "title": "Short-term Loans",
+    "content": "## Short-term Loans (2001)\n\nBorrowings from banks or financial institutions with terms ≤ 1 year.\n\n### Entries\n- Borrow: Dr: Bank Cr: Short-term Loan\n- Accrue interest: Dr: Financial Expenses (5503) Cr: Interest Payable (2231)\n- Pay interest: Dr: Interest Payable Cr: Bank\n- Repay principal: Dr: Short-term Loan Cr: Bank\n\n### vs Long-term: Short-term ≤ 1yr (2001); Long-term > 1yr (2501). Short-term interest generally expensed (cannot capitalize).\n\n### Related: 2231 Interest Payable | 5503 Financial Expenses | 2501 Long-term Loans",
+    "relatedAccountId": "2001",
+    "relatedSubject": null
+  },
+  {
+    "id": "k45",
+    "category": "accounting_practice",
+    "title": "Notes Payable",
+    "content": "## Notes Payable (2201)\n\nCommercial drafts issued for purchases of goods or services.\n\n### Entries\n- Issue: Dr: Raw Materials/Finished Goods Cr: Notes Payable\n- Pay at maturity: Dr: Notes Payable Cr: Bank\n- Unable to pay: Trade acceptance → AP (2202); Bank acceptance → Short-term Loan (2001)\n\n### Related: 1121 Notes Receivable (counterparty) | 2202 AP | 2001 Short-term Loans",
+    "relatedAccountId": "2201",
+    "relatedSubject": null
+  },
+  {
+    "id": "k46",
+    "category": "accounting_practice",
+    "title": "Advances from Customers",
+    "content": "## Advances from Customers (2203)\n\nAmounts received in advance from customers per contract.\n\n### Entries\n- Receive advance: Dr: Bank Cr: Advances from Customers\n- Deliver goods: Dr: Advances Cr: Main Revenue (5001)\n- Refund excess: Dr: Advances Cr: Bank\n\n### Note: Under new revenue standard, unearned portion may be reclassified as 'contract liabilities'.\n\n### Related: 1123 Prepaid (counterparty) | 5001 Main Revenue | 2202 AP",
+    "relatedAccountId": "2203",
+    "relatedSubject": null
+  },
+  {
+    "id": "k47",
+    "category": "accounting_practice",
+    "title": "Interest & Dividends Payable",
+    "content": "## Interest Payable (2231) & Dividends Payable (2232)\n\n### Interest Payable\n- Accrued unpaid borrowing interest\n- Accrue: Dr: Financial Expenses (5503) Cr: Interest Payable\n- Pay: Dr: Interest Payable Cr: Bank\n\n### Dividends Payable\n- Declared unpaid cash dividends\n- Declare: Dr: Profit Distribution (3104) Cr: Dividends Payable\n- Pay: Dr: Dividends Payable Cr: Bank\n\n### Related: 5503 Financial Exp | 3104 Profit Distribution | 2001 ST Loans | 2501 LT Loans",
+    "relatedAccountId": "2231",
+    "relatedSubject": null
+  },
+  {
+    "id": "k48",
+    "category": "accounting_practice",
+    "title": "Other Payables",
+    "content": "## Other Payables (2241)\n\nAll payables and temporary receipts other than notes, AP, advances, payroll, tax, interest, and dividends payable.\n\n### Includes\n- Rent payable\n- Deposits and guarantees received\n- Compensation and fines payable\n\n### Entries\n- Receive deposit: Dr: Bank Cr: Other Payables\n- Refund deposit: Dr: Other Payables Cr: Bank\n- Unclaimed deposits may be recognized as non-operating income\n\n### Related: 1221 Other Receivables (counterpart) | 2202 AP | 5301 Non-operating Income",
+    "relatedAccountId": "2241",
+    "relatedSubject": null
+  },
+  {
+    "id": "k49",
+    "category": "accounting_practice",
+    "title": "Bonds Payable",
+    "content": "## Bonds Payable (2502)\n\nBonds issued by the enterprise to raise funds.\n\n### Issuance\n- Par: Coupon rate = Market rate\n- Premium: Coupon > Market (investors pay more)\n- Discount: Coupon < Market (investors need compensation)\n\n### Entries\n- Issue: Dr: Bank Cr: Bonds Payable-Face, Bonds Payable-Premium (or Dr for Discount)\n- Accrue interest: Dr: Financial Exp Cr: Bonds Payable-Accrued Interest\n- Amortize: Dr/Cr: Bonds Payable-Adjustment Cr/Dr: Financial Exp\n\n### Related: 5503 Financial Exp | 2501 LT Loans | 2701 LT Payables",
+    "relatedAccountId": "2502",
+    "relatedSubject": null
+  },
+  {
+    "id": "k50",
+    "category": "accounting_practice",
+    "title": "Long-term Payables",
+    "content": "## Long-term Payables (2701)\n\nLong-term payables other than loans and bonds.\n\n### Includes\n- Finance lease payables\n- Installment purchase of fixed assets\n\n### Entries (Finance Lease)\n- Lease inception: Dr: Fixed Assets (lower of MLP PV or FV), Unrecognized Finance Cost Cr: LT Payables\n- Rent payment: Dr: LT Payables Cr: Bank\n- Amortize finance cost: Dr: Financial Exp Cr: Unrecognized Finance Cost\n\n### Related: 1601 Fixed Assets | 5503 Financial Exp | 2501 LT Loans | 2502 Bonds Payable",
+    "relatedAccountId": "2701",
+    "relatedSubject": null
+  },
+  {
+    "id": "k51",
+    "category": "accounting_practice",
+    "title": "Other Monetary Assets",
+    "content": "## Other Monetary Assets (1012)\n\nMonetary assets other than cash on hand and bank deposits.\n\n### Includes\n- Outport deposits (remote temporary purchase)\n- Bank draft deposits | Cashier's check deposits\n- L/C margin deposits | Credit card deposits\n\n### Entries\n- Transfer to special account: Dr: Other Monetary Assets Cr: Bank\n- Use: Dr: Raw Materials Cr: Other Monetary Assets\n- Refund balance: Dr: Bank Cr: Other Monetary Assets\n\n### Related: 1001 Cash on Hand | 1002 Bank Deposit | 2202 AP",
+    "relatedAccountId": "1012",
+    "relatedSubject": null
+  },
+  {
+    "id": "k52",
+    "category": "accounting_practice",
+    "title": "Capital Reserve",
+    "content": "## Capital Reserve (3002)\n\nExcess of investment received over registered capital share.\n\n### Sources\n- **Capital premium**: Actual contribution > registered capital\n- **Share premium**: Issue price > par value\n- **Other capital reserve**: Equity method investee changes\n\n### Uses\n- Transfer to registered capital\n- Cannot cover losses\n- After transfer, remainder ≥ 25% of pre-transfer registered capital\n\n### Entry\n- Receive premium: Dr: Bank Cr: Paid-in Capital, Capital Reserve - Premium\n\n### Related: 3001 Paid-in Capital | 3101 Surplus Reserve | 1511 LT Equity Investment",
+    "relatedAccountId": "3002",
+    "relatedSubject": null
+  },
+  {
+    "id": "k53",
+    "category": "accounting_practice",
+    "title": "Surplus Reserve",
+    "content": "## Surplus Reserve (3101)\n\nAccumulated funds extracted from net profit.\n\n### Types\n- **Statutory**: 10% of net profit (may stop at 50% of registered capital)\n- **Discretionary**: As determined by shareholders\n\n### Uses\n- Cover losses | Increase capital | Expand operations\n\n### Entries\n- Transfer: Dr: Profit Distribution (3104) Cr: Surplus Reserve\n- Cover loss: Dr: Surplus Reserve Cr: Profit Distribution\n- Increase capital: Dr: Surplus Reserve Cr: Paid-in Capital (3001)\n\n### Related: 3104 Profit Distribution | 3001 Paid-in Capital | 3103 CY Profit",
+    "relatedAccountId": "3101",
+    "relatedSubject": null
+  },
+  {
+    "id": "k54",
+    "category": "accounting_practice",
+    "title": "Current Year Profit",
+    "content": "## Current Year Profit (3103)\n\nCumulative net profit or loss realized in the current year.\n\n### Period-end Closing\n**Close Revenue**\n- Dr: Main Revenue (5001), Other Revenue (5051), Investment Income (5201), Non-op Income (5301) Cr: CY Profit\n\n**Close Expenses**\n- Dr: CY Profit Cr: Main Cost (5401), Selling (5501), Admin (5502), Financial (5503), Non-op Exp (5701), Income Tax (5801)\n\n**Year-end Transfer**\n- Profit: Dr: CY Profit Cr: Profit Distribution (3104)\n- Loss: Dr: Profit Distribution Cr: CY Profit",
+    "relatedAccountId": "3103",
+    "relatedSubject": "Period-end Closing Process"
+  },
+  {
+    "id": "k55",
+    "category": "accounting_practice",
+    "title": "Profit Distribution",
+    "content": "## Profit Distribution (3104)\n\nAllocation of profits (or coverage of losses) and accumulated balances.\n\n### Distribution Order\n1. Cover prior year losses\n2. Transfer to statutory surplus reserve (10%)\n3. Transfer to discretionary surplus reserve\n4. Distribute to investors (dividends)\n\n### Entries\n- Transfer to reserve: Dr: PD-Statutory Reserve Cr: Surplus Reserve (3101)\n- Declare dividend: Dr: PD-Dividends Cr: Dividends Payable (2232)\n- Year-end close: Dr: PD-Undistributed Cr: PD-Reserve, Dividends\n\n### Undistributed profit: Credit balance of PD-Undistributed sub-account.\n\n### Related: 3101 Surplus Reserve | 2232 Dividends Payable | 3103 CY Profit",
+    "relatedAccountId": "3104",
+    "relatedSubject": null
+  },
+  {
+    "id": "k56",
+    "category": "accounting_practice",
+    "title": "Manufacturing Overhead",
+    "content": "## Manufacturing Overhead (4101)\n\nIndirect costs incurred for production of goods and services.\n\n### Includes\n- Supervisor wages and welfare\n- Workshop depreciation\n- Utilities, heating\n- Consumables, low-value items\n- Labor protection, seasonal/repair downtime\n\n### Entries\n- Collect: Dr: Mfg Overhead Cr: Acc Dep/Payroll/Bank\n- Allocate: Dr: Production Cost (4001) Cr: Mfg Overhead\n\n### Allocation bases: Labor hours, machine hours, direct labor cost.\n\n### Related: 4001 Production Cost | 1602 Acc Dep | 2211 Payroll Payable",
+    "relatedAccountId": "4101",
+    "relatedSubject": null
+  },
+  {
+    "id": "k57",
+    "category": "accounting_practice",
+    "title": "Other Operating Revenue",
+    "content": "## Other Operating Revenue (5051)\n\nRevenue from operating activities other than main business.\n\n### Includes\n- Material sales | Packaging/fixed asset rental\n- Asset use right transfer | Transportation\n\n### Entries\n- Recognize: Dr: Bank Cr: Other Operating Revenue\n- Period-end: Dr: Other Revenue Cr: CY Profit (3103)\n\n### vs Non-operating Income: Other Revenue is routine; Non-op Income (5301) is non-routine.\n\n### Related: 5402 Other Cost | 5001 Main Revenue | 5301 Non-op Income",
+    "relatedAccountId": "5051",
+    "relatedSubject": null
+  },
+  {
+    "id": "k58",
+    "category": "accounting_practice",
+    "title": "Fair Value Change Gain",
+    "content": "## Fair Value Change Gain (5101)\n\nGains or losses from FV changes of trading financial assets and other FV-measured items.\n\n### Applicable: Trading Financial Assets (1101), FV-measured investment property.\n\n### Entries\n- FV increase: Dr: Trading FA-FV Change Cr: FV Change Gain\n- FV decrease: Dr: FV Change Gain Cr: Trading FA-FV Change\n- Period-end: Dr/Cr: FV Change Gain Cr/Dr: CY Profit (3103)\n\n### Related: 1101 Trading FA | 5201 Investment Income | 3103 CY Profit",
+    "relatedAccountId": "5101",
+    "relatedSubject": null
+  },
+  {
+    "id": "k59",
+    "category": "accounting_practice",
+    "title": "Investment Income",
+    "content": "## Investment Income (5201)\n\nGains or losses from external investments.\n\n### Sources\n- Dividend income from LT equity investment (1511)\n- Interest income from HTM (1501)\n- Disposal gains/losses of trading FA (1101)\n- Equity method share of investee net profit\n\n### Entries\n- Declared dividend (cost method): Dr: Dividends Rec Cr: Investment Income\n- Investee profit (equity method): Dr: LT Equity Cr: Investment Income\n- Dispose FA: Dr: Bank Cr: Trading FA, Investment Income (difference)\n\n### Related: 1511 LT Equity | 1131 Dividends Rec | 1101 Trading FA | 1501 HTM",
+    "relatedAccountId": "5201",
+    "relatedSubject": null
+  },
+  {
+    "id": "k60",
+    "category": "accounting_practice",
+    "title": "Non-operating Income & Expenses",
+    "content": "## Non-operating Income (5301) & Expenses (5701)\n\n### Non-operating Income: Disposal gains, overage gains, donation income, fine income, unpayable AP.\n\n### Non-operating Expenses: Disposal losses, shortage losses, donation expenses, fine expenses, extraordinary losses.\n\n### Entries\n- Overage gain: Dr: Pending Property Gain Cr: Non-op Income\n- Donation expense: Dr: Non-op Expenses Cr: Bank\n\n### Note: Both are non-routine; directly affect current profit; don't affect operating profit but affect total profit.\n\n### Related: 1901 Pending Property | 1606 Disposal",
+    "relatedAccountId": "5301",
+    "relatedSubject": null
+  },
+  {
+    "id": "k61",
+    "category": "accounting_practice",
+    "title": "Other Operating Cost",
+    "content": "## Other Operating Cost (5402)\n\nCosts incurred from other operating activities besides main business.\n\n### Includes: Material sales cost, rented FA depreciation, packaging amortization, intangible asset rental amortization.\n\n### Entries\n- Recognize cost: Dr: Other Cost Cr: Raw Materials/Acc Dep/Acc Amort\n- Period-end: Dr: CY Profit (3103) Cr: Other Cost\n\n### Matching: Other Revenue (5051) must be matched with corresponding Other Cost.\n\n### Related: 5051 Other Revenue | 5401 Main Cost | 3103 CY Profit",
+    "relatedAccountId": "5402",
+    "relatedSubject": null
+  },
+  {
+    "id": "k62",
+    "category": "accounting_practice",
+    "title": "Selling Expenses",
+    "content": "## Selling Expenses (5501)\n\nExpenses incurred in selling goods, materials, and providing services.\n\n### Includes: Advertising, exhibition, freight, handling, packaging, insurance (transit), sales staff payroll, sales dept depreciation/repair, product warranty provisions.\n\n### Entries\n- Incur: Dr: Selling Exp Cr: Bank/Acc Dep/Payroll\n- Period-end: Dr: CY Profit (3103) Cr: Selling Exp\n\n### Ratio: Selling Exp ÷ Revenue = selling expense ratio.\n\n### Related: 5502 Admin | 5503 Financial | 3103 CY Profit",
+    "relatedAccountId": "5501",
+    "relatedSubject": null
+  },
+  {
+    "id": "k63",
+    "category": "accounting_practice",
+    "title": "Administrative Expenses",
+    "content": "## Administrative Expenses (5502)\n\nExpenses for organizing and managing business operations.\n\n### Includes: Admin staff payroll, office supplies, travel, meetings, board fees, professional service fees (audit, legal), consulting, litigation, property tax, vehicle tax, stamp duty, admin FA depreciation, intangible amortization, business entertainment.\n\n### Entertainment: 60% deductible, capped at 5‰ of annual revenue.\n\n### Entries\n- Incur: Dr: Admin Cr: Bank/Acc Dep\n- Period-end: Dr: CY Profit (3103) Cr: Admin\n\n### Related: 5501 Selling | 5503 Financial | 5403 Taxes & Surcharges",
+    "relatedAccountId": "5502",
+    "relatedSubject": null
+  },
+  {
+    "id": "k64",
+    "category": "accounting_practice",
+    "title": "Financial Expenses",
+    "content": "## Financial Expenses (5503)\n\nFinancing costs incurred to raise funds for production and operations.\n\n### Includes: Interest expense (net of interest income), exchange losses (net of gains), bank charges, cash discounts.\n\n### Entries\n- Accrue interest: Dr: Financial Exp Cr: Interest Payable (2231)/LT Loan-Accrued Interest\n- Interest income: Dr: Bank Cr: Financial Exp (offset)\n- Bank charges: Dr: Financial Exp Cr: Bank\n\n### Capitalization: Interest on specific borrowings for fixed asset construction is capitalized to CIP (1604) before asset is ready for use.\n\n### Related: 2231 Interest Payable | 2001 ST Loans | 2501 LT Loans | 1604 CIP",
+    "relatedAccountId": "5503",
+    "relatedSubject": null
+  },
+  {
+    "id": "k65",
+    "category": "accounting_practice",
+    "title": "Asset Impairment Loss",
+    "content": "## Asset Impairment Loss (5601)\n\nLoss from recognizing asset impairment provisions.\n\n### Corresponding Contra Accounts\n| Impairment Loss (5601) | Contra Account |\n|---|---|\n| Bad debt loss | Bad Debt Provision (1231) |\n| Inventory write-down | Inventory Write-down (1471) |\n| FA impairment | FA Impairment Provision |\n| IA impairment | IA Impairment Provision |\n\n### Entry: Dr: Asset Impairment Loss Cr: [Contra Account]; Period-end: Dr: CY Profit (3103) Cr: Loss\n\n### Note: FA impairment cannot be reversed! Inventory write-down can be reversed within original provision. Bad debt provision cannot be reversed.\n\n### Related: 1231 Bad Debt Provision | 1471 Inventory Write-down | 3103 CY Profit",
+    "relatedAccountId": "5601",
+    "relatedSubject": null
+  },
+  {
+    "id": "k66",
+    "category": "accounting_practice",
+    "title": "Non-operating Expenses",
+    "content": "## Non-operating Expenses (5701)\n\nLosses not directly related to daily activities.\n\n### Includes: Non-current asset disposal losses, shortage losses, fines, donations, extraordinary losses (natural disasters), non-monetary exchange losses, debt restructuring losses.\n\n### Impact: Doesn't affect operating profit but affects total profit and net profit.\nTotal Profit = Operating Profit + Non-op Income - Non-op Expenses\n\n### Entry: Dr: Non-op Expenses Cr: Bank/Disposal; Period-end: Dr: CY Profit (3103) Cr: Non-op Expenses\n\n### Related: 5301 Non-op Income | 3103 CY Profit | 1606 FA Disposal",
+    "relatedAccountId": "5701",
+    "relatedSubject": null
+  },
+  {
+    "id": "k67",
+    "category": "accounting_practice",
+    "title": "Interest Receivable Accounting",
+    "content": "## Interest Receivable (1132)\n\nInterest due from HTM, AFS financial assets.\n\n### Accrue: Dr: Interest Rec Cr: Investment Income (5201)\n### Receive: Dr: Bank Cr: Interest Rec\n\n### Related: 1501 HTM | 5201 Investment Income | 5503 Financial Exp",
+    "relatedAccountId": "1132",
+    "relatedSubject": null
+  },
+  {
+    "id": "k68",
+    "category": "accounting_practice",
+    "title": "Bad Debt Provision",
+    "content": "## Bad Debt Provision (1231)\n\nContra-asset for AR, recording estimated uncollectible amounts.\n\n### Provide: Dr: Asset Impairment Loss (5601) Cr: Bad Debt Provision\n### Write-off: Dr: Bad Debt Provision Cr: AR (1122)\n### Recovery: Dr: AR Cr: Bad Debt Provision; Dr: Bank Cr: AR\n\n### Methods: Aging analysis, % of receivables\n\n### Related: 1122 AR | 5601 Impairment Loss | 1471 Inventory Write-down",
+    "relatedAccountId": "1231",
+    "relatedSubject": null
+  },
+  {
+    "id": "k69",
+    "category": "accounting_practice",
+    "title": "Dividends Payable Accounting",
+    "content": "## Dividends Payable (2232)\n\nCash dividends or profits determined by shareholders meeting.\n\n### Declare: Dr: Profit Distribution (3104) Cr: Dividends Payable\n### Pay: Dr: Dividends Payable Cr: Bank\n\n### Note: Stock dividends are not recorded here (memo entry only)\n\n### Related: 3104 Profit Distribution | 3101 Surplus Reserve | 1131 Dividends Rec (counterpart)",
+    "relatedAccountId": "2232",
+    "relatedSubject": null
+  }
+]

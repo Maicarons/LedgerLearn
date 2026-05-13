@@ -14,11 +14,11 @@ class KnowledgeRepository {
   List<KnowledgeCard> getByAccount(String accountId) =>
       getAll().where((k) => k.relatedAccountId == accountId).toList();
 
-  List<KnowledgeCard> search(String query, String locale) {
+  List<KnowledgeCard> search(String query) {
     final lower = query.toLowerCase();
     return getAll().where((k) {
-      return k.getTitle(locale).toLowerCase().contains(lower) ||
-          k.getContent(locale).toLowerCase().contains(lower) ||
+      return k.title.toLowerCase().contains(lower) ||
+          k.content.toLowerCase().contains(lower) ||
           (k.relatedAccountId?.contains(lower) ?? false);
     }).toList();
   }

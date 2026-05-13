@@ -19,8 +19,6 @@ class KnowledgeController extends GetxController {
   }
 
   List<KnowledgeCard> get filteredCards {
-    final locale =
-        Get.locale?.toLanguageTag().replaceAll('-', '_') ?? 'zh_CN';
     var list = cards.toList();
 
     if (selectedCategory.value != 'all') {
@@ -30,8 +28,8 @@ class KnowledgeController extends GetxController {
     if (searchQuery.value.isNotEmpty) {
       final q = searchQuery.value.toLowerCase();
       list = list.where((k) {
-        return k.getTitle(locale).toLowerCase().contains(q) ||
-            k.getContent(locale).toLowerCase().contains(q);
+        return k.title.toLowerCase().contains(q) ||
+            k.content.toLowerCase().contains(q);
       }).toList();
     }
 
