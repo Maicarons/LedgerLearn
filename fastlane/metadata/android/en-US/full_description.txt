@@ -1,4 +1,4 @@
-LedgerLearn 是一款面向中国内地会计初学者的多语言会计入门学习应用。通过模拟完整的会计记账流程——凭证录入、总账/明细账查询、试算平衡、财务报表生成，并在操作中嵌入会计实务与经济法知识点，实现「做中学」。
+LedgerLearn is a multilingual accounting education app designed specifically for accounting beginners in Chinese Mainland.
 
 IMPORTANT: This app is tailored for accounting practices of Chinese Mainland.
 
