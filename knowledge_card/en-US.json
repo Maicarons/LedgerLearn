@@ -2,592 +2,592 @@
   {
     "id": "k1",
     "category": "accounting_practice",
-    "title": "借贷记账法",
-    "content": "## 借贷记账法\n\n借贷记账法是现代会计的基本记账方法。\n\n### 核心规则：**有借必有贷，借贷必相等**\n\n每一笔经济业务，在记入一个账户借方的同时，必然记入另一个（或几个）账户的贷方，且借方金额与贷方金额相等。\n\n### 账户方向\n- **资产类、费用类**：增加记借方，减少记贷方，余额通常在借方\n- **负债类、权益类、收入类**：增加记贷方，减少记借方，余额通常在贷方\n\n### 示例\n企业从银行提取现金 5,000 元：\n- 借：库存现金 5,000（资产增加）\n- 贷：银行存款 5,000（资产减少）",
+    "title": "Double-Entry Bookkeeping",
+    "content": "## Double-Entry Bookkeeping\n\nDouble-entry bookkeeping is the fundamental recording method in modern accounting.\n\n### Core Rule: **Every debit must have a corresponding credit**\n\nEvery transaction must be recorded as a debit in one account and a credit in another, with equal amounts on both sides.\n\n### Account Direction\n- **Assets, Expenses**: Increase on debit side, decrease on credit side, normally have debit balance\n- **Liabilities, Equity, Revenue**: Increase on credit side, decrease on debit side, normally have credit balance\n\n### Example\nCompany withdraws 5,000 CNY from bank:\n- Dr: Cash on Hand 5,000 (asset increases)\n- Cr: Bank Deposit 5,000 (asset decreases)",
     "relatedAccountId": null,
     "relatedSubject": null
   },
   {
     "id": "k2",
     "category": "accounting_practice",
-    "title": "会计基本等式",
-    "content": "## 会计基本等式\n\n### 静态等式（资产负债表基础）\n**资产 = 负债 + 所有者权益**\n\n这个等式反映企业某一时点的财务状况。等式左边是企业的资源（资产），右边是这些资源的来源（负债和所有者权益）。\n\n### 动态等式（利润表基础）\n**收入 - 费用 = 利润**\n\n反映企业一定期间的经营成果。\n\n### 扩展等式\n**资产 = 负债 + 所有者权益 + （收入 - 费用）**\n\n任何经济业务的发生都不会破坏会计等式的平衡关系。",
+    "title": "Basic Accounting Equation",
+    "content": "## Basic Accounting Equation\n\n### Static Equation (Balance Sheet basis)\n**Assets = Liabilities + Owner's Equity**\n\nThis equation reflects the financial position at a point in time. The left side represents resources (assets), and the right side represents the sources of those resources (liabilities and equity).\n\n### Dynamic Equation (Income Statement basis)\n**Revenue - Expenses = Profit**\n\nReflects operating performance over a period.\n\n### Extended Equation\n**Assets = Liabilities + Equity + (Revenue - Expenses)**\n\nNo transaction can break the balance of the accounting equation.",
     "relatedAccountId": null,
     "relatedSubject": null
   },
   {
     "id": "k3",
     "category": "accounting_practice",
-    "title": "常见会计分录示例",
-    "content": "## 常见会计分录\n\n### 1. 提取现金\n| 借 | 贷 |\n|---|---|\n| 库存现金 | 银行存款 |\n\n### 2. 采购原材料（款未付）\n| 借 | 贷 |\n|---|---|\n| 原材料 | 应付账款 |\n\n### 3. 销售商品（款存银行）\n| 借 | 贷 |\n|---|---|\n| 银行存款 | 主营业务收入 |\n\n### 4. 报销差旅费\n| 借 | 贷 |\n|---|---|\n| 管理费用 | 库存现金 |\n\n### 5. 计提折旧\n| 借 | 贷 |\n|---|---|\n| 管理费用 | 累计折旧 |\n\n### 6. 支付工资\n| 借 | 贷 |\n|---|---|\n| 应付职工薪酬 | 银行存款 |\n\n### 7. 结转本年利润\n| 借 | 贷 |\n|---|---|\n| 主营业务收入 | 本年利润 |\n| 本年利润 | 主营业务成本 |\n| 本年利润 | 管理费用 |",
+    "title": "Common Journal Entry Examples",
+    "content": "## Common Journal Entries\n\n### 1. Cash Withdrawal\n| Debit | Credit |\n|---|---|\n| Cash on Hand | Bank Deposit |\n\n### 2. Purchase Materials (on credit)\n| Debit | Credit |\n|---|---|\n| Raw Materials | Accounts Payable |\n\n### 3. Sell Goods (deposited in bank)\n| Debit | Credit |\n|---|---|\n| Bank Deposit | Main Operating Revenue |\n\n### 4. Reimburse Travel Expenses\n| Debit | Credit |\n|---|---|\n| Admin. Expenses | Cash on Hand |\n\n### 5. Record Depreciation\n| Debit | Credit |\n|---|---|\n| Admin. Expenses | Accumulated Depreciation |\n\n### 6. Pay Wages\n| Debit | Credit |\n|---|---|\n| Payroll Payable | Bank Deposit |\n\n### 7. Close Year-End\n| Debit | Credit |\n|---|---|\n| Main Operating Revenue | Current Year Profit |\n| Current Year Profit | Main Operating Cost |\n| Current Year Profit | Admin. Expenses |",
     "relatedAccountId": null,
     "relatedSubject": null
   },
   {
     "id": "k4",
     "category": "economic_law",
-    "title": "增值税简介",
-    "content": "## 增值税简介\n\n增值税（VAT）是对商品和服务在流转过程中产生的增值额征收的一种流转税。\n\n### 纳税人分类\n- **一般纳税人**：可以抵扣进项税额，适用一般计税方法\n- **小规模纳税人**：适用简易计税方法，征收率较低但不能抵扣\n\n### 税率（中国）\n- 基本税率：13%（销售货物、提供加工修理修配劳务）\n- 低税率：9%（农产品、水电气等）、6%（现代服务业）\n\n### 计税方法\n应纳增值税 = 当期销项税额 - 当期进项税额\n\n### 会计处理\n- 购进货物时：借：原材料 应交税费-应交增值税（进项税额） 贷：银行存款\n- 销售货物时：借：银行存款 贷：主营业务收入 应交税费-应交增值税（销项税额）",
+    "title": "Introduction to VAT",
+    "content": "## Introduction to VAT\n\nValue-Added Tax (VAT) is a turnover tax levied on the value added in the circulation of goods and services.\n\n### Taxpayer Classification\n- **General taxpayers**: Can deduct input VAT, use general tax calculation method\n- **Small-scale taxpayers**: Use simplified method, lower levy rate but cannot deduct input VAT\n\n### Tax Rates (China)\n- Basic rate: 13% (goods sales, processing, repair services)\n- Low rates: 9% (agricultural products, utilities), 6% (modern services)\n\n### Calculation Method\nVAT Payable = Output VAT - Input VAT\n\n### Accounting Treatment\n- On purchase: Dr: Raw Materials, Taxes Payable-VAT(input) Cr: Bank Deposit\n- On sale: Dr: Bank Deposit Cr: Main Operating Revenue, Taxes Payable-VAT(output)",
     "relatedAccountId": null,
     "relatedSubject": null
   },
   {
     "id": "k5",
     "category": "economic_law",
-    "title": "合同法基本要点",
-    "content": "## 合同法基本要点\n\n### 合同的成立\n- **要约**：一方当事人向对方提出订立合同的意思表示\n- **承诺**：受要约人同意要约的意思表示\n- 合同自承诺生效时成立\n\n### 合同的主要条款\n1. 当事人的名称或姓名和住所\n2. 标的（合同涉及的对象）\n3. 数量\n4. 质量\n5. 价款或报酬\n6. 履行期限、地点和方式\n7. 违约责任\n8. 解决争议的方法\n\n### 合同的效力\n- **有效合同**：当事人具备相应能力、意思表示真实、内容合法\n- **无效合同**：欺诈胁迫损害国家利益、恶意串通、以合法形式掩盖非法目的等\n- **可撤销合同**：重大误解、显失公平、欺诈胁迫\n\n### 违约责任\n- 继续履行\n- 采取补救措施\n- 赔偿损失\n- 支付违约金",
+    "title": "Key Points of Contract Law",
+    "content": "## Key Points of Contract Law\n\n### Formation of Contract\n- **Offer**: One party proposes to enter into a contract\n- **Acceptance**: The offeree agrees to the offer\n- A contract is formed when acceptance takes effect\n\n### Main Terms of a Contract\n1. Names and addresses of the parties\n2. Subject matter\n3. Quantity\n4. Quality\n5. Price or remuneration\n6. Performance period, place, and method\n7. Liability for breach\n8. Dispute resolution methods\n\n### Validity of Contracts\n- **Valid**: Parties have capacity, genuine intent, lawful content\n- **Invalid**: Fraud/coercion harming state interests, malicious collusion, concealing illegal purposes\n- **Voidable**: Material misunderstanding, grossly unfair, fraud/coercion\n\n### Remedies for Breach\n- Specific performance\n- Remedial measures\n- Damages\n- Liquidated damages",
     "relatedAccountId": null,
     "relatedSubject": null
   },
   {
     "id": "k6",
     "category": "accounting_practice",
-    "title": "期末结转步骤",
-    "content": "## 期末结转步骤\n\n### 第一步：结转收入类科目\n将所有收入类科目余额转入\"本年利润\"贷方：\n- 借：主营业务收入\n- 借：其他业务收入\n- 借：营业外收入\n- 　　贷：本年利润\n\n### 第二步：结转费用类科目\n将所有费用类科目余额转入\"本年利润\"借方：\n- 借：本年利润\n- 　　贷：主营业务成本\n- 　　贷：其他业务成本\n- 　　贷：税金及附加\n- 　　贷：销售费用\n- 　　贷：管理费用\n- 　　贷：财务费用\n- 　　贷：营业外支出\n- 　　贷：所得税费用\n\n### 第三步：结转本年利润\n- 盈利时：借：本年利润 贷：利润分配-未分配利润\n- 亏损时：借：利润分配-未分配利润 贷：本年利润\n\n### 第四步：提取盈余公积\n- 借：利润分配-提取盈余公积\n- 　　贷：盈余公积",
+    "title": "Period-End Closing Steps",
+    "content": "## Period-End Closing Steps\n\n### Step 1: Close Revenue Accounts\nTransfer all revenue account balances to \"Current Year Profit\" (credit):\n- Dr: Main Operating Revenue\n- Dr: Other Operating Revenue\n- Dr: Non-operating Income\n- 　　　Cr: Current Year Profit\n\n### Step 2: Close Expense Accounts\nTransfer all expense account balances to \"Current Year Profit\" (debit):\n- Dr: Current Year Profit\n- 　　　Cr: Main Operating Cost\n- 　　　Cr: Other Operating Cost\n- 　　　Cr: Taxes & Surcharges\n- 　　　Cr: Selling Expenses\n- 　　　Cr: Admin. Expenses\n- 　　　Cr: Financial Expenses\n- 　　　Cr: Non-operating Expenses\n- 　　　Cr: Income Tax Expense\n\n### Step 3: Close Current Year Profit\n- If profit: Dr: Current Year Profit Cr: Profit Distribution\n- If loss: Dr: Profit Distribution Cr: Current Year Profit\n\n### Step 4: Transfer to Surplus Reserve\n- Dr: Profit Distribution - Transfer to Surplus Reserve\n- 　　　Cr: Surplus Reserve",
     "relatedAccountId": null,
     "relatedSubject": null
   },
   {
     "id": "k7",
     "category": "accounting_practice",
-    "title": "固定资产折旧",
-    "content": "## 固定资产折旧\n\n### 折旧方法\n1. **年限平均法（直线法）**：年折旧额 = (原值 - 残值) / 使用年限\n2. **工作量法**：按实际工作量计提\n3. **双倍余额递减法**：加速折旧方法\n4. **年数总和法**：加速折旧方法\n\n### 会计分录\n- 借：管理费用（或制造费用等）\n- 　　贷：累计折旧\n\n### 注意\n- 当月增加的固定资产，当月不计提折旧，下月起计提\n- 当月减少的固定资产，当月仍计提折旧，下月起停止\n- 累计折旧是固定资产的备抵科目，固定资产账面价值 = 原值 - 累计折旧",
+    "title": "Fixed Asset Depreciation",
+    "content": "## Fixed Asset Depreciation\n\n### Depreciation Methods\n1. **Straight-line method**: Annual depreciation = (Cost - Residual) / Useful life\n2. **Units of production method**: Based on actual usage\n3. **Double-declining balance**: Accelerated method\n4. **Sum-of-years-digits**: Accelerated method\n\n### Journal Entry\n- Dr: Admin. Expenses (or Manufacturing Overhead)\n- 　　　Cr: Accumulated Depreciation\n\n### Notes\n- Assets added this month: depreciation starts next month\n- Assets disposed this month: depreciation this month, stops next month\n- Accumulated depreciation is a contra-asset; book value = Cost - Accumulated depreciation",
     "relatedAccountId": "1602",
     "relatedSubject": null
   },
   {
     "id": "k8",
     "category": "accounting_practice",
-    "title": "试算平衡原理",
-    "content": "## 试算平衡原理\n\n### 试算平衡表的作用\n验证所有账户的借方总额是否等于贷方总额。\n\n### 平衡依据\n1. **发生额平衡**：全部账户本期借方发生额合计 = 全部账户本期贷方发生额合计\n2. **余额平衡**：全部账户借方期末余额合计 = 全部账户贷方期末余额合计\n\n### 不平衡的原因\n- 记账方向错误（把借方记入贷方）\n- 金额记录错误（数字不一致）\n- 遗漏记账（只记了一方）\n- 计算错误（汇总时计算不准）\n\n### 注意事项\n试算平衡不代表完全正确！以下情况试算仍然平衡：\n- 借贷双方同时漏记或重记\n- 借贷双方同时记错科目\n- 借贷方向颠倒但金额相等",
+    "title": "Trial Balance Principle",
+    "content": "## Trial Balance Principle\n\n### Purpose\nVerify that total debits equal total credits across all accounts.\n\n### Balance Basis\n1. **Transaction balance**: Total debit entries = Total credit entries for the period\n2. **Balance check**: Total debit ending balances = Total credit ending balances\n\n### Causes of Imbalance\n- Wrong direction (debit recorded as credit)\n- Amount error (numbers don't match)\n- Missing entry (only one side recorded)\n- Calculation error (summation mistakes)\n\n### Note\nA balanced trial balance does NOT guarantee correctness! The following don't affect balance:\n- Both sides omitted or duplicated equally\n- Both sides posted to wrong accounts\n- Debit/credit reversed but amounts equal",
     "relatedAccountId": null,
     "relatedSubject": null
   },
   {
     "id": "k9",
     "category": "economic_law",
-    "title": "会计档案保管期限",
-    "content": "## 会计档案保管期限\n\n### 永久保管\n- 年度财务报告（决算）\n- 会计档案保管清册\n- 会计档案销毁清册\n- 会计档案鉴定意见书\n\n### 保管 30 年\n- 会计凭证（原始凭证、记账凭证）\n- 会计账簿（总账、明细账、日记账）\n- 会计档案移交清册\n\n### 保管 10 年\n- 月度、季度、半年度财务报告\n- 银行存款余额调节表\n- 银行对账单\n- 纳税申报表\n\n### 法律责任\n故意销毁依法应当保存的会计凭证、会计账簿、财务会计报告，构成犯罪的，依法追究刑事责任。",
+    "title": "Accounting Archive Retention",
+    "content": "## Accounting Archive Retention\n\n### Permanent Retention\n- Annual financial reports (final accounts)\n- Accounting archive retention register\n- Accounting archive destruction register\n- Accounting archive appraisal report\n\n### 30-Year Retention\n- Accounting vouchers (source documents, journal vouchers)\n- Accounting books (general ledger, detail ledgers, journals)\n- Accounting archive transfer register\n\n### 10-Year Retention\n- Monthly, quarterly, semi-annual financial reports\n- Bank reconciliation statements\n- Bank statements\n- Tax returns\n\n### Legal Liability\nIntentional destruction of accounting documents, books, or reports required by law constitutes a criminal offense.",
     "relatedAccountId": null,
     "relatedSubject": null
   },
   {
     "id": "k10",
     "category": "accounting_practice",
-    "title": "财务报表之间的关系",
-    "content": "## 财务报表之间的关系\n\n### 三大报表\n1. **资产负债表**：反映某一时点的财务状况（资产 = 负债 + 所有者权益）\n2. **利润表**：反映一定期间的经营成果（收入 - 费用 = 利润）\n3. **现金流量表**：反映现金及现金等价物的流入和流出\n\n### 报表间的勾稽关系\n- 利润表的**净利润** 转入 资产负债表的**未分配利润**\n- 资产负债表中**现金期初与期末余额**的差额 = 现金流量表的**现金净增加额**\n\n### 分析路径\n1. 先看利润表 → 了解盈利能力\n2. 再看资产负债表 → 了解财务结构和偿债能力\n3. 最后看现金流量表 → 了解现金来源和去向",
+    "title": "Relationship Between Financial Statements",
+    "content": "## Relationship Between Financial Statements\n\n### Three Main Statements\n1. **Balance Sheet**: Financial position at a point in time (Assets = Liabilities + Equity)\n2. **Income Statement**: Operating performance over a period (Revenue - Expenses = Profit)\n3. **Cash Flow Statement**: Inflows and outflows of cash and equivalents\n\n### Articulation Between Statements\n- Income statement **net profit** flows to balance sheet **retained earnings**\n- Balance sheet **cash difference (ending - beginning)** = Cash flow statement **net cash increase**\n\n### Analysis Path\n1. Start with income statement → Understand profitability\n2. Then balance sheet → Understand financial structure and solvency\n3. Finally cash flow statement → Understand cash sources and uses",
     "relatedAccountId": null,
     "relatedSubject": null
   },
   {
     "id": "t1",
     "category": "tax",
-    "title": "增值税详解",
-    "content": "## 增值税详解\n\n增值税是中国的第一大税种，对商品和服务在流转过程中产生的增值额征税。\n\n### 纳税人\n- **一般纳税人**：年应征增值税销售额 > 500万元，可抵扣进项税额\n- **小规模纳税人**：年销售额 ≤ 500万元，适用简易计税\n\n### 税率结构\n| 税率 | 适用范围 |\n|------|---------|\n| 13% | 销售货物、加工修理修配劳务、有形动产租赁 |\n| 9% | 农产品、水电气、图书、不动产、交通运输 |\n| 6% | 现代服务业、金融服务、生活服务 |\n| 0% | 出口货物 |\n\n### 计算公式\n**一般计税**：应纳税额 = 销项税额 - 进项税额\n**简易计税**：应纳税额 = 销售额 × 征收率（3%或5%）\n\n### 发票类型\n- **增值税专用发票**：可抵扣进项税额\n- **增值税普通发票**：不可抵扣\n- **电子发票**：与纸质发票同等法律效力",
+    "title": "VAT in Detail",
+    "content": "## VAT in Detail\n\nVAT is the largest tax category in China, levied on the value added during the circulation of goods and services.\n\n### Taxpayers\n- **General taxpayers**: Annual taxable sales > 5 million CNY, can deduct input VAT\n- **Small-scale taxpayers**: Annual sales ≤ 5 million CNY, simplified method\n\n### Tax Rate Structure\n| Rate | Scope |\n|------|-------|\n| 13% | Goods sales, processing, repair, tangible movable property leasing |\n| 9% | Agricultural products, utilities, books, real estate, transportation |\n| 6% | Modern services, financial services, lifestyle services |\n| 0% | Export goods |\n\n### Calculation\n**General**: Tax payable = Output VAT - Input VAT\n**Simplified**: Tax payable = Sales × Levy rate (3% or 5%)\n\n### Invoice Types\n- **Special VAT Invoice**: Can be used for input VAT deduction\n- **General VAT Invoice**: Cannot be deducted\n- **E-Invoice**: Same legal effect as paper invoices",
     "relatedAccountId": "2221",
-    "relatedSubject": "增值税纳税申报"
+    "relatedSubject": "VAT Declaration"
   },
   {
     "id": "t2",
     "category": "tax",
-    "title": "企业所得税基础",
-    "content": "## 企业所得税\n\n企业所得税是对企业和其他取得收入的组织征收的一种税。\n\n### 税率\n| 类型 | 税率 |\n|------|------|\n| 一般企业 | 25% |\n| 高新技术企业 | 15% |\n| 小型微利企业 | 20%（减按计算）|\n\n### 应纳税所得额计算\n**应纳税所得额 = 收入总额 - 不征税收入 - 免税收入 - 各项扣除 - 以前年度亏损**\n\n### 常见扣除项目\n- 合理的工资薪金支出\n- 职工福利费（工资总额 14% 以内）\n- 业务招待费（发生额 60%，不超过收入 5‰）\n- 广告费和业务宣传费（收入 15% 以内）",
+    "title": "Corporate Income Tax Basics",
+    "content": "## Corporate Income Tax\n\nCIT is a tax levied on enterprises and other organizations that obtain income.\n\n### Tax Rates\n| Type | Rate |\n|---|---|\n| General enterprises | 25% |\n| High-tech enterprises | 15% |\n| Small low-profit enterprises | 20% (reduced basis) |\n\n### Taxable Income Calculation\n**Taxable income = Gross income - Non-taxable income - Tax-exempt income - Deductions - Prior year losses**\n\n### Common Deductions\n- Reasonable salary expenses\n- Employee welfare (within 14% of total wages)\n- Business entertainment (60% of incurred, ≤ 5‰ of revenue)\n- Advertising & promotion (within 15% of revenue)",
     "relatedAccountId": "2221",
-    "relatedSubject": "企业所得税年度汇算清缴"
+    "relatedSubject": "Annual CIT Reconciliation"
   },
   {
     "id": "t3",
     "category": "tax",
-    "title": "发票管理与合规",
-    "content": "## 发票管理\n\n发票是企业经济活动中最重要的原始凭证之一。\n\n### 发票的种类\n1. **增值税专用发票** — 可抵扣进项税额\n2. **增值税普通发票** — 不可抵扣\n3. **电子发票** — 与纸质发票同等效力\n\n### 发票开具要求\n- 必须按实际交易内容如实开具\n- 发票信息必须完整（抬头、税号、商品名称、金额、税率等）\n- 不得虚开发票\n- 不得转借、转让发票\n\n### 法律责任\n- **虚开发票**：情节严重的，处 2 年以上 7 年以下有期徒刑\n- **非法出售发票**：情节严重的，处 2 年以上 7 年以下有期徒刑\n\n### 发票保管\n- 已开具的发票存根联和发票登记簿应保存 5 年",
+    "title": "Invoice Management & Compliance",
+    "content": "## Invoice Management\n\nInvoices are one of the most important source documents in business activities.\n\n### Invoice Types\n1. **Special VAT Invoice** — For input VAT deduction\n2. **General VAT Invoice** — Cannot be deducted\n3. **E-Invoice** — Same legal effect as paper\n\n### Issuance Requirements\n- Must be issued according to actual transaction content\n- Invoice information must be complete\n- No false invoicing\n- No lending or transferring of invoices\n\n### Legal Liability\n- **False invoicing**: 2-7 years imprisonment for serious cases\n- **Illegal sale**: 2-7 years imprisonment for serious cases\n\n### Invoice Retention\n- Issued invoice stubs and registers must be kept for 5 years",
     "relatedAccountId": null,
     "relatedSubject": null
   },
   {
     "id": "t4",
     "category": "tax",
-    "title": "纳税申报流程",
-    "content": "## 纳税申报流程\n\n### 申报期限\n\n| 税种 | 申报期限 |\n|------|---------|\n| 增值税 | 次月 15 日前（一般纳税人按月申报）|\n| 企业所得税（季报）| 季度结束后 15 日内 |\n| 企业所得税（年报）| 年度结束后 5 个月内（汇算清缴）|\n| 个人所得税 | 次月 15 日前 |\n| 印花税 | 次月 15 日前 |\n\n### 申报方式\n1. **网上申报** — 通过电子税务局在线申报（最常用）\n2. **上门申报** — 到主管税务机关办税服务厅申报\n3. **邮寄申报** — 通过邮政寄送申报表\n\n### 逾期申报后果\n- 每日加收滞纳税款万分之五的滞纳金\n- 可处以 2000 元以下的罚款",
+    "title": "Tax Declaration Process",
+    "content": "## Tax Declaration Process\n\n### Filing Deadlines\n\n| Tax Type | Deadline |\n|----------|----------|\n| VAT | 15th of following month |\n| CIT (quarterly) | Within 15 days after quarter end |\n| CIT (annual) | Within 5 months after year end |\n| Individual Income Tax | 15th of following month |\n| Stamp Duty | 15th of following month |\n\n### Filing Methods\n1. **Online filing** — Via e-Tax Bureau (most common)\n2. **In-person filing** — At tax service hall\n3. **Mail filing** — Submit returns by post\n\n### Late Filing Consequences\n- Daily surcharge of 0.05% of unpaid tax\n- Fine of up to 2,000 CNY",
     "relatedAccountId": null,
     "relatedSubject": null
   },
   {
     "id": "t5",
     "category": "tax",
-    "title": "个人所得税常识",
-    "content": "## 个人所得税\n\n### 征税范围\n- 工资、薪金所得\n- 劳务报酬所得\n- 稿酬所得\n- 经营所得\n- 利息、股息、红利所得\n- 财产租赁/转让所得\n\n### 综合所得税率（工资薪金等）\n| 级数 | 全年应纳税所得额 | 税率 |\n|------|----------------|------|\n| 1 | ≤ 36,000 | 3% |\n| 2 | 36,000~144,000 | 10% |\n| 3 | 144,000~300,000 | 20% |\n| 4 | 300,000~420,000 | 25% |\n| 5 | 420,000~660,000 | 30% |\n| 6 | 660,000~960,000 | 35% |\n| 7 | > 960,000 | 45% |\n\n### 专项附加扣除\n- 子女教育：每名每月 2,000 元\n- 住房贷款利息：每月 1,000 元\n- 住房租金：每月 800-1,500 元\n- 赡养老人：每月 2,000-3,000 元\n- 3岁以下婴幼儿照护：每名每月 2,000 元",
+    "title": "Individual Income Tax Basics",
+    "content": "## Individual Income Tax\n\n### Taxable Scope\n- Wages and salaries\n- Labor remuneration\n- Author's remuneration\n- Business income\n- Interest, dividends, bonuses\n- Property rental/transfer income\n\n### Comprehensive Income Tax Rates\n| Level | Annual Taxable Income | Rate |\n|-------|---------------------|------|\n| 1 | ≤ 36,000 | 3% |\n| 2 | 36,000~144,000 | 10% |\n| 3 | 144,000~300,000 | 20% |\n| 4 | 300,000~420,000 | 25% |\n| 5 | 420,000~660,000 | 30% |\n| 6 | 660,000~960,000 | 35% |\n| 7 | > 960,000 | 45% |\n\n### Special Additional Deductions\n- Children's education: 2,000 CNY/month per child\n- Housing loan interest: 1,000 CNY/month\n- Housing rent: 800-1,500 CNY/month\n- Elderly support: 2,000-3,000 CNY/month\n- Infant care (under 3): 2,000 CNY/month per child",
     "relatedAccountId": null,
     "relatedSubject": null
   },
   {
     "id": "k11",
     "category": "accounting_practice",
-    "title": "库存现金管理",
-    "content": "## 库存现金\n\n库存现金是企业存放在保险柜中的货币资金，属于流动性最强的资产。\n\n### 管理规定\n- 限额管理：企业库存现金不得超过银行核定的限额（一般3-5天日常开支）\n- 使用范围：职工工资、津贴、差旅费、结算起点以下的零星支出\n- 不得坐支现金：不得从现金收入中直接支付支出\n\n### 常见分录\n- 提取现金：借：库存现金 贷：银行存款\n- 现金报销：借：管理费用 贷：库存现金\n- 现金盘点：溢余 借：库存现金 贷：待处理财产损溢",
+    "title": "Cash on Hand Management",
+    "content": "## Cash on Hand\n\nCash on Hand is the most liquid asset, representing physical currency held by the business.\n\n### Management Rules\n- Limit management: Cash held must not exceed bank-approved limit\n- Usage scope: Wages, allowances, travel expenses, petty cash\n- No direct payment from cash receipts\n\n### Common Entries\n- Withdraw cash: Dr: Cash on Hand Cr: Bank Deposit\n- Reimburse expense: Dr: Admin Expenses Cr: Cash on Hand\n- Cash overage: Dr: Cash on Hand Cr: Pending Property Gain",
     "relatedAccountId": "1001",
-    "relatedSubject": "现金管理规定"
+    "relatedSubject": "Cash Management Rules"
   },
   {
     "id": "k12",
     "category": "accounting_practice",
-    "title": "银行存款与对账",
-    "content": "## 银行存款\n\n银行存款是企业存放在银行账户中的资金。\n\n### 银行账户类型\n- 基本存款账户：日常转账结算和现金收付\n- 一般存款账户：借款转存和归还\n- 专用存款账户：特定用途资金\n- 临时存款账户：临时经营活动\n\n### 银行对账\n每月应编制**银行存款余额调节表**：\n- 企业已收银行未收 | 银行已收企业未收\n- 企业已付银行未付 | 银行已付企业未付\n\n### 常见分录\n- 销售收款：借：银行存款 贷：主营业务收入\n- 支付货款：借：应付账款 贷：银行存款",
+    "title": "Bank Deposits & Reconciliation",
+    "content": "## Bank Deposits\n\nBank deposits represent funds held in enterprise bank accounts.\n\n### Account Types\n- Basic deposit: Daily settlement and cash\n- General deposit: Loan transfers and repayments\n- Special deposit: Designated purpose funds\n- Temporary deposit: Temporary business\n\n### Bank Reconciliation\nPrepare monthly **bank reconciliation statement**:\n- Deposits in transit | Outstanding checks\n- Bank credits not recorded | Bank debits not recorded\n\n### Common Entries\n- Sales receipt: Dr: Bank Deposit Cr: Main Revenue\n- Pay supplier: Dr: Accounts Payable Cr: Bank Deposit",
     "relatedAccountId": "1002",
-    "relatedSubject": "银行余额调节表"
+    "relatedSubject": "Bank Reconciliation Statement"
   },
   {
     "id": "k13",
     "category": "accounting_practice",
-    "title": "应收款项管理",
-    "content": "## 应收款项\n\n### 主要科目（均需掌握）\n- **1121 应收票据**：商业汇票形成的债权\n- **1122 应收账款**：销售商品/劳务形成的债权\n- **1123 预付账款**：预先支付给供应商的款项\n- **1131 应收股利**：应收取的现金股利\n- **1132 应收利息**：应收取的债券利息\n- **1221 其他应收款**：押金、备用金等\n- **1231 坏账准备**：预计无法收回的部分（备抵科目）\n\n### 坏账计提\n借：资产减值损失（5601） 贷：坏账准备\n\n### 管理要点\n- 定期分析账龄，及时催收\n- 对超信用期的应收款计提坏账\n- 应收账款周转率 = 营业收入 ÷ 平均应收账款",
+    "title": "Receivables Management",
+    "content": "## Receivables\n\n### Key Accounts\n- **1121 Notes Receivable**: Claims from commercial notes\n- **1122 Accounts Receivable**: Claims from sales/services\n- **1123 Prepaid Accounts**: Advances to suppliers\n- **1131 Dividends Receivable**: Cash dividends due\n- **1132 Interest Receivable**: Bond interest due\n- **1221 Other Receivables**: Deposits, petty cash advances\n- **1231 Bad Debt Provision**: Estimated uncollectible (contra)\n\n### Bad Debt\nDr: Asset Impairment Loss (5601) Cr: Bad Debt Provision\n\n### Management\n- Regular aging analysis and follow-up\n- Provide for overdue receivables\n- AR Turnover = Revenue ÷ Average AR",
     "relatedAccountId": "1122",
-    "relatedSubject": "应收账款周转率与账龄分析"
+    "relatedSubject": "AR Turnover & Aging"
   },
   {
     "id": "k14",
     "category": "accounting_practice",
-    "title": "存货核算",
-    "content": "## 存货\n\n### 存货科目\n- **1401 材料采购**：在途材料的实际成本\n- **1403 原材料**：库存的各种材料\n- **1405 库存商品**：已完成验收入库的商品\n- **1411 周转材料**：可多次使用的包装物等\n- **1471 存货跌价准备**：成本高于可变现净值（备抵科目）\n\n### 存货计价方法\n- 先进先出法（FIFO）\n- 加权平均法\n- 个别计价法\n\n### 核心分录\n- 采购入库：借：原材料（1403） 贷：应付账款（2202）\n- 领用材料：借：生产成本（4001） 贷：原材料\n- 完工入库：借：库存商品（1405） 贷：生产成本\n- 结转成本：借：主营业务成本（5401） 贷：库存商品",
+    "title": "Inventory Accounting",
+    "content": "## Inventory\n\n### Accounts\n- **1401 Material Procurement**: Materials in transit\n- **1403 Raw Materials**: Stock materials\n- **1405 Finished Goods**: Goods ready for sale\n- **1411 Revolving Materials**: Reusable packaging\n- **1471 Inventory Write-down**: Cost > NRV (contra)\n\n### Valuation: FIFO, Weighted Average, Specific ID\n\n### Core Entries\n- Purchase: Dr: Raw Materials (1403) Cr: AP (2202)\n- Issue: Dr: Production Cost (4001) Cr: Raw Materials\n- Complete: Dr: Finished Goods (1405) Cr: Production Cost\n- COGS: Dr: Main Operating Cost (5401) Cr: Finished Goods",
     "relatedAccountId": "1403",
-    "relatedSubject": "存货盘点与计价方法"
+    "relatedSubject": "Inventory Count & Valuation"
   },
   {
     "id": "k15",
     "category": "accounting_practice",
-    "title": "固定资产与无形资产",
-    "content": "## 长期资产\n\n### 固定资产相关科目\n- **1601 固定资产**：为生产经营持有的有形资产\n- **1604 在建工程**：未完工的工程项目\n- **1606 固定资产清理**：处置时的过渡科目\n\n### 无形资产相关科目\n- **1701 无形资产**：专利权、商标权、土地使用权等\n- **1702 累计摊销**：无形资产的备抵科目\n\n### 其他长期资产\n- **1801 长期待摊费用**：摊销期超过一年的费用\n- **1901 待处理财产损溢**：清查中待处理盈亏\n\n### 核心分录\n- 购入：借：固定资产 贷：银行存款\n- 折旧：借：管理费用/制造费用 贷：累计折旧\n- 处置：借：固定资产清理/累计折旧 贷：固定资产\n- 摊销：借：管理费用 贷：累计摊销",
+    "title": "Fixed & Intangible Assets",
+    "content": "## Long-term Assets\n\n### Fixed Asset Accounts\n- **1601 Fixed Assets**: Tangible assets for production\n- **1604 Construction in Progress**: Uncompleted projects\n- **1606 Fixed Asset Disposal**: Transitional disposal\n\n### Intangible Asset Accounts\n- **1701 Intangible Assets**: Patents, trademarks, land use rights\n- **1702 Accumulated Amortization**: Contra account\n\n### Others\n- **1801 Long-term Prepaid Expenses**\n- **1901 Pending Property Loss/Gain**\n\n### Core Entries\n- Purchase: Dr: Fixed Assets Cr: Bank\n- Depreciation: Dr: Admin/Mfg Cr: Accumulated Depreciation\n- Disposal: Dr: Disposal/Acc Dep Cr: Fixed Assets\n- Amortization: Dr: Admin Cr: Accumulated Amortization",
     "relatedAccountId": "1601",
-    "relatedSubject": "固定资产管理制度"
+    "relatedSubject": "Fixed Asset Management Policy"
   },
   {
     "id": "k16",
     "category": "accounting_practice",
-    "title": "金融资产与投资",
-    "content": "## 投资类科目\n\n### 科目清单\n- **1012 其他货币资金**：外埠存款、银行本票、信用证保证金等\n- **1101 交易性金融资产**：短期交易的股票、债券、基金\n- **1501 持有至到期投资**：固定到期日的债券投资\n- **1511 长期股权投资**：对联营/合营/子公司的投资\n\n### 投资收益\n- **5201 投资收益**：投资获得的收益或发生的损失\n- 宣告股利：借：应收股利 贷：投资收益\n- 处置收益：借：银行存款 贷：交易性金融资产 投资收益\n\n### 公允价值变动\n- **5101 公允价值变动损益**：交易性金融资产年末调账",
+    "title": "Financial Assets & Investments",
+    "content": "## Investment Accounts\n\n### Account List\n- **1012 Other Monetary Assets**: Outport deposits, cashier's checks, L/C margins\n- **1101 Trading Financial Assets**: Stocks, bonds, funds for short-term trading\n- **1501 Held-to-Maturity Investments**: Fixed-maturity bonds\n- **1511 Long-term Equity Investment**: Associates, JVs, subsidiaries\n\n### Investment Income\n- **5201 Investment Income**: Gain or loss from investments\n- Declared dividend: Dr: Dividends Rec Cr: Investment Income\n- Disposal: Dr: Bank Deposit Cr: Trading FA, Investment Income\n\n### Fair Value Changes\n- **5101 Fair Value Change Gain**: Year-end adjustment for trading FA",
     "relatedAccountId": "1101",
-    "relatedSubject": "金融资产三分类"
+    "relatedSubject": "Three Categories of Financial Assets"
   },
   {
     "id": "k17",
     "category": "accounting_practice",
-    "title": "应付账款与短期负债",
-    "content": "## 短期负债类科目\n\n### 科目清单\n- **2001 短期借款**：一年内到期的银行借款\n- **2201 应付票据**：签发的商业汇票\n- **2202 应付账款**：因购买商品/劳务应付的款项\n- **2203 预收账款**：预先收取的客户款项\n- **2211 应付职工薪酬**：应付未付的工资社保等\n- **2231 应付利息**：应计未付的利息\n- **2232 应付股利**：已宣告未支付的股利\n- **2241 其他应付款**：押金、暂收款等\n\n### 核心分录\n- 采购：借：原材料 贷：应付账款\n- 借款：借：银行存款 贷：短期借款\n- 付款：借：应付账款 贷：银行存款\n- 计提利息：借：财务费用 贷：应付利息",
+    "title": "Accounts Payable & Short-term Liabilities",
+    "content": "## Short-term Liabilities\n\n### Account List\n- **2001 Short-term Loans**: Bank loans due within 1 year\n- **2201 Notes Payable**: Commercial notes issued\n- **2202 Accounts Payable**: Owed for goods/services\n- **2203 Advances from Customers**: Prepayments received\n- **2211 Payroll Payable**: Accrued wages & insurance\n- **2231 Interest Payable**: Accrued unpaid interest\n- **2232 Dividends Payable**: Declared unpaid dividends\n- **2241 Other Payables**: Deposits, temporary receipts\n\n### Core Entries\n- Purchase: Dr: Raw Materials Cr: AP\n- Borrow: Dr: Bank Deposit Cr: Short-term Loan\n- Pay: Dr: AP Cr: Bank Deposit\n- Accrue interest: Dr: Financial Expenses Cr: Interest Payable",
     "relatedAccountId": "2202",
-    "relatedSubject": "应付账款管理"
+    "relatedSubject": "AP Management"
   },
   {
     "id": "k18",
     "category": "accounting_practice",
-    "title": "长期负债",
-    "content": "## 长期负债类科目\n\n### 科目清单\n- **2501 长期借款**：期限一年以上的银行借款\n- **2502 应付债券**：企业发行的债券\n- **2701 长期应付款**：融资租赁、分期购入等\n\n### 长期借款\n- 借入：借：银行存款 贷：长期借款\n- 计提利息：借：财务费用/在建工程 贷：长期借款-应计利息\n- 偿还：借：长期借款 贷：银行存款\n\n### 应付债券\n- 按面值、溢价或折价发行\n- 利息调整在债券存续期内摊销\n\n### 借款费用资本化\n- 为构建固定资产发生的借款利息，在资产达到预定可使用状态前可资本化计入在建工程",
+    "title": "Long-term Liabilities",
+    "content": "## Long-term Liabilities\n\n### Account List\n- **2501 Long-term Loans**: Bank loans > 1 year\n- **2502 Bonds Payable**: Corporate bonds issued\n- **2701 Long-term Payables**: Finance leases, installments\n\n### Long-term Loans\n- Borrow: Dr: Bank Cr: Long-term Loan\n- Interest: Dr: Financial Expense/CIP Cr: Long-term Loan-Accrued Interest\n- Repay: Dr: Long-term Loan Cr: Bank\n\n### Bonds Payable\n- Issued at par, premium, or discount\n- Premium/discount amortized over life\n\n### Borrowing Cost Capitalization\n- Interest for constructing fixed assets can be capitalized into CIP before asset is ready for use",
     "relatedAccountId": "2501",
-    "relatedSubject": "借款费用资本化"
+    "relatedSubject": "Borrowing Cost Capitalization"
   },
   {
     "id": "k19",
     "category": "accounting_practice",
-    "title": "所有者权益",
-    "content": "## 所有者权益类科目\n\n### 科目清单\n- **3001 实收资本**：投资者实际投入的注册资本\n- **3002 资本公积**：资本溢价及其他\n- **3101 盈余公积**：从净利润提取的积累\n- **3103 本年利润**：本年度累计净利润\n- **3104 利润分配**：利润的分配去向\n\n### 核心分录\n- 收到投资：借：银行存款 贷：实收资本 资本公积\n- 提取盈余公积：借：利润分配 贷：盈余公积\n- 结转收入：借：主营业务收入等 贷：本年利润\n- 结转费用：借：本年利润 贷：主营业务成本等\n- 结转本年利润：借：本年利润 贷：利润分配\n\n### 会计等式\n**资产 = 负债 + 所有者权益**",
+    "title": "Owner's Equity",
+    "content": "## Owner's Equity\n\n### Account List\n- **3001 Paid-in Capital**: Registered capital invested\n- **3002 Capital Reserve**: Capital premium & other\n- **3101 Surplus Reserve**: Accumulated from net profit\n- **3103 Current Year Profit**: Cumulative net profit\n- **3104 Profit Distribution**: Profit allocation\n\n### Core Entries\n- Investment: Dr: Bank Cr: Paid-in Capital, Capital Reserve\n- Transfer to reserve: Dr: Profit Distribution Cr: Surplus Reserve\n- Close revenue: Dr: Main Revenue Cr: Current Year Profit\n- Close expenses: Dr: Current Year Profit Cr: Main Cost etc.\n- Close CY profit: Dr: Current Year Profit Cr: Profit Distribution\n\n### Equation\n**Assets = Liabilities + Equity**",
     "relatedAccountId": "3001",
-    "relatedSubject": "利润分配流程"
+    "relatedSubject": "Profit Distribution Process"
   },
   {
     "id": "k20",
     "category": "accounting_practice",
-    "title": "成本核算",
-    "content": "## 成本类科目\n\n### 科目清单\n- **4001 生产成本**：直接材料+直接人工+制造费用\n- **4101 制造费用**：车间间接费用（折旧、水电、管理人员工资等）\n\n### 成本流转\n1. 发生费用：借：生产成本 贷：原材料/应付职工薪酬\n2. 归集制造费用：借：制造费用 贷：累计折旧/银行存款\n3. 分配制造费用：借：生产成本 贷：制造费用\n4. 完工入库：借：库存商品（1405） 贷：生产成本\n5. 结转销售成本：借：主营业务成本（5401） 贷：库存商品\n\n### 成本项目\n- 直接材料：构成产品实体的原材料\n- 直接人工：直接生产工人的工资\n- 制造费用：不能直接归属的间接费用\n\n### 计算方法\n- 品种法、分批法、分步法",
+    "title": "Cost Accounting",
+    "content": "## Cost Accounts\n\n### Account List\n- **4001 Production Cost**: Direct materials + labor + overhead\n- **4101 Manufacturing Overhead**: Indirect workshop costs\n\n### Cost Flow\n1. Incur costs: Dr: Production Cost Cr: Raw Materials/Payroll\n2. Collect overhead: Dr: Mfg Overhead Cr: Acc Dep/Bank\n3. Allocate overhead: Dr: Production Cost Cr: Mfg Overhead\n4. Complete: Dr: Finished Goods (1405) Cr: Production Cost\n5. Transfer to COGS: Dr: Main Cost (5401) Cr: Finished Goods\n\n### Cost Elements\n- Direct Materials | Direct Labor | Manufacturing Overhead\n\n### Costing Methods\n- Job costing, Process costing, Activity-based costing",
     "relatedAccountId": "4001",
-    "relatedSubject": "成本计算方法详解"
+    "relatedSubject": "Costing Methods"
   },
   {
     "id": "k21",
     "category": "accounting_practice",
-    "title": "收入确认",
-    "content": "## 收入类科目\n\n### 科目清单\n- **5001 主营业务收入**：主要经营活动收入\n- **5051 其他业务收入**：材料销售、租金等\n- **5101 公允价值变动损益**：金融资产公允价值变动\n- **5201 投资收益**：对外投资损益\n- **5301 营业外收入**：非日常利得\n\n### 收入确认五步法\n1. 识别与客户订立的合同\n2. 识别合同中的履约义务\n3. 确定交易价格\n4. 将交易价格分摊至各履约义务\n5. 在履行履约义务时确认收入\n\n### 分录\n- 销售确认：借：银行存款/应收账款 贷：主营业务收入\n- 期末结转：借：主营业务收入 贷：本年利润",
+    "title": "Revenue Recognition",
+    "content": "## Revenue Accounts\n\n### Account List\n- **5001 Main Operating Revenue**: Primary business revenue\n- **5051 Other Operating Revenue**: Material sales, rent\n- **5101 Fair Value Change Gain**: Financial asset FV changes\n- **5201 Investment Income**: External investment P&L\n- **5301 Non-operating Income**: Non-routine gains\n\n### Five-Step Recognition\n1. Identify contract with customer\n2. Identify performance obligations\n3. Determine transaction price\n4. Allocate price to obligations\n5. Recognize when obligation satisfied\n\n### Entries\n- Sale: Dr: Bank/AR Cr: Main Revenue\n- Period-end: Dr: Main Revenue Cr: Current Year Profit",
     "relatedAccountId": "5001",
-    "relatedSubject": "收入确认五步法"
+    "relatedSubject": "Revenue Five-Step Model"
   },
   {
     "id": "k22",
     "category": "accounting_practice",
-    "title": "成本与费用核算",
-    "content": "## 成本费用类科目\n\n### 营业成本\n- **5401 主营业务成本**：与主营业务收入匹配的成本\n- **5402 其他业务成本**：其他业务活动成本\n\n### 税金\n- **5403 税金及附加**：消费税、城建税、教育费附加、印花税等\n\n### 期间费用\n- **5501 销售费用**：广告费、运输费、销售人员薪酬\n- **5502 管理费用**：办公费、管理人员薪酬、折旧、摊销\n- **5503 财务费用**：利息支出、汇兑损失、银行手续费\n\n### 其他损益\n- **5601 资产减值损失**：坏账、存货跌价等减值\n- **5701 营业外支出**：罚款、捐赠、非常损失\n- **5801 所得税费用**：当期所得税费用\n\n### 期末结转\n- 借：本年利润\n- 　　贷：主营业务成本、销售费用、管理费用、财务费用等",
+    "title": "Costs & Expenses Accounting",
+    "content": "## Cost & Expense Accounts\n\n### Operating Costs\n- **5401 Main Operating Cost**: Matched to main revenue\n- **5402 Other Operating Cost**: Other business costs\n\n### Taxes\n- **5403 Taxes & Surcharges**: Consumption tax, surcharges, stamp duty\n\n### Period Expenses\n- **5501 Selling Expenses**: Advertising, freight, sales staff\n- **5502 Administrative Expenses**: Office, management, depreciation\n- **5503 Financial Expenses**: Interest, exchange loss, bank charges\n\n### Other P&L\n- **5601 Asset Impairment Loss**: Bad debts, inventory write-down\n- **5701 Non-operating Expenses**: Fines, donations, extraordinary\n- **5801 Income Tax Expense**: Current income tax\n\n### Period-end Closing\n- Dr: Current Year Profit\n- 　　Cr: Main Cost, Selling Exp, Admin Exp, Financial Exp, etc.",
     "relatedAccountId": "5401",
-    "relatedSubject": "费用控制与预算管理"
+    "relatedSubject": "Expense Control & Budgeting"
   },
   {
     "id": "k23",
     "category": "accounting_practice",
-    "title": "职工薪酬核算",
-    "content": "## 应付职工薪酬（2211）\n\n### 薪酬构成\n- 工资、奖金、津贴和补贴\n- 职工福利费（工资总额 14%）\n- 社会保险费（养老、医疗、失业、工伤、生育）\n- 住房公积金\n- 工会经费（工资总额 2%）\n- 职工教育经费（工资总额 8%）\n\n### 计提分录\n借：生产成本（生产工人）\n　　制造费用（车间管理人员）\n　　管理费用（行政人员）\n　　销售费用（销售人员）\n　　贷：应付职工薪酬\n\n### 发放分录\n借：应付职工薪酬\n　　贷：银行存款\n　　　　应交税费-应交个人所得税（2221）",
+    "title": "Payroll Accounting",
+    "content": "## Payroll Payable (2211)\n\n### Components\n- Wages, bonuses, allowances, subsidies\n- Employee welfare (14% of total wages)\n- Social insurance (5 types)\n- Housing fund\n- Union fees (2% of total wages)\n- Employee education (8% of total wages)\n\n### Accrual Entry\nDr: Production Cost (workers)\n　　Mfg Overhead (workshop supervisors)\n　　Admin Expenses (staff)\n　　Selling Expenses (sales staff)\n　　Cr: Payroll Payable\n\n### Payment Entry\nDr: Payroll Payable\n　　Cr: Bank Deposit\n　　　　Tax Payable-IIT (2221)",
     "relatedAccountId": "2211",
-    "relatedSubject": "社保公积金计算基数"
+    "relatedSubject": "Social Insurance Base"
   },
   {
     "id": "k24",
     "category": "accounting_practice",
-    "title": "所得税会计",
-    "content": "## 所得税费用（5801）\n\n### 当期所得税\n应纳税所得额 × 适用税率\n\n### 递延所得税\n- **应纳税暂时性差异** → 递延所得税负债\n- **可抵扣暂时性差异** → 递延所得税资产\n\n### 所得税费用公式\n所得税费用 = 当期所得税 + 递延所得税\n\n### 分录\n借：所得税费用（5801）\n　　递延所得税资产\n　　贷：应交税费-应交所得税（2221）\n　　　　递延所得税负债\n\n### 常见暂时性差异\n- 折旧方法不同（会计直线法 vs 税法加速折旧）\n- 资产减值准备（会计计提，税法不允许）\n- 预计负债（会计确认，税法实际发生时扣除）",
+    "title": "Income Tax Accounting",
+    "content": "## Income Tax Expense (5801)\n\n### Current Tax\nTaxable income × Applicable rate\n\n### Deferred Tax\n- **Taxable temporary difference** → Deferred tax liability\n- **Deductible temporary difference** → Deferred tax asset\n\n### Income Tax Expense Formula\nTax expense = Current tax + Deferred tax\n\n### Entry\nDr: Income Tax Expense (5801)\n　　Deferred Tax Asset\n　　Cr: Tax Payable (2221)\n　　　　Deferred Tax Liability\n\n### Common Temporary Differences\n- Different depreciation methods\n- Asset impairment provisions\n- Accrued liabilities",
     "relatedAccountId": "5801",
-    "relatedSubject": "递延所得税原理"
+    "relatedSubject": "Deferred Tax Principle"
   },
   {
     "id": "k25",
     "category": "economic_law",
-    "title": "中国税制概览",
-    "content": "## 中国现行税制\n\n### 流转税（间接税）\n- **增值税**：对增值额征税（13%/9%/6%）\n- **消费税**：特定消费品（烟、酒、化妆品、汽车等）\n\n### 所得税（直接税）\n- **企业所得税**：25%/15%/20%\n- **个人所得税**：3%-45% 七级累进\n\n### 财产行为税\n- **印花税**：合同、账簿等凭证\n- **房产税**：经营性房产\n- **车船税**：车辆和船舶\n- **契税**：不动产产权转移\n\n### 附加税费\n- 城市维护建设税（7%/5%/1%）\n- 教育费附加（3%）\n- 地方教育附加（2%）\n\n### 对应会计科目\n- 增值税 → 应交税费-应交增值税（2221）\n- 消费税/城建税/教育费 → 税金及附加（5403）\n- 所得税 → 所得税费用（5801）",
+    "title": "Overview of Chinese Tax System",
+    "content": "## Chinese Tax System\n\n### Turnover Taxes\n- **VAT**: On value added (13%/9%/6%)\n- **Consumption Tax**: Specific consumer goods\n\n### Income Taxes\n- **CIT**: 25%/15%/20%\n- **IIT**: 3%-45% progressive\n\n### Property & Behavior Taxes\n- **Stamp Duty**: Contracts, books\n- **Property Tax**: Commercial property\n- **Vehicle & Vessel Tax**\n- **Deed Tax**: Real estate transfer\n\n### Surcharges\n- Urban Maintenance & Construction Tax (7%/5%/1%)\n- Education Surcharge (3%)\n- Local Education Surcharge (2%)\n\n### Corresponding Accounts\n- VAT → Tax Payable (2221)\n- Other taxes → Taxes & Surcharges (5403)\n- Income tax → Income Tax Expense (5801)",
     "relatedAccountId": "2221",
-    "relatedSubject": "各税种申报期限"
+    "relatedSubject": "Tax Filing Deadlines"
   },
   {
     "id": "k26",
     "category": "economic_law",
-    "title": "公司法与资本制度",
-    "content": "## 公司资本制度\n\n### 注册资本\n- 有限责任公司的注册资本为全体股东认缴的出资额\n- 实收资本（3001）是企业实际收到的出资\n\n### 出资方式\n- 货币出资\n- 实物出资（固定资产等）\n- 知识产权出资\n- 土地使用权出资\n\n### 资本三原则\n1. **资本确定原则**：设立时明确注册资本\n2. **资本维持原则**：存续期间保持与资本相应的财产\n3. **资本不变原则**：非经法定程序不得随意变更\n\n### 盈余公积\n- 法定盈余公积：按净利润 10% 提取\n- 可用于弥补亏损、转增资本\n- 转增资本后留存不得低于转增前注册资本的 25%\n\n### 利润分配\n- 弥补亏损 → 提取盈余公积 → 向投资者分配利润",
+    "title": "Company Law & Capital System",
+    "content": "## Company Capital System\n\n### Registered Capital\n- LLC registered capital is total subscribed contributions\n- Paid-in Capital (3001) is actual contributions received\n\n### Contribution Types\n- Cash | In-kind (fixed assets) | IP rights | Land use rights\n\n### Three Capital Principles\n1. **Capital Determination**: Specify at establishment\n2. **Capital Maintenance**: Maintain property matching capital\n3. **Capital Invariability**: No arbitrary changes\n\n### Surplus Reserve\n- Statutory surplus reserve: 10% of net profit\n- Can cover losses or increase capital\n- After capital increase, remainder ≥ 25% of pre-increase registered capital\n\n### Profit Distribution\n- Cover losses → Transfer to reserve → Distribute to investors",
     "relatedAccountId": "3001",
-    "relatedSubject": "股东权利与义务"
+    "relatedSubject": "Shareholder Rights & Obligations"
   },
   {
     "id": "k27",
     "category": "economic_law",
-    "title": "税收征收管理法",
-    "content": "## 税收征收管理\n\n### 税务登记\n- 企业成立后 30 日内办理税务登记\n- 变更、注销也需办理相应登记\n\n### 账簿凭证管理\n- 设置账簿，根据合法有效凭证记账\n- 账簿、凭证、报表等保存期限详见会计档案保管规定（知识卡片 k9）\n\n### 纳税申报\n- 按期如实申报（增值税次月 15 日前）\n- 可网上申报、上门申报或邮寄申报\n\n### 税款征收\n- 查账征收、核定征收、定期定额征收\n- 滞纳金：日加收滞纳税款万分之五\n\n### 税务检查\n- 税务机关有权检查账簿、凭证、报表\n- 可实地检查经营场所和货物存放地\n\n### 法律责任\n- 偷税：追缴税款、滞纳金，并处 50%-5 倍罚款\n- 构成犯罪的追究刑事责任",
+    "title": "Tax Administration Law",
+    "content": "## Tax Administration\n\n### Tax Registration\n- Register within 30 days of establishment\n- Update for changes and deregistration\n\n### Books & Records\n- Maintain accounting books based on valid documents\n- Retention periods covered in Archive Retention (Card k9)\n\n### Tax Filing\n- File truthfully and timely (VAT: by 15th of next month)\n- Online, in-person, or by mail\n\n### Tax Collection\n- Audit-based, deemed assessment, fixed amount\n- Late payment surcharge: 0.05% daily\n\n### Tax Inspection\n- Tax authorities may inspect books, documents, reports\n- May conduct on-site inspection\n\n### Legal Liability\n- Tax evasion: Recovery + 50%-5x fine\n- Criminal prosecution for serious cases",
     "relatedAccountId": "5403",
-    "relatedSubject": "税务稽查应对"
+    "relatedSubject": "Tax Audit Response"
   },
   {
     "id": "k28",
     "category": "accounting_practice",
-    "title": "应收票据",
-    "content": "## 应收票据（1121）\n\n企业因销售商品、提供劳务等而收到的商业汇票。\n\n### 分类\n- 商业承兑汇票：由付款人承兑\n- 银行承兑汇票：由银行承兑（信用更高）\n\n### 分录\n- 收到票据：借：应收票据 贷：主营业务收入\n- 到期收款：借：银行存款 贷：应收票据\n- 贴现：借：银行存款（贴现值） 财务费用（贴现息） 贷：应收票据\n\n### 关联科目\n- 1122 应收账款 | 1131 应收股利 | 1132 应收利息\n- 5503 财务费用（贴现息）",
+    "title": "Notes Receivable",
+    "content": "## Notes Receivable (1121)\n\nCommercial drafts received from sales of goods or services.\n\n### Types: Trade acceptance vs Bank acceptance\n\n### Entries\n- Receive note: Dr: Notes Receivable Cr: Main Revenue\n- Collect at maturity: Dr: Bank Deposit Cr: Notes Receivable\n- Discount: Dr: Bank Deposit (discounted amount), Financial Expenses (discount interest) Cr: Notes Receivable\n\n### Related\n- 1122 AR | 1131 Dividends Rec | 1132 Interest Rec\n- 5503 Financial Expenses (discount interest)",
     "relatedAccountId": "1121",
     "relatedSubject": null
   },
   {
     "id": "k29",
     "category": "accounting_practice",
-    "title": "预付账款",
-    "content": "## 预付账款（1123）\n\n企业按照合同规定预先支付给供应商的款项。\n\n### 分录\n- 预付时：借：预付账款 贷：银行存款\n- 收到货物：借：原材料 贷：预付账款\n- 补付差额：借：预付账款 贷：银行存款\n\n### 与应付账款的关系\n预付账款不多的企业可不设此科目，直接在应付账款（2202）借方核算。\n\n### 关联科目\n- 2202 应付账款 | 1403 原材料 | 2203 预收账款",
+    "title": "Prepaid Accounts",
+    "content": "## Prepaid Accounts (1123)\n\nAmounts paid in advance to suppliers per contract.\n\n### Entries\n- Prepay: Dr: Prepaid Accounts Cr: Bank Deposit\n- Receive goods: Dr: Raw Materials Cr: Prepaid Accounts\n- Pay balance: Dr: Prepaid Accounts Cr: Bank Deposit\n\n### Note: Can be recorded in AP (2202) debit if immaterial.\n\n### Related: 2202 AP | 1403 Raw Materials | 2203 Advances from Customers",
     "relatedAccountId": "1123",
     "relatedSubject": null
   },
   {
     "id": "k30",
     "category": "accounting_practice",
-    "title": "应收股利与应收利息",
-    "content": "## 应收股利（1131）与应收利息（1132）\n\n### 应收股利\n- 企业应收取的现金股利或利润\n- 宣告时：借：应收股利 贷：投资收益（5201）\n- 收到时：借：银行存款 贷：应收股利\n\n### 应收利息\n- 企业应收取的债券利息\n- 计提时：借：应收利息 贷：投资收益\n- 收到时：借：银行存款 贷：应收利息\n\n### 关联科目\n- 5201 投资收益 | 1501 持有至到期投资 | 1511 长期股权投资",
+    "title": "Dividends & Interest Receivable",
+    "content": "## Dividends Rec (1131) & Interest Rec (1132)\n\n### Dividends Receivable\n- Cash dividends or profits due to the enterprise\n- Declared: Dr: Dividends Rec Cr: Investment Income (5201)\n- Received: Dr: Bank Deposit Cr: Dividends Rec\n\n### Interest Receivable\n- Bond interest due to the enterprise\n- Accrue: Dr: Interest Rec Cr: Investment Income\n- Receive: Dr: Bank Deposit Cr: Interest Rec\n\n### Related: 5201 Investment Income | 1501 HTM | 1511 LT Equity",
     "relatedAccountId": "1131",
     "relatedSubject": null
   },
   {
     "id": "k31",
     "category": "accounting_practice",
-    "title": "其他应收款",
-    "content": "## 其他应收款（1221）\n\n除应收票据、应收账款、预付账款、应收股利和应收利息以外的各种应收及暂付款项。\n\n### 包括\n- 应收的各种赔款、罚款\n- 出租包装物的应收租金\n- 应向职工收取的各种垫付款\n- 存出保证金（押金）\n- 备用金（内部周转金）\n\n### 与营业外收入的区分\n- 罚款收入：借：其他应收款 贷：营业外收入（5301）\n- 收回时：借：银行存款 贷：其他应收款\n\n### 关联科目\n- 2241 其他应付款 | 5301 营业外收入",
+    "title": "Other Receivables",
+    "content": "## Other Receivables (1221)\n\nAll receivables and temporary payments other than notes, AR, prepaid, dividends, and interest receivable.\n\n### Includes\n- Compensation and fines receivable\n- Rent receivable from packaging rental\n- Advances recoverable from employees\n- Deposits paid (guarantee deposits)\n- Petty cash advances\n\n### Related\n- Fine income: Dr: Other Receivables Cr: Non-operating Income (5301)\n- Collection: Dr: Bank Deposit Cr: Other Receivables\n- 2241 Other Payables | 5301 Non-operating Income",
     "relatedAccountId": "1221",
     "relatedSubject": null
   },
   {
     "id": "k32",
     "category": "accounting_practice",
-    "title": "材料采购",
-    "content": "## 材料采购（1401）\n\n核算企业采用计划成本进行材料日常核算时，购入材料的实际采购成本。\n\n### 计划成本法\n1. 购入时：借：材料采购（实际成本） 贷：银行存款\n2. 入库时：借：原材料（计划成本） 材料成本差异（超支） 贷：材料采购\n\n### 材料成本差异\n- 实际成本 > 计划成本：超支（借方差异）\n- 实际成本 < 计划成本：节约（贷方差异）\n\n### 关联科目\n- 1403 原材料 | 4001 生产成本 | 5401 主营业务成本",
+    "title": "Material Procurement",
+    "content": "## Material Procurement (1401)\n\nUsed when applying planned costing for daily material accounting.\n\n### Planned Cost Method\n1. Purchase: Dr: Material Procurement (actual) Cr: Bank\n2. Receipt: Dr: Raw Materials (planned) Cr: Material Procurement; Dr/Cr: Material Cost Variance\n\n### Material Cost Variance\n- Actual > Planned: unfavorable (debit variance)\n- Actual < Planned: favorable (credit variance)\n\n### Related: 1403 Raw Materials | 4001 Production Cost | 5401 Main Cost",
     "relatedAccountId": "1401",
     "relatedSubject": null
   },
   {
     "id": "k33",
     "category": "accounting_practice",
-    "title": "库存商品",
-    "content": "## 库存商品（1405）\n\n企业已完成全部生产过程并验收入库、可以对外销售的商品。\n\n### 分录\n- 完工入库：借：库存商品 贷：生产成本（4001）\n- 销售出库：借：主营业务成本（5401） 贷：库存商品\n\n### 管理要点\n- 定期盘点，账实核对\n- 存货跌价准备计提（参考 1471）\n- 存货周转率 = 营业成本 ÷ 平均存货\n\n### 关联科目\n- 4001 生产成本 | 5401 主营业务成本 | 1411 周转材料\n- 1471 存货跌价准备（备抵科目）",
+    "title": "Finished Goods",
+    "content": "## Finished Goods (1405)\n\nGoods that have completed the entire production process, passed inspection, and are ready for sale.\n\n### Entries\n- Complete production: Dr: Finished Goods Cr: Production Cost (4001)\n- Sell: Dr: Main Operating Cost (5401) Cr: Finished Goods\n\n### Management\n- Regular physical inventory counts\n- Inventory write-down provision (see 1471)\n- Inventory turnover = COGS ÷ Average inventory\n\n### Related: 4001 Production Cost | 5401 Main Cost | 1411 Revolving Materials | 1471 Inventory Write-down",
     "relatedAccountId": "1405",
     "relatedSubject": null
   },
   {
     "id": "k34",
     "category": "accounting_practice",
-    "title": "周转材料",
-    "content": "## 周转材料（1411）\n\n企业能够多次使用但不符合固定资产定义的材料。\n\n### 包括\n- 包装物（如包装桶、箱、袋）\n- 低值易耗品（工具、管理用具、劳保用品等）\n\n### 摊销方法\n- 一次摊销法：领用时全部计入成本费用\n- 五五摊销法：领用时摊销 50%，报废时摊销 50%\n- 分次摊销法：按使用次数分期摊销\n\n### 分录（一次摊销法）\n- 领用时：借：制造费用/管理费用 贷：周转材料\n\n### 关联科目\n- 4101 制造费用 | 5502 管理费用 | 1405 库存商品",
+    "title": "Revolving Materials",
+    "content": "## Revolving Materials (1411)\n\nMaterials that can be used multiple times but don't qualify as fixed assets.\n\n### Includes\n- Packaging materials (drums, boxes, bags)\n- Low-value consumables (tools, supplies, protective gear)\n\n### Amortization Methods\n- Immediate write-off: All to expense upon issuance\n- 50-50 method: 50% at issue, 50% at retirement\n- Installment method: Amortized by usage count\n\n### Entry (immediate)\n- On issue: Dr: Mfg Overhead/Admin Cr: Revolving Materials\n\n### Related: 4101 Mfg Overhead | 5502 Admin | 1405 Finished Goods",
     "relatedAccountId": "1411",
     "relatedSubject": null
   },
   {
     "id": "k35",
     "category": "accounting_practice",
-    "title": "存货跌价准备",
-    "content": "## 存货跌价准备（1471）\n\n期末存货成本高于其可变现净值的，应计提存货跌价准备。\n\n### 可变现净值\n- 存货的估计售价 - 至完工估计成本 - 估计销售费用 - 相关税费\n\n### 计提\n- 借：资产减值损失（5601） 贷：存货跌价准备\n\n### 转回\n- 以前减记存货价值的影响因素消失，可在原计提金额内转回\n- 借：存货跌价准备 贷：资产减值损失\n\n### 关联科目\n- 1403 原材料 | 1405 库存商品 | 5601 资产减值损失\n- 1231 坏账准备（类比，但坏账准备不可转回）",
+    "title": "Inventory Write-down",
+    "content": "## Inventory Write-down (1471)\n\nProvide when inventory cost exceeds NRV at period end.\n\n### NRV = Estimated selling price - Cost to complete - Estimated selling expenses - Related taxes\n\n### Provide\nDr: Asset Impairment Loss (5601) Cr: Inventory Write-down\n\n### Reversal\nIf impairment factors disappear, reverse within original provision.\nDr: Inventory Write-down Cr: Asset Impairment Loss\n\n### Related: 1403 Raw Materials | 1405 Finished Goods | 5601 Impairment Loss | 1231 Bad Debt Provision (Note: bad debt provision cannot be reversed)",
     "relatedAccountId": "1471",
     "relatedSubject": null
   },
   {
     "id": "k36",
     "category": "accounting_practice",
-    "title": "持有至到期投资",
-    "content": "## 持有至到期投资（1501）\n\n到期日固定、回收金额固定或可确定，且企业有明确意图和能力持有至到期的非衍生金融资产。\n\n### 计量\n- 初始计量：按公允价值和交易费用之和\n- 后续计量：按实际利率法以摊余成本计量\n\n### 分录\n- 购入：借：持有至到期投资-成本 贷：银行存款\n- 计提利息：借：应收利息（1132） 贷：投资收益（5201）\n- 到期收回：借：银行存款 贷：持有至到期投资\n\n### 关联科目\n- 1132 应收利息 | 5201 投资收益 | 1511 长期股权投资",
+    "title": "Held-to-Maturity Investments",
+    "content": "## Held-to-Maturity Investments (1501)\n\nNon-derivative financial assets with fixed maturity, fixed/determinable payments, and positive intent and ability to hold to maturity.\n\n### Measurement: Initially at FV + transaction costs; subsequently at amortized cost using effective interest method.\n\n### Entries\n- Purchase: Dr: HTM - Cost Cr: Bank\n- Accrue interest: Dr: Interest Rec (1132) Cr: Investment Income (5201)\n- Maturity: Dr: Bank Cr: HTM\n\n### Related: 1132 Interest Rec | 5201 Investment Income | 1511 LT Equity",
     "relatedAccountId": "1501",
     "relatedSubject": null
   },
   {
     "id": "k37",
     "category": "accounting_practice",
-    "title": "长期股权投资",
-    "content": "## 长期股权投资（1511）\n\n投资方对被投资单位实施控制、共同控制或重大影响的权益性投资。\n\n### 核算方法\n- **成本法**：对子公司投资（持股 > 50%）\n- **权益法**：对联营企业（20%-50%）和合营企业\n\n### 成本法\n- 宣告股利：借：应收股利 贷：投资收益\n- 不随被投资单位净资产变动调整\n\n### 权益法\n- 被投资单位盈利：借：长期股权投资-损益调整 贷：投资收益\n- 宣告股利：借：应收股利 贷：长期股权投资-损益调整\n\n### 关联科目\n- 1131 应收股利 | 5201 投资收益 | 3002 资本公积",
+    "title": "Long-term Equity Investment",
+    "content": "## Long-term Equity Investment (1511)\n\nEquity investment conferring control, joint control, or significant influence.\n\n### Methods\n- **Cost method**: Subsidiaries (>50% ownership)\n- **Equity method**: Associates (20%-50%) and joint ventures\n\n### Cost Method\n- Declared dividend: Dr: Dividends Rec Cr: Investment Income\n- No adjustment for investee's net asset changes\n\n### Equity Method\n- Investee profit: Dr: LT Equity - P&L Adjustment Cr: Investment Income\n- Declared dividend: Dr: Dividends Rec Cr: LT Equity - P&L Adjustment\n\n### Related: 1131 Dividends Rec | 5201 Investment Income | 3002 Capital Reserve",
     "relatedAccountId": "1511",
     "relatedSubject": null
   },
   {
     "id": "k38",
     "category": "accounting_practice",
-    "title": "在建工程",
-    "content": "## 在建工程（1604）\n\n企业正在建设、安装或技术改造中的工程项目。\n\n### 核算内容\n- 建筑工程（厂房、办公楼等）\n- 安装工程（设备安装）\n- 技术改造工程\n\n### 分录\n- 发生支出：借：在建工程 贷：银行存款/工程物资\n- 借款费用资本化：借：在建工程 贷：长期借款-应计利息\n- 完工结转：借：固定资产（1601） 贷：在建工程\n\n### 与固定资产的关系\n在建工程达到预定可使用状态后转入固定资产，并从下月开始计提折旧。\n\n### 关联科目\n- 1601 固定资产 | 2501 长期借款 | 1606 固定资产清理",
+    "title": "Construction in Progress",
+    "content": "## Construction in Progress (1604)\n\nProjects under construction, installation, or technical renovation.\n\n### Content\n- Building works (factories, offices)\n- Installation works (equipment)\n- Technical renovation\n\n### Entries\n- Incur costs: Dr: CIP Cr: Bank/Construction materials\n- Capitalize borrowing costs: Dr: CIP Cr: Long-term Loan-Accrued Interest\n- Complete: Dr: Fixed Assets (1601) Cr: CIP\n\n### Note: Transferred to Fixed Assets when ready for use; depreciation starts next month.\n\n### Related: 1601 Fixed Assets | 2501 Long-term Loan | 1606 Disposal",
     "relatedAccountId": "1604",
     "relatedSubject": null
   },
   {
     "id": "k39",
     "category": "accounting_practice",
-    "title": "固定资产清理",
-    "content": "## 固定资产清理（1606）\n\n固定资产出售、报废、毁损时使用的过渡科目。\n\n### 分录\n1. 转入清理：借：固定资产清理 累计折旧（1602） 贷：固定资产（1601）\n2. 发生清理费用：借：固定资产清理 贷：银行存款\n3. 取得变价收入：借：银行存款 贷：固定资产清理\n4. 清理净损益：\n   - 净损失：借：营业外支出（5701） 贷：固定资产清理\n   - 净收益：借：固定资产清理 贷：营业外收入（5301）\n\n### 关联科目\n- 1601 固定资产 | 1602 累计折旧 | 5701 营业外支出 | 5301 营业外收入",
+    "title": "Fixed Asset Disposal",
+    "content": "## Fixed Asset Disposal (1606)\n\nTransitional account for sale, retirement, or destruction of fixed assets.\n\n### Entries\n1. Transfer to disposal: Dr: Disposal, Acc Dep (1602) Cr: Fixed Assets (1601)\n2. Disposal costs: Dr: Disposal Cr: Bank\n3. Proceeds: Dr: Bank Cr: Disposal\n4. Net gain/loss: Dr/Cr: Disposal Cr/Dr: Non-operating Income (5301) / Expenses (5701)\n\n### Related: 1601 Fixed Assets | 1602 Acc Dep | 5701 Non-operating Expenses | 5301 Non-operating Income",
     "relatedAccountId": "1606",
     "relatedSubject": null
   },
   {
     "id": "k40",
     "category": "accounting_practice",
-    "title": "无形资产",
-    "content": "## 无形资产（1701）\n\n企业拥有或控制的没有实物形态的可辨认非货币性资产。\n\n### 种类\n- 专利权 | 商标权 | 著作权\n- 土地使用权（中国特有）\n- 非专利技术 | 特许经营权\n\n### 分录\n- 购入：借：无形资产 贷：银行存款\n- 自行研发：研究阶段费用化，开发阶段符合条件的资本化\n- 摊销：借：管理费用（5502） 贷：累计摊销（1702）\n\n### 摊销\n- 使用寿命有限的无形资产应摊销\n- 使用寿命不确定的不摊销，但每年进行减值测试\n\n### 关联科目\n- 1702 累计摊销 | 5502 管理费用 | 1601 固定资产（类比）",
+    "title": "Intangible Assets",
+    "content": "## Intangible Assets (1701)\n\nIdentifiable non-monetary assets without physical substance.\n\n### Types\n- Patents | Trademarks | Copyrights\n- Land use rights (China-specific)\n- Proprietary technology | Franchises\n\n### Entries\n- Purchase: Dr: Intangible Assets Cr: Bank\n- Self-developed R&D: Research = expense; qualifying development = capitalize\n- Amortization: Dr: Admin (5502) Cr: Accumulated Amortization (1702)\n\n### Finite-life intangibles: Amortize. Indefinite-life: No amortization, annual impairment test.\n\n### Related: 1702 Acc Amort | 5502 Admin | 1601 Fixed Assets (analogy)",
     "relatedAccountId": "1701",
     "relatedSubject": null
   },
   {
     "id": "k41",
     "category": "accounting_practice",
-    "title": "累计摊销",
-    "content": "## 累计摊销（1702）\n\n无形资产因使用而累计减少的价值，是无形资产的备抵科目。\n\n### 摊销方法\n- 一般采用直线法\n- 摊销期：合同/法律规定年限，或预计使用年限\n\n### 分录\n- 每月摊销：借：管理费用（5502）/其他业务成本（5402） 贷：累计摊销\n\n### 与累计折旧的异同\n- 同：都是备抵科目，抵减资产账面价值\n- 异：固定资产用累计折旧（1602），无形资产用累计摊销\n\n### 关联科目\n- 1701 无形资产 | 5502 管理费用 | 1602 累计折旧（类比）",
+    "title": "Accumulated Amortization",
+    "content": "## Accumulated Amortization (1702)\n\nCumulative reduction in intangible asset value from usage; contra-asset account.\n\n### Method: Generally straight-line over legal/contractual/estimated useful life.\n\n### Entry\nMonthly: Dr: Admin (5502) / Other Cost (5402) Cr: Accumulated Amortization\n\n### vs Accumulated Depreciation\n- Same: Both contra-assets reducing carrying value\n- Diff: Fixed assets use Acc Dep (1602); Intangibles use Acc Amort (1702)\n\n### Related: 1701 Intangible Assets | 5502 Admin | 1602 Acc Dep (analogy)",
     "relatedAccountId": "1702",
     "relatedSubject": null
   },
   {
     "id": "k42",
     "category": "accounting_practice",
-    "title": "长期待摊费用",
-    "content": "## 长期待摊费用（1801）\n\n企业已经发生但应由本期和以后各期负担的、分摊期限在一年以上的各项费用。\n\n### 包括\n- 经营租入固定资产的改良支出\n- 固定资产大修理支出\n- 开办费（可选）\n\n### 分录\n- 发生时：借：长期待摊费用 贷：银行存款\n- 摊销时：借：管理费用/销售费用 贷：长期待摊费用\n\n### 与待摊费用的区别\n摊销期一年以内一般计入\"预付账款\"或直接费用化。\n\n### 关联科目\n- 5502 管理费用 | 5501 销售费用 | 1601 固定资产",
+    "title": "Long-term Prepaid Expenses",
+    "content": "## Long-term Prepaid Expenses (1801)\n\nExpenses incurred but benefiting multiple periods with amortization > 1 year.\n\n### Includes\n- Improvement to leased fixed assets\n- Major repair of fixed assets\n- Organization costs (optional)\n\n### Entries\n- Incur: Dr: LT Prepaid Expenses Cr: Bank\n- Amortize: Dr: Admin/Selling Expenses Cr: LT Prepaid Expenses\n\n### Related: 5502 Admin | 5501 Selling | 1601 Fixed Assets",
     "relatedAccountId": "1801",
     "relatedSubject": null
   },
   {
     "id": "k43",
     "category": "accounting_practice",
-    "title": "待处理财产损溢",
-    "content": "## 待处理财产损溢（1901）\n\n企业在财产清查过程中查明的各种财产盘盈、盘亏和毁损的价值。\n\n### 分录\n**盘盈（溢余）**\n- 发现时：借：固定资产/原材料 贷：待处理财产损溢\n- 批准后：借：待处理财产损溢 贷：营业外收入（5301）/管理费用\n\n**盘亏（短缺）**\n- 发现时：借：待处理财产损溢 贷：固定资产/原材料\n- 批准后：借：营业外支出（5701）/其他应收款/管理费用 贷：待处理财产损溢\n\n### 注意\n- 期末必须处理完毕，报表上不应有余额\n- 属于过渡性科目\n\n### 关联科目\n- 1601 固定资产 | 1403 原材料 | 5301 营业外收入 | 5701 营业外支出 | 1221 其他应收款",
+    "title": "Pending Property Loss/Gain",
+    "content": "## Pending Property Loss/Gain (1901)\n\nValue of asset overages, shortages, and damage discovered during property inspection.\n\n### Entries for Overage\n- Discover: Dr: Fixed Assets/Raw Materials Cr: Pending Property Gain\n- Approved: Dr: Pending Property Gain Cr: Non-operating Income (5301)/Admin\n\n### Entries for Shortage\n- Discover: Dr: Pending Property Loss Cr: Fixed Assets/Raw Materials\n- Approved: Dr: Non-operating Expenses (5701)/Other Rec/Admin Cr: Pending Property Loss\n\n### Note: Must be resolved by period-end; transitional account with no balance on reports.\n\n### Related: 1601 FA | 1403 RM | 5301 Non-operating Income | 5701 Non-operating Exp | 1221 Other Rec",
     "relatedAccountId": "1901",
     "relatedSubject": null
   },
   {
     "id": "k44",
     "category": "accounting_practice",
-    "title": "短期借款",
-    "content": "## 短期借款（2001）\n\n企业向银行或其他金融机构借入的期限一年以下（含一年）的借款。\n\n### 分录\n- 借入：借：银行存款 贷：短期借款\n- 计提利息：借：财务费用（5503） 贷：应付利息（2231）\n- 支付利息：借：应付利息 贷：银行存款\n- 偿还本金：借：短期借款 贷：银行存款\n\n### 与长期借款的区别\n- 短期借款 ≤ 1年（2001）；长期借款 > 1年（2501）\n- 短期借款利息一般计入财务费用（不可资本化）\n\n### 关联科目\n- 2231 应付利息 | 5503 财务费用 | 2501 长期借款",
+    "title": "Short-term Loans",
+    "content": "## Short-term Loans (2001)\n\nBorrowings from banks or financial institutions with terms ≤ 1 year.\n\n### Entries\n- Borrow: Dr: Bank Cr: Short-term Loan\n- Accrue interest: Dr: Financial Expenses (5503) Cr: Interest Payable (2231)\n- Pay interest: Dr: Interest Payable Cr: Bank\n- Repay principal: Dr: Short-term Loan Cr: Bank\n\n### vs Long-term: Short-term ≤ 1yr (2001); Long-term > 1yr (2501). Short-term interest generally expensed (cannot capitalize).\n\n### Related: 2231 Interest Payable | 5503 Financial Expenses | 2501 Long-term Loans",
     "relatedAccountId": "2001",
     "relatedSubject": null
   },
   {
     "id": "k45",
     "category": "accounting_practice",
-    "title": "应付票据",
-    "content": "## 应付票据（2201）\n\n企业购买商品、接受劳务等签发的商业汇票。\n\n### 分录\n- 签发时：借：原材料/库存商品 贷：应付票据\n- 到期付款：借：应付票据 贷：银行存款\n- 到期无力支付：\n  - 商业承兑汇票：借：应付票据 贷：应付账款（2202）\n  - 银行承兑汇票：借：应付票据 贷：短期借款（2001）\n\n### 关联科目\n- 1121 应收票据（对方视角）| 2202 应付账款 | 2001 短期借款",
+    "title": "Notes Payable",
+    "content": "## Notes Payable (2201)\n\nCommercial drafts issued for purchases of goods or services.\n\n### Entries\n- Issue: Dr: Raw Materials/Finished Goods Cr: Notes Payable\n- Pay at maturity: Dr: Notes Payable Cr: Bank\n- Unable to pay: Trade acceptance → AP (2202); Bank acceptance → Short-term Loan (2001)\n\n### Related: 1121 Notes Receivable (counterparty) | 2202 AP | 2001 Short-term Loans",
     "relatedAccountId": "2201",
     "relatedSubject": null
   },
   {
     "id": "k46",
     "category": "accounting_practice",
-    "title": "预收账款",
-    "content": "## 预收账款（2203）\n\n企业按照合同规定预先向客户收取的款项。\n\n### 分录\n- 预收时：借：银行存款 贷：预收账款\n- 交付商品：借：预收账款 贷：主营业务收入（5001）\n- 退还多余款：借：预收账款 贷：银行存款\n\n### 与合同负债的区别\n新收入准则下，预收账款中已收取但未履约的部分，符合条件应重分类为\"合同负债\"。\n\n### 关联科目\n- 1123 预付账款（对方视角）| 5001 主营业务收入 | 2202 应付账款",
+    "title": "Advances from Customers",
+    "content": "## Advances from Customers (2203)\n\nAmounts received in advance from customers per contract.\n\n### Entries\n- Receive advance: Dr: Bank Cr: Advances from Customers\n- Deliver goods: Dr: Advances Cr: Main Revenue (5001)\n- Refund excess: Dr: Advances Cr: Bank\n\n### Note: Under new revenue standard, unearned portion may be reclassified as 'contract liabilities'.\n\n### Related: 1123 Prepaid (counterparty) | 5001 Main Revenue | 2202 AP",
     "relatedAccountId": "2203",
     "relatedSubject": null
   },
   {
     "id": "k47",
     "category": "accounting_practice",
-    "title": "应付利息与应付股利",
-    "content": "## 应付利息（2231）与应付股利（2232）\n\n### 应付利息\n- 应计未付的借款利息\n- 计提：借：财务费用（5503） 贷：应付利息\n- 支付：借：应付利息 贷：银行存款\n\n### 应付股利\n- 已宣告但尚未支付给投资者的现金股利\n- 宣告：借：利润分配（3104） 贷：应付股利\n- 支付：借：应付股利 贷：银行存款\n\n### 关联科目\n- 5503 财务费用 | 3104 利润分配 | 2001 短期借款 | 2501 长期借款",
+    "title": "Interest & Dividends Payable",
+    "content": "## Interest Payable (2231) & Dividends Payable (2232)\n\n### Interest Payable\n- Accrued unpaid borrowing interest\n- Accrue: Dr: Financial Expenses (5503) Cr: Interest Payable\n- Pay: Dr: Interest Payable Cr: Bank\n\n### Dividends Payable\n- Declared unpaid cash dividends\n- Declare: Dr: Profit Distribution (3104) Cr: Dividends Payable\n- Pay: Dr: Dividends Payable Cr: Bank\n\n### Related: 5503 Financial Exp | 3104 Profit Distribution | 2001 ST Loans | 2501 LT Loans",
     "relatedAccountId": "2231",
     "relatedSubject": null
   },
   {
     "id": "k48",
     "category": "accounting_practice",
-    "title": "其他应付款",
-    "content": "## 其他应付款（2241）\n\n除应付票据、应付账款、预收账款、应付职工薪酬、应交税费、应付利息、应付股利等以外的应付及暂收款项。\n\n### 包括\n- 应付的租金\n- 收取的押金、保证金\n- 应付的赔偿款、罚款\n\n### 分录\n- 收取押金：借：银行存款 贷：其他应付款\n- 退还押金：借：其他应付款 贷：银行存款\n- 逾期未退的押金可能转为营业外收入\n\n### 关联科目\n- 1221 其他应收款（对方科目）| 2202 应付账款 | 5301 营业外收入",
+    "title": "Other Payables",
+    "content": "## Other Payables (2241)\n\nAll payables and temporary receipts other than notes, AP, advances, payroll, tax, interest, and dividends payable.\n\n### Includes\n- Rent payable\n- Deposits and guarantees received\n- Compensation and fines payable\n\n### Entries\n- Receive deposit: Dr: Bank Cr: Other Payables\n- Refund deposit: Dr: Other Payables Cr: Bank\n- Unclaimed deposits may be recognized as non-operating income\n\n### Related: 1221 Other Receivables (counterpart) | 2202 AP | 5301 Non-operating Income",
     "relatedAccountId": "2241",
     "relatedSubject": null
   },
   {
     "id": "k49",
     "category": "accounting_practice",
-    "title": "应付债券",
-    "content": "## 应付债券（2502）\n\n企业为筹集资金而发行的债券。\n\n### 发行方式\n- 按面值发行：票面利率 = 市场利率\n- 溢价发行：票面利率 > 市场利率（投资者愿多付）\n- 折价发行：票面利率 < 市场利率（投资者需补偿）\n\n### 分录\n- 发行：借：银行存款 贷：应付债券-面值 应付债券-利息调整（或借方）\n- 计提利息：借：财务费用 贷：应付债券-应计利息\n- 摊销利息调整：借/贷：应付债券-利息调整 贷/借：财务费用\n\n### 关联科目\n- 5503 财务费用 | 2501 长期借款 | 2701 长期应付款",
+    "title": "Bonds Payable",
+    "content": "## Bonds Payable (2502)\n\nBonds issued by the enterprise to raise funds.\n\n### Issuance\n- Par: Coupon rate = Market rate\n- Premium: Coupon > Market (investors pay more)\n- Discount: Coupon < Market (investors need compensation)\n\n### Entries\n- Issue: Dr: Bank Cr: Bonds Payable-Face, Bonds Payable-Premium (or Dr for Discount)\n- Accrue interest: Dr: Financial Exp Cr: Bonds Payable-Accrued Interest\n- Amortize: Dr/Cr: Bonds Payable-Adjustment Cr/Dr: Financial Exp\n\n### Related: 5503 Financial Exp | 2501 LT Loans | 2701 LT Payables",
     "relatedAccountId": "2502",
     "relatedSubject": null
   },
   {
     "id": "k50",
     "category": "accounting_practice",
-    "title": "长期应付款",
-    "content": "## 长期应付款（2701）\n\n除长期借款和应付债券以外的其他各种长期应付款项。\n\n### 包括\n- 应付融资租赁款（融资租入固定资产）\n- 以分期付款方式购入固定资产的应付款项\n\n### 分录（融资租赁）\n- 租入：借：固定资产（最低租赁付款额现值或公允价值孰低） 未确认融资费用 贷：长期应付款\n- 支付租金：借：长期应付款 贷：银行存款\n- 摊销融资费用：借：财务费用 贷：未确认融资费用\n\n### 关联科目\n- 1601 固定资产 | 5503 财务费用 | 2501 长期借款 | 2502 应付债券",
+    "title": "Long-term Payables",
+    "content": "## Long-term Payables (2701)\n\nLong-term payables other than loans and bonds.\n\n### Includes\n- Finance lease payables\n- Installment purchase of fixed assets\n\n### Entries (Finance Lease)\n- Lease inception: Dr: Fixed Assets (lower of MLP PV or FV), Unrecognized Finance Cost Cr: LT Payables\n- Rent payment: Dr: LT Payables Cr: Bank\n- Amortize finance cost: Dr: Financial Exp Cr: Unrecognized Finance Cost\n\n### Related: 1601 Fixed Assets | 5503 Financial Exp | 2501 LT Loans | 2502 Bonds Payable",
     "relatedAccountId": "2701",
     "relatedSubject": null
   },
   {
     "id": "k51",
     "category": "accounting_practice",
-    "title": "其他货币资金",
-    "content": "## 其他货币资金（1012）\n\n除库存现金和银行存款以外的货币资金。\n\n### 包括\n- 外埠存款（异地临时采购账户）\n- 银行汇票存款\n- 银行本票存款\n- 信用证保证金存款\n- 信用卡存款\n\n### 分录\n- 存入保证金：借：其他货币资金 贷：银行存款\n- 使用：借：原材料 贷：其他货币资金\n- 退回余额：借：银行存款 贷：其他货币资金\n\n### 关联科目\n- 1001 库存现金 | 1002 银行存款 | 2202 应付账款",
+    "title": "Other Monetary Assets",
+    "content": "## Other Monetary Assets (1012)\n\nMonetary assets other than cash on hand and bank deposits.\n\n### Includes\n- Outport deposits (remote temporary purchase)\n- Bank draft deposits | Cashier's check deposits\n- L/C margin deposits | Credit card deposits\n\n### Entries\n- Transfer to special account: Dr: Other Monetary Assets Cr: Bank\n- Use: Dr: Raw Materials Cr: Other Monetary Assets\n- Refund balance: Dr: Bank Cr: Other Monetary Assets\n\n### Related: 1001 Cash on Hand | 1002 Bank Deposit | 2202 AP",
     "relatedAccountId": "1012",
     "relatedSubject": null
   },
   {
     "id": "k52",
     "category": "accounting_practice",
-    "title": "资本公积",
-    "content": "## 资本公积（3002）\n\n企业收到的投资者出资超过注册资本（或股本）中所占份额的部分。\n\n### 来源\n- **资本溢价**：实际出资超过注册资本份额\n- **股本溢价**：股票发行价高于面值\n- **其他资本公积**：权益法下被投资单位权益变动等\n\n### 用途\n- 转增资本（股本）\n- 不得用于弥补亏损\n- 转增资本后留存不得低于转增前注册资本的 25%\n\n### 分录\n- 收到溢价出资：借：银行存款 贷：实收资本 资本公积-资本溢价\n\n### 关联科目\n- 3001 实收资本 | 3101 盈余公积 | 1511 长期股权投资",
+    "title": "Capital Reserve",
+    "content": "## Capital Reserve (3002)\n\nExcess of investment received over registered capital share.\n\n### Sources\n- **Capital premium**: Actual contribution > registered capital\n- **Share premium**: Issue price > par value\n- **Other capital reserve**: Equity method investee changes\n\n### Uses\n- Transfer to registered capital\n- Cannot cover losses\n- After transfer, remainder ≥ 25% of pre-transfer registered capital\n\n### Entry\n- Receive premium: Dr: Bank Cr: Paid-in Capital, Capital Reserve - Premium\n\n### Related: 3001 Paid-in Capital | 3101 Surplus Reserve | 1511 LT Equity Investment",
     "relatedAccountId": "3002",
     "relatedSubject": null
   },
   {
     "id": "k53",
     "category": "accounting_practice",
-    "title": "盈余公积",
-    "content": "## 盈余公积（3101）\n\n企业从净利润中提取的积累资金。\n\n### 种类\n- **法定盈余公积**：按净利润 10% 提取，累计达注册资本 50% 可不再提取\n- **任意盈余公积**：由股东会决定提取比例\n\n### 用途\n- 弥补亏损\n- 转增资本（股本）\n- 扩大生产经营\n\n### 分录\n- 提取：借：利润分配（3104） 贷：盈余公积\n- 弥补亏损：借：盈余公积 贷：利润分配\n- 转增资本：借：盈余公积 贷：实收资本（3001）\n\n### 关联科目\n- 3104 利润分配 | 3001 实收资本 | 3103 本年利润",
+    "title": "Surplus Reserve",
+    "content": "## Surplus Reserve (3101)\n\nAccumulated funds extracted from net profit.\n\n### Types\n- **Statutory**: 10% of net profit (may stop at 50% of registered capital)\n- **Discretionary**: As determined by shareholders\n\n### Uses\n- Cover losses | Increase capital | Expand operations\n\n### Entries\n- Transfer: Dr: Profit Distribution (3104) Cr: Surplus Reserve\n- Cover loss: Dr: Surplus Reserve Cr: Profit Distribution\n- Increase capital: Dr: Surplus Reserve Cr: Paid-in Capital (3001)\n\n### Related: 3104 Profit Distribution | 3001 Paid-in Capital | 3103 CY Profit",
     "relatedAccountId": "3101",
     "relatedSubject": null
   },
   {
     "id": "k54",
     "category": "accounting_practice",
-    "title": "本年利润",
-    "content": "## 本年利润（3103）\n\n企业本年度累计实现的净利润（或亏损）。\n\n### 期末结转\n**结转收入**\n- 借：主营业务收入（5001）\n- 借：其他业务收入（5051）\n- 借：投资收益（5201）\n- 借：营业外收入（5301）\n- 　　贷：本年利润\n\n**结转费用**\n- 借：本年利润\n- 　　贷：主营业务成本（5401）\n- 　　贷：销售费用（5501）\n- 　　贷：管理费用（5502）\n- 　　贷：财务费用（5503）\n- 　　贷：营业外支出（5701）\n- 　　贷：所得税费用（5801）\n\n**年终结转**\n- 盈利：借：本年利润 贷：利润分配（3104）\n- 亏损：借：利润分配 贷：本年利润",
+    "title": "Current Year Profit",
+    "content": "## Current Year Profit (3103)\n\nCumulative net profit or loss realized in the current year.\n\n### Period-end Closing\n**Close Revenue**\n- Dr: Main Revenue (5001), Other Revenue (5051), Investment Income (5201), Non-op Income (5301) Cr: CY Profit\n\n**Close Expenses**\n- Dr: CY Profit Cr: Main Cost (5401), Selling (5501), Admin (5502), Financial (5503), Non-op Exp (5701), Income Tax (5801)\n\n**Year-end Transfer**\n- Profit: Dr: CY Profit Cr: Profit Distribution (3104)\n- Loss: Dr: Profit Distribution Cr: CY Profit",
     "relatedAccountId": "3103",
-    "relatedSubject": "期末结转流程"
+    "relatedSubject": "Period-end Closing Process"
   },
   {
     "id": "k55",
     "category": "accounting_practice",
-    "title": "利润分配",
-    "content": "## 利润分配（3104）\n\n企业利润的分配（或亏损的弥补）和历年分配（或弥补）后的余额。\n\n### 分配顺序\n1. 弥补以前年度亏损\n2. 提取法定盈余公积（10%）\n3. 提取任意盈余公积\n4. 向投资者分配利润（股利）\n\n### 分录\n- 提取盈余公积：借：利润分配-提取法定盈余公积 贷：盈余公积（3101）\n- 宣告股利：借：利润分配-应付股利 贷：应付股利（2232）\n- 年终结转：借：利润分配-未分配利润 贷：利润分配-提取盈余公积、应付股利\n\n### 未分配利润\n利润分配-未分配利润贷方余额 = 历年累积未分配利润\n\n### 关联科目\n- 3101 盈余公积 | 2232 应付股利 | 3103 本年利润",
+    "title": "Profit Distribution",
+    "content": "## Profit Distribution (3104)\n\nAllocation of profits (or coverage of losses) and accumulated balances.\n\n### Distribution Order\n1. Cover prior year losses\n2. Transfer to statutory surplus reserve (10%)\n3. Transfer to discretionary surplus reserve\n4. Distribute to investors (dividends)\n\n### Entries\n- Transfer to reserve: Dr: PD-Statutory Reserve Cr: Surplus Reserve (3101)\n- Declare dividend: Dr: PD-Dividends Cr: Dividends Payable (2232)\n- Year-end close: Dr: PD-Undistributed Cr: PD-Reserve, Dividends\n\n### Undistributed profit: Credit balance of PD-Undistributed sub-account.\n\n### Related: 3101 Surplus Reserve | 2232 Dividends Payable | 3103 CY Profit",
     "relatedAccountId": "3104",
     "relatedSubject": null
   },
   {
     "id": "k56",
     "category": "accounting_practice",
-    "title": "制造费用",
-    "content": "## 制造费用（4101）\n\n企业为生产产品和提供劳务而发生的各项间接费用。\n\n### 包括\n- 车间管理人员工资及福利费\n- 车间固定资产折旧费\n- 车间水电费、取暖费\n- 机物料消耗、低值易耗品摊销\n- 劳动保护费、季节性和修理期间的停工损失\n\n### 分录\n- 归集：借：制造费用 贷：累计折旧/应付职工薪酬/银行存款\n- 分配：借：生产成本（4001） 贷：制造费用\n\n### 分配标准\n- 按生产工时比例分配\n- 按机器工时比例分配\n- 按直接人工成本比例分配\n\n### 关联科目\n- 4001 生产成本 | 1602 累计折旧 | 2211 应付职工薪酬",
+    "title": "Manufacturing Overhead",
+    "content": "## Manufacturing Overhead (4101)\n\nIndirect costs incurred for production of goods and services.\n\n### Includes\n- Supervisor wages and welfare\n- Workshop depreciation\n- Utilities, heating\n- Consumables, low-value items\n- Labor protection, seasonal/repair downtime\n\n### Entries\n- Collect: Dr: Mfg Overhead Cr: Acc Dep/Payroll/Bank\n- Allocate: Dr: Production Cost (4001) Cr: Mfg Overhead\n\n### Allocation bases: Labor hours, machine hours, direct labor cost.\n\n### Related: 4001 Production Cost | 1602 Acc Dep | 2211 Payroll Payable",
     "relatedAccountId": "4101",
     "relatedSubject": null
   },
   {
     "id": "k57",
     "category": "accounting_practice",
-    "title": "其他业务收入",
-    "content": "## 其他业务收入（5051）\n\n企业除主营业务活动以外的其他经营活动实现的收入。\n\n### 包括\n- 销售材料收入\n- 出租包装物和固定资产的租金收入\n- 让渡资产使用权收入\n- 运输等非主营业务收入\n\n### 分录\n- 确认收入：借：银行存款 贷：其他业务收入\n- 期末结转：借：其他业务收入 贷：本年利润（3103）\n\n### 与营业外收入的区别\n- 其他业务收入：日常活动但不属于主业\n- 营业外收入（5301）：非日常活动利得\n\n### 关联科目\n- 5402 其他业务成本 | 5001 主营业务收入 | 5301 营业外收入",
+    "title": "Other Operating Revenue",
+    "content": "## Other Operating Revenue (5051)\n\nRevenue from operating activities other than main business.\n\n### Includes\n- Material sales | Packaging/fixed asset rental\n- Asset use right transfer | Transportation\n\n### Entries\n- Recognize: Dr: Bank Cr: Other Operating Revenue\n- Period-end: Dr: Other Revenue Cr: CY Profit (3103)\n\n### vs Non-operating Income: Other Revenue is routine; Non-op Income (5301) is non-routine.\n\n### Related: 5402 Other Cost | 5001 Main Revenue | 5301 Non-op Income",
     "relatedAccountId": "5051",
     "relatedSubject": null
   },
   {
     "id": "k58",
     "category": "accounting_practice",
-    "title": "公允价值变动损益",
-    "content": "## 公允价值变动损益（5101）\n\n交易性金融资产等按公允价值计量时，公允价值变动形成的应计入当期损益的利得或损失。\n\n### 适用资产\n- 交易性金融资产（1101）\n- 以公允价值计量的投资性房地产\n\n### 分录\n- 公允价值上升：借：交易性金融资产-公允价值变动 贷：公允价值变动损益\n- 公允价值下降：借：公允价值变动损益 贷：交易性金融资产-公允价值变动\n- 期末结转：借/贷：公允价值变动损益 贷/借：本年利润（3103）\n\n### 关联科目\n- 1101 交易性金融资产 | 5201 投资收益 | 3103 本年利润",
+    "title": "Fair Value Change Gain",
+    "content": "## Fair Value Change Gain (5101)\n\nGains or losses from FV changes of trading financial assets and other FV-measured items.\n\n### Applicable: Trading Financial Assets (1101), FV-measured investment property.\n\n### Entries\n- FV increase: Dr: Trading FA-FV Change Cr: FV Change Gain\n- FV decrease: Dr: FV Change Gain Cr: Trading FA-FV Change\n- Period-end: Dr/Cr: FV Change Gain Cr/Dr: CY Profit (3103)\n\n### Related: 1101 Trading FA | 5201 Investment Income | 3103 CY Profit",
     "relatedAccountId": "5101",
     "relatedSubject": null
   },
   {
     "id": "k59",
     "category": "accounting_practice",
-    "title": "投资收益",
-    "content": "## 投资收益（5201）\n\n企业对外投资取得的收益或发生的损失。\n\n### 来源\n- 长期股权投资（1511）的股利收入\n- 持有至到期投资（1501）的利息收入\n- 交易性金融资产（1101）的处置损益\n- 权益法下被投资单位净利润份额\n\n### 分录\n- 宣告股利（成本法）：借：应收股利 贷：投资收益\n- 被投资单位盈利（权益法）：借：长期股权投资 贷：投资收益\n- 处置金融资产：借：银行存款 贷：交易性金融资产 投资收益（差额）\n\n### 关联科目\n- 1511 长期股权投资 | 1131 应收股利 | 1101 交易性金融资产 | 1501 持有至到期投资",
+    "title": "Investment Income",
+    "content": "## Investment Income (5201)\n\nGains or losses from external investments.\n\n### Sources\n- Dividend income from LT equity investment (1511)\n- Interest income from HTM (1501)\n- Disposal gains/losses of trading FA (1101)\n- Equity method share of investee net profit\n\n### Entries\n- Declared dividend (cost method): Dr: Dividends Rec Cr: Investment Income\n- Investee profit (equity method): Dr: LT Equity Cr: Investment Income\n- Dispose FA: Dr: Bank Cr: Trading FA, Investment Income (difference)\n\n### Related: 1511 LT Equity | 1131 Dividends Rec | 1101 Trading FA | 1501 HTM",
     "relatedAccountId": "5201",
     "relatedSubject": null
   },
   {
     "id": "k60",
     "category": "accounting_practice",
-    "title": "营业外收入与支出",
-    "content": "## 营业外收入（5301）与营业外支出（5701）\n\n### 营业外收入\n- 非流动资产处置利得\n- 盘盈利得\n- 捐赠利得\n- 罚款收入\n- 无法支付的应付款项\n\n### 营业外支出\n- 非流动资产处置损失\n- 盘亏损失\n- 捐赠支出\n- 罚款支出\n- 非常损失（自然灾害等）\n\n### 分录\n- 盘盈利得：借：待处理财产损溢 贷：营业外收入\n- 捐赠支出：借：营业外支出 贷：银行存款\n\n### 注意\n- 均属于非日常活动\n- 直接影响当期利润\n- 不影响营业利润，但影响利润总额\n\n### 关联科目\n- 1901 待处理财产损溢 | 1606 固定资产清理",
+    "title": "Non-operating Income & Expenses",
+    "content": "## Non-operating Income (5301) & Expenses (5701)\n\n### Non-operating Income: Disposal gains, overage gains, donation income, fine income, unpayable AP.\n\n### Non-operating Expenses: Disposal losses, shortage losses, donation expenses, fine expenses, extraordinary losses.\n\n### Entries\n- Overage gain: Dr: Pending Property Gain Cr: Non-op Income\n- Donation expense: Dr: Non-op Expenses Cr: Bank\n\n### Note: Both are non-routine; directly affect current profit; don't affect operating profit but affect total profit.\n\n### Related: 1901 Pending Property | 1606 Disposal",
     "relatedAccountId": "5301",
     "relatedSubject": null
   },
   {
     "id": "k61",
     "category": "accounting_practice",
-    "title": "其他业务成本",
-    "content": "## 其他业务成本（5402）\n\n企业确认的除主营业务活动以外的其他经营活动所发生的成本。\n\n### 包括\n- 销售材料的成本\n- 出租固定资产的折旧额\n- 出租包装物的摊销额\n- 出租无形资产的摊销额\n\n### 分录\n- 确认成本：借：其他业务成本 贷：原材料/累计折旧/累计摊销\n- 期末结转：借：本年利润（3103） 贷：其他业务成本\n\n### 配比原则\n其他业务收入（5051）与对应的其他业务成本应配比确认。\n\n### 关联科目\n- 5051 其他业务收入 | 5401 主营业务成本 | 3103 本年利润",
+    "title": "Other Operating Cost",
+    "content": "## Other Operating Cost (5402)\n\nCosts incurred from other operating activities besides main business.\n\n### Includes: Material sales cost, rented FA depreciation, packaging amortization, intangible asset rental amortization.\n\n### Entries\n- Recognize cost: Dr: Other Cost Cr: Raw Materials/Acc Dep/Acc Amort\n- Period-end: Dr: CY Profit (3103) Cr: Other Cost\n\n### Matching: Other Revenue (5051) must be matched with corresponding Other Cost.\n\n### Related: 5051 Other Revenue | 5401 Main Cost | 3103 CY Profit",
     "relatedAccountId": "5402",
     "relatedSubject": null
   },
   {
     "id": "k62",
     "category": "accounting_practice",
-    "title": "销售费用",
-    "content": "## 销售费用（5501）\n\n企业在销售商品和材料、提供劳务的过程中发生的各种费用。\n\n### 包括\n- 广告费和展览费\n- 运输费、装卸费、包装费\n- 保险费（运输途中）\n- 销售部门职工薪酬\n- 销售部门的折旧费、修理费\n- 预计产品质量保证损失\n\n### 分录\n- 发生费用：借：销售费用 贷：银行存款/累计折旧/应付职工薪酬\n- 期末结转：借：本年利润（3103） 贷：销售费用\n\n### 销售费用率\n销售费用 ÷ 营业收入 = 销售费用率（反映销售效率）\n\n### 关联科目\n- 5502 管理费用 | 5503 财务费用 | 3103 本年利润",
+    "title": "Selling Expenses",
+    "content": "## Selling Expenses (5501)\n\nExpenses incurred in selling goods, materials, and providing services.\n\n### Includes: Advertising, exhibition, freight, handling, packaging, insurance (transit), sales staff payroll, sales dept depreciation/repair, product warranty provisions.\n\n### Entries\n- Incur: Dr: Selling Exp Cr: Bank/Acc Dep/Payroll\n- Period-end: Dr: CY Profit (3103) Cr: Selling Exp\n\n### Ratio: Selling Exp ÷ Revenue = selling expense ratio.\n\n### Related: 5502 Admin | 5503 Financial | 3103 CY Profit",
     "relatedAccountId": "5501",
     "relatedSubject": null
   },
   {
     "id": "k63",
     "category": "accounting_practice",
-    "title": "管理费用",
-    "content": "## 管理费用（5502）\n\n企业为组织和管理企业生产经营所发生的费用。\n\n### 包括\n- 行政管理部门职工薪酬\n- 办公费、差旅费、会议费\n- 董事会费（董事会成员津贴等）\n- 聘请中介机构费（审计、律师等）\n- 咨询费、诉讼费\n- 房产税、车船税、印花税\n- 行政用固定资产折旧、无形资产摊销\n- 业务招待费\n\n### 业务招待费\n- 按发生额 60% 扣除，最高不超过当年营业收入 5‰\n\n### 分录\n- 发生：借：管理费用 贷：银行存款/累计折旧\n- 期末：借：本年利润（3103） 贷：管理费用\n\n### 关联科目\n- 5501 销售费用 | 5503 财务费用 | 5403 税金及附加",
+    "title": "Administrative Expenses",
+    "content": "## Administrative Expenses (5502)\n\nExpenses for organizing and managing business operations.\n\n### Includes: Admin staff payroll, office supplies, travel, meetings, board fees, professional service fees (audit, legal), consulting, litigation, property tax, vehicle tax, stamp duty, admin FA depreciation, intangible amortization, business entertainment.\n\n### Entertainment: 60% deductible, capped at 5‰ of annual revenue.\n\n### Entries\n- Incur: Dr: Admin Cr: Bank/Acc Dep\n- Period-end: Dr: CY Profit (3103) Cr: Admin\n\n### Related: 5501 Selling | 5503 Financial | 5403 Taxes & Surcharges",
     "relatedAccountId": "5502",
     "relatedSubject": null
   },
   {
     "id": "k64",
     "category": "accounting_practice",
-    "title": "财务费用",
-    "content": "## 财务费用（5503）\n\n企业为筹集生产经营所需资金等而发生的筹资费用。\n\n### 包括\n- 利息支出（减利息收入）\n- 汇兑损失（减汇兑收益）\n- 银行手续费\n- 现金折扣\n\n### 分录\n- 计提利息：借：财务费用 贷：应付利息（2231）/长期借款-应计利息\n- 收到利息收入：借：银行存款 贷：财务费用（冲减）\n- 支付手续费：借：财务费用 贷：银行存款\n\n### 资本化\n为购建固定资产的专门借款利息，在资产达到预定可使用状态前计入在建工程（1604），不确认财务费用。\n\n### 关联科目\n- 2231 应付利息 | 2001 短期借款 | 2501 长期借款 | 1604 在建工程",
+    "title": "Financial Expenses",
+    "content": "## Financial Expenses (5503)\n\nFinancing costs incurred to raise funds for production and operations.\n\n### Includes: Interest expense (net of interest income), exchange losses (net of gains), bank charges, cash discounts.\n\n### Entries\n- Accrue interest: Dr: Financial Exp Cr: Interest Payable (2231)/LT Loan-Accrued Interest\n- Interest income: Dr: Bank Cr: Financial Exp (offset)\n- Bank charges: Dr: Financial Exp Cr: Bank\n\n### Capitalization: Interest on specific borrowings for fixed asset construction is capitalized to CIP (1604) before asset is ready for use.\n\n### Related: 2231 Interest Payable | 2001 ST Loans | 2501 LT Loans | 1604 CIP",
     "relatedAccountId": "5503",
     "relatedSubject": null
   },
   {
     "id": "k65",
     "category": "accounting_practice",
-    "title": "资产减值损失",
-    "content": "## 资产减值损失（5601）\n\n企业计提各项资产减值准备所形成的损失。\n\n### 对应减值科目\n| 减值损失（5601） | 对应备抵科目 |\n|------|------|\n| 坏账损失 | 坏账准备（1231）|\n| 存货跌价损失 | 存货跌价准备（1471）|\n| 固定资产减值损失 | 固定资产减值准备 |\n| 无形资产减值损失 | 无形资产减值准备 |\n\n### 分录\n- 计提：借：资产减值损失 贷：坏账准备/存货跌价准备等\n- 期末结转：借：本年利润（3103） 贷：资产减值损失\n\n### 注意\n- 固定资产减值损失一经确认，不得转回！\n- 存货跌价准备可以在原计提范围内转回\n- 坏账准备不能转回（不同于存货）\n\n### 关联科目\n- 1231 坏账准备 | 1471 存货跌价准备 | 3103 本年利润",
+    "title": "Asset Impairment Loss",
+    "content": "## Asset Impairment Loss (5601)\n\nLoss from recognizing asset impairment provisions.\n\n### Corresponding Contra Accounts\n| Impairment Loss (5601) | Contra Account |\n|---|---|\n| Bad debt loss | Bad Debt Provision (1231) |\n| Inventory write-down | Inventory Write-down (1471) |\n| FA impairment | FA Impairment Provision |\n| IA impairment | IA Impairment Provision |\n\n### Entry: Dr: Asset Impairment Loss Cr: [Contra Account]; Period-end: Dr: CY Profit (3103) Cr: Loss\n\n### Note: FA impairment cannot be reversed! Inventory write-down can be reversed within original provision. Bad debt provision cannot be reversed.\n\n### Related: 1231 Bad Debt Provision | 1471 Inventory Write-down | 3103 CY Profit",
     "relatedAccountId": "5601",
     "relatedSubject": null
   },
   {
     "id": "k66",
     "category": "accounting_practice",
-    "title": "营业外支出",
-    "content": "## 营业外支出（5701）\n\n企业发生的与日常活动无直接关系的各项损失。\n\n### 包括\n- 非流动资产处置净损失\n- 盘亏损失（计入营业外支出的部分）\n- 罚款支出（如税务罚款、环保罚款等）\n- 捐赠支出\n- 非常损失（自然灾害等不可抗力造成的损失）\n- 非货币性资产交换损失\n- 债务重组损失\n\n### 影响\n- 不影响营业利润（营业利润 = 收入 - 成本 - 税金 - 期间费用 - 减值）\n- 但影响利润总额和净利润\n- 利润总额 = 营业利润 + 营业外收入 - 营业外支出\n\n### 分录\n- 发生：借：营业外支出 贷：银行存款/固定资产清理\n- 期末：借：本年利润（3103） 贷：营业外支出\n\n### 关联科目\n- 5301 营业外收入 | 3103 本年利润 | 1606 固定资产清理",
+    "title": "Non-operating Expenses",
+    "content": "## Non-operating Expenses (5701)\n\nLosses not directly related to daily activities.\n\n### Includes: Non-current asset disposal losses, shortage losses, fines, donations, extraordinary losses (natural disasters), non-monetary exchange losses, debt restructuring losses.\n\n### Impact: Doesn't affect operating profit but affects total profit and net profit.\nTotal Profit = Operating Profit + Non-op Income - Non-op Expenses\n\n### Entry: Dr: Non-op Expenses Cr: Bank/Disposal; Period-end: Dr: CY Profit (3103) Cr: Non-op Expenses\n\n### Related: 5301 Non-op Income | 3103 CY Profit | 1606 FA Disposal",
     "relatedAccountId": "5701",
     "relatedSubject": null
   },
   {
     "id": "k67",
     "category": "accounting_practice",
-    "title": "应收利息核算",
-    "content": "## 应收利息（1132）\n\n企业持有至到期投资、可供出售金融资产等应收取的利息。\n\n### 计提：借：应收利息 贷：投资收益（5201）\n### 收到：借：银行存款 贷：应收利息\n\n### 关联：1501 持有至到期投资 | 5201 投资收益 | 5503 财务费用",
+    "title": "Interest Receivable Accounting",
+    "content": "## Interest Receivable (1132)\n\nInterest due from HTM, AFS financial assets.\n\n### Accrue: Dr: Interest Rec Cr: Investment Income (5201)\n### Receive: Dr: Bank Cr: Interest Rec\n\n### Related: 1501 HTM | 5201 Investment Income | 5503 Financial Exp",
     "relatedAccountId": "1132",
     "relatedSubject": null
   },
   {
     "id": "k68",
     "category": "accounting_practice",
-    "title": "坏账准备核算",
-    "content": "## 坏账准备（1231）\n\n应收账款的备抵科目，核算预计无法收回的应收账款。\n\n### 计提：借：资产减值损失（5601） 贷：坏账准备\n### 核销：借：坏账准备 贷：应收账款（1122）\n### 已核销又收回：借：应收账款 贷：坏账准备；借：银行存款 贷：应收账款\n\n### 估计方法：账龄分析法、余额百分比法\n\n### 关联：1122 应收账款 | 5601 资产减值损失 | 1471 存货跌价准备",
+    "title": "Bad Debt Provision",
+    "content": "## Bad Debt Provision (1231)\n\nContra-asset for AR, recording estimated uncollectible amounts.\n\n### Provide: Dr: Asset Impairment Loss (5601) Cr: Bad Debt Provision\n### Write-off: Dr: Bad Debt Provision Cr: AR (1122)\n### Recovery: Dr: AR Cr: Bad Debt Provision; Dr: Bank Cr: AR\n\n### Methods: Aging analysis, % of receivables\n\n### Related: 1122 AR | 5601 Impairment Loss | 1471 Inventory Write-down",
     "relatedAccountId": "1231",
     "relatedSubject": null
   },
   {
     "id": "k69",
     "category": "accounting_practice",
-    "title": "应付股利核算",
-    "content": "## 应付股利（2232）\n\n企业经股东大会或类似机构决议确定分配的现金股利或利润。\n\n### 宣告：借：利润分配（3104） 贷：应付股利\n### 支付：借：应付股利 贷：银行存款\n\n### 注意：股票股利不通过本科目核算（仅做备查登记）\n\n### 关联：3104 利润分配 | 3101 盈余公积 | 1131 应收股利（对方视角）",
+    "title": "Dividends Payable Accounting",
+    "content": "## Dividends Payable (2232)\n\nCash dividends or profits determined by shareholders meeting.\n\n### Declare: Dr: Profit Distribution (3104) Cr: Dividends Payable\n### Pay: Dr: Dividends Payable Cr: Bank\n\n### Note: Stock dividends are not recorded here (memo entry only)\n\n### Related: 3104 Profit Distribution | 3101 Surplus Reserve | 1131 Dividends Rec (counterpart)",
     "relatedAccountId": "2232",
     "relatedSubject": null
   }
