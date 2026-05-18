@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:window_manager/window_manager.dart';
 import 'app/i18n/translations.dart';
 import 'app/bindings/app_binding.dart';
 import 'app/routes/app_pages.dart';
@@ -12,8 +13,21 @@ import 'modules/settings/views/settings_view.dart';
 import 'modules/settings/controllers/theme_controller.dart';
 import 'data/services/database_service.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await windowManager.ensureInitialized();
+
+  const windowOptions = WindowOptions(
+    size: Size(540, 960),
+    minimumSize: Size(360, 640),
+    center: true,
+    title: 'LedgerLearn',
+  );
+
+  await windowManager.waitUntilReadyToShow(windowOptions, () async {
+    await windowManager.setAspectRatio(9 / 16);
+  });
 
   // Create a single DatabaseService, init it, and register globally
   final db = DatabaseService();
