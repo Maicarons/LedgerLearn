@@ -7,15 +7,97 @@ on:
     branches: [master]
 
 jobs:
-  analyze-and-test:
+  analyze:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: subosito/flutter-action@v2
         with:
           channel: beta
-
       - run: flutter pub get
       - run: flutter analyze
+
+  test-vm:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: beta
+      - run: flutter pub get
       - run: flutter test
+
+  test-chrome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: beta
+      - run: flutter pub get
+      - run: flutter test --platform=chrome
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: beta
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq cmake clang libgtk-3-dev ninja-build
+      - run: flutter pub get
+      - run: flutter build linux --release
+
+  build-web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: beta
+      - run: flutter pub get
+      - run: flutter build web --release
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: beta
+      - run: flutter pub get
+      - run: flutter build windows --release
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: beta
+      - run: flutter pub get
+      - run: flutter build macos --release
+
+  build-ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: beta
+      - run: flutter pub get
+      - run: flutter build ios --release --no-codesign
+
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: beta
+      - run: flutter pub get
+      - run: flutter build apk --release
