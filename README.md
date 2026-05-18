@@ -1,8 +1,31 @@
 # LedgerLearn — 记账学习模拟应用
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter)](https://flutter.dev)
-[![Crowdin](https://badges.crowdin.net/ledgerlearn/localized.svg)](https://crowdin.com/project/ledgerlearn)
+<p align="center">
+  <img src="logo.png" alt="LedgerLearn Logo" width="128" height="128">
+</p>
+
+<p align="center">
+  <a href="https://github.com/Maicarons/ledgerlearn/releases"><img src="https://img.shields.io/github/v/release/Maicarons/ledgerlearn?color=blue&label=Release" alt="GitHub Release"></a>
+  <a href="https://github.com/Maicarons/ledgerlearn/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a>
+  <a href="https://flutter.dev"><img src="https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white" alt="Flutter"></a>
+  <a href="https://dart.dev"><img src="https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white" alt="Dart"></a>
+  <a href="https://crowdin.com/project/ledgerlearn"><img src="https://badges.crowdin.net/ledgerlearn/localized.svg" alt="Crowdin"></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Android-34A853?logo=android&logoColor=white" alt="Android">
+  <img src="https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white" alt="Windows">
+  <img src="https://img.shields.io/badge/Platform-macOS-000000?logo=apple&logoColor=white" alt="macOS">
+  <img src="https://img.shields.io/badge/Platform-iOS-999999?logo=apple&logoColor=white" alt="iOS">
+  <img src="https://img.shields.io/badge/Platform-Linux-FCC624?logo=linux&logoColor=black" alt="Linux">
+  <img src="https://img.shields.io/badge/Platform-Web-4285F4?logo=googlechrome&logoColor=white" alt="Web">
+</p>
+
+<p align="center">
+  <a href="https://github.com/Maicarons/ledgerlearn/stargazers"><img src="https://img.shields.io/github/stars/Maicarons/ledgerlearn?style=social" alt="GitHub Stars"></a>
+  <a href="https://f-droid.org"><img src="https://img.shields.io/badge/Available%20on-F--Droid-1976D2?logo=f-droid&logoColor=white" alt="F-Droid"></a>
+  <a href="https://github.com/Maicarons/ledgerlearn/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+</p>
 
 一款面向**中国内地会计初学者**的多语言会计入门学习应用，支持多语言。通过模拟完整的会计记账流程——凭证录入、总账/明细账查询、试算平衡、财务报表生成，并在操作中嵌入会计实务与经济法知识点，实现「做中学」。
 
