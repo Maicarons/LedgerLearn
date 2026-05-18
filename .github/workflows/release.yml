@@ -75,12 +75,18 @@ jobs:
       - run: flutter build apk --release
       - run: flutter build appbundle --release
 
+      - name: Rename artifacts
+        run: |
+          V=${{ needs.version.outputs.semver }}
+          cp build/app/outputs/flutter-apk/app-release.apk "ledgerlearn-v$V-android.apk"
+          cp build/app/outputs/bundle/release/app-release.aab "ledgerlearn-v$V-android.aab"
+
       - uses: actions/upload-artifact@v4
         with:
           name: android-artifacts
           path: |
-            build/app/outputs/flutter-apk/app-release.apk
-            build/app/outputs/bundle/release/app-release.aab
+            ledgerlearn-v${{ needs.version.outputs.semver }}-android.apk
+            ledgerlearn-v${{ needs.version.outputs.semver }}-android.aab
 
   build-linux:
     needs: version
@@ -95,12 +101,17 @@ jobs:
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq cmake clang libgtk-3-dev ninja-build
       - run: flutter pub get
       - run: flutter build linux --release
-      - run: cd build/linux/x64/release/bundle && tar -czf ledgerlearn-linux-x64.tar.gz *
+
+      - name: Package
+        run: |
+          V=${{ needs.version.outputs.semver }}
+          cd build/linux/x64/release/bundle
+          tar -czf "ledgerlearn-v$V-linux-x64.tar.gz" *
 
       - uses: actions/upload-artifact@v4
         with:
           name: linux-artifacts
-          path: build/linux/x64/release/bundle/ledgerlearn-linux-x64.tar.gz
+          path: build/linux/x64/release/bundle/ledgerlearn-v${{ needs.version.outputs.semver }}-linux-x64.tar.gz
 
   build-web:
     needs: version
@@ -114,12 +125,16 @@ jobs:
 
       - run: flutter pub get
       - run: flutter build web --release
-      - run: cd build/web && zip -r ../../ledgerlearn-web.zip *
+
+      - name: Package
+        run: |
+          V=${{ needs.version.outputs.semver }}
+          cd build/web && zip -r "../../ledgerlearn-v$V-web.zip" *
 
       - uses: actions/upload-artifact@v4
         with:
           name: web-artifacts
-          path: ledgerlearn-web.zip
+          path: ledgerlearn-v${{ needs.version.outputs.semver }}-web.zip
 
   build-windows:
     needs: version
@@ -133,12 +148,16 @@ jobs:
 
       - run: flutter pub get
       - run: flutter build windows --release
-      - run: Compress-Archive -Path build/windows/x64/runner/Release/* -DestinationPath ledgerlearn-windows-x64.zip
+
+      - name: Package
+        run: |
+          $V = "${{ needs.version.outputs.semver }}"
+          Compress-Archive -Path build/windows/x64/runner/Release/* -DestinationPath "ledgerlearn-v$V-windows-x64.zip"
 
       - uses: actions/upload-artifact@v4
         with:
           name: windows-artifacts
-          path: ledgerlearn-windows-x64.zip
+          path: ledgerlearn-v${{ needs.version.outputs.semver }}-windows-x64.zip
 
   build-macos:
     needs: version
@@ -152,12 +171,17 @@ jobs:
 
       - run: flutter pub get
       - run: flutter build macos --release
-      - run: cd build/macos/Build/Products/Release && zip -ry ledgerlearn-macos.zip ledgerlearn.app
+
+      - name: Package
+        run: |
+          V="${{ needs.version.outputs.semver }}"
+          cd build/macos/Build/Products/Release
+          zip -ry "ledgerlearn-v$V-macos.zip" ledgerlearn.app
 
       - uses: actions/upload-artifact@v4
         with:
           name: macos-artifacts
-          path: build/macos/Build/Products/Release/ledgerlearn-macos.zip
+          path: build/macos/Build/Products/Release/ledgerlearn-v${{ needs.version.outputs.semver }}-macos.zip
 
   build-ios:
     needs: version
@@ -172,10 +196,16 @@ jobs:
       - run: flutter pub get
       - run: flutter build ios --release --no-codesign
 
+      - name: Package
+        run: |
+          V="${{ needs.version.outputs.semver }}"
+          cd build/ios/iphoneos
+          zip -ry "ledgerlearn-v$V-ios-unsigned.zip" Runner.app
+
       - uses: actions/upload-artifact@v4
         with:
           name: ios-artifacts
-          path: build/ios/iphoneos/Runner.app
+          path: build/ios/iphoneos/ledgerlearn-v${{ needs.version.outputs.semver }}-ios-unsigned.zip
 
   release:
     needs:
@@ -202,13 +232,15 @@ jobs:
         if: github.event_name == 'push'
         uses: softprops/action-gh-release@v2
         with:
+          body_path: CHANGELOG.md
           files: |
-            app-release.apk
-            app-release.aab
-            ledgerlearn-linux-x64.tar.gz
-            ledgerlearn-web.zip
-            ledgerlearn-windows-x64.zip
-            ledgerlearn-macos.zip
+            ledgerlearn-v*.apk
+            ledgerlearn-v*.aab
+            ledgerlearn-v*-linux-x64.tar.gz
+            ledgerlearn-v*-web.zip
+            ledgerlearn-v*-windows-x64.zip
+            ledgerlearn-v*-macos.zip
+            ledgerlearn-v*-ios-unsigned.zip
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -219,13 +251,15 @@ jobs:
         with:
           name: v${{ needs.version.outputs.semver }}
           tag_name: v${{ needs.version.outputs.semver }}
+          body_path: CHANGELOG.md
           files: |
-            app-release.apk
-            app-release.aab
-            ledgerlearn-linux-x64.tar.gz
-            ledgerlearn-web.zip
-            ledgerlearn-windows-x64.zip
-            ledgerlearn-macos.zip
+            ledgerlearn-v*.apk
+            ledgerlearn-v*.aab
+            ledgerlearn-v*-linux-x64.tar.gz
+            ledgerlearn-v*-web.zip
+            ledgerlearn-v*-windows-x64.zip
+            ledgerlearn-v*-macos.zip
+            ledgerlearn-v*-ios-unsigned.zip
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
