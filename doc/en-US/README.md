@@ -1,8 +1,29 @@
 # LedgerLearn — 记账学习模拟应用
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter)](https://flutter.dev)
-[![Crowdin](https://badges.crowdin.net/ledgerlearn/localized.svg)](https://crowdin.com/project/ledgerlearn)
+<p align="center">
+  <img src="logo.png" alt="LedgerLearn Logo" width="128" height="128">
+</p>
+
+<p align="center"><a href="https://github.com/Maicarons/ledgerlearn/releases"><img src="https://img.shields.io/github/v/release/Maicarons/ledgerlearn?color=blue&label=Release" alt="GitHub Release"></a>
+  <a href="https://github.com/Maicarons/ledgerlearn/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a>
+  <a href="https://flutter.dev"><img src="https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white" alt="Flutter"></a>
+  <a href="https://dart.dev"><img src="https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white" alt="Dart"></a>
+  <a href="https://crowdin.com/project/ledgerlearn"><img src="https://badges.crowdin.net/ledgerlearn/localized.svg" alt="Crowdin"></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Android-34A853?logo=android&logoColor=white" alt="Android">
+  <img src="https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white" alt="Windows">
+  <img src="https://img.shields.io/badge/Platform-macOS-000000?logo=apple&logoColor=white" alt="macOS">
+  <img src="https://img.shields.io/badge/Platform-iOS-999999?logo=apple&logoColor=white" alt="iOS">
+  <img src="https://img.shields.io/badge/Platform-Linux-FCC624?logo=linux&logoColor=black" alt="Linux">
+  <img src="https://img.shields.io/badge/Platform-Web-4285F4?logo=googlechrome&logoColor=white" alt="Web">
+</p>
+
+<p align="center"><a href="https://github.com/Maicarons/ledgerlearn/stargazers"><img src="https://img.shields.io/github/stars/Maicarons/ledgerlearn?style=social" alt="GitHub Stars"></a>
+  <a href="https://f-droid.org"><img src="https://img.shields.io/badge/Available%20on-F--Droid-1976D2?logo=f-droid&logoColor=white" alt="F-Droid"></a>
+  <a href="https://github.com/Maicarons/ledgerlearn/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+</p>
 
 一款面向**中国内地会计初学者**的多语言会计入门学习应用，支持多语言。通过模拟完整的会计记账流程——凭证录入、总账/明细账查询、试算平衡、财务报表生成，并在操作中嵌入会计实务与经济法知识点，实现「做中学」。
 
@@ -17,16 +38,16 @@
 
 ## Feature Overview
 
-| 模块         | 功能描述                                         |
-| ---------- | -------------------------------------------- |
-| **首页仪表盘**  | 当前账期概览：凭证数量、借贷方合计、试算平衡状态；快捷入口                |
-| **凭证管理**   | 新建/编辑/删除记账凭证，动态分录行，借贷平衡校验，4 种业务模板            |
-| **会计科目**   | 59 个预置标准科目（资产/负债/权益/成本/损益），支持自定义科目           |
-| **总账/明细账** | 按科目汇总的总账，按凭证逐笔展示的明细账                         |
-| **财务报表**   | 试算平衡表、利润表、资产负债表，附教学解读                        |
-| **知识库**    | 74 条三语知识卡片（会计实务 + 经济法），支持 Markdown 渲染，支持联网更新 |
-| **导出**     | 凭证列表、总账/明细账、试算平衡表、利润表、资产负债表导出为 CSV/PDF       |
-| **设置**     | 中/英/韩语言实时切换，浅色/深色/跟随系统主题，数据重置                |
+| 模块                 | 功能描述                                                           |
+| ------------------ | -------------------------------------------------------------- |
+| **首页仪表盘**          | 当前账期概览：凭证数量、借贷方合计、试算平衡状态；快捷入口                                  |
+| **凭证管理**           | 新建/编辑/删除记账凭证，动态分录行，借贷平衡校验，4 种业务模板                              |
+| **会计科目**           | 59 个预置标准科目（资产/负债/权益/成本/损益），支持自定义科目                             |
+| **GLOBALIZATIONS** | 按科目汇总的总账，按凭证逐笔展示的明细账                                           |
+| **财务报表**           | 试算平衡表、利润表、资产负债表，附教学解读                                          |
+| **知识库**            | 74 条三语知识卡片（会计实务 + 经济法），支持 Markdown 渲染，支持联网更新                   |
+| **导出**             | 凭证列表、总账/明细账、试算平衡表、利润表、资产负债表导出为 CSV/PDF                         |
+| **设置**             | Language switched, light/dark/follow system themes, data reset |
 
 ## 技术栈
 
