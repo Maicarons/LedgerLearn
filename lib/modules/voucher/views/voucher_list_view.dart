@@ -24,7 +24,7 @@ class VoucherListView extends GetView<VoucherListController> {
             tooltip: 'export_csv'.tr,
             onPressed: () async {
               final path = await ExportService.exportVoucherListCsv(
-                  controller.vouchers, locale);
+                  controller.filteredVouchers, locale);
               if (path != null && context.mounted) {
                 Get.snackbar('export_success'.tr, 'export_saved'.tr,
                     snackPosition: SnackPosition.BOTTOM);
@@ -102,10 +102,27 @@ class VoucherListView extends GetView<VoucherListController> {
                 )),
           ),
 
+          // Search
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: 'voucher_search_hint'.tr,
+                prefixIcon: const Icon(Icons.search),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8)),
+                contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 12, vertical: 10),
+              ),
+              onChanged: controller.setSearch,
+            ),
+          ),
+
           // Voucher list
           Expanded(
             child: Obx(() {
-              if (controller.vouchers.isEmpty) {
+              final filtered = controller.filteredVouchers;
+              if (filtered.isEmpty) {
                 return Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -122,9 +139,9 @@ class VoucherListView extends GetView<VoucherListController> {
 
               return ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                itemCount: controller.vouchers.length,
+                itemCount: filtered.length,
                 itemBuilder: (context, index) {
-                  final v = controller.vouchers[index];
+                  final v = filtered[index];
                   return Card(
                     margin: const EdgeInsets.only(bottom: 8),
                     child: ListTile(

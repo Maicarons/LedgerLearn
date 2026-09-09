@@ -2,6 +2,14 @@
 
 All notable changes to LedgerLearn will be documented in this file.
 
+## [0.2.0] - 2026-09-09
+
+### Added
+- Voucher templates: 4 new common business templates (pay wages, record depreciation, pay taxes, transfer COGS) — 8 in total
+- Voucher list: search by summary or account (name/code)
+- Voucher detail: related knowledge cards recommended from the accounts used in the voucher
+- Learning progress: track vouchers created and knowledge cards read, with 5 unlockable achievement badges shown on the Settings page
+
 ## [0.1.2] - 2026-09-09
 
 ### Fixed

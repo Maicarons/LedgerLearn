@@ -147,6 +147,26 @@ class VoucherFormView extends GetView<VoucherFormController> {
                           icon: Icons.flight,
                           onTap: () => controller.applyTemplate(3),
                         ),
+                        _TemplateChip(
+                          label: 'voucher_template_wages'.tr,
+                          icon: Icons.payments,
+                          onTap: () => controller.applyTemplate(4),
+                        ),
+                        _TemplateChip(
+                          label: 'voucher_template_depreciation'.tr,
+                          icon: Icons.trending_down,
+                          onTap: () => controller.applyTemplate(5),
+                        ),
+                        _TemplateChip(
+                          label: 'voucher_template_tax'.tr,
+                          icon: Icons.account_balance,
+                          onTap: () => controller.applyTemplate(6),
+                        ),
+                        _TemplateChip(
+                          label: 'voucher_template_cogs'.tr,
+                          icon: Icons.swap_horiz,
+                          onTap: () => controller.applyTemplate(7),
+                        ),
                       ],
                     ),
                   ),

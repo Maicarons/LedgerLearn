@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import '../../../data/repositories/voucher_repository.dart';
 import '../../../data/repositories/account_repository.dart';
+import '../../../data/repositories/knowledge_repository.dart';
+import '../../../data/models/voucher.dart';
+import '../../../data/models/knowledge_card.dart';
 import '../controllers/voucher_controller.dart';
 import '../../home/controllers/home_controller.dart';
 import '../../../shared/utils/helpers.dart';
@@ -164,9 +167,46 @@ class VoucherDetailView extends StatelessWidget {
                 ),
               ],
             ),
+            ..._relatedKnowledge(context, voucher),
           ],
         ),
       ),
     );
+  }
+
+  /// Knowledge cards linked to the accounts used in this voucher.
+  List<Widget> _relatedKnowledge(BuildContext context, Voucher voucher) {
+    final knowledgeRepo = Get.find<KnowledgeRepository>();
+    final seen = <String>{};
+    final cards = <KnowledgeCard>[];
+    for (final e in voucher.entries) {
+      for (final k in knowledgeRepo.getByAccount(e.accountId)) {
+        if (seen.add(k.id)) cards.add(k);
+      }
+    }
+    if (cards.isEmpty) return const [];
+
+    return [
+      const SizedBox(height: 16),
+      Text('accounts_related_knowledge'.tr,
+          style: Theme.of(context).textTheme.titleMedium),
+      const SizedBox(height: 8),
+      ...cards.map((k) => Card(
+            margin: const EdgeInsets.only(bottom: 8),
+            child: ListTile(
+              leading: const Icon(Icons.lightbulb, color: Colors.amber),
+              title: Text(k.title,
+                  style: const TextStyle(fontSize: 14)),
+              subtitle: Text(
+                k.category == 'accounting_practice'
+                    ? 'knowledge_practice'.tr
+                    : 'knowledge_law'.tr,
+                style: const TextStyle(fontSize: 12),
+              ),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => Get.toNamed('/knowledge/detail/${k.id}'),
+            ),
+          )),
+    ];
   }
 }

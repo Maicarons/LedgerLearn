@@ -169,25 +169,70 @@ class SettingsView extends GetView<SettingsController> {
                           fontSize: 16, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 12),
                   Obx(() {
-                    final count = controller.voucherCount.value;
+                    final vCount = controller.progress.voucherCount.value;
+                    final kCount =
+                        controller.progress.knowledgeReadCount.value;
+                    final achievements =
+                        controller.progress.unlockedAchievements;
                     return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text('voucher_title'.tr),
                             Text('settings_progress_vouchers'
-                                .trParams({'count': '$count'})),
+                                .trParams({'count': '$vCount'})),
                           ],
                         ),
                         const SizedBox(height: 8),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(4),
                           child: LinearProgressIndicator(
-                            value: (count / 20).clamp(0.0, 1.0),
+                            value: (vCount / 20).clamp(0.0, 1.0),
                             minHeight: 8,
                           ),
                         ),
+                        const SizedBox(height: 12),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('settings_progress_knowledge'.tr),
+                            Text('$kCount'),
+                          ],
+                        ),
+                        const SizedBox(height: 12),
+                        Text('achievements'.tr,
+                            style: const TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.w600)),
+                        const SizedBox(height: 8),
+                        if (achievements.isEmpty)
+                          Text('no_data'.tr,
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey.shade500))
+                        else
+                          Wrap(
+                            spacing: 8,
+                            runSpacing: 8,
+                            children: achievements
+                                .map((a) => Tooltip(
+                                      message: a.descKey.tr,
+                                      child: Chip(
+                                        avatar: Icon(a.icon,
+                                            color: a.color, size: 18),
+                                        label: Text(a.titleKey.tr,
+                                            style: const TextStyle(
+                                                fontSize: 12)),
+                                        backgroundColor:
+                                            a.color.withValues(alpha: 0.08),
+                                        side: BorderSide(
+                                            color: a.color
+                                                .withValues(alpha: 0.3)),
+                                      ),
+                                    ))
+                                .toList(),
+                          ),
                       ],
                     );
                   }),

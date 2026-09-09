@@ -12,6 +12,7 @@ class DatabaseService {
   static const String _vouchersKey = 'vouchers';
   static const String _knowledgeKey = 'knowledge_cards';
   static const String _knowledgeVersionKey = 'knowledge_version';
+  static const String _viewedKnowledgeKey = 'viewed_knowledge';
   static const int _currentKnowledgeVersion = 2;
   final GetStorage _box = GetStorage();
 
@@ -208,6 +209,21 @@ class DatabaseService {
     return data
         .map((e) => KnowledgeCard.fromJson(Map<String, dynamic>.from(e)))
         .toList();
+  }
+
+  // ==================== Learning Progress ====================
+
+  List<String> getViewedKnowledgeIds() {
+    final data = _box.read<List>(_viewedKnowledgeKey);
+    if (data == null) return [];
+    return data.cast<String>().toList();
+  }
+
+  Future<void> addViewedKnowledge(String id) async {
+    final ids = getViewedKnowledgeIds();
+    if (ids.contains(id)) return;
+    ids.add(id);
+    await _box.write(_viewedKnowledgeKey, ids);
   }
 
   // ==================== Settings ====================

@@ -3,9 +3,24 @@ import 'package:get/get.dart';
 import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import '../../../data/repositories/knowledge_repository.dart';
 import '../../../data/repositories/account_repository.dart';
+import '../../../data/services/progress_service.dart';
 
-class KnowledgeDetailView extends StatelessWidget {
+class KnowledgeDetailView extends StatefulWidget {
   const KnowledgeDetailView({super.key});
+
+  @override
+  State<KnowledgeDetailView> createState() => _KnowledgeDetailViewState();
+}
+
+class _KnowledgeDetailViewState extends State<KnowledgeDetailView> {
+  @override
+  void initState() {
+    super.initState();
+    final id = Get.parameters['id'];
+    if (id != null) {
+      Get.find<ProgressService>().recordKnowledgeViewed(id);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -6,6 +6,7 @@ import '../../../data/models/knowledge_card.dart';
 import '../../../data/repositories/voucher_repository.dart';
 import '../../../data/repositories/account_repository.dart';
 import '../../../data/repositories/knowledge_repository.dart';
+import '../../../data/services/progress_service.dart';
 
 class VoucherFormController extends GetxController {
   final VoucherRepository voucherRepo = Get.find<VoucherRepository>();
@@ -135,6 +136,7 @@ class VoucherFormController extends GetxController {
     );
 
     await voucherRepo.save(voucher);
+    Get.find<ProgressService>().reload();
     return voucher;
   }
 
@@ -179,6 +181,42 @@ class VoucherFormController extends GetxController {
           Entry(accountId: cash.id, accountName: cash.getName(locale), isDebit: false, amount: 1200),
         ];
         break;
+      case 4: // Pay wages
+        final payroll = accountRepo.getById('2211')!;
+        final bank = accountRepo.getById('1002')!;
+        summary.value = 'voucher_template_wages_desc'.tr;
+        entries.value = [
+          Entry(accountId: payroll.id, accountName: payroll.getName(locale), isDebit: true, amount: 50000),
+          Entry(accountId: bank.id, accountName: bank.getName(locale), isDebit: false, amount: 50000),
+        ];
+        break;
+      case 5: // Record depreciation
+        final admin = accountRepo.getById('5502')!;
+        final dep = accountRepo.getById('1602')!;
+        summary.value = 'voucher_template_depreciation_desc'.tr;
+        entries.value = [
+          Entry(accountId: admin.id, accountName: admin.getName(locale), isDebit: true, amount: 3000),
+          Entry(accountId: dep.id, accountName: dep.getName(locale), isDebit: false, amount: 3000),
+        ];
+        break;
+      case 6: // Pay taxes
+        final tax = accountRepo.getById('2221')!;
+        final bank2 = accountRepo.getById('1002')!;
+        summary.value = 'voucher_template_tax_desc'.tr;
+        entries.value = [
+          Entry(accountId: tax.id, accountName: tax.getName(locale), isDebit: true, amount: 8000),
+          Entry(accountId: bank2.id, accountName: bank2.getName(locale), isDebit: false, amount: 8000),
+        ];
+        break;
+      case 7: // Transfer cost of goods sold
+        final cogs = accountRepo.getById('5401')!;
+        final goods = accountRepo.getById('1405')!;
+        summary.value = 'voucher_template_cogs_desc'.tr;
+        entries.value = [
+          Entry(accountId: cogs.id, accountName: cogs.getName(locale), isDebit: true, amount: 25000),
+          Entry(accountId: goods.id, accountName: goods.getName(locale), isDebit: false, amount: 25000),
+        ];
+        break;
     }
     _recalculate();
   }
@@ -193,6 +231,7 @@ class VoucherListController extends GetxController {
   final vouchers = <Voucher>[].obs;
   final filterYear = 0.obs;
   final filterMonth = 0.obs;
+  final searchQuery = ''.obs;
 
   @override
   void onInit() {
@@ -216,8 +255,25 @@ class VoucherListController extends GetxController {
     loadVouchers();
   }
 
+  void setSearch(String query) {
+    searchQuery.value = query;
+  }
+
+  /// Vouchers filtered by the search query (summary, account id or name).
+  List<Voucher> get filteredVouchers {
+    final q = searchQuery.value.trim().toLowerCase();
+    if (q.isEmpty) return vouchers;
+    return vouchers.where((v) {
+      if (v.summary.toLowerCase().contains(q)) return true;
+      return v.entries.any((e) =>
+          e.accountId.toLowerCase().contains(q) ||
+          e.accountName.toLowerCase().contains(q));
+    }).toList();
+  }
+
   Future<void> deleteVoucher(String id) async {
     await voucherRepo.delete(id);
     loadVouchers();
+    Get.find<ProgressService>().reload();
   }
 }

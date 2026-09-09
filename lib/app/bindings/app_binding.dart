@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import '../../data/services/database_service.dart';
+import '../../data/services/progress_service.dart';
 import '../../data/repositories/account_repository.dart';
 import '../../data/repositories/voucher_repository.dart';
 import '../../data/repositories/knowledge_repository.dart';
@@ -18,5 +19,7 @@ class AppBinding extends Bindings {
 
     final voucherRepo = VoucherRepository(db);
     Get.put(voucherRepo, permanent: true);
+
+    Get.put(ProgressService(), permanent: true);
   }
 }
