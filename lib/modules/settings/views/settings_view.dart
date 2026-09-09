@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/settings_controller.dart';
 import '../../../app/theme/app_theme.dart';
+import '../../../app/config/app_version.dart';
 
 class SettingsView extends GetView<SettingsController> {
   const SettingsView({super.key});
@@ -29,24 +30,29 @@ class SettingsView extends GetView<SettingsController> {
                   const SizedBox(height: 12),
 
                   // Theme mode
-                  Text('模式', style: TextStyle(fontSize: 13, color: Colors.grey.shade600)),
+                  Text('theme_mode'.tr,
+                      style:
+                          TextStyle(fontSize: 13, color: Colors.grey.shade600)),
                   const SizedBox(height: 8),
                   Obx(() => SegmentedButton<ThemeMode>(
-                        segments: const [
+                        segments: [
                           ButtonSegment(
                             value: ThemeMode.system,
-                            icon: Icon(Icons.settings_suggest, size: 18),
-                            label: Text('自动', style: TextStyle(fontSize: 12)),
+                            icon: const Icon(Icons.settings_suggest, size: 18),
+                            label: Text('theme_mode_system'.tr,
+                                style: const TextStyle(fontSize: 12)),
                           ),
                           ButtonSegment(
                             value: ThemeMode.light,
-                            icon: Icon(Icons.light_mode, size: 18),
-                            label: Text('浅色', style: TextStyle(fontSize: 12)),
+                            icon: const Icon(Icons.light_mode, size: 18),
+                            label: Text('theme_mode_light'.tr,
+                                style: const TextStyle(fontSize: 12)),
                           ),
                           ButtonSegment(
                             value: ThemeMode.dark,
-                            icon: Icon(Icons.dark_mode, size: 18),
-                            label: Text('深色', style: TextStyle(fontSize: 12)),
+                            icon: const Icon(Icons.dark_mode, size: 18),
+                            label: Text('theme_mode_dark'.tr,
+                                style: const TextStyle(fontSize: 12)),
                           ),
                         ],
                         selected: {controller.currentThemeMode},
@@ -113,33 +119,33 @@ class SettingsView extends GetView<SettingsController> {
                         child: Column(
                           children: [
                             RadioListTile<String>(
-                              title: Text('中文'),
-                              subtitle: const Text('简体中文'),
+                              title: Text('settings_language_zh'.tr),
+                              subtitle: const Text('zh_CN'),
                               value: 'zh_CN',
                             ),
                             RadioListTile<String>(
-                              title: const Text('English'),
-                              subtitle: const Text('English'),
+                              title: Text('settings_language_en'.tr),
+                              subtitle: const Text('en_US'),
                               value: 'en_US',
                             ),
                             RadioListTile<String>(
-                              title: const Text('한국어'),
-                              subtitle: const Text('한국어'),
+                              title: Text('settings_language_ko'.tr),
+                              subtitle: const Text('ko_KR'),
                               value: 'ko_KR',
                             ),
                             RadioListTile<String>(
-                              title: const Text('日本語'),
-                              subtitle: const Text('日本語'),
+                              title: Text('settings_language_ja'.tr),
+                              subtitle: const Text('ja_JP'),
                               value: 'ja_JP',
                             ),
                             RadioListTile<String>(
-                              title: const Text('Tiếng Việt'),
-                              subtitle: const Text('Tiếng Việt'),
+                              title: Text('settings_language_vi'.tr),
+                              subtitle: const Text('vi_VN'),
                               value: 'vi_VN',
                             ),
                             RadioListTile<String>(
-                              title: const Text('ภาษาไทย'),
-                              subtitle: const Text('ภาษาไทย'),
+                              title: Text('settings_language_th'.tr),
+                              subtitle: const Text('th_TH'),
                               value: 'th_TH',
                             ),
                           ],
@@ -170,7 +176,8 @@ class SettingsView extends GetView<SettingsController> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text('voucher_title'.tr),
-                            Text('$count 个凭证'),
+                            Text('settings_progress_vouchers'
+                                .trParams({'count': '$count'})),
                           ],
                         ),
                         const SizedBox(height: 8),
@@ -247,7 +254,7 @@ class SettingsView extends GetView<SettingsController> {
                           const SizedBox(height: 8),
                           const Text('LedgerLearn',
                               style: TextStyle(fontWeight: FontWeight.w600)),
-                          Text('${'settings_version'.tr}: 1.0.0',
+                          Text('${'settings_version'.tr}: $appVersion',
                               style: TextStyle(color: Colors.grey.shade600)),
                           const SizedBox(height: 4),
                           Text('about_view_details'.tr,

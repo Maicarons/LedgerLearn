@@ -21,12 +21,12 @@ class VoucherListView extends GetView<VoucherListController> {
         actions: [
           IconButton(
             icon: const Icon(Icons.download),
-            tooltip: '导出 CSV',
+            tooltip: 'export_csv'.tr,
             onPressed: () async {
               final path = await ExportService.exportVoucherListCsv(
                   controller.vouchers, locale);
               if (path != null && context.mounted) {
-                Get.snackbar('导出成功', '文件已保存',
+                Get.snackbar('export_success'.tr, 'export_saved'.tr,
                     snackPosition: SnackPosition.BOTTOM);
               }
             },
@@ -56,7 +56,7 @@ class VoucherListView extends GetView<VoucherListController> {
                       child: DropdownButtonFormField<int>(
                         initialValue: controller.filterYear.value,
                         decoration: InputDecoration(
-                          labelText: '年份',
+                          labelText: 'year'.tr,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8)),
                           contentPadding: const EdgeInsets.symmetric(
@@ -80,7 +80,7 @@ class VoucherListView extends GetView<VoucherListController> {
                       child: DropdownButtonFormField<int>(
                         initialValue: controller.filterMonth.value,
                         decoration: InputDecoration(
-                          labelText: '月份',
+                          labelText: 'month'.tr,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8)),
                           contentPadding: const EdgeInsets.symmetric(

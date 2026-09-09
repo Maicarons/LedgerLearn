@@ -195,7 +195,7 @@ class HomeView extends GetView<HomeController> {
                   const SizedBox(height: 28),
 
                   // Quick actions
-                  Text('快捷操作',
+                  Text('home_quick_actions'.tr,
                       style: Theme.of(context)
                           .textTheme
                           .titleMedium

@@ -16,4 +16,12 @@ class LedgerLearnTranslations extends Translations {
         'vi_VN': viVN,
         'zh_CN': zhCN,
       };
+
+  /// Look up a translation for a specific locale without changing the
+  /// current app locale. Falls back to zh_CN, then the key itself.
+  static String tr(String key, String locale) {
+    final maps = LedgerLearnTranslations().keys;
+    final map = maps[locale] ?? maps['zh_CN'];
+    return map?[key] ?? key;
+  }
 }

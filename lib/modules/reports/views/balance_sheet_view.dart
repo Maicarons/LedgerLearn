@@ -19,7 +19,7 @@ class BalanceSheetView extends GetView<BalanceSheetController> {
         actions: [
           IconButton(
             icon: const Icon(Icons.download),
-            tooltip: '导出 CSV',
+            tooltip: 'export_csv'.tr,
             onPressed: () async {
               final path = await ExportService.exportBalanceSheetCsv(
                 totalAssets: controller.totalAssets,
@@ -28,7 +28,8 @@ class BalanceSheetView extends GetView<BalanceSheetController> {
                 locale: locale,
               );
               if (path != null && context.mounted) {
-                Get.snackbar('导出成功', '文件已保存', snackPosition: SnackPosition.BOTTOM);
+                Get.snackbar('export_success'.tr, 'export_saved'.tr,
+                    snackPosition: SnackPosition.BOTTOM);
               }
             },
           ),
@@ -55,36 +56,39 @@ class BalanceSheetView extends GetView<BalanceSheetController> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Center(
-                      child: Text('资产负债表',
-                          style: TextStyle(
+                    Center(
+                      child: Text('reports_balance_sheet'.tr,
+                          style: const TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold)),
-                    ),
-                    const Center(
-                      child: Text('Balance Sheet',
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.grey)),
                     ),
                     const Divider(),
                     _buildSection('reports_assets'.tr, [
-                      _buildRow('reports_current_assets'.tr, controller.totalAssets),
+                      _buildRow('reports_current_assets'.tr,
+                          controller.totalAssets,
+                          locale: locale),
                     ]),
                     const Divider(thickness: 2),
                     _buildRow('reports_total_assets'.tr,
-                        controller.totalAssets, bold: true),
+                        controller.totalAssets,
+                        bold: true,
+                        locale: locale),
                     const SizedBox(height: 24),
                     _buildSection('reports_liabilities'.tr, [
                       _buildRow('reports_current_liabilities'.tr,
-                          controller.totalLiabilities),
+                          controller.totalLiabilities,
+                          locale: locale),
                     ]),
                     const Divider(),
                     _buildSection('reports_equity'.tr, [
-                      _buildRow('reports_equity'.tr, controller.totalEquity),
+                      _buildRow('reports_equity'.tr,
+                          controller.totalEquity,
+                          locale: locale),
                     ]),
                     const Divider(thickness: 2),
                     _buildRow('reports_total_liabilities_equity'.tr,
                         controller.totalLiabilitiesEquity,
-                        bold: true),
+                        bold: true,
+                        locale: locale),
                   ],
                 ),
               ),
@@ -110,7 +114,8 @@ class BalanceSheetView extends GetView<BalanceSheetController> {
     );
   }
 
-  Widget _buildRow(String label, double amount, {bool bold = false}) {
+  Widget _buildRow(String label, double amount,
+      {bool bold = false, required String locale}) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
@@ -119,7 +124,7 @@ class BalanceSheetView extends GetView<BalanceSheetController> {
           Text(label,
               style: TextStyle(
                   fontWeight: bold ? FontWeight.bold : null)),
-          Text(formatCurrency(amount, 'zh_CN'),
+          Text(formatCurrency(amount, locale),
               style: TextStyle(
                 fontWeight: bold ? FontWeight.bold : null,
                 fontSize: bold ? 16 : 14,

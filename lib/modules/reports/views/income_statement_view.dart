@@ -19,7 +19,7 @@ class IncomeStatementView extends GetView<IncomeStatementController> {
         actions: [
           IconButton(
             icon: const Icon(Icons.download),
-            tooltip: '导出 CSV',
+            tooltip: 'export_csv'.tr,
             onPressed: () async {
               final path = await ExportService.exportIncomeStatementCsv(
                 revenues: controller.revenueItems
@@ -36,7 +36,8 @@ class IncomeStatementView extends GetView<IncomeStatementController> {
                 locale: locale,
               );
               if (path != null && context.mounted) {
-                Get.snackbar('导出成功', '文件已保存', snackPosition: SnackPosition.BOTTOM);
+                Get.snackbar('export_success'.tr, 'export_saved'.tr,
+                    snackPosition: SnackPosition.BOTTOM);
               }
             },
           ),
@@ -63,15 +64,10 @@ class IncomeStatementView extends GetView<IncomeStatementController> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Center(
-                      child: Text('利润表',
-                          style: TextStyle(
+                    Center(
+                      child: Text('reports_income_statement'.tr,
+                          style: const TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold)),
-                    ),
-                    const Center(
-                      child: Text('Income Statement',
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.grey)),
                     ),
                     const Divider(),
                     ...controller.revenueItems

@@ -3,6 +3,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import '../../shared/utils/helpers.dart';
+import '../../app/i18n/translations.dart';
 
 class ExportService {
   static Future<String?> exportCsv({
@@ -85,10 +86,19 @@ class ExportService {
   static Future<String?> exportTrialBalanceCsv(
       List<dynamic> rows, String locale) {
     return exportCsv(
-      fileName: _datedFileName('试算平衡表', 'csv'),
-      headers: ['科目', '借方本期', '贷方本期', '借方期末', '贷方期末'],
+      fileName: _datedFileName(
+          LedgerLearnTranslations.tr('reports_trial_balance', locale), 'csv'),
+      headers: [
+        LedgerLearnTranslations.tr('ledger_account', locale),
+        LedgerLearnTranslations.tr('reports_debit_current', locale),
+        LedgerLearnTranslations.tr('reports_credit_current', locale),
+        LedgerLearnTranslations.tr('reports_debit_ending', locale),
+        LedgerLearnTranslations.tr('reports_credit_ending', locale),
+      ],
       rows: rows.map<List<String>>((r) => [
-            r.accountId == 'total' ? '合计' : '${r.accountId} ${r.accountName}',
+            r.accountId == 'total'
+                ? LedgerLearnTranslations.tr('total', locale)
+                : '${r.accountId} ${r.accountName}',
             r.debitCurrent > 0
                 ? formatCurrency(r.debitCurrent, locale)
                 : '',
@@ -113,8 +123,17 @@ class ExportService {
     required String locale,
   }) {
     return exportCsv(
-      fileName: _datedFileName('明细账_$accountName', 'csv'),
-      headers: ['日期', '凭证号', '摘要', '借方', '贷方', '余额'],
+      fileName: _datedFileName(
+          '${LedgerLearnTranslations.tr('ledger_detail_title', locale)}_$accountName',
+          'csv'),
+      headers: [
+        LedgerLearnTranslations.tr('ledger_date', locale),
+        LedgerLearnTranslations.tr('ledger_voucher_no', locale),
+        LedgerLearnTranslations.tr('ledger_summary', locale),
+        LedgerLearnTranslations.tr('ledger_debit', locale),
+        LedgerLearnTranslations.tr('ledger_credit', locale),
+        LedgerLearnTranslations.tr('ledger_balance', locale),
+      ],
       rows: entries.map<List<String>>((e) => [
             '${e.date.year}-${e.date.month.toString().padLeft(2, '0')}-${e.date.day.toString().padLeft(2, '0')}',
             e.voucherId,
@@ -136,23 +155,43 @@ class ExportService {
     required String locale,
   }) {
     final rows = <List<String>>[];
-    rows.add(['收入', '', '']);
+    final revenueLabel = LedgerLearnTranslations.tr('reports_revenue', locale);
+    final expenseLabel = LedgerLearnTranslations.tr('reports_expense', locale);
+    rows.add([revenueLabel, '', '']);
     for (final r in revenues) {
       rows.add([r.key, formatCurrency(r.value, locale), '']);
     }
-    rows.add(['收入合计', formatCurrency(totalRevenue, locale), '']);
+    rows.add([
+      LedgerLearnTranslations.tr('export_revenue_total', locale),
+      formatCurrency(totalRevenue, locale),
+      ''
+    ]);
     rows.add(['', '', '']);
-    rows.add(['费用', '', '']);
+    rows.add([expenseLabel, '', '']);
     for (final e in expenses) {
       rows.add([e.key, '', formatCurrency(e.value, locale)]);
     }
-    rows.add(['费用合计', '', formatCurrency(totalExpense, locale)]);
+    rows.add([
+      LedgerLearnTranslations.tr('export_expense_total', locale),
+      '',
+      formatCurrency(totalExpense, locale)
+    ]);
     rows.add(['', '', '']);
-    rows.add(['净利润', '', formatCurrency(netProfit, locale)]);
+    rows.add([
+      LedgerLearnTranslations.tr('reports_net_profit', locale),
+      '',
+      formatCurrency(netProfit, locale)
+    ]);
 
     return exportCsv(
-      fileName: _datedFileName('利润表', 'csv'),
-      headers: ['项目', '收入', '费用'],
+      fileName: _datedFileName(
+          LedgerLearnTranslations.tr('reports_income_statement', locale),
+          'csv'),
+      headers: [
+        LedgerLearnTranslations.tr('reports_item', locale),
+        revenueLabel,
+        expenseLabel,
+      ],
       rows: rows,
     );
   }
@@ -165,14 +204,30 @@ class ExportService {
     required String locale,
   }) {
     return exportCsv(
-      fileName: _datedFileName('资产负债表', 'csv'),
-      headers: ['项目', '金额'],
+      fileName: _datedFileName(
+          LedgerLearnTranslations.tr('reports_balance_sheet', locale), 'csv'),
+      headers: [
+        LedgerLearnTranslations.tr('reports_item', locale),
+        LedgerLearnTranslations.tr('reports_amount', locale),
+      ],
       rows: [
-        ['资产总计', formatCurrency(totalAssets, locale)],
-        ['负债合计', formatCurrency(totalLiabilities, locale)],
-        ['所有者权益合计', formatCurrency(totalEquity, locale)],
-        ['负债与所有者权益总计',
-          formatCurrency(totalLiabilities + totalEquity, locale)],
+        [
+          LedgerLearnTranslations.tr('reports_total_assets', locale),
+          formatCurrency(totalAssets, locale)
+        ],
+        [
+          LedgerLearnTranslations.tr('export_liabilities_total', locale),
+          formatCurrency(totalLiabilities, locale)
+        ],
+        [
+          LedgerLearnTranslations.tr('export_equity_total', locale),
+          formatCurrency(totalEquity, locale)
+        ],
+        [
+          LedgerLearnTranslations.tr('reports_total_liabilities_equity',
+              locale),
+          formatCurrency(totalLiabilities + totalEquity, locale)
+        ],
       ],
     );
   }
@@ -181,8 +236,15 @@ class ExportService {
   static Future<String?> exportVoucherListCsv(
       List<dynamic> vouchers, String locale) {
     return exportCsv(
-      fileName: _datedFileName('凭证列表', 'csv'),
-      headers: ['凭证号', '日期', '摘要', '借方合计', '贷方合计'],
+      fileName: _datedFileName(
+          LedgerLearnTranslations.tr('voucher_list', locale), 'csv'),
+      headers: [
+        LedgerLearnTranslations.tr('voucher_number', locale),
+        LedgerLearnTranslations.tr('ledger_date', locale),
+        LedgerLearnTranslations.tr('ledger_summary', locale),
+        LedgerLearnTranslations.tr('voucher_debit_total', locale),
+        LedgerLearnTranslations.tr('voucher_credit_total', locale),
+      ],
       rows: vouchers.map<List<String>>((v) => [
             v.id,
             '${v.date.year}-${v.date.month.toString().padLeft(2, '0')}-${v.date.day.toString().padLeft(2, '0')}',

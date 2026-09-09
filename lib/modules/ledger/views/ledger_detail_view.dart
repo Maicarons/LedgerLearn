@@ -20,7 +20,7 @@ class LedgerDetailView extends GetView<LedgerDetailController> {
         actions: [
           IconButton(
             icon: const Icon(Icons.download),
-            tooltip: '导出 CSV',
+            tooltip: 'export_csv'.tr,
             onPressed: () async {
               final path = await ExportService.exportLedgerDetailCsv(
                 accountName: controller.account.getName(locale),
@@ -29,7 +29,8 @@ class LedgerDetailView extends GetView<LedgerDetailController> {
                 locale: locale,
               );
               if (path != null && context.mounted) {
-                Get.snackbar('导出成功', '文件已保存', snackPosition: SnackPosition.BOTTOM);
+                Get.snackbar('export_success'.tr, 'export_saved'.tr,
+                    snackPosition: SnackPosition.BOTTOM);
               }
             },
           ),

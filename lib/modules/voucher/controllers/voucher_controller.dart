@@ -114,7 +114,7 @@ class VoucherFormController extends GetxController {
     if (summary.value.trim().isEmpty) return 'voucher_summary_hint'.tr;
     if (entries.length < 2) return 'voucher_no_entries'.tr;
     if (entries.any((e) => e.accountId.isEmpty)) {
-      return '请为所有分录选择科目';
+      return 'voucher_select_account_error'.tr;
     }
     if (!isBalanced.value) return 'voucher_balance_rule'.tr;
     return null;
@@ -146,11 +146,7 @@ class VoucherFormController extends GetxController {
       case 0: // Cash withdrawal
         final cash = accountRepo.getById('1001')!;
         final bank = accountRepo.getById('1002')!;
-        summary.value = locale == 'zh_CN'
-            ? '从银行提取现金'
-            : locale == 'ko_KR'
-                ? '은행에서 현금 인출'
-                : 'Withdraw cash from bank';
+        summary.value = 'voucher_template_cash_withdraw_desc'.tr;
         entries.value = [
           Entry(accountId: cash.id, accountName: cash.getName(locale), isDebit: true, amount: 5000),
           Entry(accountId: bank.id, accountName: bank.getName(locale), isDebit: false, amount: 5000),
@@ -159,11 +155,7 @@ class VoucherFormController extends GetxController {
       case 1: // Purchase materials
         final materials = accountRepo.getById('1403')!;
         final payables = accountRepo.getById('2202')!;
-        summary.value = locale == 'zh_CN'
-            ? '采购原材料，价款未付'
-            : locale == 'ko_KR'
-                ? '원자재 외상 구매'
-                : 'Purchase raw materials on credit';
+        summary.value = 'voucher_template_purchase_desc'.tr;
         entries.value = [
           Entry(accountId: materials.id, accountName: materials.getName(locale), isDebit: true, amount: 20000),
           Entry(accountId: payables.id, accountName: payables.getName(locale), isDebit: false, amount: 20000),
@@ -172,11 +164,7 @@ class VoucherFormController extends GetxController {
       case 2: // Sales
         final bank = accountRepo.getById('1002')!;
         final revenue = accountRepo.getById('5001')!;
-        summary.value = locale == 'zh_CN'
-            ? '销售商品，款项存入银行'
-            : locale == 'ko_KR'
-                ? '상품 판매 후 은행 입금'
-                : 'Sell goods, deposit to bank';
+        summary.value = 'voucher_template_sales_desc'.tr;
         entries.value = [
           Entry(accountId: bank.id, accountName: bank.getName(locale), isDebit: true, amount: 35000),
           Entry(accountId: revenue.id, accountName: revenue.getName(locale), isDebit: false, amount: 35000),
@@ -185,11 +173,7 @@ class VoucherFormController extends GetxController {
       case 3: // Reimbursement
         final admin = accountRepo.getById('5502')!;
         final cash = accountRepo.getById('1001')!;
-        summary.value = locale == 'zh_CN'
-            ? '报销差旅费'
-            : locale == 'ko_KR'
-                ? '출장비 정산'
-                : 'Reimburse travel expenses';
+        summary.value = 'voucher_template_reimburse_desc'.tr;
         entries.value = [
           Entry(accountId: admin.id, accountName: admin.getName(locale), isDebit: true, amount: 1200),
           Entry(accountId: cash.id, accountName: cash.getName(locale), isDebit: false, amount: 1200),

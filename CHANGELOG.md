@@ -2,6 +2,19 @@
 
 All notable changes to LedgerLearn will be documented in this file.
 
+## [0.1.2] - 2026-09-09
+
+### Fixed
+- Home page: "Quick Actions" section title was hardcoded Chinese; now translated
+- Trial balance / income statement / balance sheet: account names now display in the current language instead of always Chinese
+- Balance sheet: amounts were always formatted with the zh_CN locale; now follow the selected language
+- Report views: hardcoded "Export CSV" tooltips and export result dialogs are now translated
+- CSV export: all headers, section labels, and file names were hardcoded Chinese; now localized per language
+- Ledger and voucher list: year/month filter labels were hardcoded; now translated
+- Voucher form: "select an account" validation message and template summaries now use translation keys
+- Settings: theme mode labels, learning progress count, and language list entries now translated
+- Settings: app version was hardcoded as 1.0.0; now reads the real version (0.1.2)
+
 ## [0.1.1] - 2026-05-19
 
 ### Added

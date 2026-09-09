@@ -11,6 +11,9 @@ class TrialBalanceController extends GetxController {
   final AccountRepository accountRepo = Get.find<AccountRepository>();
   final VoucherRepository voucherRepo = Get.find<VoucherRepository>();
 
+  String get _locale =>
+      Get.locale?.toLanguageTag().replaceAll('-', '_') ?? 'zh_CN';
+
   int year = DateTime.now().year;
   int month = DateTime.now().month;
 
@@ -64,7 +67,7 @@ class TrialBalanceController extends GetxController {
 
       result.add(TrialBalanceRow(
         accountId: account.id,
-        accountName: account.nameZh,
+        accountName: account.getName(_locale),
         debitOpening: debitOpening,
         creditOpening: creditOpening,
         debitCurrent: debitCurrent,
@@ -123,6 +126,9 @@ class TrialBalanceRow {
 class IncomeStatementController extends GetxController {
   final AccountRepository accountRepo = Get.find<AccountRepository>();
 
+  String get _locale =>
+      Get.locale?.toLanguageTag().replaceAll('-', '_') ?? 'zh_CN';
+
   int year = DateTime.now().year;
   int month = DateTime.now().month;
 
@@ -130,7 +136,7 @@ class IncomeStatementController extends GetxController {
     final income = accountRepo.getByType(5);
     return income.map((a) {
       final summary = accountRepo.getPeriodSummary(a.id, year, month);
-      return IncomeItem(name: a.nameZh, amount: summary.credit);
+      return IncomeItem(name: a.getName(_locale), amount: summary.credit);
     }).toList();
   }
 
@@ -138,7 +144,7 @@ class IncomeStatementController extends GetxController {
     final expenses = accountRepo.getByType(6);
     return expenses.map((a) {
       final summary = accountRepo.getPeriodSummary(a.id, year, month);
-      return IncomeItem(name: a.nameZh, amount: summary.debit);
+      return IncomeItem(name: a.getName(_locale), amount: summary.debit);
     }).toList();
   }
 

@@ -38,7 +38,7 @@ class LedgerView extends GetView<LedgerController> {
                       child: DropdownButtonFormField<int>(
                         initialValue: controller.periodYear.value,
                         decoration: InputDecoration(
-                          labelText: '年份',
+                          labelText: 'year'.tr,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8)),
                           contentPadding: const EdgeInsets.symmetric(
@@ -63,7 +63,7 @@ class LedgerView extends GetView<LedgerController> {
                       child: DropdownButtonFormField<int>(
                         initialValue: controller.periodMonth.value,
                         decoration: InputDecoration(
-                          labelText: '月份',
+                          labelText: 'month'.tr,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8)),
                           contentPadding: const EdgeInsets.symmetric(
