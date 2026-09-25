@@ -2,6 +2,18 @@
 
 All notable changes to LedgerLearn will be documented in this file.
 
+## [0.3.1] - 2026-09-25
+
+### Fixed
+- Fastlane `en-US` short description shortened to under 80 characters (F-Droid bot)
+- Gradle wrapper uses official `services.gradle.org` distribution URL
+- Gradle wrapper `distributionSha256Sum` pinned (fixes `insecure-gradlew` / non-standard source)
+- Application ID set to `cn.yosvu.ledgerlearn`
+
+### Changed
+- Store icons regenerated from project `logo.png` (512×512 F-Droid icon)
+- Phone screenshots for store listing
+
 ## [0.3.0] - 2026-09-20
 
 ### Added
