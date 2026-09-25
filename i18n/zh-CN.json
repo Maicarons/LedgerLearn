@@ -329,5 +329,6 @@
   "voucher_template_tax": "缴纳税费",
   "voucher_template_tax_desc": "用银行存款缴纳应交税费",
   "voucher_template_cogs": "结转销售成本",
-  "voucher_template_cogs_desc": "结转已销商品的销售成本"
+  "voucher_template_cogs_desc": "结转已销商品的销售成本",
+  "home_tagline": "做中学 · 借贷记账入门"
 }

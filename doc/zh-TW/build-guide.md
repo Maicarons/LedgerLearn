@@ -173,7 +173,7 @@ git tag -a v1.0.0 -m "Release 1.0.0"
 git push origin v1.0.0
 ```
 
-标签名称与 `fdroid/com.yosvu.ledgerlearn.ledgerlearn.yml` 中的 `commit` 字段对应。
+标签名称与 `fdroid/cn.yosvu.ledgerlearn.yml` 中的 `commit` 字段对应。
 
 ### 3. F-Droid 元数据验证
 
@@ -182,13 +182,13 @@ git push origin v1.0.0
 pip install fdroidserver
 
 # 验证元数据语法
-fdroid readmeta fdroid/com.yosvu.ledgerlearn.ledgerlearn.yml
+fdroid readmeta fdroid/cn.yosvu.ledgerlearn.yml
 ```
 
 ### 4. 提交到 fdroiddata
 
 1. Fork [fdroiddata](https://gitlab.com/fdroid/fdroiddata)
-2. 将 `fdroid/com.yosvu.ledgerlearn.ledgerlearn.yml` 复制到 `metadata/` 目录
+2. 将 `fdroid/cn.yosvu.ledgerlearn.yml` 复制到 `metadata/` 目录
 3. 创建 Merge Request
 
 详细的 F-Droid 提交流程参见：[F-Droid Submission Guide](https://f-droid.org/en/docs/Submitting_to_F-Droid_Quick_Start_Guide/)

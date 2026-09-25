@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../../../data/services/database_service.dart';
 import '../../../data/services/progress_service.dart';
 import '../../../app/theme/app_theme.dart';
+import '../../about/controllers/about_controller.dart';
 import 'theme_controller.dart';
 
 class SettingsController extends GetxController {
@@ -24,6 +25,10 @@ class SettingsController extends GetxController {
     selectedLocale.value = locale;
     db.setLocale(locale);
     Get.updateLocale(Locale(locale.split('_')[0], locale.split('_')[1]));
+    // Keep About README / lists in sync with the new language.
+    if (Get.isRegistered<AboutController>()) {
+      Get.find<AboutController>().loadContent();
+    }
   }
 
   void setThemeMode(ThemeMode mode) {

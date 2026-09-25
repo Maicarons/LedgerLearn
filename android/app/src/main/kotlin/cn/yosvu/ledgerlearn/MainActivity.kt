@@ -1,4 +1,4 @@
-package com.yosvu.ledgerlearn.ledgerlearn
+package cn.yosvu.ledgerlearn
 
 import io.flutter.embedding.android.FlutterActivity
 

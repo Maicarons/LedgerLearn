@@ -91,6 +91,7 @@
 	  'home_quick_knowledge': '지식 베이스',
 	  'home_quick_practice': '분개 연습',
 	  'home_quick_voucher': '전표 입력',
+	  'home_tagline': '실습으로 배우는 복식부기 기초',
 	  'home_title': '회계학습',
 	  'home_trend_title': '최근 6기 추이',
 	  'home_unbalanced': '불균형',

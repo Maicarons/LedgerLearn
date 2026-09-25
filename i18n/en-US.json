@@ -329,5 +329,6 @@
   "voucher_template_tax": "Pay taxes",
   "voucher_template_tax_desc": "Pay tax payable from bank",
   "voucher_template_cogs": "Transfer COGS",
-  "voucher_template_cogs_desc": "Transfer cost of goods sold"
+  "voucher_template_cogs_desc": "Transfer cost of goods sold",
+  "home_tagline": "Learn by doing · double-entry basics"
 }

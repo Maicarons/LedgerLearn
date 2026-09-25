@@ -329,5 +329,6 @@
   "voucher_template_tax": "納税",
   "voucher_template_tax_desc": "未払税金を銀行で納付",
   "voucher_template_cogs": "売上原価振替",
-  "voucher_template_cogs_desc": "販売商品の原価を振替"
+  "voucher_template_cogs_desc": "販売商品の原価を振替",
+  "home_tagline": "実践で学ぶ複式簿記の基礎"
 }

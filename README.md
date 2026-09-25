@@ -5,6 +5,10 @@
 </p>
 
 <p align="center">
+  <b>中文</b> · <a href="README_en.md">English</a> · <a href="README_ko.md">한국어</a>
+</p>
+
+<p align="center">
   <a href="https://github.com/Maicarons/ledgerlearn/releases"><img src="https://img.shields.io/github/v/release/Maicarons/ledgerlearn?color=blue&label=Release" alt="GitHub Release"></a>
   <a href="https://github.com/Maicarons/ledgerlearn/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a>
   <a href="https://flutter.dev"><img src="https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white" alt="Flutter"></a>
@@ -81,7 +85,7 @@
 │   ├── en-US/                          # F-Droid 元数据（英文）
 │   └── ko-KR/                          # F-Droid 元数据（韩文）
 ├── fdroid/
-│   └── com.yosvu.ledgerlearn.ledgerlearn.yml  # fdroiddata 提交用元数据
+│   └── cn.yosvu.ledgerlearn.yml  # fdroiddata 提交用元数据
 ├── ├── lib/
 │   ├── main.dart                       # 入口 + 底部导航壳
 │   ├── app/
@@ -249,14 +253,11 @@ flutter build web --release
 
 ## 发布到 F-Droid
 
-`fdroid/` 目录下的 YAML 文件已准备就绪，可直接提交到 [fdroiddata](https://gitlab.com/fdroid/fdroiddata) 仓库的 Merge Request。
+`fdroid/` 目录已备好构建元数据草稿。完整流程见 **[doc/fdroid-release.md](doc/fdroid-release.md)**（含 fdroiddata MR、fastlane 元数据与本地 `fdroid build` 验证）。
 
 ```bash
-# 预览 F-Droid 元数据
-cat fdroid/com.yosvu.ledgerlearn.ledgerlearn.yml
-
-# 本地验证构建（需要 fdroidserver）
-fdroid build com.yosvu.ledgerlearn.ledgerlearn
+# 本地验证（需安装 fdroidserver）
+fdroid build cn.yosvu.ledgerlearn
 ```
 
 商店页面文本（fastlane 格式）存放于 `fastlane/metadata/android/`。

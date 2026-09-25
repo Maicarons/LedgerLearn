@@ -329,5 +329,6 @@
   "voucher_template_tax": "Nộp thuế",
   "voucher_template_tax_desc": "Nộp thuế phải trả từ ngân hàng",
   "voucher_template_cogs": "Kết chuyển giá vốn",
-  "voucher_template_cogs_desc": "Kết chuyển giá vốn hàng bán"
+  "voucher_template_cogs_desc": "Kết chuyển giá vốn hàng bán",
+  "home_tagline": "Học qua thực hành · kế toán kép"
 }

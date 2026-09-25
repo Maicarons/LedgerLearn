@@ -91,6 +91,7 @@
 	  'home_quick_knowledge': 'Knowledge Base',
 	  'home_quick_practice': 'Practice',
 	  'home_quick_voucher': 'New Voucher',
+	  'home_tagline': 'Learn by doing · double-entry basics',
 	  'home_title': 'LedgerLearn',
 	  'home_trend_title': '6-period trend',
 	  'home_unbalanced': 'Unbalanced',

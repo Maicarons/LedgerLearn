@@ -82,7 +82,7 @@ git push origin master v$VER
 
 ## 同步到 F-Droid
 
-1. GitHub Release 发布后，更新 `fdroid/com.yosvu.ledgerlearn.ledgerlearn.yml` 中的 `Builds` 列表：
+1. GitHub Release 发布后，更新 `fdroid/cn.yosvu.ledgerlearn.yml` 中的 `Builds` 列表：
 
 ```yaml
 Builds:
@@ -104,4 +104,4 @@ Builds:
 | `scripts/bump_version.dart` | 版本号升级工具 |
 | `scripts/sync_version.dart` | 版本号同步工具 |
 | `.github/workflows/release.yml` | 自动发布工作流 |
-| `fdroid/com.yosvu.ledgerlearn.ledgerlearn.yml` | F-Droid 构建元数据 |
+| `fdroid/cn.yosvu.ledgerlearn.yml` | F-Droid 构建元数据 |

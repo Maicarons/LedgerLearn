@@ -76,7 +76,7 @@
 │   ├── en-US/                          # F-Droid 元数据（英文）
 │   └── ko-KR/                          # F-Droid 元数据（韩文）
 ├── fdroid/
-│   └── com.yosvu.ledgerlearn.ledgerlearn.yml  # fdroiddata 提交用元数据
+│   └── cn.yosvu.ledgerlearn.yml  # fdroiddata 提交用元数据
 ├── ├── lib/
 │   ├── main.dart                       # 入口 + 底部导航壳
 │   ├── app/
@@ -220,10 +220,10 @@ flutter test test/i18n_parity_test.dart
 
 ```bash
 # 预览 F-Droid 元数据
-cat fdroid/com.yosvu.ledgerlearn.ledgerlearn.yml
+cat fdroid/cn.yosvu.ledgerlearn.yml
 
 # 本地验证构建（需要 fdroidserver）
-fdroid build com.yosvu.ledgerlearn.ledgerlearn
+fdroid build cn.yosvu.ledgerlearn
 ```
 
 商店页面文本（fastlane 格式）存放于 `fastlane/metadata/android/`。

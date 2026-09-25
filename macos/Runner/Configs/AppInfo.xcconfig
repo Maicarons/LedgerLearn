@@ -8,7 +8,7 @@
 PRODUCT_NAME = ledgerlearn
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.yosvu.ledgerlearn.ledgerlearn
+PRODUCT_BUNDLE_IDENTIFIER = cn.yosvu.ledgerlearn
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2026 com.yosvu.ledgerlearn. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2026 cn.yosvu.ledgerlearn. All rights reserved.

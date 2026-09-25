@@ -91,6 +91,7 @@
 	  'home_quick_knowledge': 'Kiến thức',
 	  'home_quick_practice': 'Luyện tập',
 	  'home_quick_voucher': 'Nhập chứng từ',
+	  'home_tagline': 'Học qua thực hành · kế toán kép',
 	  'home_title': 'Học kế toán',
 	  'home_trend_title': 'Xu hướng 6 kỳ',
 	  'home_unbalanced': 'Mất cân bằng',

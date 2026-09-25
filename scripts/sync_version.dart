@@ -8,7 +8,7 @@ import 'dart:io';
 
 const versionFile = 'version.json';
 const pubspecFile = 'pubspec.yaml';
-const fdroidFile = 'fdroid/com.yosvu.ledgerlearn.ledgerlearn.yml';
+const fdroidFile = 'fdroid/cn.yosvu.ledgerlearn.yml';
 const dartOutput = 'lib/app/config/app_version.dart';
 
 void main() {

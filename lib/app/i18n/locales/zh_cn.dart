@@ -91,6 +91,7 @@
 	  'home_quick_knowledge': '知识库',
 	  'home_quick_practice': '分录练习',
 	  'home_quick_voucher': '录凭证',
+	  'home_tagline': '做中学 · 借贷记账入门',
 	  'home_title': '记账学习',
 	  'home_trend_title': '近 6 期借贷趋势',
 	  'home_unbalanced': '不平衡',

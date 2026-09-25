@@ -91,6 +91,7 @@
 	  'home_quick_knowledge': 'ฐานความรู้',
 	  'home_quick_practice': 'ฝึกหัด',
 	  'home_quick_voucher': 'บันทึกใบสำคัญ',
+	  'home_tagline': 'เรียนรู้จากการปฏิบัติ · ระบบบัญชีคู่',
 	  'home_title': 'เรียนรู้การทำบัญชี',
 	  'home_trend_title': 'แนวโน้ม 6 งวด',
 	  'home_unbalanced': 'ไม่สมดุล',

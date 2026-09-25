@@ -329,5 +329,6 @@
   "voucher_template_tax": "세금 납부",
   "voucher_template_tax_desc": "은행에서 미납세금 납부",
   "voucher_template_cogs": "매출원가 전입",
-  "voucher_template_cogs_desc": "판매상품 원가 전입"
+  "voucher_template_cogs_desc": "판매상품 원가 전입",
+  "home_tagline": "실습으로 배우는 복식부기 기초"
 }

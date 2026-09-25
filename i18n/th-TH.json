@@ -329,5 +329,6 @@
   "voucher_template_tax": "ชำระภาษี",
   "voucher_template_tax_desc": "ชำระภาษีค้างจ่ายจากธนาคาร",
   "voucher_template_cogs": "โอนต้นทุนขาย",
-  "voucher_template_cogs_desc": "โอนต้นทุนสินค้าที่ขาย"
+  "voucher_template_cogs_desc": "โอนต้นทุนสินค้าที่ขาย",
+  "home_tagline": "เรียนรู้จากการปฏิบัติ · ระบบบัญชีคู่"
 }

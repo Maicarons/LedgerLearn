@@ -43,6 +43,8 @@ flutter:
 
   assets:
     - README.md
+    - README_en.md
+    - README_ko.md
     - CHANGELOG.md
     - knowledge_card/
 

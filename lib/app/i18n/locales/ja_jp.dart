@@ -91,6 +91,7 @@
 	  'home_quick_knowledge': '知識ベース',
 	  'home_quick_practice': '仕訳練習',
 	  'home_quick_voucher': '伝票入力',
+	  'home_tagline': '実践で学ぶ複式簿記の基礎',
 	  'home_title': '簿記学習',
 	  'home_trend_title': '直近6期の推移',
 	  'home_unbalanced': '不均衡',
