@@ -8,7 +8,6 @@
   <a href="https://github.com/Maicarons/ledgerlearn/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a>
   <a href="https://flutter.dev"><img src="https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white" alt="Flutter"></a>
   <a href="https://dart.dev"><img src="https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white" alt="Dart"></a>
-  <a href="https://crowdin.com/project/ledgerlearn"><img src="https://badges.crowdin.net/ledgerlearn/localized.svg" alt="Crowdin"></a>
 </p>
 
 <p align="center">
@@ -66,7 +65,7 @@
 ## 项目结构
 
 ```
-├── i18n/                               # 📦 Crowdin 翻译源文件（JSON）
+├── i18n/                               # 📦 社区翻译源文件（JSON，PR 贡献）
 │   ├── zh_CN.json                      # 源语言：简体中文
 │   ├── en_US.json                      # 英文翻译
 │   └── ko_KR.json                      # 韩文翻译
@@ -78,8 +77,7 @@
 │   └── ko-KR/                          # F-Droid 元数据（韩文）
 ├── fdroid/
 │   └── com.yosvu.ledgerlearn.ledgerlearn.yml  # fdroiddata 提交用元数据
-├── crowdin.yml                         # Crowdin 翻译平台配置
-├── lib/
+├── ├── lib/
 │   ├── main.dart                       # 入口 + 底部导航壳
 │   ├── app/
 │   │   ├── bindings/app_binding.dart   # GetX 全局依赖注入
@@ -142,45 +140,43 @@ flutter run
 flutter build apk
 ```
 
-## 翻译（Crowdin）
+## Translations (GitHub PR)
 
-本项目使用 [Crowdin](https://crowdin.com) 翻译平台管理多语言内容。翻译范围包括：
+Translations are contributed via **GitHub Pull Request** — no third-party translation platform.
 
-- **应用 UI 文本** — `i18n/*.json`
-- **F-Droid 商店页面文本** — `fastlane/metadata/android/*.txt`
-- **项目文档** — `README.md`
+### Scope
 
-### 翻译工作流
+- **App UI strings** — `i18n/*.json`
+- **Knowledge cards** — `knowledge_card/*.json`
+- **Store / docs** — `fastlane/metadata/android/*`, `doc/*/README.md`
+
+### How to contribute
+
+1. Fork this repo and create a branch (e.g. `l10n/ja-JP`)
+2. Edit the target locale JSON (source is `i18n/zh-CN.json`; keep key names identical):
+   ```bash
+   $EDITOR i18n/ja-JP.json
+   $EDITOR knowledge_card/ja-JP.json   # if needed
+   ```
+3. Generate Dart locales and verify:
+   ```bash
+   dart run scripts/gen_i18n.dart
+   flutter analyze
+   flutter test
+   ```
+4. Open a PR (suggested title: `l10n(ja-JP): improve UI strings`)
+   - Touch only translation files
+   - For a **new language**, also register it in the maps in `scripts/gen_i18n.dart`
+5. Maintainers review and merge
+
+### Local workflow
 
 ```bash
-# 1. 从 Crowdin 拉取最新翻译
-crowdin pull
-
-# 2. 从 JSON 生成 Dart 翻译文件
+# 1. Edit i18n/*.json or knowledge_card/*.json
 dart run scripts/gen_i18n.dart
-
-# 3. 更新源文本后推送至 Crowdin
-crowdin push
-
-# 4. 添加新语言只需在 crowdin.yml 中配置，然后拉取 + 生成即可
+flutter test test/i18n_parity_test.dart
 ```
 
-### 当前支持的语言
-
-| 语言              | 代码      | 状态             |
-| --------------- | ------- | -------------- |
-| 🇨🇳 简体中文（源语言）  | `zh_CN` | ✅ 完成           |
-| 🇺🇸 English    | `en_US` | ✅ 完成           |
-| 🇰🇷 한국어        | `ko_KR` | ✅ 完成           |
-| 🇯🇵 日本語        | `ja_JP` | 🔜 Crowdin 待翻译 |
-| 🇻🇳 Tiếng Việt | `vi_VN` | 🔜 Crowdin 待翻译 |
-| 🇹🇭 ไทย        | `th_TH` | 🔜 Crowdin 待翻译 |
-
-### 参与翻译
-
-1. 访问 [LedgerLearn Crowdin 项目](https://crowdin.com/project/ledgerlearn)
-2. 选择目标语言并开始翻译
-3. 翻译审核通过后，将合并到主分支
 
 ## 会计科目体系
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'database_service.dart';
+import 'practice_service.dart';
 
 /// An unlockable achievement badge shown on the Settings page.
 class Achievement {
@@ -25,9 +26,11 @@ class Achievement {
 /// exposes unlocked achievements. Persists viewed knowledge ids in storage.
 class ProgressService extends GetxController {
   final DatabaseService db = Get.find<DatabaseService>();
+  final PracticeService practice = Get.find<PracticeService>();
 
   final voucherCount = 0.obs;
   final knowledgeReadCount = 0.obs;
+  final practicePassedCount = 0.obs;
   final viewedKnowledgeIds = <String>[].obs;
 
   static final List<Achievement> achievements = [
@@ -84,6 +87,7 @@ class ProgressService extends GetxController {
   void reload() {
     voucherCount.value = db.getVouchers().length;
     knowledgeReadCount.value = viewedKnowledgeIds.length;
+    practicePassedCount.value = practice.passedCount;
     update();
   }
 

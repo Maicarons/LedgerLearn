@@ -18,7 +18,11 @@ class _KnowledgeDetailViewState extends State<KnowledgeDetailView> {
     super.initState();
     final id = Get.parameters['id'];
     if (id != null) {
-      Get.find<ProgressService>().recordKnowledgeViewed(id);
+      // Defer: ProgressService notifies Rx listeners; must not run during build.
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        Get.find<ProgressService>().recordKnowledgeViewed(id);
+      });
     }
   }
 

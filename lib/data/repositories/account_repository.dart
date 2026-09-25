@@ -29,97 +29,137 @@ class AccountRepository {
     await _db.addAccount(account);
   }
 
-  /// Calculate the current balance for an account from all vouchers
-  double getCurrentBalance(String accountId) {
-    final accounts = getAll();
+  /// Calculate the current balance for an account from all vouchers (yuan).
+  double getCurrentBalance(String accountId) =>
+      centsToYuan(getCurrentBalanceCents(accountId));
+
+  int getCurrentBalanceCents(String accountId) {
     Account? account;
     try {
-      account = accounts.firstWhere((a) => a.id == accountId);
+      account = getAll().firstWhere((a) => a.id == accountId);
     } catch (_) {
       return 0;
     }
 
-    final vouchers = _db.getVouchers();
-    double totalDebit = 0;
-    double totalCredit = 0;
+    int totalDebit = 0;
+    int totalCredit = 0;
 
-    for (final v in vouchers) {
+    for (final v in _db.getVouchers()) {
       for (final e in v.entries) {
         if (e.accountId == accountId) {
           if (e.isDebit) {
-            totalDebit += e.amount;
+            totalDebit += e.amountCents;
           } else {
-            totalCredit += e.amount;
+            totalCredit += e.amountCents;
           }
         }
       }
     }
 
-    return calculateEndingBalance(
-      opening: account.openingBalance,
-      totalDebit: totalDebit,
-      totalCredit: totalCredit,
+    return calculateEndingBalanceCents(
+      openingCents: account.openingBalanceCents,
+      totalDebitCents: totalDebit,
+      totalCreditCents: totalCredit,
       normallyDebit: account.normallyDebit,
     );
   }
 
-  /// Get period activity summary for an account
+  /// Get period activity summary for an account (yuan fields for display).
   ({double debit, double credit, double opening, double ending}) getPeriodSummary(
       String accountId, int? year, int? month) {
+    final s = getPeriodSummaryCents(accountId, year, month);
+    return (
+      debit: s.debitCents / 100.0,
+      credit: s.creditCents / 100.0,
+      opening: s.openingCents / 100.0,
+      ending: s.endingCents / 100.0,
+    );
+  }
+
+  /// Exact period summary in cents.
+  ({
+    int debitCents,
+    int creditCents,
+    int openingCents,
+    int endingCents
+  }) getPeriodSummaryCents(String accountId, int? year, int? month) {
     final account = getById(accountId);
     if (account == null) {
-      return (debit: 0, credit: 0, opening: 0, ending: 0);
+      return (debitCents: 0, creditCents: 0, openingCents: 0, endingCents: 0);
     }
 
     final vouchers = _db.getVouchers(year: year, month: month);
-    double totalDebit = 0;
-    double totalCredit = 0;
+    int totalDebit = 0;
+    int totalCredit = 0;
 
     for (final v in vouchers) {
       for (final e in v.entries) {
         if (e.accountId == accountId) {
           if (e.isDebit) {
-            totalDebit += e.amount;
+            totalDebit += e.amountCents;
           } else {
-            totalCredit += e.amount;
+            totalCredit += e.amountCents;
           }
         }
       }
     }
 
     // Opening balance includes prior periods' activity
-    double priorDebit = 0;
-    double priorCredit = 0;
-    final priorVouchers = _db.getVouchers();
-    for (final v in priorVouchers) {
+    int priorDebit = 0;
+    int priorCredit = 0;
+    for (final v in _db.getVouchers()) {
       if (year != null && month != null) {
         if (v.year > year || (v.year == year && v.month >= month)) continue;
       }
       for (final e in v.entries) {
         if (e.accountId == accountId) {
           if (e.isDebit) {
-            priorDebit += e.amount;
+            priorDebit += e.amountCents;
           } else {
-            priorCredit += e.amount;
+            priorCredit += e.amountCents;
           }
         }
       }
     }
 
-    final opening = calculateEndingBalance(
-      opening: account.openingBalance,
-      totalDebit: priorDebit,
-      totalCredit: priorCredit,
+    final opening = calculateEndingBalanceCents(
+      openingCents: account.openingBalanceCents,
+      totalDebitCents: priorDebit,
+      totalCreditCents: priorCredit,
       normallyDebit: account.normallyDebit,
     );
 
-    final ending = calculateEndingBalance(
-      opening: opening,
-      totalDebit: totalDebit,
-      totalCredit: totalCredit,
+    final ending = calculateEndingBalanceCents(
+      openingCents: opening,
+      totalDebitCents: totalDebit,
+      totalCreditCents: totalCredit,
       normallyDebit: account.normallyDebit,
     );
 
-    return (debit: totalDebit, credit: totalCredit, opening: opening, ending: ending);
+    return (
+      debitCents: totalDebit,
+      creditCents: totalCredit,
+      openingCents: opening,
+      endingCents: ending,
+    );
+  }
+
+  /// Period activity of P&L / balance-sheet groups for charts.
+  /// Returns yuan values keyed by account name.
+  Map<String, double> amountsByType(int type, {int? year, int? month}) {
+    final result = <String, double>{};
+    final locale = 'zh_CN';
+    for (final a in getByType(type)) {
+      final s = getPeriodSummary(a.id, year, month);
+      final amount = type == 5
+          ? s.credit
+          : type == 6
+              ? s.debit
+              : s.ending.abs();
+      if (amount > 0) {
+        result[a.getName(locale)] = amount;
+      }
+    }
+    return result;
   }
 }

@@ -8,7 +8,7 @@
 | Android SDK | API 34+ | `ANDROID_HOME` 已配置 |
 | JDK | 17 | 编译 Android 必需 |
 | Git | 2.x | 获取源码和依赖 |
-| Crowdin CLI | 最新版 | 翻译管理（可选，仅翻译工作需要） |
+| GitHub PR CLI | 最新版 | 翻译管理（可选，仅翻译工作需要） |
 
 ### 环境检查
 
@@ -193,18 +193,61 @@ fdroid readmeta fdroid/com.yosvu.ledgerlearn.ledgerlearn.yml
 
 详细的 F-Droid 提交流程参见：[F-Droid Submission Guide](https://f-droid.org/en/docs/Submitting_to_F-Droid_Quick_Start_Guide/)
 
-## 翻译文件生成
+## 翻译（GitHub PR）
 
-构建前确保翻译文件是最新的：
+翻译由社区通过 **GitHub Pull Request** 贡献，不依赖第三方翻译平台。
+
+### 翻译范围
+
+- **应用 UI 文本** — `i18n/*.json`
+- **知识卡片** — `knowledge_card/*.json`
+- **商店/文档** — `fastlane/metadata/android/*`、`doc/*/README.md`
+
+### 如何贡献翻译
+
+1. Fork 本仓库并创建分支（如 `l10n/ja-JP`）
+2. 编辑目标语言 JSON（源语言为 `i18n/zh-CN.json`，键名保持一致）：
+   ```bash
+   # 例：完善日语 UI 文案
+   $EDITOR i18n/ja-JP.json
+   # 如需同步知识卡片
+   $EDITOR knowledge_card/ja-JP.json
+   ```
+3. 生成 Dart 语言包并自检：
+   ```bash
+   dart run scripts/gen_i18n.dart
+   flutter analyze
+   flutter test
+   ```
+4. 提交 PR（标题建议：`l10n(ja-JP): improve UI strings`）
+   - 仅改翻译相关文件，勿夹带无关代码
+   - 新增语言：同时在 `scripts/gen_i18n.dart` 的 locale 映射表中注册
+5. 维护者审阅后合并；合并后 `git pull` 即可看到最新文案
+
+### 本地工作流
 
 ```bash
-# 如果参与了 Crowdin 翻译项目
-crowdin pull                        # 拉取最新翻译
-dart run scripts/gen_i18n.dart      # 生成 Dart 翻译文件
+# 1. 修改 i18n/*.json 或 knowledge_card/*.json
+# 2. 从 JSON 生成 Dart 翻译文件
+dart run scripts/gen_i18n.dart
 
-# 检查生成结果
-flutter analyze
+# 3. 检查键完整性（测试会比对六语键集合）
+flutter test test/i18n_parity_test.dart
 ```
+
+### 当前支持的语言
+
+| 语言 | 代码 | 状态 |
+|---|---|---|
+| 🇨🇳 简体中文（源语言） | `zh_CN` | ✅ 完成 |
+| 🇺🇸 English | `en_US` | ✅ 完成 |
+| 🇰🇷 한국어 | `ko_KR` | ✅ 完成 |
+| 🇯🇵 日本語 | `ja_JP` | ✅ 基础完成，欢迎润色 |
+| 🇻🇳 Tiếng Việt | `vi_VN` | ✅ 基础完成，欢迎润色 |
+| 🇹🇭 ไทย | `th_TH` | ✅ 基础完成，欢迎润色 |
+
+欢迎通过 PR 补充 `doc/` 下更多语言的 README，或修正既有译文。
+
 
 ## 代码质量
 

@@ -42,7 +42,7 @@ class HomeController extends GetxController {
     final now = DateTime.now();
     currentPeriod.value = '${now.year}-${now.month.toString().padLeft(2, '0')}';
     locale.value = Get.locale?.toLanguageTag().replaceAll('-', '_') ?? 'zh_CN';
-    refreshSummary();
+    Future.microtask(refreshSummary);
   }
 
   void setPeriod(String period) {
@@ -58,7 +58,9 @@ class HomeController extends GetxController {
     final count = voucherRepo.getAll(year: year, month: month).length;
     final debit = voucherRepo.totalPeriodDebit(year, month);
     final credit = voucherRepo.totalPeriodCredit(year, month);
-    final balanced = (debit - credit).abs() < 0.01;
+    final balanced =
+        voucherRepo.totalPeriodDebitCents(year, month) ==
+            voucherRepo.totalPeriodCreditCents(year, month);
 
     summary.value = HomeSummary(
       voucherCount: count,
@@ -70,5 +72,13 @@ class HomeController extends GetxController {
 
   String formatAmount(double amount) {
     return formatCurrency(amount, locale.value);
+  }
+
+  /// Last 6 months debit/credit trend for the home chart.
+  List<({String label, double debit, double credit})> get trend {
+    final parts = currentPeriod.value.split('-');
+    final year = int.parse(parts[0]);
+    final month = int.parse(parts[1]);
+    return voucherRepo.monthlyTrend(endYear: year, endMonth: month, months: 6);
   }
 }

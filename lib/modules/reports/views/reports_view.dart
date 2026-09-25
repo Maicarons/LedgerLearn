@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../reports/controllers/reports_controller.dart';
+import '../../../shared/widgets/charts.dart';
+import 'closing_wizard_view.dart';
 
 class ReportsView extends StatelessWidget {
   const ReportsView({super.key});
@@ -7,6 +10,7 @@ class ReportsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final balanceCtrl = Get.put(BalanceSheetController());
 
     return Scaffold(
       appBar: AppBar(title: Text('reports_title'.tr)),
@@ -35,6 +39,46 @@ class ReportsView extends StatelessWidget {
             subtitle: 'reports_balance_hint'.tr,
             color: Colors.indigo,
             onTap: () => Get.toNamed('/reports/balance-sheet'),
+          ),
+          const SizedBox(height: 12),
+          _ReportCard(
+            icon: Icons.autorenew,
+            title: 'reports_closing_wizard'.tr,
+            subtitle: 'closing_intro_body'.tr,
+            color: Colors.deepPurple,
+            onTap: () => Get.to(() => const ClosingWizardView()),
+          ),
+          const SizedBox(height: 24),
+          Text('reports_expense_chart'.tr,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.copyWith(fontWeight: FontWeight.w600)),
+          const SizedBox(height: 8),
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: Builder(builder: (context) {
+                final data = <String, double>{};
+                for (final i in balanceCtrl.topExpenseItems) {
+                  data[i.name] = i.amount;
+                }
+                return BreakdownPieChart(data: data);
+              }),
+            ),
+          ),
+          const SizedBox(height: 16),
+          Text('reports_asset_chart'.tr,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.copyWith(fontWeight: FontWeight.w600)),
+          const SizedBox(height: 8),
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: BreakdownPieChart(data: balanceCtrl.assetBreakdown),
+            ),
           ),
         ],
       ),
@@ -82,6 +126,8 @@ class _ReportCard extends StatelessWidget {
                             fontSize: 16, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 4),
                     Text(subtitle,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                             fontSize: 13, color: Colors.grey.shade600)),
                   ],

@@ -6,11 +6,13 @@ class Account {
   String category; // 'asset','liability','equity','cost','pl'
   String? subCategory;
   int type; // 1=asset,2=liability,3=equity,4=cost,5=income,6=expense
-  double openingBalance;
+  int openingBalanceCents;
   bool isSystem;
   String? explanationZh;
   String? explanationEn;
   String? explanationKo;
+
+  double get openingBalance => openingBalanceCents / 100.0;
 
   Account({
     required this.id,
@@ -20,12 +22,14 @@ class Account {
     required this.category,
     this.subCategory,
     required this.type,
-    this.openingBalance = 0,
+    double? openingBalance,
+    int? openingBalanceCents,
     this.isSystem = false,
     this.explanationZh,
     this.explanationEn,
     this.explanationKo,
-  });
+  }) : openingBalanceCents =
+            openingBalanceCents ?? ((openingBalance ?? 0) * 100).round();
 
   String getName(String locale) {
     switch (locale) {
@@ -35,6 +39,10 @@ class Account {
         return nameEn;
       case 'ko_KR':
         return nameKo;
+      case 'ja_JP':
+      case 'vi_VN':
+      case 'th_TH':
+        return nameEn;
       default:
         return nameZh;
     }
@@ -48,6 +56,10 @@ class Account {
         return explanationEn ?? '';
       case 'ko_KR':
         return explanationKo ?? '';
+      case 'ja_JP':
+      case 'vi_VN':
+      case 'th_TH':
+        return explanationEn ?? '';
       default:
         return explanationZh ?? '';
     }
@@ -100,6 +112,7 @@ class Account {
         'category': category,
         'subCategory': subCategory,
         'type': type,
+        'openingBalanceCents': openingBalanceCents,
         'openingBalance': openingBalance,
         'isSystem': isSystem,
         'explanationZh': explanationZh,
@@ -107,18 +120,28 @@ class Account {
         'explanationKo': explanationKo,
       };
 
-  factory Account.fromJson(Map<String, dynamic> json) => Account(
-        id: json['id'],
-        nameZh: json['nameZh'],
-        nameEn: json['nameEn'],
-        nameKo: json['nameKo'],
-        category: json['category'],
-        subCategory: json['subCategory'],
-        type: json['type'],
-        openingBalance: (json['openingBalance'] ?? 0).toDouble(),
-        isSystem: json['isSystem'] ?? false,
-        explanationZh: json['explanationZh'],
-        explanationEn: json['explanationEn'],
-        explanationKo: json['explanationKo'],
-      );
+  factory Account.fromJson(Map<String, dynamic> json) {
+    final cents = json['openingBalanceCents'];
+    int openingCents;
+    if (cents is int) {
+      openingCents = cents;
+    } else {
+      final legacy = (json['openingBalance'] ?? 0).toDouble();
+      openingCents = (legacy * 100).round();
+    }
+    return Account(
+      id: json['id'],
+      nameZh: json['nameZh'],
+      nameEn: json['nameEn'],
+      nameKo: json['nameKo'],
+      category: json['category'],
+      subCategory: json['subCategory'],
+      type: json['type'],
+      openingBalanceCents: openingCents,
+      isSystem: json['isSystem'] ?? false,
+      explanationZh: json['explanationZh'],
+      explanationEn: json['explanationEn'],
+      explanationKo: json['explanationKo'],
+    );
+  }
 }

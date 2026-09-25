@@ -11,8 +11,12 @@ import '../../modules/reports/views/reports_view.dart';
 import '../../modules/reports/views/trial_balance_view.dart';
 import '../../modules/reports/views/income_statement_view.dart';
 import '../../modules/reports/views/balance_sheet_view.dart';
+import '../../modules/reports/views/closing_wizard_view.dart';
 import '../../modules/knowledge/views/knowledge_view.dart';
 import '../../modules/knowledge/views/knowledge_detail_view.dart';
+import '../../modules/practice/views/practice_view.dart';
+import '../../modules/practice/views/practice_detail_view.dart';
+import '../../modules/practice/views/wrong_book_view.dart';
 import '../../modules/settings/views/settings_view.dart';
 import '../../modules/about/views/about_view.dart';
 
@@ -33,8 +37,12 @@ class AppPages {
     GetPage(name: '/reports/trial-balance', page: () => const TrialBalanceView()),
     GetPage(name: '/reports/income-statement', page: () => const IncomeStatementView()),
     GetPage(name: '/reports/balance-sheet', page: () => const BalanceSheetView()),
+    GetPage(name: '/reports/closing', page: () => const ClosingWizardView()),
     GetPage(name: '/knowledge', page: () => const KnowledgeView()),
     GetPage(name: '/knowledge/detail/:id', page: () => const KnowledgeDetailView()),
+    GetPage(name: '/practice', page: () => const PracticeView()),
+    GetPage(name: '/practice/:id', page: () => const PracticeDetailView()),
+    GetPage(name: '/practice/wrong-book', page: () => const WrongBookView()),
     GetPage(name: '/settings', page: () => const SettingsView()),
     GetPage(name: '/about', page: () => const AboutView()),
   ];

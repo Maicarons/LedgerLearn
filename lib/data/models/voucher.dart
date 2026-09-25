@@ -15,16 +15,18 @@ class Voucher {
     this.attachedKnowledge,
   });
 
-  double get totalDebit => entries
-      .where((e) => e.isDebit)
-      .fold(0.0, (sum, e) => sum + e.amount);
+  int get totalDebitCents =>
+      entries.where((e) => e.isDebit).fold(0, (sum, e) => sum + e.amountCents);
 
-  double get totalCredit => entries
-      .where((e) => !e.isDebit)
-      .fold(0.0, (sum, e) => sum + e.amount);
+  int get totalCreditCents =>
+      entries.where((e) => !e.isDebit).fold(0, (sum, e) => sum + e.amountCents);
 
-  bool get isBalanced =>
-      (totalDebit - totalCredit).abs() < 0.001;
+  double get totalDebit => totalDebitCents / 100.0;
+
+  double get totalCredit => totalCreditCents / 100.0;
+
+  /// Exact balance check in cents (no float epsilon).
+  bool get isBalanced => totalDebitCents == totalCreditCents;
 
   int get year => date.year;
   int get month => date.month;
@@ -42,7 +44,7 @@ class Voucher {
         date: DateTime.parse(json['date']),
         summary: json['summary'],
         entries: (json['entries'] as List)
-            .map((e) => Entry.fromJson(e))
+            .map((e) => Entry.fromJson(Map<String, dynamic>.from(e)))
             .toList(),
         attachedKnowledge: json['attachedKnowledge'],
       );

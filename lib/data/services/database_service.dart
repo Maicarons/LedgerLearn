@@ -257,6 +257,9 @@ class DatabaseService {
         _accountsKey,
         presetAccounts.map((a) => a.toJson()).toList());
     await _box.write(_vouchersKey, <Map<String, dynamic>>[]);
+    await _box.write(_viewedKnowledgeKey, <String>[]);
+    await _box.write('practice_attempts', <Map<String, dynamic>>[]);
+    await _box.write('practice_passed', <String>[]);
     await _refreshKnowledge();
   }
 }

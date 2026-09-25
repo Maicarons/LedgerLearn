@@ -16,7 +16,8 @@ class SettingsController extends GetxController {
   void onInit() {
     super.onInit();
     selectedLocale.value = db.getLocale();
-    progress.reload();
+    // Defer: reload() writes Rx and may run while parent widgets are building.
+    Future.microtask(progress.reload);
   }
 
   void switchLanguage(String locale) {
@@ -40,7 +41,7 @@ class SettingsController extends GetxController {
 
   Future<void> resetData() async {
     await db.resetAll();
-    progress.reload();
+    Future.microtask(progress.reload);
     Get.snackbar('success'.tr, 'settings_reset_success'.tr,
         snackPosition: SnackPosition.BOTTOM);
   }

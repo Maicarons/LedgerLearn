@@ -1,3 +1,4 @@
+import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 import '../../../data/models/knowledge_card.dart';
 import '../../../data/repositories/knowledge_repository.dart';
@@ -11,7 +12,12 @@ class KnowledgeController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    loadCards();
+    // Defer first load so Obx widgets can subscribe before the list notifies.
+    if (SchedulerBinding.instance.schedulerPhase == SchedulerPhase.persistentCallbacks) {
+      SchedulerBinding.instance.addPostFrameCallback((_) => loadCards());
+    } else {
+      loadCards();
+    }
   }
 
   void loadCards() {

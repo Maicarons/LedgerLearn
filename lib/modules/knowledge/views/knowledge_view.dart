@@ -95,9 +95,12 @@ class KnowledgeView extends GetView<KnowledgeController> {
                       title: Text(card.title,
                           style: const TextStyle(fontWeight: FontWeight.w600)),
                       subtitle: Text(
-                        card.category == 'accounting_practice'
-                            ? 'knowledge_practice'.tr
-                            : 'knowledge_law'.tr,
+                        switch (card.category) {
+                          'accounting_practice' => 'knowledge_practice'.tr,
+                          'economic_law' => 'knowledge_law'.tr,
+                          'tax' => 'knowledge_tax'.tr,
+                          _ => 'knowledge_practice'.tr,
+                        },
                         style: const TextStyle(fontSize: 12),
                       ),
                       trailing: const Icon(Icons.chevron_right),

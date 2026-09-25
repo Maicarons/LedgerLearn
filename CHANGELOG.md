@@ -2,6 +2,29 @@
 
 All notable changes to LedgerLearn will be documented in this file.
 
+## [0.3.0] - 2026-09-20
+
+### Added
+- Practice module: 10 business-scenario drills with auto-grading (account + direction + balance + amount)
+- Wrong-answer book with explanations and one-tap clear
+- Period-end closing wizard: guided 3-step close (revenue → expense → net profit)
+- Home dashboard: 6-period debit/credit trend chart (fl_chart)
+- Reports: expense mix and asset structure pie charts
+- Chart of accounts: +3 ASBE accounts (Contract Assets 1331, Financial Liabilities Held for Trading 2101, Contract Liabilities 2314) → 62 total
+- i18n: 76 new UI keys in all 6 app locales (298 keys each)
+- CI: GitHub Pages web deploy workflow
+- Tests: 40+ unit tests covering money cents, models, i18n parity, practice grading
+
+### Changed
+- Money is stored as integer cents (`Entry.amountCents`, `Account.openingBalanceCents`) with legacy JSON migration
+- Voucher balance checks are exact (cents), no float epsilon
+- `window_manager` is desktop-only (guarded) — safer on mobile/web
+- Remote knowledge base prefers versioned jsDelivr tags over `@master`
+- CLAUDE.md rewritten to match the real architecture
+
+### Removed
+- Unused dependencies: hive, hive_flutter, hive_generator, flutter_slidable, build_runner
+
 ## [0.2.0] - 2026-09-09
 
 ### Added

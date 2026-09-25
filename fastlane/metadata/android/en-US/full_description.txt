@@ -13,4 +13,4 @@ Features:
 
 Built with Flutter and GetX. Offline-first with local storage — no account registration needed.
 
-翻译由 Crowdin 社区提供支持。
+翻译由 GitHub 社区贡献者提供支持。

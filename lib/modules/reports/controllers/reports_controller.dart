@@ -94,8 +94,8 @@ class TrialBalanceController extends GetxController {
 
   bool get isBalanced {
     final r = rows.last;
-    return (r.debitCurrent - r.creditCurrent).abs() < 0.01 &&
-        (r.debitEnding - r.creditEnding).abs() < 0.01;
+    return (r.debitCurrent - r.creditCurrent).abs() < 0.005 &&
+        (r.debitEnding - r.creditEnding).abs() < 0.005;
   }
 }
 
@@ -171,6 +171,30 @@ class BalanceSheetController extends GetxController {
       total += accountRepo.getCurrentBalance(a.id);
     }
     return total;
+  }
+
+  /// Asset / liability / equity slices for charts (yuan).
+  Map<String, double> get assetBreakdown =>
+      accountRepo.amountsByType(1);
+
+  Map<String, double> get liabilityBreakdown =>
+      accountRepo.amountsByType(2);
+
+  Map<String, double> get equityBreakdown =>
+      accountRepo.amountsByType(3);
+
+  /// Top expense items for the pie chart.
+  List<IncomeItem> get topExpenseItems {
+    final expenses = accountRepo.getByType(6);
+    final locale =
+        Get.locale?.toLanguageTag().replaceAll('-', '_') ?? 'zh_CN';
+    final now = DateTime.now();
+    final list = expenses.map((a) {
+      final summary = accountRepo.getPeriodSummary(a.id, now.year, now.month);
+      return IncomeItem(name: a.getName(locale), amount: summary.debit);
+    }).where((i) => i.amount > 0).toList()
+      ..sort((a, b) => b.amount.compareTo(a.amount));
+    return list.take(5).toList();
   }
 
   double get totalLiabilities {

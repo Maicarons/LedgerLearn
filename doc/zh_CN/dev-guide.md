@@ -142,7 +142,7 @@ View (Widget)
 ### 国际化
 
 - 所有 UI 文字使用 `.tr` 获取翻译：`'voucher_title'.tr`
-- 翻译源文件为 `i18n/*.json`（JSON 格式），由 Crowdin 平台管理
+- 翻译源文件为 `i18n/*.json`（JSON 格式），由社区通过 GitHub Pull Request 贡献
 - Dart 文件 `lib/app/i18n/locales/` 由 `scripts/gen_i18n.dart` 从 JSON 自动生成
 - 动态数据（科目名、知识卡片）使用三语字段存储，通过 `locale` 参数选择
 - 语言切换：`Get.updateLocale(Locale(lang, region))`
@@ -189,9 +189,9 @@ RemoteKnowledgeService
 ### 添加新语言
 
 参见 [翻译指南 — 添加新语言](translation-guide.md#添加新语言)。简要流程：
-1. 在 Crowdin 平台添加目标语言并完成翻译
+1. 按 translation-guide.md 通过 GitHub Pull Request 提交新语言翻译
 2. 在 `scripts/gen_i18n.dart` 中添加语言映射
-3. 运行 `crowdin pull && dart run scripts/gen_i18n.dart`
+3. 运行 `dart run scripts/gen_i18n.dart`
 4. 在设置页面的语言选项中注册新语言
 
 ## 注意事项

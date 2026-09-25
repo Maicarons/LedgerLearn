@@ -4,6 +4,9 @@ import '../controllers/home_controller.dart';
 import '../../voucher/views/voucher_form_view.dart';
 import '../../accounts/views/accounts_view.dart';
 import '../../knowledge/views/knowledge_view.dart';
+import '../../practice/views/practice_view.dart';
+import '../../reports/views/closing_wizard_view.dart';
+import '../../../shared/widgets/charts.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
@@ -215,10 +218,10 @@ class HomeView extends GetView<HomeController> {
                       const SizedBox(width: 10),
                       Expanded(
                         child: _QuickActionCard(
-                          icon: Icons.account_balance_rounded,
-                          label: 'home_quick_accounts'.tr,
-                          color: const Color(0xFF14B8A6),
-                          onTap: () => Get.to(() => const AccountsView()),
+                          icon: Icons.fitness_center_rounded,
+                          label: 'home_quick_practice'.tr,
+                          color: const Color(0xFFF59E0B),
+                          onTap: () => Get.to(() => const PracticeView()),
                         ),
                       ),
                       const SizedBox(width: 10),
@@ -233,12 +236,89 @@ class HomeView extends GetView<HomeController> {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: _QuickActionCard(
+                          icon: Icons.account_balance_rounded,
+                          label: 'home_quick_accounts'.tr,
+                          color: const Color(0xFF14B8A6),
+                          onTap: () => Get.to(() => const AccountsView()),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: _QuickActionCard(
+                          icon: Icons.autorenew_rounded,
+                          label: 'reports_closing_wizard'.tr,
+                          color: const Color(0xFF6366F1),
+                          onTap: () =>
+                              Get.to(() => const ClosingWizardView()),
+                        ),
+                      ),
+                      const Expanded(child: SizedBox()),
+                    ],
+                  ),
+
+                  const SizedBox(height: 28),
+
+                  // Trend chart
+                  Text('home_trend_title'.tr,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium
+                          ?.copyWith(fontWeight: FontWeight.w600)),
+                  const SizedBox(height: 8),
+                  Obx(() {
+                    // Rebuild when period/summary changes
+                    controller.summary.value;
+                    final trend = controller.trend;
+                    return Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Column(
+                          children: [
+                            MonthlyTrendChart(data: trend),
+                            const SizedBox(height: 8),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                _LegendDot(color: colorScheme.primary),
+                                const SizedBox(width: 4),
+                                Text('home_legend_debit'.tr,
+                                    style: const TextStyle(fontSize: 12)),
+                                const SizedBox(width: 16),
+                                _LegendDot(color: colorScheme.tertiary),
+                                const SizedBox(width: 4),
+                                Text('home_legend_credit'.tr,
+                                    style: const TextStyle(fontSize: 12)),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
                 ],
               ),
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class _LegendDot extends StatelessWidget {
+  final Color color;
+  const _LegendDot({required this.color});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 10,
+      height: 10,
+      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
     );
   }
 }

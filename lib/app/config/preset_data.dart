@@ -33,6 +33,8 @@ List<Account> presetAccounts = [
   Account(id: '1702', nameZh: '累计摊销', nameEn: 'Accumulated Amortization', nameKo: '무형자산상각누계액', category: 'asset', subCategory: 'noncurrent_asset', type: 1, isSystem: true),
   Account(id: '1801', nameZh: '长期待摊费用', nameEn: 'Long-term Prepaid Expenses', nameKo: '장기선급비용', category: 'asset', subCategory: 'noncurrent_asset', type: 1, isSystem: true),
   Account(id: '1901', nameZh: '待处理财产损溢', nameEn: 'Pending Property Loss/Gain', nameKo: '미처리재산손익', category: 'asset', subCategory: 'noncurrent_asset', type: 1, isSystem: true),
+  Account(id: '1331', nameZh: '合同资产', nameEn: 'Contract Assets', nameKo: '계약자산', category: 'asset', subCategory: 'current_asset', type: 1, isSystem: true,
+      explanationZh: '企业已向客户转让商品而有权收取对价的权利，且该权利取决于时间流逝之外的其他因素。', explanationEn: 'Right to consideration in exchange for goods transferred to a customer, conditional on factors other than the passage of time.', explanationKo: '고객에게 상품을 이전하고 대가를 받을 권리 중 시간 경과 이외 요건이 붙은 자산.'),
 
   // ============ 负债类 Liabilities ============
   Account(id: '2001', nameZh: '短期借款', nameEn: 'Short-term Loans', nameKo: '단기차입금', category: 'liability', subCategory: 'current_liability', type: 2, isSystem: true),
@@ -47,6 +49,10 @@ List<Account> presetAccounts = [
   Account(id: '2501', nameZh: '长期借款', nameEn: 'Long-term Loans', nameKo: '장기차입금', category: 'liability', subCategory: 'noncurrent_liability', type: 2, isSystem: true),
   Account(id: '2502', nameZh: '应付债券', nameEn: 'Bonds Payable', nameKo: '사채', category: 'liability', subCategory: 'noncurrent_liability', type: 2, isSystem: true),
   Account(id: '2701', nameZh: '长期应付款', nameEn: 'Long-term Payables', nameKo: '장기미지급금', category: 'liability', subCategory: 'noncurrent_liability', type: 2, isSystem: true),
+  Account(id: '2101', nameZh: '交易性金融负债', nameEn: 'Financial Liabilities Held for Trading', nameKo: '매도가능금융부채', category: 'liability', subCategory: 'current_liability', type: 2, isSystem: true,
+      explanationZh: '企业以公允价值计量且其变动计入当期损益的金融负债。', explanationEn: 'Financial liabilities measured at fair value through profit or loss.', explanationKo: '공정가치로 측정하고 변동을 당기손익에 처리하는 금융부채.'),
+  Account(id: '2314', nameZh: '合同负债', nameEn: 'Contract Liabilities', nameKo: '계약부채', category: 'liability', subCategory: 'current_liability', type: 2, isSystem: true,
+      explanationZh: '企业已收或应收客户对价而应向客户转让商品的义务。', explanationEn: 'Obligation to transfer goods to a customer for consideration received or receivable.', explanationKo: '대가를 수령·수취한 고객에게 상품을 이전해야 할 의무.'),
 
   // ============ 所有者权益类 Owner's Equity ============
   Account(id: '3001', nameZh: '实收资本', nameEn: 'Paid-in Capital', nameKo: '자본금', category: 'equity', subCategory: 'equity', type: 3, isSystem: true, openingBalance: 390000,

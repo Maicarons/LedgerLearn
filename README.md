@@ -9,7 +9,6 @@
   <a href="https://github.com/Maicarons/ledgerlearn/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a>
   <a href="https://flutter.dev"><img src="https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white" alt="Flutter"></a>
   <a href="https://dart.dev"><img src="https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white" alt="Dart"></a>
-  <a href="https://crowdin.com/project/ledgerlearn"><img src="https://badges.crowdin.net/ledgerlearn/localized.svg" alt="Crowdin"></a>
 </p>
 
 <p align="center">
@@ -44,10 +43,13 @@
 |---|---|
 | **首页仪表盘** | 当前账期概览：凭证数量、借贷方合计、试算平衡状态；快捷入口 |
 | **凭证管理** | 新建/编辑/删除记账凭证，动态分录行，借贷平衡校验，4 种业务模板 |
-| **会计科目** | 59 个预置标准科目（资产/负债/权益/成本/损益），支持自定义科目 |
+| **会计科目** | 62 个预置标准科目（资产/负债/权益/成本/损益），支持自定义科目 |
 | **总账/明细账** | 按科目汇总的总账，按凭证逐笔展示的明细账 |
 | **财务报表** | 试算平衡表、利润表、资产负债表，附教学解读 |
-| **知识库** | 74 条三语知识卡片（会计实务 + 经济法），支持 Markdown 渲染，支持联网更新 |
+| **知识库** | 74 条多语言知识卡片（会计实务 + 经济法 + 税务），支持 Markdown 渲染，支持联网更新 |
+| **分录练习** | 10 个业务场景闯关，自动判分 + 错题本 |
+| **期末结转** | 三步向导：结转收入 → 费用 → 本年利润 |
+| **图表** | 首页近 6 期借贷趋势、费用构成 / 资产结构饼图 |
 | **导出** | 凭证列表、总账/明细账、试算平衡表、利润表、资产负债表导出为 CSV/PDF |
 | **设置** | 中/英/韩语言实时切换，浅色/深色/跟随系统主题，数据重置 |
 
@@ -68,7 +70,7 @@
 ## 项目结构
 
 ```
-├── i18n/                               # 📦 Crowdin 翻译源文件（JSON）
+├── i18n/                               # 📦 社区翻译源文件（JSON，PR 贡献）
 │   ├── zh_CN.json                      # 源语言：简体中文
 │   ├── en_US.json                      # 英文翻译
 │   └── ko_KR.json                      # 韩文翻译
@@ -80,12 +82,11 @@
 │   └── ko-KR/                          # F-Droid 元数据（韩文）
 ├── fdroid/
 │   └── com.yosvu.ledgerlearn.ledgerlearn.yml  # fdroiddata 提交用元数据
-├── crowdin.yml                         # Crowdin 翻译平台配置
-├── lib/
+├── ├── lib/
 │   ├── main.dart                       # 入口 + 底部导航壳
 │   ├── app/
 │   │   ├── bindings/app_binding.dart   # GetX 全局依赖注入
-│   │   ├── config/preset_data.dart     # 59 个科目 + 74 条知识卡片的预置数据
+│   │   ├── config/preset_data.dart     # 62 个科目预置数据
 │   │   ├── i18n/
 │   │   │   ├── translations.dart       # GetX Translations 类（由 gen_i18n.dart 生成）
 │   │   │   └── locales/                # 各语言 Dart 文件（由 gen_i18n.dart 生成）
@@ -144,27 +145,46 @@ flutter run
 flutter build apk
 ```
 
-## 翻译（Crowdin）
+## 翻译（GitHub PR）
 
-本项目使用 [Crowdin](https://crowdin.com) 翻译平台管理多语言内容。翻译范围包括：
+翻译由社区通过 **GitHub Pull Request** 贡献，不依赖第三方翻译平台。
+
+### 翻译范围
 
 - **应用 UI 文本** — `i18n/*.json`
-- **F-Droid 商店页面文本** — `fastlane/metadata/android/*.txt`
-- **项目文档** — `README.md`
+- **知识卡片** — `knowledge_card/*.json`
+- **商店/文档** — `fastlane/metadata/android/*`、`doc/*/README.md`
 
-### 翻译工作流
+### 如何贡献翻译
+
+1. Fork 本仓库并创建分支（如 `l10n/ja-JP`）
+2. 编辑目标语言 JSON（源语言为 `i18n/zh-CN.json`，键名保持一致）：
+   ```bash
+   # 例：完善日语 UI 文案
+   $EDITOR i18n/ja-JP.json
+   # 如需同步知识卡片
+   $EDITOR knowledge_card/ja-JP.json
+   ```
+3. 生成 Dart 语言包并自检：
+   ```bash
+   dart run scripts/gen_i18n.dart
+   flutter analyze
+   flutter test
+   ```
+4. 提交 PR（标题建议：`l10n(ja-JP): improve UI strings`）
+   - 仅改翻译相关文件，勿夹带无关代码
+   - 新增语言：同时在 `scripts/gen_i18n.dart` 的 locale 映射表中注册
+5. 维护者审阅后合并；合并后 `git pull` 即可看到最新文案
+
+### 本地工作流
 
 ```bash
-# 1. 从 Crowdin 拉取最新翻译
-crowdin pull
-
+# 1. 修改 i18n/*.json 或 knowledge_card/*.json
 # 2. 从 JSON 生成 Dart 翻译文件
 dart run scripts/gen_i18n.dart
 
-# 3. 更新源文本后推送至 Crowdin
-crowdin push
-
-# 4. 添加新语言只需在 crowdin.yml 中配置，然后拉取 + 生成即可
+# 3. 检查键完整性（测试会比对六语键集合）
+flutter test test/i18n_parity_test.dart
 ```
 
 ### 当前支持的语言
@@ -174,22 +194,19 @@ crowdin push
 | 🇨🇳 简体中文（源语言） | `zh_CN` | ✅ 完成 |
 | 🇺🇸 English | `en_US` | ✅ 完成 |
 | 🇰🇷 한국어 | `ko_KR` | ✅ 完成 |
-| 🇯🇵 日本語 | `ja_JP` | 🔜 Crowdin 待翻译 |
-| 🇻🇳 Tiếng Việt | `vi_VN` | 🔜 Crowdin 待翻译 |
-| 🇹🇭 ไทย | `th_TH` | 🔜 Crowdin 待翻译 |
+| 🇯🇵 日本語 | `ja_JP` | ✅ 基础完成，欢迎润色 |
+| 🇻🇳 Tiếng Việt | `vi_VN` | ✅ 基础完成，欢迎润色 |
+| 🇹🇭 ไทย | `th_TH` | ✅ 基础完成，欢迎润色 |
 
-### 参与翻译
+欢迎通过 PR 补充 `doc/` 下更多语言的 README，或修正既有译文。
 
-1. 访问 [LedgerLearn Crowdin 项目](https://crowdin.com/project/ledgerlearn)
-2. 选择目标语言并开始翻译
-3. 翻译审核通过后，将合并到主分支
 
 ## 会计科目体系
 
-预置 **59 个标准会计科目**，严格按照**中国企业会计准则**分类：
+预置 **62 个标准会计科目**，严格按照**中国企业会计准则**分类：
 
-- **资产类**（25 个）：库存现金、银行存款、应收账款、原材料、库存商品、固定资产、累计折旧等
-- **负债类**（12 个）：短期借款、应付账款、应付职工薪酬、应交税费、长期借款等
+- **资产类**（26 个）：库存现金、银行存款、应收账款、合同资产、原材料、库存商品、固定资产、累计折旧等
+- **负债类**（14 个）：短期借款、应付账款、合同负债、交易性金融负债、应付职工薪酬、应交税费、长期借款等
 - **所有者权益类**（5 个）：实收资本、资本公积、盈余公积、本年利润、利润分配
 - **成本类**（2 个）：生产成本、制造费用
 - **损益类**（15 个）：主营业务收入、主营业务成本、销售费用、管理费用、财务费用等
@@ -214,11 +231,21 @@ crowdin push
 
 ## 教学融入设计
 
+- **分录练习**：10 个真实业务场景，自动判分（科目/方向/平衡/金额），错题本可复盘
+- **期末结转向导**：三步生成结转凭证（收入 → 费用 → 本年利润）
 - **凭证保存后**：随机弹出会计实务知识点
 - **凭证不平衡**：提示「有借必有贷，借贷必相等」并解释借贷记账法
-- **报表页面**：点击信息图标查看该报表的解读说明
+- **报表页面**：点击信息图标查看该报表的解读说明；费用/资产饼图辅助理解结构
 - **科目详情页**：展示关联的知识卡片
 - **明细账/总账页**：悬浮按钮解释会计概念
+
+## Web 试用
+
+推送到 `master` 或打 `v*` 标签后，GitHub Actions 会自动构建并部署到 GitHub Pages（路径 `/LedgerLearn/`）。也可本地执行：
+
+```bash
+flutter build web --release
+```
 
 ## 发布到 F-Droid
 

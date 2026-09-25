@@ -21,6 +21,8 @@ class VoucherFormController extends GetxController {
 
   final totalDebit = 0.0.obs;
   final totalCredit = 0.0.obs;
+  final totalDebitCents = 0.obs;
+  final totalCreditCents = 0.obs;
   final isBalanced = false.obs;
 
   @override
@@ -90,17 +92,19 @@ class VoucherFormController extends GetxController {
       accountId: old.accountId,
       accountName: old.accountName,
       isDebit: old.isDebit,
-      amount: amount,
+      amountCents: (amount * 100).round(),
     );
     _recalculate();
   }
 
   void _recalculate() {
-    totalDebit.value =
-        entries.where((e) => e.isDebit).fold(0.0, (s, e) => s + e.amount);
-    totalCredit.value =
-        entries.where((e) => !e.isDebit).fold(0.0, (s, e) => s + e.amount);
-    isBalanced.value = (totalDebit.value - totalCredit.value).abs() < 0.001;
+    totalDebitCents.value =
+        entries.where((e) => e.isDebit).fold(0, (s, e) => s + e.amountCents);
+    totalCreditCents.value =
+        entries.where((e) => !e.isDebit).fold(0, (s, e) => s + e.amountCents);
+    totalDebit.value = totalDebitCents.value / 100.0;
+    totalCredit.value = totalCreditCents.value / 100.0;
+    isBalanced.value = totalDebitCents.value == totalCreditCents.value;
   }
 
   bool canSave() {
@@ -136,7 +140,7 @@ class VoucherFormController extends GetxController {
     );
 
     await voucherRepo.save(voucher);
-    Get.find<ProgressService>().reload();
+    Future.microtask(() => Get.find<ProgressService>().reload());
     return voucher;
   }
 
@@ -239,7 +243,7 @@ class VoucherListController extends GetxController {
     final now = DateTime.now();
     filterYear.value = now.year;
     filterMonth.value = now.month;
-    loadVouchers();
+    Future.microtask(loadVouchers);
   }
 
   void loadVouchers() {
@@ -274,6 +278,6 @@ class VoucherListController extends GetxController {
   Future<void> deleteVoucher(String id) async {
     await voucherRepo.delete(id);
     loadVouchers();
-    Get.find<ProgressService>().reload();
+    Future.microtask(() => Get.find<ProgressService>().reload());
   }
 }

@@ -23,20 +23,25 @@ class VoucherRepository {
   String generateId(int year, int month) =>
       _db.generateVoucherId(year, month);
 
-  /// Get all entries for a specific account, ordered by date
-  List<({Voucher voucher, double debit, double credit})> getEntriesForAccount(
-      String accountId,
-      {int? year, int? month}) {
+  /// Get all entries for a specific account, ordered by date.
+  /// Amounts are in yuan (from cents-backed [Entry.amount]).
+  List<({Voucher voucher, double debit, double credit, int debitCents, int creditCents})>
+      getEntriesForAccount(String accountId, {int? year, int? month}) {
     final vouchers = _db.getVouchers(year: year, month: month);
-    final result = <({Voucher voucher, double debit, double credit})>[];
+    final result =
+        <({Voucher voucher, double debit, double credit, int debitCents, int creditCents})>[];
 
     for (final v in vouchers) {
       for (final e in v.entries) {
         if (e.accountId == accountId) {
+          final dC = e.isDebit ? e.amountCents : 0;
+          final cC = e.isDebit ? 0 : e.amountCents;
           result.add((
             voucher: v,
-            debit: e.isDebit ? e.amount : 0,
-            credit: e.isDebit ? 0 : e.amount,
+            debit: dC / 100.0,
+            credit: cC / 100.0,
+            debitCents: dC,
+            creditCents: cC,
           ));
         }
       }
@@ -45,7 +50,7 @@ class VoucherRepository {
     return result;
   }
 
-  /// Check if all vouchers in a period are balanced
+  /// Check if all vouchers in a period are balanced (exact cents).
   bool isPeriodBalanced(int year, int month) {
     final vouchers = getAll(year: year, month: month);
     for (final v in vouchers) {
@@ -54,15 +59,48 @@ class VoucherRepository {
     return true;
   }
 
-  /// Total debit across all vouchers in a period
-  double totalPeriodDebit(int year, int month) {
+  int totalPeriodDebitCents(int year, int month) {
     return getAll(year: year, month: month)
-        .fold(0.0, (sum, v) => sum + v.totalDebit);
+        .fold(0, (sum, v) => sum + v.totalDebitCents);
   }
 
-  /// Total credit across all vouchers in a period
-  double totalPeriodCredit(int year, int month) {
+  int totalPeriodCreditCents(int year, int month) {
     return getAll(year: year, month: month)
-        .fold(0.0, (sum, v) => sum + v.totalCredit);
+        .fold(0, (sum, v) => sum + v.totalCreditCents);
+  }
+
+  /// Total debit across all vouchers in a period (yuan)
+  double totalPeriodDebit(int year, int month) =>
+      totalPeriodDebitCents(year, month) / 100.0;
+
+  /// Total credit across all vouchers in a period (yuan)
+  double totalPeriodCredit(int year, int month) =>
+      totalPeriodCreditCents(year, month) / 100.0;
+
+  /// Monthly debit/credit series for the last [months] months ending at [end].
+  List<({String label, double debit, double credit})> monthlyTrend({
+    required int endYear,
+    required int endMonth,
+    int months = 6,
+  }) {
+    final result = <({String label, double debit, double credit})>[];
+    var y = endYear;
+    var m = endMonth;
+    for (var i = 0; i < months; i++) {
+      result.insert(
+        0,
+        (
+          label: '$y-${m.toString().padLeft(2, '0')}',
+          debit: totalPeriodDebit(y, m),
+          credit: totalPeriodCredit(y, m),
+        ),
+      );
+      m -= 1;
+      if (m == 0) {
+        m = 12;
+        y -= 1;
+      }
+    }
+    return result;
   }
 }
