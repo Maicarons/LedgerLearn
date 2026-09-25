@@ -3,7 +3,6 @@ name: Deploy Web (GitHub Pages)
 on:
   push:
     branches: [master]
-    tags: ['v*']
   workflow_dispatch:
 
 permissions:
@@ -32,6 +31,8 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    # github-pages environment only accepts default-branch refs (not tags)
+    if: github.ref == 'refs/heads/master' || github.ref_type == 'branch'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
