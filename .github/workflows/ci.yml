@@ -13,7 +13,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          channel: beta
+          flutter-version: '3.41.9'
+          channel: stable
       - run: flutter pub get
       - run: flutter analyze
 
@@ -27,7 +28,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          channel: beta
+          flutter-version: '3.41.9'
+          channel: stable
       - run: flutter pub get
       - run: flutter test
 
@@ -37,7 +39,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          channel: beta
+          flutter-version: '3.41.9'
+          channel: stable
       - run: flutter pub get
       - run: flutter test --platform=chrome
 
@@ -47,7 +50,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          channel: beta
+          flutter-version: '3.41.9'
+          channel: stable
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq cmake clang libgtk-3-dev ninja-build
       - run: flutter pub get
       - run: flutter build linux --release
@@ -58,7 +62,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          channel: beta
+          flutter-version: '3.41.9'
+          channel: stable
       - run: flutter pub get
       - run: flutter build web --release
 
@@ -68,7 +73,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          channel: beta
+          flutter-version: '3.41.9'
+          channel: stable
       - run: flutter pub get
       - run: flutter build windows --release
 
@@ -78,7 +84,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          channel: beta
+          flutter-version: '3.41.9'
+          channel: stable
       - run: flutter pub get
       - run: flutter build macos --release
 
@@ -88,7 +95,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          channel: beta
+          flutter-version: '3.41.9'
+          channel: stable
       - run: flutter pub get
       - run: flutter build ios --release --no-codesign
 
@@ -98,6 +106,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          channel: beta
+          flutter-version: '3.41.9'
+          channel: stable
       - run: flutter pub get
       - run: flutter build apk --release
