@@ -5,7 +5,11 @@ import '../../voucher/views/voucher_form_view.dart';
 import '../../accounts/views/accounts_view.dart';
 import '../../knowledge/views/knowledge_view.dart';
 import '../../practice/views/practice_view.dart';
+import '../../knowledge/views/review_view.dart';
 import '../../reports/views/closing_wizard_view.dart';
+import '../../../data/services/practice_service.dart';
+import '../../../data/services/review_service.dart';
+import '../../../data/services/streak_service.dart';
 import '../../../shared/widgets/charts.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -22,6 +26,13 @@ class HomeView extends GetView<HomeController> {
           SliverAppBar(
             pinned: true,
             expandedHeight: 236,
+            actions: [
+              IconButton(
+                tooltip: 'search_title'.tr,
+                icon: const Icon(Icons.search),
+                onPressed: () => Get.toNamed('/search'),
+              ),
+            ],
             flexibleSpace: FlexibleSpaceBar(
               background: _AppBarBackground(colorScheme: colorScheme),
             ),
@@ -186,6 +197,104 @@ class HomeView extends GetView<HomeController> {
                   }),
 
                   const SizedBox(height: 28),
+
+                  // Today's learning recommendation
+                  Builder(builder: (context) {
+                    final practice = Get.find<PracticeService>();
+                    final streak =
+                        Get.isRegistered<StreakService>() ? Get.find<StreakService>() : null;
+                    final next = practice.nextRecommended();
+                    final passed = practice.passedCount;
+                    final total = practice.scenarios.length;
+                    if (next == null) return const SizedBox.shrink();
+                    return Card(
+                      elevation: 1,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.school_outlined,
+                                    color: colorScheme.primary, size: 20),
+                                const SizedBox(width: 8),
+                                Text('home_today_learn'.tr,
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.w600)),
+                                const Spacer(),
+                                if (streak != null)
+                                  Obx(() => Chip(
+                                        avatar: const Icon(
+                                            Icons.local_fire_department,
+                                            size: 16),
+                                        label: Text('${streak.streak.value}'),
+                                        visualDensity: VisualDensity.compact,
+                                      )),
+                                const SizedBox(width: 8),
+                                Text(
+                                  '$passed / $total',
+                                  style: TextStyle(
+                                      color: colorScheme.outline,
+                                      fontSize: 12),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 10),
+                            Text(next.titleKey.tr,
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.w500)),
+                            const SizedBox(height: 4),
+                            Text(
+                              next.descriptionKey.tr,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: 12, color: colorScheme.outline),
+                            ),
+                            const SizedBox(height: 12),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: FilledButton.tonal(
+                                    onPressed: () =>
+                                        Get.to(() => const PracticeView()),
+                                    child: Text('home_continue_learn'.tr),
+                                  ),
+                                ),
+                                const SizedBox(width: 10),
+                                Expanded(
+                                  child: OutlinedButton(
+                                    onPressed: () =>
+                                        Get.to(() => const ReviewView()),
+                                    child: Text('review_start'.tr),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            if (Get.isRegistered<ReviewService>()) ...[
+                              const SizedBox(height: 8),
+                              Obx(() {
+                                final due = Get.find<ReviewService>().dueCount.value;
+                                if (due <= 0) return const SizedBox.shrink();
+                                return Text(
+                                  'review_due_count'.trParams({'n': '$due'}),
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: colorScheme.primary),
+                                );
+                              }),
+                            ],
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
+
+                  const SizedBox(height: 20),
 
                   // Quick actions
                   Text('home_quick_actions'.tr,

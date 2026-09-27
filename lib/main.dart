@@ -8,7 +8,7 @@ import 'app/bindings/app_binding.dart';
 import 'app/routes/app_pages.dart';
 import 'modules/home/views/home_view.dart';
 import 'modules/voucher/views/voucher_list_view.dart';
-import 'modules/accounts/views/accounts_view.dart';
+import 'modules/practice/views/practice_view.dart';
 import 'modules/reports/views/reports_view.dart';
 import 'modules/knowledge/views/knowledge_view.dart';
 import 'modules/settings/views/settings_view.dart';
@@ -85,7 +85,7 @@ class _MainShellState extends State<MainShell> {
   final List<Widget> _pages = const [
     HomeView(),
     VoucherListView(),
-    AccountsView(),
+    PracticeView(),
     ReportsView(),
     KnowledgeView(),
     SettingsView(),
@@ -117,10 +117,10 @@ class _MainShellState extends State<MainShell> {
             label: 'nav_voucher'.tr,
           ),
           NavigationDestination(
-            icon: const Icon(Icons.account_balance_outlined),
-            selectedIcon: Icon(Icons.account_balance,
+            icon: const Icon(Icons.fitness_center_outlined),
+            selectedIcon: Icon(Icons.fitness_center,
                 color: Theme.of(context).colorScheme.primary),
-            label: 'nav_accounts'.tr,
+            label: 'nav_practice'.tr,
           ),
           NavigationDestination(
             icon: const Icon(Icons.assessment_outlined),
