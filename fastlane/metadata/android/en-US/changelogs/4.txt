@@ -1,0 +1,9 @@
+What's new in 0.3.0
+
+- Integer-cent amounts with exact balance checks
+- Practice drills and wrong-answer book (10 scenarios)
+- Period-end closing wizard
+- Home trend chart and report pie charts
+- 62 ASBE accounts
+- UI languages: zh, en, ko, ja, vi, th
+- Translations via GitHub PR

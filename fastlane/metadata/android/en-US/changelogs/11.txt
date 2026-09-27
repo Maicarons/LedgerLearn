@@ -1,0 +1,5 @@
+What's new in 0.8.1
+
+- Local storage migrated to SQLite
+- Automatic migration from legacy GetStorage
+- Practice / streak / SRS now persisted in SQLite

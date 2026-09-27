@@ -1,0 +1,7 @@
+What's new in 0.6.0
+
+- Year-end closing workbench (incl. 10% surplus reserve)
+- Comparative statements (current / prior / delta)
+- Financial ratio teaching report
+- 16 voucher templates, copy & red-letter reverse
+- Knowledge quick check + learning streak

@@ -1,0 +1,7 @@
+What's new in 0.4.0
+
+- Book backup & restore (JSON export / paste import)
+- Cash flow statement (simplified direct method)
+- Practice drills expanded to 22 scenarios
+- Wrong-answer book shows missing/extra accounts
+- UI languages: zh, en, ko, ja, vi, th

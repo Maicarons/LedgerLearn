@@ -1,0 +1,5 @@
+What's new in 0.8.0
+
+- Global search (vouchers / accounts / knowledge)
+- CSV voucher import (simple and multi-line forms)
+- BookQueryService structured query layer

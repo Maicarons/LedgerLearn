@@ -1,0 +1,6 @@
+What's new in 0.7.0
+
+- Spaced-repetition review (SM-2 lite) with quiz grading
+- Knowledge quiz bank expanded to 16 questions
+- Home review shortcut with due-count badge
+- Review + practice feed the learning streak

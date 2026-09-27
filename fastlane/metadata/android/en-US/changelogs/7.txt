@@ -1,0 +1,7 @@
+What's new in 0.5.0
+
+- 6-chapter learning path with progressive unlock
+- Mastery stars and random quiz mode
+- One-tap wrong-answer retry
+- Home "Today's learning" recommendation
+- Practice tab in bottom navigation
