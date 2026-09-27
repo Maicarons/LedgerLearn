@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ledgerlearn/data/storage/local_store.dart';
+import 'package:ledgerlearn/data/storage/local_store_io.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 void main() {
@@ -9,10 +9,10 @@ void main() {
   });
 
   group('LocalStore SQLite', () {
-    late LocalStore store;
+    late SqliteLocalStore store;
 
     setUp(() async {
-      store = LocalStore();
+      store = SqliteLocalStore();
       await store.init(factory: databaseFactoryFfi, inMemory: true);
     });
 

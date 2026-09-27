@@ -2,6 +2,14 @@
 
 All notable changes to LedgerLearn will be documented in this file.
 
+## [0.8.2] - 2026-09-27
+
+### Fixed
+- **Web build broken by SQLite imports**: split `LocalStore` into platform implementations via conditional imports
+  - IO (mobile/desktop): SQLite `SqliteLocalStore`
+  - Web: GetStorage-backed `WebLocalStore` (no `dart:io` / `sqflite` in the browser tree)
+- `.gitignore` rewritten as UTF-8 (Flutter tooling crash on garbled encoding)
+
 ## [0.8.1] - 2026-09-26
 
 ### Changed

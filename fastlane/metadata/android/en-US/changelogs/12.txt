@@ -1,0 +1,4 @@
+What's new in 0.8.2
+
+- Fix web build (conditional SQLite imports)
+- Web continues to use GetStorage

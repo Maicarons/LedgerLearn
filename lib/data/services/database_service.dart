@@ -1,4 +1,4 @@
-﻿import 'dart:convert';
+import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:get_storage/get_storage.dart';
@@ -7,6 +7,7 @@ import '../models/account.dart';
 import '../models/knowledge_card.dart';
 import '../models/voucher.dart';
 import '../storage/local_store.dart';
+import '../storage/local_store_factory.dart';
 import '../storage/sqlite_bootstrap.dart';
 import 'remote_knowledge_service.dart';
 import '../../app/config/preset_data.dart';
@@ -24,7 +25,7 @@ class DatabaseService {
   static const String _viewedKnowledgeKey = 'viewed_knowledge';
   static const int _currentKnowledgeVersion = 2;
 
-  final LocalStore store = LocalStore();
+  final LocalStore store = createLocalStore();
 
   // In-memory cache (source for sync getters).
   final List<Account> _accounts = [];
@@ -480,16 +481,25 @@ class DatabaseService {
   Future<void> _loadKvCache() async {
     if (_kvLoaded) return;
     if (store.isOpen) {
-      // Pull known keys + everything from kv table via raw query.
-      final rows = await store.db.query('kv');
-      for (final r in rows) {
-        final k = r['key'] as String;
-        final raw = r['value'] as String;
-        try {
-          _kvCache[k] = json.decode(raw);
-        } catch (_) {
-          _kvCache[k] = raw;
-        }
+      const keys = [
+        'locale',
+        'themeMode',
+        'colorScheme',
+        'defaultPeriod',
+        'knowledge_version',
+        'viewed_knowledge',
+        'practice_attempts',
+        'practice_passed',
+        'learning_streak',
+        'learning_last_day',
+        'learning_today_done',
+        'knowledge_quiz_score',
+        'knowledge_srs',
+        'review_session_count',
+      ];
+      for (final k in keys) {
+        final v = await store.readJson<Object?>(k);
+        if (v != null) _kvCache[k] = v;
       }
     }
     _kvLoaded = true;

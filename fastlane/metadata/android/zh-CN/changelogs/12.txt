@@ -1,0 +1,4 @@
+0.8.2 更新
+
+- 修复 Web 构建（SQLite 按平台条件引入）
+- Web 端继续使用 GetStorage
