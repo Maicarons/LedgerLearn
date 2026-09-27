@@ -10,7 +10,8 @@ class Achievement {
   final String descKey;
   final IconData icon;
   final Color color;
-  final bool Function(int voucherCount, int knowledgeCount) unlocked;
+  final bool Function(int voucherCount, int knowledgeCount, int practicePassed)
+      unlocked;
 
   const Achievement({
     required this.id,
@@ -40,7 +41,7 @@ class ProgressService extends GetxController {
       descKey: 'achievement_first_voucher_desc',
       icon: Icons.receipt_long,
       color: Color(0xFF1565C0),
-      unlocked: (v, k) => v >= 1,
+      unlocked: (v, k, p) => v >= 1,
     ),
     Achievement(
       id: 'voucher_5',
@@ -48,7 +49,7 @@ class ProgressService extends GetxController {
       descKey: 'achievement_voucher_5_desc',
       icon: Icons.assignment_turned_in,
       color: Color(0xFF00695C),
-      unlocked: (v, k) => v >= 5,
+      unlocked: (v, k, p) => v >= 5,
     ),
     Achievement(
       id: 'voucher_20',
@@ -56,7 +57,7 @@ class ProgressService extends GetxController {
       descKey: 'achievement_voucher_20_desc',
       icon: Icons.workspace_premium,
       color: Color(0xFFE65100),
-      unlocked: (v, k) => v >= 20,
+      unlocked: (v, k, p) => v >= 20,
     ),
     Achievement(
       id: 'knowledge_5',
@@ -64,7 +65,7 @@ class ProgressService extends GetxController {
       descKey: 'achievement_knowledge_5_desc',
       icon: Icons.menu_book,
       color: Color(0xFF6A1B9A),
-      unlocked: (v, k) => k >= 5,
+      unlocked: (v, k, p) => k >= 5,
     ),
     Achievement(
       id: 'knowledge_20',
@@ -72,7 +73,39 @@ class ProgressService extends GetxController {
       descKey: 'achievement_knowledge_20_desc',
       icon: Icons.emoji_events,
       color: Color(0xFF2E7D32),
-      unlocked: (v, k) => k >= 20,
+      unlocked: (v, k, p) => k >= 20,
+    ),
+    Achievement(
+      id: 'practice_first',
+      titleKey: 'achievement_practice_first',
+      descKey: 'achievement_practice_first_desc',
+      icon: Icons.fitness_center,
+      color: Color(0xFF0277BD),
+      unlocked: (v, k, p) => p >= 1,
+    ),
+    Achievement(
+      id: 'practice_10',
+      titleKey: 'achievement_practice_10',
+      descKey: 'achievement_practice_10_desc',
+      icon: Icons.school,
+      color: Color(0xFFC62828),
+      unlocked: (v, k, p) => p >= 10,
+    ),
+    Achievement(
+      id: 'practice_all',
+      titleKey: 'achievement_practice_all',
+      descKey: 'achievement_practice_all_desc',
+      icon: Icons.military_tech,
+      color: Color(0xFF6A1B9A),
+      unlocked: (v, k, p) => p >= 22,
+    ),
+    Achievement(
+      id: 'quiz_ready',
+      titleKey: 'achievement_quiz_ready',
+      descKey: 'achievement_quiz_ready_desc',
+      icon: Icons.quiz,
+      color: Color(0xFF00838F),
+      unlocked: (v, k, p) => p >= 5,
     ),
   ];
 
@@ -99,6 +132,8 @@ class ProgressService extends GetxController {
     reload();
   }
 
-  List<Achievement> get unlockedAchievements =>
-      achievements.where((a) => a.unlocked(voucherCount.value, knowledgeReadCount.value)).toList();
+  List<Achievement> get unlockedAchievements => achievements
+      .where((a) => a.unlocked(
+          voucherCount.value, knowledgeReadCount.value, practicePassedCount.value))
+      .toList();
 }

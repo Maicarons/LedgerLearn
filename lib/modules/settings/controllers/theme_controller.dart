@@ -29,6 +29,13 @@ class ThemeController extends GetxController {
     themeMode.value = _parseThemeMode(savedMode);
   }
 
+  /// Re-read theme settings from storage (after backup restore).
+  void reloadFromStorage() {
+    _load();
+    Get.forceAppUpdate();
+    update();
+  }
+
   ThemeMode _parseThemeMode(String mode) {
     switch (mode) {
       case 'light':

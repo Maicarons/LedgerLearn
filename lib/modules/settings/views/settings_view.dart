@@ -253,6 +253,36 @@ class SettingsView extends GetView<SettingsController> {
                       style: const TextStyle(
                           fontSize: 16, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 12),
+                  Text('backup_hint'.tr,
+                      style: TextStyle(
+                          fontSize: 12, color: Colors.grey.shade600)),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: OutlinedButton.icon(
+                          onPressed: () => controller.exportBackup(),
+                          icon: const Icon(Icons.backup_outlined),
+                          label: Text('backup_export'.tr),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: OutlinedButton.icon(
+                          onPressed: () => _showImportDialog(context, controller),
+                          icon: const Icon(Icons.restore_outlined),
+                          label: Text('backup_import'.tr),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  OutlinedButton.icon(
+                    onPressed: () => _showCsvImportDialog(context, controller),
+                    icon: const Icon(Icons.file_upload_outlined),
+                    label: Text('csv_import'.tr),
+                  ),
+                  const SizedBox(height: 12),
                   OutlinedButton.icon(
                     onPressed: () {
                       Get.defaultDialog(
@@ -313,6 +343,106 @@ class SettingsView extends GetView<SettingsController> {
                 ),
               ),
             ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Paste-a-JSON import dialog — works on every platform without a
+  /// file-picker dependency. Users export first, then paste the contents.
+  void _showImportDialog(BuildContext context, SettingsController controller) {
+    final textCtrl = TextEditingController();
+    Get.dialog(
+      AlertDialog(
+        title: Text('backup_import'.tr),
+        content: SizedBox(
+          width: 420,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('backup_import_hint'.tr,
+                  style: TextStyle(
+                      fontSize: 12, color: Colors.grey.shade600)),
+              const SizedBox(height: 12),
+              TextField(
+                controller: textCtrl,
+                maxLines: 8,
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  hintText: 'backup_import_placeholder'.tr,
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Get.back(),
+            child: Text('cancel'.tr),
+          ),
+          FilledButton(
+            onPressed: () async {
+              final text = textCtrl.text.trim();
+              if (text.isEmpty) return;
+              Get.back();
+              await controller.importBackup(text);
+            },
+            child: Text('backup_import'.tr),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// CSV voucher import dialog (paste CSV text).
+  void _showCsvImportDialog(
+      BuildContext context, SettingsController controller) {
+    final textCtrl = TextEditingController();
+    Get.dialog(
+      AlertDialog(
+        title: Text('csv_import'.tr),
+        content: SizedBox(
+          width: 420,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('csv_import_hint'.tr,
+                  style:
+                      TextStyle(fontSize: 12, color: Colors.grey.shade600)),
+              const SizedBox(height: 8),
+              Text('csv_import_format'.tr,
+                  style: TextStyle(
+                      fontSize: 11,
+                      fontFamily: 'monospace',
+                      color: Colors.grey.shade700)),
+              const SizedBox(height: 12),
+              TextField(
+                controller: textCtrl,
+                maxLines: 8,
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  hintText: 'csv_import_placeholder'.tr,
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Get.back(),
+            child: Text('cancel'.tr),
+          ),
+          FilledButton(
+            onPressed: () async {
+              final text = textCtrl.text.trim();
+              if (text.isEmpty) return;
+              Get.back();
+              await controller.importCsvVouchers(text);
+            },
+            child: Text('csv_import'.tr),
           ),
         ],
       ),
