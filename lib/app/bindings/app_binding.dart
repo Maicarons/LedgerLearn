@@ -2,6 +2,9 @@ import 'package:get/get.dart';
 import '../../data/services/database_service.dart';
 import '../../data/services/progress_service.dart';
 import '../../data/services/practice_service.dart';
+import '../../data/services/book_query_service.dart';
+import '../../data/services/review_service.dart';
+import '../../data/services/streak_service.dart';
 import '../../data/repositories/account_repository.dart';
 import '../../data/repositories/voucher_repository.dart';
 import '../../data/repositories/knowledge_repository.dart';
@@ -21,7 +24,13 @@ class AppBinding extends Bindings {
     final voucherRepo = VoucherRepository(db);
     Get.put(voucherRepo, permanent: true);
 
-    Get.put(PracticeService(), permanent: true);
+    Get.put(PracticeService(db), permanent: true);
     Get.put(ProgressService(), permanent: true);
+    Get.put(StreakService(db), permanent: true);
+    Get.put(ReviewService(db), permanent: true);
+    Get.put(
+      BookQueryService(accountRepo: accountRepo, voucherRepo: voucherRepo),
+      permanent: true,
+    );
   }
 }
