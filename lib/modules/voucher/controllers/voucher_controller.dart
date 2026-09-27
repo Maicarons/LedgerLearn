@@ -221,7 +221,102 @@ class VoucherFormController extends GetxController {
           Entry(accountId: goods.id, accountName: goods.getName(locale), isDebit: false, amount: 25000),
         ];
         break;
+      // ===== 0.6.0 — 8 more templates =====
+      case 8: // Bad debt provision
+        summary.value = 'voucher_template_bad_debt_desc'.tr;
+        entries.value = [
+          Entry(accountId: '5601', accountName: nameOf('5601', locale), isDebit: true, amount: 2000),
+          Entry(accountId: '1231', accountName: nameOf('1231', locale), isDebit: false, amount: 2000),
+        ];
+        break;
+      case 9: // Write off bad debt
+        summary.value = 'voucher_template_writeoff_desc'.tr;
+        entries.value = [
+          Entry(accountId: '1231', accountName: nameOf('1231', locale), isDebit: true, amount: 3000),
+          Entry(accountId: '1122', accountName: nameOf('1122', locale), isDebit: false, amount: 3000),
+        ];
+        break;
+      case 10: // Prepayment
+        summary.value = 'voucher_template_prepay_desc'.tr;
+        entries.value = [
+          Entry(accountId: '1123', accountName: nameOf('1123', locale), isDebit: true, amount: 15000),
+          Entry(accountId: '1002', accountName: nameOf('1002', locale), isDebit: false, amount: 15000),
+        ];
+        break;
+      case 11: // Advance from customer
+        summary.value = 'voucher_template_advance_desc'.tr;
+        entries.value = [
+          Entry(accountId: '1002', accountName: nameOf('1002', locale), isDebit: true, amount: 12000),
+          Entry(accountId: '2203', accountName: nameOf('2203', locale), isDebit: false, amount: 12000),
+        ];
+        break;
+      case 12: // Short-term loan
+        summary.value = 'voucher_template_loan_desc'.tr;
+        entries.value = [
+          Entry(accountId: '1002', accountName: nameOf('1002', locale), isDebit: true, amount: 80000),
+          Entry(accountId: '2001', accountName: nameOf('2001', locale), isDebit: false, amount: 80000),
+        ];
+        break;
+      case 13: // Accrue interest
+        summary.value = 'voucher_template_interest_desc'.tr;
+        entries.value = [
+          Entry(accountId: '5503', accountName: nameOf('5503', locale), isDebit: true, amount: 1500),
+          Entry(accountId: '2231', accountName: nameOf('2231', locale), isDebit: false, amount: 1500),
+        ];
+        break;
+      case 14: // Buy fixed asset
+        summary.value = 'voucher_template_fa_buy_desc'.tr;
+        entries.value = [
+          Entry(accountId: '1601', accountName: nameOf('1601', locale), isDebit: true, amount: 50000),
+          Entry(accountId: '1002', accountName: nameOf('1002', locale), isDebit: false, amount: 50000),
+        ];
+        break;
+      case 15: // Close admin expense to profit
+        summary.value = 'voucher_template_close_exp_desc'.tr;
+        entries.value = [
+          Entry(accountId: '3103', accountName: nameOf('3103', locale), isDebit: true, amount: 9000),
+          Entry(accountId: '5502', accountName: nameOf('5502', locale), isDebit: false, amount: 9000),
+        ];
+        break;
     }
+    _recalculate();
+  }
+
+  String nameOf(String id, String locale) =>
+      accountRepo.getById(id)?.getName(locale) ?? id;
+
+  /// Load an existing voucher's lines as a brand-new voucher (copy).
+  void loadFromVoucher(Voucher source, {String? summaryPrefix}) {
+    isEdit.value = false;
+    editingId = null;
+    summary.value =
+        '${summaryPrefix ?? ''}${source.summary}';
+    date.value = DateTime.now();
+    entries.value = source.entries
+        .map((e) => Entry(
+              accountId: e.accountId,
+              accountName: e.accountName,
+              isDebit: e.isDebit,
+              amountCents: e.amountCents,
+            ))
+        .toList();
+    _recalculate();
+  }
+
+  /// Red-letter (reverse) voucher: flip debit/credit directions.
+  void loadReverseFromVoucher(Voucher source) {
+    isEdit.value = false;
+    editingId = null;
+    summary.value = 'voucher_reverse_prefix'.trParams({'summary': source.summary});
+    date.value = DateTime.now();
+    entries.value = source.entries
+        .map((e) => Entry(
+              accountId: e.accountId,
+              accountName: e.accountName,
+              isDebit: !e.isDebit,
+              amountCents: e.amountCents,
+            ))
+        .toList();
     _recalculate();
   }
 

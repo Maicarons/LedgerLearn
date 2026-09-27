@@ -167,6 +167,46 @@ class VoucherFormView extends GetView<VoucherFormController> {
                           icon: Icons.swap_horiz,
                           onTap: () => controller.applyTemplate(7),
                         ),
+                        _TemplateChip(
+                          label: 'voucher_template_bad_debt'.tr,
+                          icon: Icons.warning_amber,
+                          onTap: () => controller.applyTemplate(8),
+                        ),
+                        _TemplateChip(
+                          label: 'voucher_template_writeoff'.tr,
+                          icon: Icons.remove_circle_outline,
+                          onTap: () => controller.applyTemplate(9),
+                        ),
+                        _TemplateChip(
+                          label: 'voucher_template_prepay'.tr,
+                          icon: Icons.payments_outlined,
+                          onTap: () => controller.applyTemplate(10),
+                        ),
+                        _TemplateChip(
+                          label: 'voucher_template_advance'.tr,
+                          icon: Icons.savings_outlined,
+                          onTap: () => controller.applyTemplate(11),
+                        ),
+                        _TemplateChip(
+                          label: 'voucher_template_loan'.tr,
+                          icon: Icons.account_balance_outlined,
+                          onTap: () => controller.applyTemplate(12),
+                        ),
+                        _TemplateChip(
+                          label: 'voucher_template_interest'.tr,
+                          icon: Icons.percent,
+                          onTap: () => controller.applyTemplate(13),
+                        ),
+                        _TemplateChip(
+                          label: 'voucher_template_fa_buy'.tr,
+                          icon: Icons.precision_manufacturing,
+                          onTap: () => controller.applyTemplate(14),
+                        ),
+                        _TemplateChip(
+                          label: 'voucher_template_close_exp'.tr,
+                          icon: Icons.event_available,
+                          onTap: () => controller.applyTemplate(15),
+                        ),
                       ],
                     ),
                   ),

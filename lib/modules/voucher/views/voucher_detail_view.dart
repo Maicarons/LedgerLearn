@@ -34,6 +34,24 @@ class VoucherDetailView extends StatelessWidget {
         title: Text('voucher_detail'.tr),
         actions: [
           IconButton(
+            tooltip: 'voucher_copy'.tr,
+            icon: const Icon(Icons.copy_all_outlined),
+            onPressed: () {
+              final ctrl = Get.put(VoucherFormController());
+              ctrl.loadFromVoucher(voucher);
+              Get.toNamed('/vouchers/new');
+            },
+          ),
+          IconButton(
+            tooltip: 'voucher_reverse'.tr,
+            icon: const Icon(Icons.swap_horiz),
+            onPressed: () {
+              final ctrl = Get.put(VoucherFormController());
+              ctrl.loadReverseFromVoucher(voucher);
+              Get.toNamed('/vouchers/new');
+            },
+          ),
+          IconButton(
             icon: const Icon(Icons.edit),
             onPressed: () => Get.toNamed('/vouchers/edit/${voucher.id}',
                 arguments: {'voucher': voucher}),
