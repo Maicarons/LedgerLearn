@@ -11,14 +11,20 @@ import '../../modules/reports/views/reports_view.dart';
 import '../../modules/reports/views/trial_balance_view.dart';
 import '../../modules/reports/views/income_statement_view.dart';
 import '../../modules/reports/views/balance_sheet_view.dart';
+import '../../modules/reports/views/cash_flow_view.dart';
+import '../../modules/reports/views/year_end_view.dart';
+import '../../modules/reports/views/ratio_view.dart';
 import '../../modules/reports/views/closing_wizard_view.dart';
 import '../../modules/knowledge/views/knowledge_view.dart';
 import '../../modules/knowledge/views/knowledge_detail_view.dart';
+import '../../modules/knowledge/views/review_view.dart';
 import '../../modules/practice/views/practice_view.dart';
 import '../../modules/practice/views/practice_detail_view.dart';
+import '../../modules/practice/views/quiz_view.dart';
 import '../../modules/practice/views/wrong_book_view.dart';
 import '../../modules/settings/views/settings_view.dart';
 import '../../modules/about/views/about_view.dart';
+import '../../modules/search/views/global_search_view.dart';
 
 class AppPages {
   static const String initial = '/home';
@@ -37,13 +43,19 @@ class AppPages {
     GetPage(name: '/reports/trial-balance', page: () => const TrialBalanceView()),
     GetPage(name: '/reports/income-statement', page: () => const IncomeStatementView()),
     GetPage(name: '/reports/balance-sheet', page: () => const BalanceSheetView()),
+    GetPage(name: '/reports/cash-flow', page: () => const CashFlowView()),
+    GetPage(name: '/reports/ratios', page: () => const RatioView()),
+    GetPage(name: '/reports/year-end', page: () => const YearEndClosingView()),
     GetPage(name: '/reports/closing', page: () => const ClosingWizardView()),
     GetPage(name: '/knowledge', page: () => const KnowledgeView()),
     GetPage(name: '/knowledge/detail/:id', page: () => const KnowledgeDetailView()),
+    GetPage(name: '/knowledge/review', page: () => const ReviewView()),
     GetPage(name: '/practice', page: () => const PracticeView()),
     GetPage(name: '/practice/:id', page: () => const PracticeDetailView()),
     GetPage(name: '/practice/wrong-book', page: () => const WrongBookView()),
+    GetPage(name: '/practice/quiz', page: () => const QuizView()),
     GetPage(name: '/settings', page: () => const SettingsView()),
     GetPage(name: '/about', page: () => const AboutView()),
+    GetPage(name: '/search', page: () => const GlobalSearchView()),
   ];
 }
