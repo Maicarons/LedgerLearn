@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/knowledge_controller.dart';
+import 'review_view.dart';
 
 class KnowledgeView extends GetView<KnowledgeController> {
   const KnowledgeView({super.key});
@@ -9,7 +10,16 @@ class KnowledgeView extends GetView<KnowledgeController> {
   Widget build(BuildContext context) {
     final controller = Get.put(KnowledgeController());
     return Scaffold(
-      appBar: AppBar(title: Text('knowledge_title'.tr)),
+      appBar: AppBar(
+        title: Text('knowledge_title'.tr),
+        actions: [
+          IconButton(
+            tooltip: 'review_title'.tr,
+            icon: const Icon(Icons.psychology_outlined),
+            onPressed: () => Get.to(() => const ReviewView()),
+          ),
+        ],
+      ),
       body: Column(
         children: [
           Padding(
