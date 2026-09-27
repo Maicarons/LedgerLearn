@@ -69,39 +69,77 @@ class IncomeStatementView extends GetView<IncomeStatementController> {
                           style: const TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold)),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 6),
+                      child: Row(
+                        children: [
+                          Expanded(
+                              flex: 3,
+                              child: Text('reports_item'.tr,
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey.shade600))),
+                          Expanded(
+                              flex: 2,
+                              child: Text('reports_current_period'.tr,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey.shade600))),
+                          Expanded(
+                              flex: 2,
+                              child: Text('reports_prev_period'.tr,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey.shade600))),
+                          Expanded(
+                              child: Text('reports_change'.tr,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey.shade600))),
+                        ],
+                      ),
+                    ),
                     const Divider(),
                     ...controller.revenueItems
-                        .where((i) => i.amount > 0)
-                        .map((i) => _TotalRow(
+                        .where((i) => i.amount > 0 || i.prevAmount > 0)
+                        .map((i) => _CompareRow(
                               label: i.name,
                               amount: i.amount,
+                              prev: i.prevAmount,
                               locale: locale,
                             )),
                     const Divider(),
-                    _TotalRow(
+                    _CompareRow(
                         label: 'reports_revenue'.tr,
                         amount: controller.totalRevenue,
+                        prev: controller.prevTotalRevenue,
                         locale: locale,
                         bold: true),
                     const SizedBox(height: 16),
                     ...controller.expenseItems
-                        .where((i) => i.amount > 0)
-                        .map((i) => _TotalRow(
+                        .where((i) => i.amount > 0 || i.prevAmount > 0)
+                        .map((i) => _CompareRow(
                               label: i.name,
                               amount: i.amount,
+                              prev: i.prevAmount,
                               locale: locale,
                             )),
                     const Divider(),
-                    _TotalRow(
+                    _CompareRow(
                         label: 'reports_expense'.tr,
                         amount: controller.totalExpense,
+                        prev: controller.prevTotalExpense,
                         locale: locale,
                         bold: true),
                     const SizedBox(height: 16),
                     const Divider(thickness: 2),
-                    _TotalRow(
+                    _CompareRow(
                         label: 'reports_net_profit'.tr,
                         amount: controller.netProfit,
+                        prev: controller.prevNetProfit,
                         locale: locale,
                         bold: true,
                         isProfit: true),
@@ -116,16 +154,18 @@ class IncomeStatementView extends GetView<IncomeStatementController> {
   }
 }
 
-class _TotalRow extends StatelessWidget {
+class _CompareRow extends StatelessWidget {
   final String label;
   final double amount;
+  final double prev;
   final String locale;
   final bool bold;
   final bool isProfit;
 
-  const _TotalRow({
+  const _CompareRow({
     required this.label,
     required this.amount,
+    required this.prev,
     required this.locale,
     this.bold = false,
     this.isProfit = false,
@@ -133,21 +173,51 @@ class _TotalRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final delta = amount - prev;
+    final deltaColor = delta > 0
+        ? Colors.green.shade700
+        : delta < 0
+            ? Colors.red.shade700
+            : Colors.grey;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Expanded(child: Text(label,
-              style: TextStyle(fontWeight: bold ? FontWeight.bold : null))),
-          Text(formatCurrency(amount, locale),
+          Expanded(
+            flex: 3,
+            child: Text(label,
+                style: TextStyle(fontWeight: bold ? FontWeight.bold : null)),
+          ),
+          Expanded(
+            flex: 2,
+            child: Text(formatCurrency(amount, locale),
+                textAlign: TextAlign.right,
+                style: TextStyle(
+                  fontWeight: bold ? FontWeight.bold : null,
+                  fontSize: bold ? 15 : 13,
+                  color: isProfit
+                      ? (amount >= 0 ? Colors.green : Colors.red)
+                      : null,
+                )),
+          ),
+          Expanded(
+            flex: 2,
+            child: Text(formatCurrency(prev, locale),
+                textAlign: TextAlign.right,
+                style: TextStyle(fontSize: 13, color: Colors.grey.shade600)),
+          ),
+          Expanded(
+            child: Text(
+              delta == 0
+                  ? '—'
+                  : '${delta > 0 ? '+' : ''}${formatCurrency(delta, locale)}',
+              textAlign: TextAlign.right,
               style: TextStyle(
-                fontWeight: bold ? FontWeight.bold : null,
-                fontSize: bold ? 16 : 14,
-                color: isProfit
-                    ? (amount >= 0 ? Colors.green : Colors.red)
-                    : null,
-              )),
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: deltaColor),
+            ),
+          ),
         ],
       ),
     );

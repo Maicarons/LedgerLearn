@@ -61,32 +61,59 @@ class BalanceSheetView extends GetView<BalanceSheetController> {
                           style: const TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold)),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 6),
+                      child: Row(
+                        children: [
+                          Expanded(
+                              flex: 3,
+                              child: Text('reports_item'.tr,
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey.shade600))),
+                          Expanded(
+                              flex: 2,
+                              child: Text('reports_current_period'.tr,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey.shade600))),
+                          Expanded(
+                              flex: 2,
+                              child: Text('reports_prev_period'.tr,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey.shade600))),
+                        ],
+                      ),
+                    ),
                     const Divider(),
                     _buildSection('reports_assets'.tr, [
-                      _buildRow('reports_current_assets'.tr,
+                      _buildRow('reports_total_assets'.tr,
                           controller.totalAssets,
+                          prev: controller.prevTotalAssets(),
                           locale: locale),
                     ]),
-                    const Divider(thickness: 2),
-                    _buildRow('reports_total_assets'.tr,
-                        controller.totalAssets,
-                        bold: true,
-                        locale: locale),
                     const SizedBox(height: 24),
                     _buildSection('reports_liabilities'.tr, [
-                      _buildRow('reports_current_liabilities'.tr,
+                      _buildRow('reports_liabilities'.tr,
                           controller.totalLiabilities,
+                          prev: controller.prevTotalLiabilities(),
                           locale: locale),
                     ]),
                     const Divider(),
                     _buildSection('reports_equity'.tr, [
                       _buildRow('reports_equity'.tr,
                           controller.totalEquity,
+                          prev: controller.prevTotalEquity(),
                           locale: locale),
                     ]),
                     const Divider(thickness: 2),
                     _buildRow('reports_total_liabilities_equity'.tr,
                         controller.totalLiabilitiesEquity,
+                        prev: controller.prevTotalLiabilities() +
+                            controller.prevTotalEquity(),
                         bold: true,
                         locale: locale),
                   ],
@@ -115,20 +142,30 @@ class BalanceSheetView extends GetView<BalanceSheetController> {
   }
 
   Widget _buildRow(String label, double amount,
-      {bool bold = false, required String locale}) {
+      {double prev = 0, bool bold = false, required String locale}) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(label,
-              style: TextStyle(
-                  fontWeight: bold ? FontWeight.bold : null)),
-          Text(formatCurrency(amount, locale),
-              style: TextStyle(
-                fontWeight: bold ? FontWeight.bold : null,
-                fontSize: bold ? 16 : 14,
-              )),
+          Expanded(
+            flex: 3,
+            child: Text(label,
+                style: TextStyle(fontWeight: bold ? FontWeight.bold : null)),
+          ),
+          Expanded(
+            flex: 2,
+            child: Text(formatCurrency(amount, locale),
+                textAlign: TextAlign.right,
+                style: TextStyle(
+                    fontWeight: bold ? FontWeight.bold : null,
+                    fontSize: bold ? 15 : 13)),
+          ),
+          Expanded(
+            flex: 2,
+            child: Text(formatCurrency(prev, locale),
+                textAlign: TextAlign.right,
+                style: TextStyle(fontSize: 13, color: Colors.grey.shade600)),
+          ),
         ],
       ),
     );

@@ -132,19 +132,37 @@ class IncomeStatementController extends GetxController {
   int year = DateTime.now().year;
   int month = DateTime.now().month;
 
+  /// Previous calendar month (for comparative column).
+  (int y, int m) get prevPeriod {
+    if (month == 1) return (year - 1, 12);
+    return (year, month - 1);
+  }
+
   List<IncomeItem> get revenueItems {
     final income = accountRepo.getByType(5);
+    final prev = prevPeriod;
     return income.map((a) {
       final summary = accountRepo.getPeriodSummary(a.id, year, month);
-      return IncomeItem(name: a.getName(_locale), amount: summary.credit);
+      final prevS = accountRepo.getPeriodSummary(a.id, prev.$1, prev.$2);
+      return IncomeItem(
+        name: a.getName(_locale),
+        amount: summary.credit,
+        prevAmount: prevS.credit,
+      );
     }).toList();
   }
 
   List<IncomeItem> get expenseItems {
     final expenses = accountRepo.getByType(6);
+    final prev = prevPeriod;
     return expenses.map((a) {
       final summary = accountRepo.getPeriodSummary(a.id, year, month);
-      return IncomeItem(name: a.getName(_locale), amount: summary.debit);
+      final prevS = accountRepo.getPeriodSummary(a.id, prev.$1, prev.$2);
+      return IncomeItem(
+        name: a.getName(_locale),
+        amount: summary.debit,
+        prevAmount: prevS.debit,
+      );
     }).toList();
   }
 
@@ -153,16 +171,32 @@ class IncomeStatementController extends GetxController {
   double get totalExpense =>
       expenseItems.fold(0.0, (s, i) => s + i.amount);
   double get netProfit => totalRevenue - totalExpense;
+
+  double get prevTotalRevenue =>
+      revenueItems.fold(0.0, (s, i) => s + i.prevAmount);
+  double get prevTotalExpense =>
+      expenseItems.fold(0.0, (s, i) => s + i.prevAmount);
+  double get prevNetProfit => prevTotalRevenue - prevTotalExpense;
 }
 
 class IncomeItem {
   final String name;
   final double amount;
-  IncomeItem({required this.name, required this.amount});
+  final double prevAmount;
+  IncomeItem({required this.name, required this.amount, this.prevAmount = 0});
 }
 
 class BalanceSheetController extends GetxController {
   final AccountRepository accountRepo = Get.find<AccountRepository>();
+
+  int year = DateTime.now().year;
+  int month = DateTime.now().month;
+
+  /// Previous calendar month (for comparative column).
+  (int y, int m) get prevPeriod {
+    if (month == 1) return (year - 1, 12);
+    return (year, month - 1);
+  }
 
   double get totalAssets {
     final assets = accountRepo.getByType(1);
@@ -182,6 +216,37 @@ class BalanceSheetController extends GetxController {
 
   Map<String, double> get equityBreakdown =>
       accountRepo.amountsByType(3);
+
+  /// Current assets total (type 1, subCategory current_asset).
+  double get currentAssets {
+    double total = 0;
+    for (final a in accountRepo.getByType(1)) {
+      if (a.subCategory == 'current_asset') {
+        total += accountRepo.getCurrentBalance(a.id);
+      }
+    }
+    return total;
+  }
+
+  /// Inventory (1403 + 1405 + 1411).
+  double get inventory {
+    double total = 0;
+    for (final id in ['1403', '1405', '1411']) {
+      total += accountRepo.getCurrentBalance(id);
+    }
+    return total;
+  }
+
+  /// Current liabilities (type 2, subCategory current_liability).
+  double get currentLiabilities {
+    double total = 0;
+    for (final a in accountRepo.getByType(2)) {
+      if (a.subCategory == 'current_liability') {
+        total += accountRepo.getCurrentBalance(a.id).abs();
+      }
+    }
+    return total;
+  }
 
   /// Top expense items for the pie chart.
   List<IncomeItem> get topExpenseItems {
@@ -216,4 +281,32 @@ class BalanceSheetController extends GetxController {
   }
 
   double get totalLiabilitiesEquity => totalLiabilities + totalEquity;
+
+  /// Comparative totals at previous period end.
+  double prevTotalAssets() {
+    final prev = prevPeriod;
+    double total = 0;
+    for (final a in accountRepo.getByType(1)) {
+      total += accountRepo.getPeriodSummary(a.id, prev.$1, prev.$2).ending;
+    }
+    return total;
+  }
+
+  double prevTotalLiabilities() {
+    final prev = prevPeriod;
+    double total = 0;
+    for (final a in accountRepo.getByType(2)) {
+      total += accountRepo.getPeriodSummary(a.id, prev.$1, prev.$2).ending.abs();
+    }
+    return total;
+  }
+
+  double prevTotalEquity() {
+    final prev = prevPeriod;
+    double total = 0;
+    for (final a in accountRepo.getByType(3)) {
+      total += accountRepo.getPeriodSummary(a.id, prev.$1, prev.$2).ending.abs();
+    }
+    return total;
+  }
 }
