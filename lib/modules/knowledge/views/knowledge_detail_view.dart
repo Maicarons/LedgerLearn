@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import '../../../data/repositories/knowledge_repository.dart';
 import '../../../data/repositories/account_repository.dart';
+import '../../../data/services/knowledge_quiz.dart';
 import '../../../data/services/progress_service.dart';
+import '../../../data/services/streak_service.dart';
 
 class KnowledgeDetailView extends StatefulWidget {
   const KnowledgeDetailView({super.key});
@@ -22,8 +24,51 @@ class _KnowledgeDetailViewState extends State<KnowledgeDetailView> {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (!mounted) return;
         Get.find<ProgressService>().recordKnowledgeViewed(id);
+        // Offer a one-question quick check for cards that have one.
+        final q = quizForKnowledge(id);
+        if (q != null) {
+          _showQuickCheck(q);
+        }
       });
     }
+  }
+
+  Future<void> _showQuickCheck(KnowledgeQuizQuestion q) async {
+    final selected = await Get.dialog<int>(
+      AlertDialog(
+        title: Text('knowledge_quiz_title'.tr),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(q.questionKey.tr),
+            const SizedBox(height: 12),
+            for (var i = 0; i < q.optionKeys.length; i++)
+              ListTile(
+                dense: true,
+                title: Text(q.optionKeys[i].tr),
+                onTap: () => Get.back(result: i),
+              ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Get.back(),
+            child: Text('close'.tr),
+          ),
+        ],
+      ),
+    );
+    if (selected == null || !mounted) return;
+    final correct = selected == q.answerIndex;
+    final streak = Get.find<StreakService>();
+    await streak.recordQuizResult(correct: correct);
+    Get.snackbar(
+      correct ? 'knowledge_quiz_correct'.tr : 'knowledge_quiz_wrong'.tr,
+      q.explainKey.tr,
+      snackPosition: SnackPosition.BOTTOM,
+      duration: const Duration(seconds: 4),
+    );
   }
 
   @override
