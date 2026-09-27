@@ -54,4 +54,4 @@ $null
 /upgrade-plan.css
 /upgrade-plan.js
 /index.html
-/scripts/_add_*.py
+/scripts/_add_*.py/scripts/_patch_*.py
