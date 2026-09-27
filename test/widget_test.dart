@@ -7,7 +7,7 @@ import 'package:ledgerlearn/modules/settings/controllers/theme_controller.dart';
 
 class MockDatabaseService extends DatabaseService {
   @override
-  Future<void> init() async {}
+  Future<void> init({bool inMemory = false}) async {}
 
   @override
   String getLocale() => 'zh_CN';

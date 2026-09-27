@@ -1,7 +1,7 @@
 name: ledgerlearn
 description: "LedgerLearn - Accounting Learning Simulation App"
 publish_to: 'none'
-version: 0.3.1+5
+version: 0.8.1+11
 
 environment:
   sdk: ^3.11.0-296.4.beta
@@ -12,6 +12,8 @@ dependencies:
   cupertino_icons: ^1.0.9
   get: ^4.7.3
   get_storage: ^2.1.1
+  sqflite: ^2.3.3
+  sqflite_common_ffi: ^2.3.3
   intl: ^0.20.2
   flutter_markdown_plus: ^1.0.7
   fl_chart: ^1.2.0
