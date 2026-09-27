@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../data/services/practice_service.dart';
 import '../controllers/practice_controller.dart';
+import 'quiz_view.dart';
 
 class WrongBookView extends GetView<WrongBookController> {
   const WrongBookView({super.key});
@@ -15,6 +16,16 @@ class WrongBookView extends GetView<WrongBookController> {
       appBar: AppBar(
         title: Text('practice_wrong_book'.tr),
         actions: [
+          IconButton(
+            tooltip: 'practice_retry_wrong'.tr,
+            icon: const Icon(Icons.replay_outlined),
+            onPressed: () {
+              final ids = c.retryQueue();
+              if (ids.isEmpty) return;
+              // Launch a quiz session over the weak scenarios.
+              Get.to(() => const QuizView(), arguments: ids);
+            },
+          ),
           IconButton(
             tooltip: 'practice_clear_wrong'.tr,
             icon: const Icon(Icons.delete_sweep_outlined),
@@ -74,6 +85,24 @@ class WrongBookView extends GetView<WrongBookController> {
                         ...a.lines.map((l) => Text(
                               '${l.accountId}  ${l.isDebit ? 'D' : 'C'}  ${(l.amountCents / 100).toStringAsFixed(2)}',
                             )),
+                        if (a.missingAccountIds.isNotEmpty) ...[
+                          const SizedBox(height: 8),
+                          Text(
+                            '${'practice_wrong_missing'.tr}: '
+                            '${a.missingAccountIds.join(', ')}',
+                            style: TextStyle(
+                                color: Theme.of(context).colorScheme.error),
+                          ),
+                        ],
+                        if (a.unexpectedAccountIds.isNotEmpty) ...[
+                          const SizedBox(height: 4),
+                          Text(
+                            '${'practice_wrong_extra'.tr}: '
+                            '${a.unexpectedAccountIds.join(', ')}',
+                            style: TextStyle(
+                                color: Theme.of(context).colorScheme.error),
+                          ),
+                        ],
                         const SizedBox(height: 8),
                         Text('practice_explanation'.tr,
                             style:

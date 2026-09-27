@@ -3,6 +3,7 @@ import '../../../data/models/account.dart';
 import '../../../data/models/entry.dart';
 import '../../../data/models/practice.dart';
 import '../../../data/services/practice_service.dart';
+import '../../../data/services/streak_service.dart';
 import '../../../data/repositories/account_repository.dart';
 
 class PracticeController extends GetxController {
@@ -11,6 +12,8 @@ class PracticeController extends GetxController {
 
   final scenarios = <PracticeScenario>[].obs;
   final passedIds = <String>[].obs;
+  final unlockedChapterIds = <String>[].obs;
+  final masteryStars = <String, int>{}.obs;
 
   @override
   void onInit() {
@@ -21,10 +24,31 @@ class PracticeController extends GetxController {
   void reload() {
     scenarios.value = service.scenarios;
     passedIds.value = service.getPassedIds();
+    unlockedChapterIds.value = practiceChapters
+        .where((c) => service.isChapterUnlocked(c.id))
+        .map((c) => c.id)
+        .toList();
+    masteryStars.value = {
+      for (final s in scenarios) s.id: service.masteryOf(s.id).stars,
+    };
+    update();
   }
 
   double get progress =>
       scenarios.isEmpty ? 0 : passedIds.length / scenarios.length;
+
+  List<PracticeScenario> chapterScenarios(String chapterId) =>
+      service.scenariosOfChapter(chapterId);
+
+  double chapterProgress(String chapterId) =>
+      service.chapterProgress(chapterId);
+
+  bool isChapterUnlocked(String chapterId) =>
+      unlockedChapterIds.contains(chapterId);
+
+  int starsOf(String scenarioId) => masteryStars[scenarioId] ?? 0;
+
+  PracticeScenario? get nextRecommended => service.nextRecommended();
 }
 
 class PracticeDetailController extends GetxController {
@@ -115,6 +139,9 @@ class PracticeDetailController extends GetxController {
         await service.submit(scenario: scenario, lines: lines);
     result.value = attempt;
     showExplanation.value = true;
+    if (attempt.passed && Get.isRegistered<StreakService>()) {
+      await Get.find<StreakService>().markActivity();
+    }
     return attempt;
   }
 }
@@ -137,4 +164,18 @@ class WrongBookController extends GetxController {
     await service.clearWrongBook();
     reload();
   }
+
+  /// Scenario ids that have at least one wrong attempt (unique, recent first).
+  List<String> get weakScenarioIds {
+    final seen = <String>{};
+    final ids = <String>[];
+    for (final a in items) {
+      if (seen.add(a.scenarioId)) ids.add(a.scenarioId);
+    }
+    return ids;
+  }
+
+  /// Retry all weak scenarios as a quiz session.
+  List<String> retryQueue({int max = 5}) =>
+      weakScenarioIds.take(max).toList();
 }

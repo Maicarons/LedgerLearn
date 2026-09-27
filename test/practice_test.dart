@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ledgerlearn/data/models/practice.dart';
+import 'package:ledgerlearn/data/services/practice_service.dart';
 
 void main() {
   group('PracticeGrader', () {
@@ -14,7 +15,7 @@ void main() {
         .toList();
 
     test('passes correct debit/credit pair', () {
-      final problems = PracticeGrader.grade(
+      final result = PracticeGrader.grade(
         expected: expected,
         actual: lines([
           ('1001', true, 500000),
@@ -23,33 +24,35 @@ void main() {
         checkAmount: true,
         expectedAmountCents: 500000,
       );
-      expect(problems, isEmpty);
+      expect(result.problems, isEmpty);
+      expect(result.passed, isTrue);
     });
 
     test('fails when direction is swapped', () {
-      final problems = PracticeGrader.grade(
+      final result = PracticeGrader.grade(
         expected: expected,
         actual: lines([
           ('1001', false, 500000),
           ('1002', true, 500000),
         ]),
       );
-      expect(problems, contains('practice_err_missing'));
+      expect(result.problems, contains('practice_err_missing'));
+      expect(result.missingAccountIds, isNotEmpty);
     });
 
     test('fails when unbalanced', () {
-      final problems = PracticeGrader.grade(
+      final result = PracticeGrader.grade(
         expected: expected,
         actual: lines([
           ('1001', true, 500000),
           ('1002', false, 400000),
         ]),
       );
-      expect(problems, contains('practice_err_unbalanced'));
+      expect(result.problems, contains('practice_err_unbalanced'));
     });
 
     test('fails on unexpected extra line', () {
-      final problems = PracticeGrader.grade(
+      final result = PracticeGrader.grade(
         expected: expected,
         actual: lines([
           ('1001', true, 500000),
@@ -57,22 +60,23 @@ void main() {
           ('5502', true, 0),
         ]),
       );
-      expect(problems, contains('practice_err_wrong_line'));
+      expect(result.problems, contains('practice_err_wrong_line'));
+      expect(result.unexpectedAccountIds, contains('5502'));
     });
 
     test('fails when amount zero', () {
-      final problems = PracticeGrader.grade(
+      final result = PracticeGrader.grade(
         expected: expected,
         actual: lines([
           ('1001', true, 0),
           ('1002', false, 0),
         ]),
       );
-      expect(problems, contains('practice_err_zero'));
+      expect(result.problems, contains('practice_err_zero'));
     });
 
     test('fails amount check when wrong amount', () {
-      final problems = PracticeGrader.grade(
+      final result = PracticeGrader.grade(
         expected: expected,
         actual: lines([
           ('1001', true, 100),
@@ -81,7 +85,7 @@ void main() {
         checkAmount: true,
         expectedAmountCents: 500000,
       );
-      expect(problems, contains('practice_err_amount'));
+      expect(result.problems, contains('practice_err_amount'));
     });
   });
 
@@ -98,20 +102,35 @@ void main() {
         ],
         passed: false,
         problems: ['practice_err_unbalanced'],
+        missingAccountIds: ['1001'],
+        unexpectedAccountIds: ['5502'],
       );
       final restored = PracticeAttempt.fromJson(a.toJson());
       expect(restored.scenarioId, a.scenarioId);
       expect(restored.passed, isFalse);
       expect(restored.lines.length, 2);
       expect(restored.problems, ['practice_err_unbalanced']);
+      expect(restored.missingAccountIds, ['1001']);
+      expect(restored.unexpectedAccountIds, ['5502']);
     });
   });
 
   group('preset scenarios', () {
+    test('has at least 22 scenarios with unique ids', () {
+      expect(presetScenarios.length, greaterThanOrEqualTo(22));
+      final ids = presetScenarios.map((s) => s.id).toSet();
+      expect(ids.length, presetScenarios.length);
+    });
+
+    test('every scenario has two or more expected lines', () {
+      for (final s in presetScenarios) {
+        expect(s.expected.length, greaterThanOrEqualTo(2),
+            reason: s.id);
+      }
+    });
+
     test('every expected account id looks like a chart code', () {
-      // Import-free check: re-read expected from grader inputs style
-      // Covered more deeply in practice_service tests via scenarios list length.
-      expect(PracticeGrader.grade(
+      final result = PracticeGrader.grade(
         expected: const [ExpectedLine(accountId: '5001', isDebit: true)],
         actual: [
           PracticeAttemptLine(
@@ -119,7 +138,8 @@ void main() {
           PracticeAttemptLine(
               accountId: '3103', isDebit: false, amountCents: 100),
         ],
-      ), isNotEmpty); // missing expected credit line → problems
+      );
+      expect(result.problems, isNotEmpty); // missing expected credit line
     });
   });
 }
