@@ -1,3 +1,6 @@
+@TestOn('vm')
+library;
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ledgerlearn/data/storage/local_store_io.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
